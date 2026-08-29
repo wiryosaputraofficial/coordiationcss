@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 404,
+    "staticUtilityCount": 409,
     "familyCount": 15,
-    "completeFamilies": 8,
-    "partialFamilies": 7,
+    "completeFamilies": 9,
+    "partialFamilies": 6,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -705,28 +705,39 @@
     },
     {
       "id": "backgrounds",
-      "label": "Backgrounds and colors",
-      "status": "partial",
+      "label": "Backgrounds, gradients, and colors",
+      "status": "complete",
       "target": "0.3",
       "patterns": [
         "co-bg-*",
+        "co-bg-linear-*",
+        "co-bg-radial-*",
+        "co-bg-conic-*",
+        "co-from-*",
+        "co-via-*",
+        "co-to-*",
         "co-text-{color}",
         "co-accent-*",
         "co-caret-*"
       ],
       "examples": [
-        "co-bg-black",
         "co-bg-black/50",
-        "co-bg-cover",
-        "co-bg-clip-text"
+        "co-bg-[url(/hero.svg)]",
+        "co-bg-linear-to-r/oklch",
+        "co-from-brand-500",
+        "co-via-40%",
+        "co-to-transparent",
+        "co-bg-position-(--focus)",
+        "co-bg-size-[auto_12rem]"
       ],
-      "supportsNegative": false,
+      "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Apply theme or arbitrary colors and control background attachment, clipping, origin, position, repetition, and sizing.",
-        "guidance": "Prefer theme colors so components remain adaptable. Use slash opacity for transparent variants and bg-clip-text when a background should be constrained to glyphs.",
+        "summary": "Apply theme, inherited, current, transparent, or arbitrary colors; compose linear, radial, and conic gradients; and control every background image layer setting.",
+        "guidance": "Prefer theme colors and named background-image tokens, compose gradients from an explicit direction plus from/via/to stops, and use typed arbitrary values when image, color, position, or size syntax could be ambiguous.",
         "properties": [
           "background-color",
+          "background-image",
           "background-attachment",
           "background-clip",
           "background-origin",
@@ -734,29 +745,22 @@
           "background-repeat",
           "background-size",
           "accent-color",
-          "caret-color"
+          "caret-color",
+          "--co-gradient-stops"
         ],
         "concepts": [
-          "Theme colors compile through --co-color-* variables.",
+          "Theme colors compile through --co-color-* variables and named images through --co-background-image-* variables.",
           "Slash opacity uses color-mix in OKLab instead of duplicating palette entries.",
-          "Arbitrary color values remain available when a token is inappropriate."
+          "Linear, radial, and conic gradients share composable from/via/to colors and percentage positions.",
+          "Gradient interpolation modifiers support sRGB, HSL, OKLab, OKLCH, and OKLCH hue-path controls.",
+          "Position and size accept named values, CSS custom-property shorthand, and safe arbitrary values."
         ],
         "caveats": [
-          "Gradient stop composition and image utilities are still planned for v0.3.",
-          "Full Display-P3 token authoring is not complete."
+          "Wide-gamut palette design and Display-P3 authoring are tracked separately by the Modern color capability.",
+          "Background images referenced by URL remain application assets and are not bundled by the compiler."
         ]
       },
       "resolvedExamples": [
-        {
-          "candidate": "co-bg-black",
-          "supported": true,
-          "declarations": [
-            [
-              "background-color",
-              "var(--co-color-black)"
-            ]
-          ]
-        },
         {
           "candidate": "co-bg-black/50",
           "supported": true,
@@ -768,26 +772,80 @@
           ]
         },
         {
-          "candidate": "co-bg-cover",
+          "candidate": "co-bg-[url(/hero.svg)]",
           "supported": true,
           "declarations": [
             [
-              "background-size",
-              "cover"
+              "background-image",
+              "url(/hero.svg)"
             ]
           ]
         },
         {
-          "candidate": "co-bg-clip-text",
+          "candidate": "co-bg-linear-to-r/oklch",
           "supported": true,
           "declarations": [
             [
-              "background-clip",
-              "text"
+              "background-image",
+              "linear-gradient(to right in oklch, var(--co-gradient-stops))"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-from-brand-500",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-gradient-from",
+              "var(--co-color-brand-500) var(--co-gradient-from-position, 0%)"
             ],
             [
-              "-webkit-background-clip",
-              "text"
+              "--co-gradient-to",
+              "color-mix(in oklab, var(--co-color-brand-500) 0%, transparent) var(--co-gradient-to-position, 100%)"
+            ],
+            [
+              "--co-gradient-stops",
+              "var(--co-gradient-from), var(--co-gradient-to)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-via-40%",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-gradient-via-position",
+              "40%"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-to-transparent",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-gradient-to",
+              "transparent var(--co-gradient-to-position, 100%)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-bg-position-(--focus)",
+          "supported": true,
+          "declarations": [
+            [
+              "background-position",
+              "var(--focus)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-bg-size-[auto_12rem]",
+          "supported": true,
+          "declarations": [
+            [
+              "background-size",
+              "auto 12rem"
             ]
           ]
         }
@@ -1749,6 +1807,24 @@
       ]
     },
     {
+      "candidate": "co-bg-bottom-left",
+      "declarations": [
+        [
+          "background-position",
+          "bottom left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-bottom-right",
+      "declarations": [
+        [
+          "background-position",
+          "bottom right"
+        ]
+      ]
+    },
+    {
       "candidate": "co-bg-center",
       "declarations": [
         [
@@ -1870,6 +1946,15 @@
       ]
     },
     {
+      "candidate": "co-bg-none",
+      "declarations": [
+        [
+          "background-image",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-bg-origin-border",
       "declarations": [
         [
@@ -1983,6 +2068,24 @@
         [
           "background-position",
           "top"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-top-left",
+      "declarations": [
+        [
+          "background-position",
+          "top left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-top-right",
+      "declarations": [
+        [
+          "background-position",
+          "top right"
         ]
       ]
     },
