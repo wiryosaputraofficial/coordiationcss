@@ -586,15 +586,17 @@ footer > span { justify-self: end; }
 .component-catalog-card.is-selected { outline: 2px solid #111; outline-offset: -2px; }
 .component-preview { width: 100%; min-height: 280px; padding: 38px 24px; position: relative; display: grid; place-items: center; border-bottom: 1px solid var(--line); background-color: #f8f8f5; background-image: linear-gradient(to right, rgb(0 0 0 / .04) 1px, transparent 1px), linear-gradient(to bottom, rgb(0 0 0 / .04) 1px, transparent 1px); background-size: 24px 24px; }
 .component-preview:hover { background-color: #efefeb; }
-.component-index { position: absolute; left: 14px; top: 12px; color: #aaa; font-family: var(--font-geist-mono); font-size: 7px; }
-.component-preview-select { min-height: 27px; padding: 0 9px; position: absolute; z-index: 2; top: 9px; right: 10px; border: 1px solid #bbb; border-radius: 999px; background: #fff; color: #111; cursor: pointer; font-family: var(--font-geist-mono); font-size: 7px; font-weight: 700; text-transform: uppercase; }
+.component-preview > :not(.component-index, .component-preview-select) { transform: scale(1.12); transform-origin: center; }
+.component-index { position: absolute; left: 14px; top: 12px; color: #999; font-family: var(--font-geist-mono); font-size: 8px; }
+.component-preview-select { min-height: 29px; padding: 0 10px; position: absolute; z-index: 2; top: 9px; right: 10px; border: 1px solid #aaa; border-radius: 999px; background: #fff; color: #111; cursor: pointer; font-family: var(--font-geist-mono); font-size: 8px; font-weight: 700; text-transform: uppercase; }
 .component-preview-select:hover, .component-preview-select:focus-visible { border-color: #111; outline: 2px solid #111; outline-offset: 2px; background: #050505; color: #fff; }
 .component-card-meta { min-height: 125px; padding: 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
-.component-card-meta h3 { margin: 0; font-size: 17px; letter-spacing: -.035em; }
-.component-card-meta p { max-width: 330px; margin: 8px 0 0; color: #777; font-size: 9px; line-height: 1.55; }
-.component-card-meta > span { padding: 5px 7px; border: 1px solid #d1d1ce; border-radius: 999px; color: #777; font-family: var(--font-geist-mono); font-size: 6px; }
+.component-card-meta h3 { margin: 0; font-size: 18px; letter-spacing: -.035em; }
+.component-card-meta p { max-width: 350px; margin: 8px 0 0; color: #666; font-size: 10px; line-height: 1.6; }
+.component-card-meta > span { padding: 5px 8px; border: 1px solid #c7c7c3; border-radius: 999px; color: #666; font-family: var(--font-geist-mono); font-size: 7px; }
 .component-detail { min-width: 0; padding: 28px; position: sticky; top: 76px; }
 .component-detail-preview { min-height: 205px; margin-bottom: 28px; display: grid; place-items: center; border: 1px solid #111; background: #f7f7f4; }
+.component-detail-preview > * { transform: scale(1.06); transform-origin: center; }
 .component-detail > h2 { margin: 10px 0 8px; font-size: 35px; letter-spacing: -.05em; }
 .component-detail > h2 + p { margin: 0 0 24px; color: #777; font-size: 10px; line-height: 1.6; }
 .component-detail > section { margin-top: 12px; border: 1px solid #333; background: #080808; color: #fff; }
@@ -849,6 +851,7 @@ footer > span { justify-self: end; }
   .component-detail { width: 100%; padding: 18px; position: static; }
   .component-detail-empty { min-height: 230px; }
   .component-preview { min-height: 240px; }
+  .component-preview > :not(.component-index, .component-preview-select), .component-detail-preview > * { transform: scale(1.04); }
   .component-registry-footer { margin-top: 60px; padding: 28px; gap: 35px; }
   .component-registry-footer h2 { font-size: 33px; }
   .component-registry-footer a { align-items: flex-start; flex-direction: column; }
