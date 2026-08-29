@@ -56,7 +56,7 @@ console.log(result.customVariants);
 
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI GENERATION CONTRACT</p><h2>Discover names before composing</h2><p>Agents should treat the authored directives and compile manifest as the exact project-local variant API.</p></div><ul><li>Never infer a custom variant from its visual intent or another framework&apos;s name.</li><li>Keep the full stacked candidate literal so the scanner can discover it.</li><li>Preserve selector and conditional wrapper order from the manifest.</li><li>Use <code>@co-slot;</code> once in compound definitions and never invent unsupported at-rules.</li><li>Report a rejected candidate instead of silently falling back to a built-in variant.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs/core/custom-utilities"><span>Previous</span><b>← Custom utilities</b></Link><Link href="/release-check"><span>Next</span><b>Release Check →</b></Link></div>
+      <div className="docs-next split"><Link href="/docs/core/custom-utilities"><span>Previous</span><b>← Custom utilities</b></Link><Link href="/docs/core/plugin-api"><span>Next</span><b>Plugin API →</b></Link></div>
     </article>
   );
 }
