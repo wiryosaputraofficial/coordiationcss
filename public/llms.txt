@@ -21,6 +21,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Feature query: `supports-[display:grid]:co-grid`, `not-supports-[display:grid]:co-block`
 - Named container query: `@md/sidebar:co-grid-cols-2`
 - Arbitrary conditional at-rule: `[@media(pointer:fine)]:co-block`
+- Preflight is enabled by default; disable it with `preflight: false` or CLI `--no-preflight`
 
 ## Reliability rules for AI agents
 
@@ -36,3 +37,4 @@ Machine-readable capability manifest: `/api/capabilities`
 Machine-readable utility registry: `/api/utilities`
 Attribute and selector variant documentation: `/docs/variants/attribute-selectors`
 Conditional variant documentation: `/docs/variants/conditional-rules`
+Preflight documentation: `/docs/core/preflight`
