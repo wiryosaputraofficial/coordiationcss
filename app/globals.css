@@ -722,6 +722,9 @@ footer > span { justify-self: end; }
 @media (max-width: 980px) {
   .site-header { grid-template-columns: 1fr auto auto; gap: 10px; }
   .site-header > nav, .reference-header > nav { display: none; }
+  .site-header > .brand, .reference-header > .brand { order: 1; }
+  .site-header > .header-cta { order: 2; }
+  .site-header > .mobile-nav, .reference-header > .mobile-nav { order: 3; }
   .mobile-nav { display: block; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { max-width: 800px; }
