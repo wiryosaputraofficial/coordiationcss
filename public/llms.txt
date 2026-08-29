@@ -28,6 +28,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Sizing: `co-w-md`, `co-h-dvh`, `co-size-12`, `co-inline-full`, `co-max-inline-lg`, `co-min-block-24`
 - Typography: `co-text-sm/6`, `co-font-stretch-condensed`, `co-font-features-(--features)`, `co-tabular-nums`, `co-wrap-anywhere`, `before:co-content-['AI_ready']`
 - Backgrounds: `co-bg-black/50`, `co-bg-[url(/hero.svg)]`, `co-bg-linear-to-r/oklch`, `co-from-brand-500`, `co-via-40%`, `co-to-transparent`, `co-bg-position-(--focus)`, `co-bg-size-[auto_12rem]`
+- Borders: `co-border-bs-2`, `co-border-e-brand-500/50`, `co-rounded-se-(--radius)`, `focus-visible:co-outline-2`, `-co-outline-offset-2`, `co-ring-2`, `co-inset-ring-brand-500`, `co-divide-x-reverse`, `co-divide-dashed`
 
 ## Reliability rules for AI agents
 
@@ -50,3 +51,4 @@ Spacing documentation: `/docs/utilities/spacing`
 Sizing documentation: `/docs/utilities/sizing`
 Typography documentation: `/docs/utilities/typography`
 Background utility documentation: `/docs/utilities/backgrounds`
+Border, outline, ring, and divide documentation: `/docs/utilities/borders-rings`

@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 409,
+    "staticUtilityCount": 411,
     "familyCount": 15,
-    "completeFamilies": 9,
-    "partialFamilies": 6,
+    "completeFamilies": 10,
+    "partialFamilies": 5,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -854,66 +854,104 @@
     {
       "id": "borders-rings",
       "label": "Borders, outlines, rings, and divide",
-      "status": "partial",
+      "status": "complete",
       "target": "0.3",
       "patterns": [
         "co-border-*",
         "co-rounded-*",
         "co-outline-*",
+        "co-outline-offset-*",
         "co-ring-*",
-        "co-divide-*-*"
+        "co-inset-ring-*",
+        "co-divide-*"
       ],
       "examples": [
-        "co-border-x-2",
-        "co-rounded-t-lg",
+        "co-border-bs-2",
+        "co-border-e-brand-500/50",
+        "co-rounded-se-(--radius)",
+        "focus:co-outline-2",
+        "-co-outline-offset-2",
         "co-ring-2",
-        "co-divide-y"
+        "co-inset-ring-brand-500",
+        "co-divide-x-reverse",
+        "co-divide-dashed"
       ],
-      "supportsNegative": false,
+      "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Define border widths and styles, logical edges, corner radii, outlines, focus rings, and borders between direct children.",
-        "guidance": "Use borders for element geometry, outlines for accessibility that must not affect layout, and rings for composable focus treatment.",
+        "summary": "Define physical and logical border widths and colors, styles, corner radii, accessible outlines, outward and inset rings, legacy ring offsets, and complete dividers between children.",
+        "guidance": "Use borders for element geometry, outlines for keyboard focus without layout movement, rings for composable focus treatment, and divide utilities only when sibling separators belong to the parent layout.",
         "properties": [
           "border-width",
           "border-style",
           "border-color",
           "border-radius",
-          "outline",
+          "outline-width",
+          "outline-style",
+          "outline-color",
+          "outline-offset",
           "box-shadow"
         ],
         "concepts": [
-          "Logical border start/end utilities adapt to writing direction.",
-          "Ring utilities compose CSS custom properties into box-shadow.",
-          "Divide utilities apply border width to direct children except the last."
+          "Physical and logical border axes accept numeric pixels, typed custom properties, and safe arbitrary lengths.",
+          "Every border edge accepts theme, inherited, current, transparent, arbitrary, and slash-opacity colors.",
+          "Radius tokens and custom values apply to complete boxes, physical sides, logical sides, and individual corners.",
+          "Outward and inset rings compose with each other and ordinary shadows through shared custom properties.",
+          "Divide width, reverse direction, color, and style target every direct child except the last."
         ],
         "caveats": [
-          "Ring inset and complete divide color/style composition remain.",
-          "Complex per-corner logical combinations should be verified against browser support."
+          "The ring-offset utilities remain as a compatibility extension even though current Tailwind-style rings no longer require an offset layer.",
+          "Logical corners and edges follow writing mode and direction, so visual placement changes intentionally in RTL or vertical text."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-border-x-2",
+          "candidate": "co-border-bs-2",
           "supported": true,
           "declarations": [
             [
-              "border-inline-width",
+              "border-block-start-width",
               "2px"
             ]
           ]
         },
         {
-          "candidate": "co-rounded-t-lg",
+          "candidate": "co-border-e-brand-500/50",
           "supported": true,
           "declarations": [
             [
-              "border-top-left-radius",
-              "var(--co-radius-lg)"
-            ],
+              "border-inline-end-color",
+              "color-mix(in oklab, var(--co-color-brand-500) 50%, transparent)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-rounded-se-(--radius)",
+          "supported": true,
+          "declarations": [
             [
-              "border-top-right-radius",
-              "var(--co-radius-lg)"
+              "border-start-end-radius",
+              "var(--radius)"
+            ]
+          ]
+        },
+        {
+          "candidate": "focus:co-outline-2",
+          "supported": true,
+          "declarations": [
+            [
+              "outline-width",
+              "2px"
+            ]
+          ]
+        },
+        {
+          "candidate": "-co-outline-offset-2",
+          "supported": true,
+          "declarations": [
+            [
+              "outline-offset",
+              "calc(2px * -1)"
             ]
           ]
         },
@@ -923,7 +961,7 @@
           "declarations": [
             [
               "--co-ring-offset-shadow",
-              "0 0 #0000"
+              "0 0 0 var(--co-ring-offset-width, 0px) var(--co-ring-offset-color, transparent)"
             ],
             [
               "--co-ring-shadow",
@@ -931,17 +969,37 @@
             ],
             [
               "box-shadow",
-              "var(--co-ring-offset-shadow), var(--co-ring-shadow), var(--co-shadow, 0 0 #0000)"
+              "var(--co-inset-ring-shadow, 0 0 #0000), var(--co-ring-offset-shadow, 0 0 #0000), var(--co-ring-shadow, 0 0 #0000), var(--co-shadow, 0 0 #0000)"
             ]
           ]
         },
         {
-          "candidate": "co-divide-y",
+          "candidate": "co-inset-ring-brand-500",
           "supported": true,
           "declarations": [
             [
-              "border-top-width",
-              "1px"
+              "--co-inset-ring-color",
+              "var(--co-color-brand-500)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-divide-x-reverse",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-divide-x-reverse",
+              "1"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-divide-dashed",
+          "supported": true,
+          "declarations": [
+            [
+              "border-style",
+              "dashed"
             ]
           ]
         }
@@ -985,8 +1043,12 @@
           "supported": true,
           "declarations": [
             [
-              "box-shadow",
+              "--co-shadow",
               "var(--co-shadow-lg)"
+            ],
+            [
+              "box-shadow",
+              "var(--co-inset-ring-shadow, 0 0 #0000), var(--co-ring-offset-shadow, 0 0 #0000), var(--co-ring-shadow, 0 0 #0000), var(--co-shadow, 0 0 #0000)"
             ]
           ]
         },
@@ -2176,6 +2238,15 @@
         [
           "border-style",
           "double"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-border-hidden",
+      "declarations": [
+        [
+          "border-style",
+          "hidden"
         ]
       ]
     },
@@ -3939,6 +4010,15 @@
       ]
     },
     {
+      "candidate": "co-outline",
+      "declarations": [
+        [
+          "outline-width",
+          "1px"
+        ]
+      ]
+    },
+    {
       "candidate": "co-outline-dashed",
       "declarations": [
         [
@@ -3982,12 +4062,8 @@
       "candidate": "co-outline-none",
       "declarations": [
         [
-          "outline",
-          "2px solid transparent"
-        ],
-        [
-          "outline-offset",
-          "2px"
+          "outline-style",
+          "none"
         ]
       ]
     },
