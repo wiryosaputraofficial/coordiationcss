@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 330,
+    "staticUtilityCount": 341,
     "familyCount": 15,
-    "completeFamilies": 0,
-    "partialFamilies": 15,
+    "completeFamilies": 2,
+    "partialFamilies": 13,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -979,7 +979,7 @@
     {
       "id": "svg",
       "label": "SVG",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-fill-*",
@@ -987,7 +987,9 @@
       ],
       "examples": [
         "co-fill-current",
-        "co-stroke-black"
+        "co-stroke-black",
+        "co-stroke-2",
+        "co-stroke-[1.5]"
       ],
       "supportsNegative": false,
       "supportsArbitrary": true,
@@ -996,15 +998,16 @@
         "guidance": "Use currentColor when an icon should inherit surrounding text color and theme colors when fill or stroke needs independent semantic meaning.",
         "properties": [
           "fill",
-          "stroke"
+          "stroke",
+          "stroke-width"
         ],
         "concepts": [
           "Fill and stroke use the shared color resolver.",
-          "Arbitrary colors and slash opacity are available.",
-          "State and responsive variants compose with SVG color utilities."
+          "Stroke width accepts 0, 1, 2, numeric arbitrary values, and CSS lengths.",
+          "State and responsive variants compose with SVG utilities."
         ],
         "caveats": [
-          "Stroke width, line cap, line join, dash array, and vector-effect utilities remain.",
+          "Use arbitrary properties for SVG presentation attributes outside fill, stroke color, and stroke width.",
           "SVG presentation attributes may compete with generated CSS specificity."
         ]
       },
@@ -1028,21 +1031,45 @@
               "var(--co-color-black)"
             ]
           ]
+        },
+        {
+          "candidate": "co-stroke-2",
+          "supported": true,
+          "declarations": [
+            [
+              "stroke-width",
+              "2"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-stroke-[1.5]",
+          "supported": true,
+          "declarations": [
+            [
+              "stroke-width",
+              "1.5"
+            ]
+          ]
         }
       ]
     },
     {
       "id": "accessibility",
       "label": "Accessibility",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-sr-only",
-        "co-not-sr-only"
+        "co-not-sr-only",
+        "co-forced-color-adjust-*",
+        "co-scheme-*"
       ],
       "examples": [
         "co-sr-only",
-        "focus:co-not-sr-only"
+        "focus:co-not-sr-only",
+        "co-forced-color-adjust-none",
+        "co-scheme-light-dark"
       ],
       "supportsNegative": false,
       "supportsArbitrary": false,
@@ -1058,16 +1085,18 @@
           "overflow",
           "clip",
           "white-space",
-          "border-width"
+          "border-width",
+          "forced-color-adjust",
+          "color-scheme"
         ],
         "concepts": [
           "Screen-reader-only content remains in the accessibility tree.",
-          "not-sr-only restores the essential layout properties.",
-          "Forced-color variants are available for high-contrast environments."
+          "Forced-color adjustment controls whether user-agent high-contrast colors override an element.",
+          "Color-scheme utilities declare supported light and dark browser UI schemes."
         ],
         "caveats": [
           "Do not use sr-only to hide interactive content that must remain unreachable.",
-          "Additional forced-color adjustment utilities are still incomplete."
+          "Use forced-color-adjust-none only when preserving authored colors is essential for meaning."
         ]
       },
       "resolvedExamples": [
@@ -1148,6 +1177,26 @@
             [
               "white-space",
               "normal"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-forced-color-adjust-none",
+          "supported": true,
+          "declarations": [
+            [
+              "forced-color-adjust",
+              "none"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-scheme-light-dark",
+          "supported": true,
+          "declarations": [
+            [
+              "color-scheme",
+              "light dark"
             ]
           ]
         }
@@ -2426,6 +2475,24 @@
       ]
     },
     {
+      "candidate": "co-forced-color-adjust-auto",
+      "declarations": [
+        [
+          "forced-color-adjust",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-forced-color-adjust-none",
+      "declarations": [
+        [
+          "forced-color-adjust",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-grid",
       "declarations": [
         [
@@ -3623,6 +3690,60 @@
       ]
     },
     {
+      "candidate": "co-scheme-dark",
+      "declarations": [
+        [
+          "color-scheme",
+          "dark"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scheme-light",
+      "declarations": [
+        [
+          "color-scheme",
+          "light"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scheme-light-dark",
+      "declarations": [
+        [
+          "color-scheme",
+          "light dark"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scheme-normal",
+      "declarations": [
+        [
+          "color-scheme",
+          "normal"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scheme-only-dark",
+      "declarations": [
+        [
+          "color-scheme",
+          "only dark"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scheme-only-light",
+      "declarations": [
+        [
+          "color-scheme",
+          "only light"
+        ]
+      ]
+    },
+    {
       "candidate": "co-scroll-auto",
       "declarations": [
         [
@@ -3894,6 +4015,33 @@
         [
           "position",
           "sticky"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-stroke-0",
+      "declarations": [
+        [
+          "stroke-width",
+          "0"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-stroke-1",
+      "declarations": [
+        [
+          "stroke-width",
+          "1"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-stroke-2",
+      "declarations": [
+        [
+          "stroke-width",
+          "2"
         ]
       ]
     },
