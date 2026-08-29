@@ -55,7 +55,7 @@ coordiation-css: Unsupported candidate: co-does-not-exist`} /></div></section>
 
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI GENERATION CONTRACT</p><h2>Keep pipeline decisions auditable</h2><p>Agents can query the complete PostCSS capability before generating configuration.</p></div><ul><li>Use an ESM or CJS PostCSS config that matches the host project.</li><li>Place Coordiation before Autoprefixer, preset-env, and minifiers.</li><li>Keep <code>content</code>, filters, and safelist values literal.</li><li>Do not add custom filesystem watchers when the runner consumes standard dependency messages.</li><li>Do not place <code>@coordiation</code> in CSS entries that should remain untouched.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs/installation/using-vite"><span>Previous</span><b>← Using Vite</b></Link><Link href="/release-check"><span>Next</span><b>Release Check →</b></Link></div>
+      <div className="docs-next split"><Link href="/docs/installation/using-vite"><span>Previous</span><b>← Using Vite</b></Link><Link href="/docs/installation/using-cli"><span>Next</span><b>Using the CLI →</b></Link></div>
     </article>
   );
 }
