@@ -1,0 +1,26 @@
+# Coordiation CSS
+
+Coordiation CSS is an independent utility-first CSS compiler for the Coordiation framework. It has no Tailwind dependency and uses the `co-` prefix.
+
+## Canonical usage
+
+- Base utility: `co-flex`
+- Responsive variant: `md:co-grid-cols-3`
+- State variant: `hover:co-bg-black`
+- Stacked variants: `dark:md:hover:co-text-white`
+- Important utility: `!co-hidden`
+- Negative utility: `-co-mt-4`
+- Arbitrary value: `co-w-[42rem]`
+- Arbitrary property: `co-[mask-type:luminance]`
+
+## Reliability rules for AI agents
+
+1. Query `/api/capabilities` before generating framework-specific code.
+2. Use capabilities marked `complete` freely.
+3. Use `partial` only when the requested example is explicitly covered by its note or examples.
+4. Never emit a `planned` capability as working code.
+5. Preserve complete class strings in source so the plain-text scanner can detect them.
+6. Prefer theme tokens over arbitrary values.
+
+Human release tracker: `/release-check`
+Machine-readable capability manifest: `/api/capabilities`

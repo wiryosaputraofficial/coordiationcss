@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const utilities = [
   "co-grid",
   "co-gap-6",
@@ -64,6 +66,8 @@ export default function Home() {
           <a href="#features">Features</a>
           <a href="#engine">Engine</a>
           <a href="#roadmap">Roadmap</a>
+          <Link href="/docs">Docs</Link>
+          <Link href="/release-check">Release Check</Link>
         </nav>
         <a className="header-cta" href="#quick-start">Get started <span aria-hidden="true">↗</span></a>
       </header>
@@ -186,7 +190,7 @@ export default function Home() {
           <div className="install-tabs"><span className="active">pnpm</span><span>npm</span><span>bun</span><i>CLI</i></div>
           <code><span>$</span> pnpm add -D @coordiation/css</code>
           <div className="install-divider" />
-          <pre><span className="muted">/* app.css */</span>{`\n`}@coordiation;{`\n\n`}@co-theme {`{`}{`\n`}  --co-color-brand-500: #000;{`\n`}{`}`}</pre>
+          <pre><span className="muted">{"/* app.css */"}</span>{`\n`}@coordiation;{`\n\n`}@co-theme {`{`}{`\n`}  --co-color-brand-500: #000;{`\n`}{`}`}</pre>
         </div>
       </section>
 
@@ -195,7 +199,7 @@ export default function Home() {
           <p className="kicker">ROAD TO 1.0</p>
           <h2>Built in the open.<br />Measured honestly.</h2>
           <p>Coordiation CSS is an alpha today. Every capability is tracked, tested, and promoted only when it is truly ready.</p>
-          <a href="#quick-start">Read the alpha guide <span>→</span></a>
+          <Link href="/release-check">Open release check <span>→</span></Link>
         </div>
         <div className="roadmap-list">
           {roadmap.map(([name, status, className], index) => (
