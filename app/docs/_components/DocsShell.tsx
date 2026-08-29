@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 const navigation = [
   { title: "Getting started", items: [["Installation", "/docs"], ["Using Vite", "/docs/installation/using-vite"], ["Editor setup", "#editor-setup"], ["Compatibility", "/release-check"]] },
-  { title: "Core concepts", items: [["Utility classes", "#utility-classes"], ["Responsive design", "#responsive-design"], ["States and variants", "#states-and-variants"], ["Theme variables", "#theme-variables"]] },
+  { title: "Core concepts", items: [["Utility classes", "#utility-classes"], ["Responsive design", "#responsive-design"], ["Attribute selectors", "/docs/variants/attribute-selectors"], ["Theme variables", "#theme-variables"]] },
   { title: "Core utilities", items: [["Utility registry", "/docs/utilities"], ["Layout", "/docs/utilities/layout"], ["Flexbox & Grid", "/docs/utilities/flex-grid"], ["Spacing", "/docs/utilities/spacing"], ["Sizing", "/docs/utilities/sizing"], ["Typography", "/docs/utilities/typography"], ["Backgrounds", "/docs/utilities/backgrounds"], ["Borders & Rings", "/docs/utilities/borders-rings"], ["Effects", "/docs/utilities/effects"], ["Tables & Columns", "/docs/utilities/tables-columns"], ["Transforms", "/docs/utilities/transforms"], ["Transitions", "/docs/utilities/transitions"], ["SVG", "/docs/utilities/svg"], ["Accessibility", "/docs/utilities/accessibility"], ["Interactivity", "/docs/utilities/interaction"], ["Arbitrary properties", "/docs/utilities/arbitrary-properties"]] },
   { title: "Tooling", items: [["Vite", "/docs/installation/using-vite"], ["PostCSS", "#postcss"], ["CLI", "#cli"], ["AI integration", "#ai-integration"]] },
 ] as const;

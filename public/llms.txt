@@ -11,7 +11,12 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Important utility: `!co-hidden`
 - Negative utility: `-co-mt-4`
 - Arbitrary value: `co-w-[42rem]`
+- Typed arbitrary value: `co-text-[length:2rem]`
 - Arbitrary property: `co-[mask-type:luminance]`
+- ARIA variant: `aria-expanded:co-block`
+- Data variant: `data-[state=open]:co-block`
+- Descendant/negation variants: `has-checked:co-ring-2`, `not-focus:co-opacity-50`
+- Arbitrary selector: `[&.is-ready]:co-block`
 
 ## Reliability rules for AI agents
 
@@ -25,3 +30,4 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
 Machine-readable utility registry: `/api/utilities`
+Attribute and selector variant documentation: `/docs/variants/attribute-selectors`
