@@ -28,7 +28,8 @@ export default defineConfig({
       cssFile: "src/coordiation.css",
       toolchain: {
         minify: process.env.NODE_ENV === "production"
-      }
+      },
+      sourceMap: true
     })
   ]
 });`} /></div></section>
@@ -63,12 +64,12 @@ Never treat a planned capability as implemented.`} /><div className="inline-link
 
       <section className="family-concepts" id="configuration">
         <div><p className="docs-overline">CONFIGURATION</p><h2>Keep dependencies explicit</h2><p>Every path is resolved from Vite&apos;s final project root unless <code>cwd</code> is supplied deliberately.</p></div>
-        <ol><li><span>01</span><p><strong>content:</strong> source files or directories to scan and watch; defaults to <code>[&quot;src&quot;]</code>.</p></li><li><span>02</span><p><strong>cssFile:</strong> recommended watched CSS entry and import-resolution base.</p></li><li><span>03</span><p><strong>css:</strong> inline alternative for generated configurations.</p></li><li><span>04</span><p><strong>cache:</strong> process-local source and compilation reuse; defaults to <code>true</code>.</p></li><li><span>05</span><p><strong>toolchain:</strong> controls imports, nesting, prefixing, minification, and browser targets.</p></li><li><span>06</span><p><strong>include / exclude / safelist:</strong> literal scan-boundary controls.</p></li><li><span>07</span><p><strong>extractors:</strong> framework-specific candidate extraction hooks.</p></li></ol>
+        <ol><li><span>01</span><p><strong>content:</strong> source files or directories to scan and watch; defaults to <code>[&quot;src&quot;]</code>.</p></li><li><span>02</span><p><strong>cssFile:</strong> recommended watched CSS entry and import-resolution base.</p></li><li><span>03</span><p><strong>css:</strong> inline alternative for generated configurations.</p></li><li><span>04</span><p><strong>cache:</strong> process-local source and compilation reuse; defaults to <code>true</code>.</p></li><li><span>05</span><p><strong>sourceMap:</strong> return a native Vite map; accepts <code>true</code> or an embedded-content policy.</p></li><li><span>06</span><p><strong>toolchain:</strong> controls imports, nesting, prefixing, minification, and browser targets.</p></li><li><span>07</span><p><strong>include / exclude / safelist:</strong> literal scan-boundary controls.</p></li><li><span>08</span><p><strong>extractors:</strong> framework-specific candidate extraction hooks.</p></li></ol>
       </section>
 
       <section className="family-caveats" id="troubleshooting"><div><p className="docs-overline">TROUBLESHOOTING</p><h2>When a class does not appear</h2><p>The adapter reports scanner diagnostics through Vite and keeps unsupported candidates observable.</p></div><ul><li>Confirm the file lives inside a configured <code>content</code> root and is not excluded.</li><li>Keep complete utility strings in source; dynamic string concatenation cannot be discovered.</li><li>Import <code>virtual:coordiation.css</code> exactly once from the client entry.</li><li>Use <code>cssFile</code> when theme changes should participate in HMR.</li><li>On WSL or mounted filesystems, verify that Vite itself receives filesystem events.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs/tooling/incremental-cache"><span>Previous</span><b>← Incremental cache</b></Link><Link href="/docs/installation/using-postcss"><span>Next</span><b>Using PostCSS →</b></Link></div>
+      <div className="docs-next split"><Link href="/docs/tooling/source-maps"><span>Previous</span><b>← Source maps</b></Link><Link href="/docs/installation/using-postcss"><span>Next</span><b>Using PostCSS →</b></Link></div>
     </article>
   );
 }
