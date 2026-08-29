@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 499,
+    "staticUtilityCount": 507,
     "familyCount": 15,
-    "completeFamilies": 12,
-    "partialFamilies": 3,
+    "completeFamilies": 13,
+    "partialFamilies": 2,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -1310,43 +1310,61 @@
     },
     {
       "id": "transforms",
-      "label": "Transforms",
-      "status": "partial",
+      "label": "Transforms and perspective",
+      "status": "complete",
       "target": "0.3",
       "patterns": [
-        "co-translate-*-*",
+        "co-transform-*",
+        "co-translate-*",
         "co-rotate-*",
         "co-scale-*",
-        "co-skew-*-*",
-        "co-origin-*"
+        "co-skew-*",
+        "co-origin-*",
+        "co-perspective-*",
+        "co-backface-*",
+        "co-zoom-*"
       ],
       "examples": [
         "-co-translate-x-4",
-        "co-rotate-45",
+        "co-translate-z-8",
+        "co-rotate-y-45",
         "co-scale-95",
-        "co-origin-top"
+        "co-skew-x-6",
+        "co-transform-3d",
+        "co-perspective-normal",
+        "co-perspective-origin-top",
+        "co-backface-hidden",
+        "co-zoom-110"
       ],
       "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Translate, rotate, scale, skew, and change transform origin using independent modern CSS transform properties where possible.",
-        "guidance": "Apply transform utilities to the element being moved, keep layout spacing separate, and use negative modifiers for reverse translation or rotation.",
+        "summary": "Compose 2D and 3D translation, rotation, scale, skew, transform origin, perspective, backface visibility, hardware acceleration, and zoom.",
+        "guidance": "Apply perspective to the parent, preserve 3D on the scene container, transform its children, and use backface visibility intentionally for cards or cubes. Prefer scale over zoom when surrounding layout must remain unaffected.",
         "properties": [
           "translate",
           "rotate",
           "scale",
           "transform",
           "transform-origin",
-          "backface-visibility"
+          "transform-style",
+          "perspective",
+          "perspective-origin",
+          "backface-visibility",
+          "zoom"
         ],
         "concepts": [
-          "Translate values reuse the spacing and fraction scales.",
-          "Rotation and skew numeric values are interpreted as degrees.",
-          "Transform origin accepts named positions or arbitrary values."
+          "Translate values reuse spacing, percentage fractions, px, custom properties, and safe arbitrary values across x, y, and z axes.",
+          "2D rotate uses the independent rotate property while x/y/z rotations and skew compose through transform-function variables.",
+          "Scale x and y compose independently and support mirrored negative values.",
+          "Named perspective tokens range from dramatic to distant and can be extended through --co-perspective-* theme variables.",
+          "Transform and perspective origins accept nine named positions, custom properties, or arbitrary positions.",
+          "CPU/GPU, flat/preserve-3d, backface, and zoom utilities provide explicit rendering controls and resets."
         ],
         "caveats": [
-          "3D translate/rotate, transform-style, perspective, and perspective-origin remain planned.",
-          "Skew currently uses the transform shorthand and should not be mixed carelessly with other shorthand transforms."
+          "Translate-z and rotate-x/y/z are only visually meaningful in a preserved 3D scene with perspective applied to an ancestor.",
+          "CSS zoom changes the effective layout size and should not replace scale for ordinary animation.",
+          "Arbitrary transform functions are emitted as a complete transform value and intentionally replace composed rotate/skew functions."
         ]
       },
       "resolvedExamples": [
@@ -1355,18 +1373,40 @@
           "supported": true,
           "declarations": [
             [
+              "--co-translate-x",
+              "calc(calc(var(--co-space-unit) * 4) * -1)"
+            ],
+            [
               "translate",
-              "calc(calc(var(--co-space-unit) * 4) * -1) 0"
+              "var(--co-translate-x, 0) var(--co-translate-y, 0) var(--co-translate-z, 0)"
             ]
           ]
         },
         {
-          "candidate": "co-rotate-45",
+          "candidate": "co-translate-z-8",
           "supported": true,
           "declarations": [
             [
-              "rotate",
-              "45deg"
+              "--co-translate-z",
+              "calc(var(--co-space-unit) * 8)"
+            ],
+            [
+              "translate",
+              "var(--co-translate-x, 0) var(--co-translate-y, 0) var(--co-translate-z, 0)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-rotate-y-45",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-rotate-y",
+              "rotateY(45deg)"
+            ],
+            [
+              "transform",
+              "var(--co-rotate-x, rotateX(0)) var(--co-rotate-y, rotateY(0)) var(--co-rotate-z, rotateZ(0)) var(--co-skew-x, skewX(0)) var(--co-skew-y, skewY(0))"
             ]
           ]
         },
@@ -1375,18 +1415,80 @@
           "supported": true,
           "declarations": [
             [
+              "--co-scale-x",
+              "95%"
+            ],
+            [
+              "--co-scale-y",
+              "95%"
+            ],
+            [
               "scale",
-              "0.95"
+              "var(--co-scale-x, 100%) var(--co-scale-y, 100%)"
             ]
           ]
         },
         {
-          "candidate": "co-origin-top",
+          "candidate": "co-skew-x-6",
           "supported": true,
           "declarations": [
             [
-              "transform-origin",
+              "--co-skew-x",
+              "skewX(6deg)"
+            ],
+            [
+              "transform",
+              "var(--co-rotate-x, rotateX(0)) var(--co-rotate-y, rotateY(0)) var(--co-rotate-z, rotateZ(0)) var(--co-skew-x, skewX(0)) var(--co-skew-y, skewY(0))"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-transform-3d",
+          "supported": true,
+          "declarations": [
+            [
+              "transform-style",
+              "preserve-3d"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-perspective-normal",
+          "supported": true,
+          "declarations": [
+            [
+              "perspective",
+              "var(--co-perspective-normal)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-perspective-origin-top",
+          "supported": true,
+          "declarations": [
+            [
+              "perspective-origin",
               "top"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-backface-hidden",
+          "supported": true,
+          "declarations": [
+            [
+              "backface-visibility",
+              "hidden"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-zoom-110",
+          "supported": true,
+          "declarations": [
+            [
+              "zoom",
+              "110%"
             ]
           ]
         }
@@ -5260,6 +5362,15 @@
       ]
     },
     {
+      "candidate": "co-perspective-none",
+      "declarations": [
+        [
+          "perspective",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-place-content-around",
       "declarations": [
         [
@@ -5544,6 +5655,24 @@
         [
           "resize",
           "vertical"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-rotate-none",
+      "declarations": [
+        [
+          "rotate",
+          "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scale-none",
+      "declarations": [
+        [
+          "scale",
+          "none"
         ]
       ]
     },
@@ -6223,6 +6352,42 @@
       ]
     },
     {
+      "candidate": "co-transform-3d",
+      "declarations": [
+        [
+          "transform-style",
+          "preserve-3d"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-transform-cpu",
+      "declarations": [
+        [
+          "transform",
+          "var(--co-rotate-x, rotateX(0)) var(--co-rotate-y, rotateY(0)) var(--co-rotate-z, rotateZ(0)) var(--co-skew-x, skewX(0)) var(--co-skew-y, skewY(0))"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-transform-flat",
+      "declarations": [
+        [
+          "transform-style",
+          "flat"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-transform-gpu",
+      "declarations": [
+        [
+          "transform",
+          "translateZ(0) var(--co-rotate-x, rotateX(0)) var(--co-rotate-y, rotateY(0)) var(--co-rotate-z, rotateZ(0)) var(--co-skew-x, skewX(0)) var(--co-skew-y, skewY(0))"
+        ]
+      ]
+    },
+    {
       "candidate": "co-transform-none",
       "declarations": [
         [
@@ -6310,6 +6475,15 @@
         [
           "transition-duration",
           "150ms"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-translate-none",
+      "declarations": [
+        [
+          "translate",
+          "none"
         ]
       ]
     },
