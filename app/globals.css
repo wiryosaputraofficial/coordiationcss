@@ -366,6 +366,9 @@ footer > span { justify-self: end; }
 .integration-grid p { color: #777; font-size: 10px; line-height: 1.6; }
 .integration-grid code { margin-top: auto; font-size: 9px; }
 .integration-grid b { position: absolute; right: 22px; bottom: 20px; }
+.framework-integration-grid > a:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
+.framework-step-copy > p { margin: 0 0 18px; color: #666; font-size: 13px; line-height: 1.7; }
+.framework-official-link { margin-top: 20px; display: inline-flex; border-bottom: 1px solid currentColor; font-size: 11px; font-weight: 700; }
 .docs-list { padding-left: 20px; color: #555; font-size: 13px; line-height: 2; }
 .docs-next { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); }
 .docs-next > span, .docs-next a span { display: block; margin-bottom: 7px; color: #999; font-family: var(--font-geist-mono); font-size: 8px; text-transform: uppercase; }
@@ -766,6 +769,7 @@ footer > span { justify-self: end; }
   .integration-grid > a { min-height: 190px; border-right: 0; border-bottom: 1px solid var(--line); }
   .integration-grid > a:last-child { border-bottom: 0; }
   .integration-grid > a:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+  .framework-integration-grid > a:last-child:nth-child(odd) { grid-column: auto; }
   .registry-family-grid { grid-template-columns: 1fr; }
   .registry-family-grid > section { border-right: 0; }
   .registry-family-grid > section:nth-last-child(2) { border-bottom: 1px solid var(--line); }

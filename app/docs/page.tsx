@@ -16,6 +16,16 @@ export default function DocsOverview() {
         <Link href="/docs/installation/using-postcss"><span>Flexible</span><strong>Using PostCSS</strong><p>Add Coordiation CSS to an existing PostCSS pipeline.</p><code>@coordiation/postcss</code><b>→</b></Link>
         <Link href="/docs/installation/using-cli"><span>Framework agnostic</span><strong>Using the CLI</strong><p>Compile once or run a durable cross-platform watch process without a bundler plugin.</p><code>coordiation-css</code><b>→</b></Link>
       </div>
+      <h2 id="framework-guides">Framework guides</h2>
+      <div className="integration-grid framework-integration-grid">
+        <Link href="/docs/installation/using-nextjs"><span>PostCSS</span><strong>Next.js</strong><p>App Router and Pages Router setup through the official PostCSS adapter.</p><code>postcss.config.mjs</code><b>→</b></Link>
+        <Link href="/docs/installation/using-astro"><span>Vite</span><strong>Astro</strong><p>Scan Astro components and import the generated virtual stylesheet.</p><code>astro.config.mjs</code><b>→</b></Link>
+        <Link href="/docs/installation/using-laravel"><span>Blade + Vite</span><strong>Laravel</strong><p>Compile utilities found in Blade templates and frontend components.</p><code>resources/**</code><b>→</b></Link>
+        <Link href="/docs/installation/using-svelte"><span>Vite</span><strong>SvelteKit</strong><p>Register Coordiation beside SvelteKit and load it from the root layout.</p><code>+layout.svelte</code><b>→</b></Link>
+        <Link href="/docs/installation/using-html-css"><span>CLI</span><strong>HTML + CSS</strong><p>Generate a static, runtime-free stylesheet without a framework.</p><code>coordiation-css</code><b>→</b></Link>
+        <Link href="/docs/installation/using-php"><span>CLI</span><strong>PHP</strong><p>Scan PHP templates and deploy ordinary compiled CSS.</p><code>*.php</code><b>→</b></Link>
+        <Link href="/docs/installation/using-wordpress"><span>Theme workflow</span><strong>WordPress</strong><p>Compile inside a custom or child theme and enqueue the generated asset.</p><code>functions.php</code><b>→</b></Link>
+      </div>
       <h2 id="requirements">Requirements</h2>
       <ul className="docs-list"><li>Node.js 20 or newer</li><li>Static, complete class names in source files</li><li>Vite 5 or newer when using the Vite adapter</li></ul>
       <div className="docs-next"><span>Next</span><Link href="/docs/installation/using-npm"><b>Install from npm</b><i>→</i></Link></div>
