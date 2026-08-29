@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import SolarIcon from "../../../_components/SolarIcon";
 import CodeBlock from "../../_components/CodeBlock";
 
 const preview: CSSProperties = {
@@ -63,10 +64,6 @@ export function AccessibilityMiniNavigation() {
   );
 }
 
-function BellIcon() {
-  return <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" /><path d="M10 21h4" /></svg>;
-}
-
 export default function AccessibilityExamples() {
   return (
     <>
@@ -88,7 +85,7 @@ export default function AccessibilityExamples() {
 </button>`}
       >
         <div style={{ minHeight: 160, display: "grid", placeItems: "center", textAlign: "center" }}>
-          <button type="button" style={{ width: 54, height: 54, display: "grid", placeItems: "center", border: "1px solid #111", borderRadius: "50%", background: "#111", color: "#fff", cursor: "pointer" }}><BellIcon /><span style={srOnly}>Notifications</span></button>
+          <button type="button" style={{ width: 54, height: 54, display: "grid", placeItems: "center", border: "1px solid #111", borderRadius: "50%", background: "#111", color: "#fff", cursor: "pointer" }}><SolarIcon name="bell" size={22} /><span style={srOnly}>Notifications</span></button>
           <p style={{ margin: "14px 0 0", color: "#666", fontSize: 10 }}>VISIBLE ICON · ACCESSIBLE NAME: “NOTIFICATIONS”</p>
         </div>
       </Demo>

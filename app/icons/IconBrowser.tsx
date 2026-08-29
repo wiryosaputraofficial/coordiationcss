@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import SolarIcon from "../_components/SolarIcon";
 
 type IconEntry = {
   name: string;
@@ -129,14 +130,14 @@ export default function IconBrowser() {
               <section className="icon-code-section"><div><h3>2. Render</h3><button type="button" onClick={() => copy(renderCode, "Render code copied")}>Copy</button></div><pre><code>{renderCode}</code></pre></section>
               <section className="icon-code-section"><div><h3>3. Style</h3><button type="button" onClick={() => copy(cssCode, "CSS copied")}>Copy</button></div><pre><code>{cssCode}</code></pre></section>
               <p className="icon-usage-note">Use <code>label</code> only when nearby text does not explain the icon. Omit it for decorative icons.</p>
-            </> : <div className="icon-usage-empty"><span>↖</span><h2>Click an icon</h2><p>Its exact import path, rendering example, CSS, categories, and copy actions will appear here.</p></div>}
+            </> : <div className="icon-usage-empty"><span><SolarIcon name="arrow-left-up" size={23} /></span><h2>Click an icon</h2><p>Its exact import path, rendering example, CSS, categories, and copy actions will appear here.</p></div>}
           </aside>
         </div>
       )}
 
       <footer className="icon-browser-footer">
         <p>Solar Icons by <a href="https://www.figma.com/community/file/1166831539721848736">480 Design</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Attribution is required.</p>
-        <a href="/icon-registry.json">Open machine-readable registry ↗</a>
+        <a href="/icon-registry.json">Open machine-readable registry <SolarIcon name="arrow-to-top-right" size={14} /></a>
       </footer>
       <p className={`icon-copy-status${copied ? " visible" : ""}`} role="status">{copied || "Copied"}</p>
     </section>

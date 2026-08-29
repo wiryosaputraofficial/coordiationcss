@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SolarIcon from "../_components/SolarIcon";
 import IconBrowser from "./IconBrowser";
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function IconsPage() {
           <Link href="/docs/icons/solar-linear">Icon guide</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
-        <a className="header-cta" href="#icon-catalog">Browse icons <span aria-hidden="true">↓</span></a>
+        <a className="header-cta" href="#icon-catalog">Browse icons <SolarIcon name="arrow-down" size={15} /></a>
       </header>
 
       <section className="icons-hero">

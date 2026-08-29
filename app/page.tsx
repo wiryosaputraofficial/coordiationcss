@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SolarIcon from "./_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
 import registry from "./docs/generated/utility-registry.json";
 
@@ -134,7 +135,7 @@ export default function Home() {
       <div className="announcement">
         <span className="announcement-dot" />
         All {completeCapabilityCount} tracked capabilities are complete
-        <Link href="/release-check">View release readiness <span aria-hidden="true">→</span></Link>
+        <Link href="/release-check">View release readiness <SolarIcon name="arrow-right" size={14} /></Link>
       </div>
 
       <header className="site-header">
@@ -152,7 +153,7 @@ export default function Home() {
           <Link href="/docs">Docs</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
-        <Link className="header-cta" href="/docs/installation/using-vite">Get started <span aria-hidden="true">↗</span></Link>
+        <Link className="header-cta" href="/docs/installation/using-vite">Get started <SolarIcon name="arrow-to-top-right" size={15} /></Link>
       </header>
 
       <section className="hero" id="top">
@@ -167,7 +168,7 @@ export default function Home() {
             CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">
-            <Link className="button button-dark" href="/docs/installation/using-vite">Start building <span>→</span></Link>
+            <Link className="button button-dark" href="/docs/installation/using-vite">Start building <SolarIcon name="arrow-right" size={16} /></Link>
             <a className="button button-light" href="#engine">See how it works</a>
           </div>
           <div className="hero-proof">
@@ -197,7 +198,7 @@ export default function Home() {
             <span className="line"><span className="ln">10</span><span className="muted">&lt;/</span><span className="tag">section</span><span className="muted">&gt;</span></span>
           </code></pre>
           <div className="compile-line">
-            <span className="compile-check">✓</span>
+            <span className="compile-check"><SolarIcon name="check-circle" size={16} /></span>
             <span><b>{familyCount}</b> families verified</span>
             <span className="compile-size">{utilityCount} utilities indexed</span>
           </div>
@@ -235,7 +236,7 @@ export default function Home() {
               <div className="feature-suite-list">
                 {feature.ids.map((id) => <span key={id}>{capabilities.find((capability) => capability.id === id)?.area}</span>)}
               </div>
-              <div className="feature-suite-footer"><code>{feature.example}</code><Link href={feature.href}>Explore <span aria-hidden="true">↗</span></Link></div>
+              <div className="feature-suite-footer"><code>{feature.example}</code><Link href={feature.href}>Explore <SolarIcon name="arrow-to-top-right" size={14} /></Link></div>
             </article>
           ))}
         </div>
@@ -249,21 +250,21 @@ export default function Home() {
         </div>
         <div className="showcase-grid">
           <article className="showcase-card showcase-theme">
-            <div className="showcase-meta"><span>01 · THEME</span><Link href="/docs/core/theme-variables">Explore tokens ↗</Link></div>
+            <div className="showcase-meta"><span>01 · THEME</span><Link href="/docs/core/theme-variables">Explore tokens <SolarIcon name="arrow-to-top-right" size={14} /></Link></div>
             <h3>Own the design system in CSS.</h3>
             <p>Extend or override colors, type, radii, shadows, breakpoints, perspective, and motion through recognized variables.</p>
             <div className="showcase-palette" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <code>--co-color-product: oklch(62% .2 260);</code>
           </article>
           <article className="showcase-card showcase-responsive">
-            <div className="showcase-meta"><span>02 · RESPONSIVE</span><Link href="/docs/core/responsive-design">Explore breakpoints ↗</Link></div>
+            <div className="showcase-meta"><span>02 · RESPONSIVE</span><Link href="/docs/core/responsive-design">Explore breakpoints <SolarIcon name="arrow-to-top-right" size={14} /></Link></div>
             <h3>Adapt by viewport or local space.</h3>
             <p>Compose mobile-first breakpoints, exact ranges, media features, and named container queries without runtime listeners.</p>
             <div className="showcase-layout" aria-hidden="true"><aside /><div><i /><i /><i /></div></div>
             <code>md:co-grid-cols-2 @lg/card:co-grid-cols-3</code>
           </article>
           <article className="showcase-card showcase-ai">
-            <div className="showcase-meta"><span>03 · AI CONTRACT</span><a href="/api/capabilities">Open API ↗</a></div>
+            <div className="showcase-meta"><span>03 · AI CONTRACT</span><a href="/api/capabilities">Open API <SolarIcon name="arrow-to-top-right" size={14} /></a></div>
             <h3>Generate only what really ships.</h3>
             <p>Agents can inspect capability status, class patterns, resolved declarations, variants, and limitations before writing code.</p>
             <pre><code>{`{
@@ -293,9 +294,9 @@ export default function Home() {
             <p><span className="prompt">$</span> coordiation-css --content src</p>
             <p className="terminal-muted">Scanning <b>src/**/*.{`{coord,tsx,html}`}</b></p>
             <div className="terminal-meter"><span /></div>
-            <p><span className="terminal-check">✓</span> {familyCount} utility families loaded</p>
-            <p><span className="terminal-check">✓</span> {utilityCount} static utilities indexed</p>
-            <p><span className="terminal-check">✓</span> 0 unsupported utilities</p>
+            <p><span className="terminal-check"><SolarIcon name="check-circle" size={14} /></span> {familyCount} utility families loaded</p>
+            <p><span className="terminal-check"><SolarIcon name="check-circle" size={14} /></span> {utilityCount} static utilities indexed</p>
+            <p><span className="terminal-check"><SolarIcon name="check-circle" size={14} /></span> 0 unsupported utilities</p>
             <div className="terminal-result">
               <span>utility-registry.json</span>
               <strong>{verifiedExampleCount} verified</strong>
@@ -310,7 +311,7 @@ export default function Home() {
           <p className="kicker kicker-light">BUILT FOR HUMAN + AI TEAMS</p>
           <h2>A support contract,<br />not a guessing game.</h2>
           <p>Coordiation publishes the exact capabilities and utilities an agent may use. Every generated class can be traced back to a tested declaration.</p>
-          <div className="ai-native-actions"><a href="/llms.txt">Read llms.txt →</a><a href="/api/capabilities">Capability API →</a></div>
+          <div className="ai-native-actions"><a href="/llms.txt">Read llms.txt <SolarIcon name="arrow-right" size={15} /></a><a href="/api/capabilities">Capability API <SolarIcon name="arrow-right" size={15} /></a></div>
         </div>
         <div className="ai-contract-card">
           <div><span>AGENT CHECKLIST</span><span>LIVE</span></div>
@@ -329,7 +330,7 @@ export default function Home() {
           <code><span>$</span> pnpm add -D @coordiation/css @coordiation/vite</code>
           <div className="install-divider" />
           <pre><span className="muted">{"/* src/coordiation.css */"}</span>{`\n`}@coordiation;{`\n\n`}@co-theme {`{`}{`\n`}  --co-color-product: oklch(62% 0.2 260);{`\n`}{`}`}</pre>
-          <div className="install-next"><Link href="/docs/installation/using-vite">Continue with the Vite guide <span>→</span></Link></div>
+          <div className="install-next"><Link href="/docs/installation/using-vite">Continue with the Vite guide <SolarIcon name="arrow-right" size={15} /></Link></div>
         </div>
       </section>
 
@@ -344,7 +345,7 @@ export default function Home() {
             <div><span>{String(index + 1).padStart(2, "0")}</span><span>{integration.label}</span></div>
             <h3>{integration.name}</h3>
             <p>{integration.description}</p>
-            <code>{integration.code}</code><b>→</b>
+            <code>{integration.code}</code><b><SolarIcon name="arrow-right" size={18} /></b>
           </Link>)}
         </div>
       </section>
@@ -354,7 +355,7 @@ export default function Home() {
           <p className="kicker">COMPLETE FEATURE MAP</p>
           <h2>Nothing hidden.<br />Nothing implied.</h2>
           <p>Every shipped feature belongs to a named group, a tested capability ID, and a documentation path. The Release Check remains the exact source of truth.</p>
-          <Link href="/release-check">Open release check <span>→</span></Link>
+          <Link href="/release-check">Open release check <SolarIcon name="arrow-right" size={16} /></Link>
         </div>
         <div className="roadmap-list">
           {roadmap.map(({ name, count, status }, index) => (
@@ -371,7 +372,7 @@ export default function Home() {
         <img src="/coordiation-logo-white.png" alt="" />
         <p className="kicker kicker-light">COORDIATION STARTS HERE</p>
         <h2>Build the interface.<br />Keep the system.</h2>
-        <Link className="button button-white" href="/docs/installation/using-vite">Read the installation guide <span>→</span></Link>
+        <Link className="button button-white" href="/docs/installation/using-vite">Read the installation guide <SolarIcon name="arrow-right" size={16} /></Link>
       </section>
 
       <footer>

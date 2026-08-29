@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SolarIcon from "../_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "../docs/capabilities";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function ReleaseCheckPage() {
         <nav aria-label="Documentation navigation">
           <a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#ai-access">AI access</a>
         </nav>
-        <Link className="header-cta" href="/">Back home <span aria-hidden="true">↗</span></Link>
+        <Link className="header-cta" href="/">Back home <SolarIcon name="arrow-to-top-right" size={15} /></Link>
       </header>
 
       <section className="docs-hero" id="overview">
@@ -84,10 +85,10 @@ export default function ReleaseCheckPage() {
           <p>Agents can query the same structured source used by this page, then generate only supported Coordiation classes.</p>
         </div>
         <div className="ai-links">
-          <a href="/api/capabilities"><span>JSON capability manifest</span><code>GET /api/capabilities</code><b>→</b></a>
-          <a href="/api/utilities"><span>Generated utility registry</span><code>GET /api/utilities</code><b>→</b></a>
-          <a href="/api/components"><span>Open-code component manifest</span><code>GET /api/components</code><b>→</b></a>
-          <a href="/llms.txt"><span>Concise AI usage guide</span><code>GET /llms.txt</code><b>→</b></a>
+          <a href="/api/capabilities"><span>JSON capability manifest</span><code>GET /api/capabilities</code><SolarIcon name="arrow-right" size={17} /></a>
+          <a href="/api/utilities"><span>Generated utility registry</span><code>GET /api/utilities</code><SolarIcon name="arrow-right" size={17} /></a>
+          <a href="/api/components"><span>Open-code component manifest</span><code>GET /api/components</code><SolarIcon name="arrow-right" size={17} /></a>
+          <a href="/llms.txt"><span>Concise AI usage guide</span><code>GET /llms.txt</code><SolarIcon name="arrow-right" size={17} /></a>
         </div>
       </section>
 

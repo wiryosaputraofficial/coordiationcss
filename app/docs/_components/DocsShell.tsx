@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import SolarIcon from "../../_components/SolarIcon";
 
 const navigation = [
   { title: "Getting started", items: [["Installation", "/docs"], ["Using Vite", "/docs/installation/using-vite"], ["Components", "/docs/components"], ["Icon library", "/docs/icons/solar-linear"], ["Editor setup", "/docs/tooling/language-server"], ["Compatibility", "/docs/core/compatibility"]] },
@@ -32,8 +33,8 @@ export default function DocsShell({ children }: { children: ReactNode }) {
     <div className="reference-page">
       <header className="reference-header">
         <Link prefetch={false} className="brand" href="/" aria-label="Coordiation CSS home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link>
-        <div className="docs-search"><span aria-hidden="true">⌕</span><input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Search documentation…" aria-label="Search documentation" /><kbd>⌘ K</kbd>{query && <div className="docs-search-results">{results.length ? results.map((item) => <Link prefetch={false} href={item.href} key={`${item.section}-${item.label}`} onClick={() => setQuery("")}><span>{item.label}</span><small>{item.section}</small></Link>) : <p>No matching documentation.</p>}</div>}</div>
-        <nav aria-label="Documentation links"><Link prefetch={false} href="/components">Components</Link><Link prefetch={false} href="/icons">Icons</Link><Link prefetch={false} href="/release-check">Release Check</Link><a href="/api/capabilities">API</a><Link prefetch={false} className="docs-home-link" href="/">Home ↗</Link></nav>
+        <div className="docs-search"><SolarIcon name="magnifier" size={16} /><input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Search documentation…" aria-label="Search documentation" /><kbd>⌘ K</kbd>{query && <div className="docs-search-results">{results.length ? results.map((item) => <Link prefetch={false} href={item.href} key={`${item.section}-${item.label}`} onClick={() => setQuery("")}><span>{item.label}</span><small>{item.section}</small></Link>) : <p>No matching documentation.</p>}</div>}</div>
+        <nav aria-label="Documentation links"><Link prefetch={false} href="/components">Components</Link><Link prefetch={false} href="/icons">Icons</Link><Link prefetch={false} href="/release-check">Release Check</Link><a href="/api/capabilities">API</a><Link prefetch={false} className="docs-home-link" href="/">Home <SolarIcon name="arrow-to-top-right" size={14} /></Link></nav>
       </header>
       <div className="reference-layout">
         <aside className="reference-sidebar" aria-label="Documentation sections">
