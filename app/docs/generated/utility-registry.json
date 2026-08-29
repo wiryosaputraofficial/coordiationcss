@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 521,
+    "staticUtilityCount": 565,
     "familyCount": 15,
-    "completeFamilies": 14,
-    "partialFamilies": 1,
+    "completeFamilies": 15,
+    "partialFamilies": 0,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -1996,78 +1996,123 @@
     {
       "id": "interaction",
       "label": "Interactivity",
-      "status": "partial",
+      "status": "complete",
       "target": "0.3",
       "patterns": [
+        "co-appearance-*",
         "co-cursor-*",
+        "co-field-sizing-*",
         "co-pointer-events-*",
         "co-select-*",
         "co-resize-*",
+        "co-scroll-*",
+        "co-scrollbar-*",
         "co-snap-*",
-        "co-touch-*"
+        "co-touch-*",
+        "co-will-change-*"
       ],
       "examples": [
-        "co-cursor-pointer",
-        "co-select-none",
-        "co-snap-x",
-        "co-touch-pan-y"
+        "co-cursor-(--control-cursor)",
+        "co-field-sizing-content",
+        "co-scrollbar-thumb-brand-500",
+        "co-scrollbar-gutter-stable",
+        "co-snap-always",
+        "co-touch-pan-y",
+        "co-touch-pinch-zoom",
+        "co-will-change-[contents,transform]"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": false,
+      "supportsArbitrary": true,
       "documentation": {
-        "summary": "Control cursors, pointer events, text selection, resize handles, appearance, scroll snapping, touch gestures, and change hints.",
-        "guidance": "Use interaction utilities to reflect real behavior, not only visual intent, and preserve keyboard and assistive-technology access.",
+        "summary": "Control form appearance and intrinsic field sizing, pointer feedback, text selection, resize handles, scrolling, scrollbars, snapping, touch gestures, and rendering change hints.",
+        "guidance": "Use interaction utilities to reflect real behavior, preserve keyboard and assistive-technology access, and keep browser-native scrolling or zooming enabled unless the application intentionally replaces it.",
         "properties": [
+          "appearance",
           "cursor",
+          "field-sizing",
           "pointer-events",
           "user-select",
           "resize",
-          "appearance",
           "scroll-behavior",
+          "scrollbar-color",
+          "scrollbar-width",
+          "scrollbar-gutter",
           "scroll-snap-type",
+          "scroll-snap-align",
+          "scroll-snap-stop",
           "touch-action",
           "will-change"
         ],
         "concepts": [
-          "Scroll snap needs a snap type on the container and snap alignment on children.",
-          "Touch action tells the browser which gestures the application handles.",
-          "will-change should be temporary and used sparingly."
+          "Every standard cursor keyword is available, with CSS custom properties and safe arbitrary cursor lists for application-owned assets.",
+          "Scrollbar thumb and track colors compose through --co-scrollbar-thumb and --co-scrollbar-track while width and gutter use browser keywords.",
+          "Scroll snap needs a snap type and strictness on the container, alignment and optional stop behavior on children.",
+          "Directional pan and pinch-zoom utilities compose so one element can preserve multiple touch gestures.",
+          "will-change accepts named hints, custom properties, or safe arbitrary lists and should be removed after the anticipated change."
         ],
         "caveats": [
-          "Additional cursor keywords and touch combinations remain.",
-          "pointer-events-none does not automatically remove descendants from keyboard navigation."
+          "pointer-events-none does not automatically remove descendants from keyboard navigation.",
+          "scrollbar-width and scrollbar-color depend on browser support and user-agent rendering.",
+          "field-sizing-content is progressive enhancement and should retain sensible width, min-size, and max-size constraints.",
+          "Use will-change only for a measured performance problem; excessive hints can increase memory use."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-cursor-pointer",
+          "candidate": "co-cursor-(--control-cursor)",
           "supported": true,
           "declarations": [
             [
               "cursor",
-              "pointer"
+              "var(--control-cursor)"
             ]
           ],
           "globalCss": null
         },
         {
-          "candidate": "co-select-none",
+          "candidate": "co-field-sizing-content",
           "supported": true,
           "declarations": [
             [
-              "user-select",
-              "none"
+              "field-sizing",
+              "content"
             ]
           ],
           "globalCss": null
         },
         {
-          "candidate": "co-snap-x",
+          "candidate": "co-scrollbar-thumb-brand-500",
           "supported": true,
           "declarations": [
             [
-              "scroll-snap-type",
-              "x var(--co-scroll-snap-strictness)"
+              "--co-scrollbar-thumb",
+              "var(--co-color-brand-500)"
+            ],
+            [
+              "scrollbar-color",
+              "var(--co-scrollbar-thumb) var(--co-scrollbar-track)"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-scrollbar-gutter-stable",
+          "supported": true,
+          "declarations": [
+            [
+              "scrollbar-gutter",
+              "stable"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-snap-always",
+          "supported": true,
+          "declarations": [
+            [
+              "scroll-snap-stop",
+              "always"
             ]
           ],
           "globalCss": null
@@ -2077,8 +2122,38 @@
           "supported": true,
           "declarations": [
             [
-              "touch-action",
+              "--co-pan-y",
               "pan-y"
+            ],
+            [
+              "touch-action",
+              "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-touch-pinch-zoom",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-pinch-zoom",
+              "pinch-zoom"
+            ],
+            [
+              "touch-action",
+              "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-will-change-[contents,transform]",
+          "supported": true,
+          "declarations": [
+            [
+              "will-change",
+              "contents,transform"
             ]
           ],
           "globalCss": null
@@ -3514,11 +3589,74 @@
       ]
     },
     {
+      "candidate": "co-cursor-alias",
+      "declarations": [
+        [
+          "cursor",
+          "alias"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-all-scroll",
+      "declarations": [
+        [
+          "cursor",
+          "all-scroll"
+        ]
+      ]
+    },
+    {
       "candidate": "co-cursor-auto",
       "declarations": [
         [
           "cursor",
           "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-cell",
+      "declarations": [
+        [
+          "cursor",
+          "cell"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-col-resize",
+      "declarations": [
+        [
+          "cursor",
+          "col-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-context-menu",
+      "declarations": [
+        [
+          "cursor",
+          "context-menu"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-copy",
+      "declarations": [
+        [
+          "cursor",
+          "copy"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-crosshair",
+      "declarations": [
+        [
+          "cursor",
+          "crosshair"
         ]
       ]
     },
@@ -3532,11 +3670,101 @@
       ]
     },
     {
+      "candidate": "co-cursor-e-resize",
+      "declarations": [
+        [
+          "cursor",
+          "e-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-ew-resize",
+      "declarations": [
+        [
+          "cursor",
+          "ew-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-grab",
+      "declarations": [
+        [
+          "cursor",
+          "grab"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-grabbing",
+      "declarations": [
+        [
+          "cursor",
+          "grabbing"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-help",
+      "declarations": [
+        [
+          "cursor",
+          "help"
+        ]
+      ]
+    },
+    {
       "candidate": "co-cursor-move",
       "declarations": [
         [
           "cursor",
           "move"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-n-resize",
+      "declarations": [
+        [
+          "cursor",
+          "n-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-ne-resize",
+      "declarations": [
+        [
+          "cursor",
+          "ne-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-nesw-resize",
+      "declarations": [
+        [
+          "cursor",
+          "nesw-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-no-drop",
+      "declarations": [
+        [
+          "cursor",
+          "no-drop"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-none",
+      "declarations": [
+        [
+          "cursor",
+          "none"
         ]
       ]
     },
@@ -3550,11 +3778,83 @@
       ]
     },
     {
+      "candidate": "co-cursor-ns-resize",
+      "declarations": [
+        [
+          "cursor",
+          "ns-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-nw-resize",
+      "declarations": [
+        [
+          "cursor",
+          "nw-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-nwse-resize",
+      "declarations": [
+        [
+          "cursor",
+          "nwse-resize"
+        ]
+      ]
+    },
+    {
       "candidate": "co-cursor-pointer",
       "declarations": [
         [
           "cursor",
           "pointer"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-progress",
+      "declarations": [
+        [
+          "cursor",
+          "progress"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-row-resize",
+      "declarations": [
+        [
+          "cursor",
+          "row-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-s-resize",
+      "declarations": [
+        [
+          "cursor",
+          "s-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-se-resize",
+      "declarations": [
+        [
+          "cursor",
+          "se-resize"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-sw-resize",
+      "declarations": [
+        [
+          "cursor",
+          "sw-resize"
         ]
       ]
     },
@@ -3568,11 +3868,47 @@
       ]
     },
     {
+      "candidate": "co-cursor-vertical-text",
+      "declarations": [
+        [
+          "cursor",
+          "vertical-text"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-w-resize",
+      "declarations": [
+        [
+          "cursor",
+          "w-resize"
+        ]
+      ]
+    },
+    {
       "candidate": "co-cursor-wait",
       "declarations": [
         [
           "cursor",
           "wait"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-zoom-in",
+      "declarations": [
+        [
+          "cursor",
+          "zoom-in"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-cursor-zoom-out",
+      "declarations": [
+        [
+          "cursor",
+          "zoom-out"
         ]
       ]
     },
@@ -3681,6 +4017,24 @@
         [
           "transition-timing-function",
           "var(--co-ease-out)"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-field-sizing-content",
+      "declarations": [
+        [
+          "field-sizing",
+          "content"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-field-sizing-fixed",
+      "declarations": [
+        [
+          "field-sizing",
+          "fixed"
         ]
       ]
     },
@@ -6039,6 +6393,60 @@
       ]
     },
     {
+      "candidate": "co-scrollbar-auto",
+      "declarations": [
+        [
+          "scrollbar-width",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scrollbar-gutter-auto",
+      "declarations": [
+        [
+          "scrollbar-gutter",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scrollbar-gutter-both",
+      "declarations": [
+        [
+          "scrollbar-gutter",
+          "stable both-edges"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scrollbar-gutter-stable",
+      "declarations": [
+        [
+          "scrollbar-gutter",
+          "stable"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scrollbar-none",
+      "declarations": [
+        [
+          "scrollbar-width",
+          "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-scrollbar-thin",
+      "declarations": [
+        [
+          "scrollbar-width",
+          "thin"
+        ]
+      ]
+    },
+    {
       "candidate": "co-select-all",
       "declarations": [
         [
@@ -6192,6 +6600,15 @@
       ]
     },
     {
+      "candidate": "co-snap-always",
+      "declarations": [
+        [
+          "scroll-snap-stop",
+          "always"
+        ]
+      ]
+    },
+    {
       "candidate": "co-snap-both",
       "declarations": [
         [
@@ -6233,6 +6650,15 @@
         [
           "scroll-snap-type",
           "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-snap-normal",
+      "declarations": [
+        [
+          "scroll-snap-stop",
+          "normal"
         ]
       ]
     },
@@ -6624,11 +7050,67 @@
       ]
     },
     {
+      "candidate": "co-touch-pan-down",
+      "declarations": [
+        [
+          "--co-pan-y",
+          "pan-down"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-touch-pan-left",
+      "declarations": [
+        [
+          "--co-pan-x",
+          "pan-left"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-touch-pan-right",
+      "declarations": [
+        [
+          "--co-pan-x",
+          "pan-right"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-touch-pan-up",
+      "declarations": [
+        [
+          "--co-pan-y",
+          "pan-up"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+        ]
+      ]
+    },
+    {
       "candidate": "co-touch-pan-x",
       "declarations": [
         [
-          "touch-action",
+          "--co-pan-x",
           "pan-x"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
         ]
       ]
     },
@@ -6636,8 +7118,25 @@
       "candidate": "co-touch-pan-y",
       "declarations": [
         [
-          "touch-action",
+          "--co-pan-y",
           "pan-y"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-touch-pinch-zoom",
+      "declarations": [
+        [
+          "--co-pinch-zoom",
+          "pinch-zoom"
+        ],
+        [
+          "touch-action",
+          "var(--co-pan-x,) var(--co-pan-y,) var(--co-pinch-zoom,)"
         ]
       ]
     },
