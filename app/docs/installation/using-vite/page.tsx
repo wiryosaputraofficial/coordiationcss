@@ -14,7 +14,7 @@ export default function UsingVitePage() {
       <p className="docs-overline">INSTALLATION · COMPLETE ADAPTER</p>
       <h1>Using Vite</h1>
       <p className="docs-lead">Install Coordiation CSS as a Vite plugin, import its generated virtual stylesheet, and get dependency-aware updates while you develop.</p>
-      <div className="docs-note"><span>✓</span><p>The adapter scans from the resolved Vite root, watches templates and CSS theme input, and refreshes the generated stylesheet when files change, appear, or disappear. No Coordiation runtime is added to the browser.</p></div>
+      <div className="docs-note"><span>✓</span><p>The adapter scans from the resolved Vite root, watches templates, the CSS entry, and every local CSS import, then refreshes the generated stylesheet when files change, appear, or disappear. Import bundling, nesting, and target-aware prefixing are built in; no Coordiation runtime is added to the browser.</p></div>
 
       <section className="guide-step" id="install-packages"><div className="step-number">01</div><div><h2>Install the packages</h2><p>Add the compiler and official Vite adapter as development dependencies.</p><CodeBlock title="Terminal" code="pnpm add -D @coordiation/css @coordiation/vite" /></div></section>
 
@@ -25,14 +25,16 @@ export default defineConfig({
   plugins: [
     coordiation({
       content: ["src"],
-      cssFile: "src/coordiation.css"
+      cssFile: "src/coordiation.css",
+      toolchain: {
+        minify: process.env.NODE_ENV === "production"
+      }
     })
   ]
 });`} /></div></section>
 
-      <section className="guide-step" id="theme-input"><div className="step-number">03</div><div><h2>Create the CSS input</h2><p>Keep the framework marker and theme tokens in a watched file. Editing this file regenerates the virtual stylesheet without restarting Vite.</p><CodeBlock title="src/coordiation.css" code={`@coordiation;
-
-@co-theme {
+      <section className="guide-step" id="theme-input"><div className="step-number">03</div><div><h2>Create the CSS input</h2><p>Keep the framework marker in a watched entry. Local imports are bundled before compilation and become HMR dependencies automatically.</p><CodeBlock title="src/coordiation.css" code={`@import "./theme.css";
+@coordiation;`} /><CodeBlock title="src/theme.css" code={`@co-theme {
   --co-color-brand-500: oklch(62.3% 0.214 259.815);
   --co-color-brand-600: oklch(54.6% 0.245 262.881);
 }`} /></div></section>
@@ -53,7 +55,7 @@ createApp().mount("#app");`} /></div></section>
   </div>
 </section>`} /></div></section>
 
-      <section className="guide-step" id="hot-updates"><div className="step-number">06</div><div><h2>Develop with reliable hot updates</h2><p>Changing a template invalidates the virtual CSS module and returns it to Vite as an HMR dependency. Creating or deleting a source file triggers a structural rescan and stylesheet refresh. Changes outside the configured content roots are ignored.</p><div className="docs-callout"><strong>Why cssFile is recommended</strong><p>An inline <code>css</code> option still works for generated configuration, but a <code>cssFile</code> can be watched directly and updated without restarting the development server.</p></div></div></section>
+      <section className="guide-step" id="hot-updates"><div className="step-number">06</div><div><h2>Develop with reliable hot updates</h2><p>Changing a template or imported CSS file invalidates the virtual CSS module and returns it to Vite as an HMR dependency. Creating or deleting a source file triggers a structural rescan and stylesheet refresh. Changes outside the configured dependency boundary are ignored.</p><div className="docs-callout"><strong>Why cssFile is recommended</strong><p>An inline <code>css</code> option still works for generated configuration, but a <code>cssFile</code> gives imports a stable resolution base and can be watched directly.</p></div></div></section>
 
       <section className="guide-step" id="ai-integration"><div className="step-number">07</div><div><h2>Give AI the support contract</h2><p>Point coding agents to the concise guide and capability manifest so they only generate utilities that really ship.</p><CodeBlock title="Agent instructions" code={`Read /llms.txt first.
 Check /api/capabilities before generating Coordiation classes.
@@ -61,12 +63,12 @@ Never treat a planned capability as implemented.`} /><div className="inline-link
 
       <section className="family-concepts" id="configuration">
         <div><p className="docs-overline">CONFIGURATION</p><h2>Keep dependencies explicit</h2><p>Every path is resolved from Vite&apos;s final project root unless <code>cwd</code> is supplied deliberately.</p></div>
-        <ol><li><span>01</span><p><strong>content:</strong> source files or directories to scan and watch; defaults to <code>[&quot;src&quot;]</code>.</p></li><li><span>02</span><p><strong>cssFile:</strong> recommended watched CSS-first theme input.</p></li><li><span>03</span><p><strong>css:</strong> inline alternative for generated configurations.</p></li><li><span>04</span><p><strong>include / exclude:</strong> filters applied during every rescan.</p></li><li><span>05</span><p><strong>safelist:</strong> literal candidates that must always be emitted.</p></li><li><span>06</span><p><strong>extractors:</strong> framework-specific candidate extraction hooks.</p></li></ol>
+        <ol><li><span>01</span><p><strong>content:</strong> source files or directories to scan and watch; defaults to <code>[&quot;src&quot;]</code>.</p></li><li><span>02</span><p><strong>cssFile:</strong> recommended watched CSS entry and import-resolution base.</p></li><li><span>03</span><p><strong>css:</strong> inline alternative for generated configurations.</p></li><li><span>04</span><p><strong>toolchain:</strong> controls imports, nesting, prefixing, minification, and browser targets.</p></li><li><span>05</span><p><strong>include / exclude / safelist:</strong> literal scan-boundary controls.</p></li><li><span>06</span><p><strong>extractors:</strong> framework-specific candidate extraction hooks.</p></li></ol>
       </section>
 
       <section className="family-caveats" id="troubleshooting"><div><p className="docs-overline">TROUBLESHOOTING</p><h2>When a class does not appear</h2><p>The adapter reports scanner diagnostics through Vite and keeps unsupported candidates observable.</p></div><ul><li>Confirm the file lives inside a configured <code>content</code> root and is not excluded.</li><li>Keep complete utility strings in source; dynamic string concatenation cannot be discovered.</li><li>Import <code>virtual:coordiation.css</code> exactly once from the client entry.</li><li>Use <code>cssFile</code> when theme changes should participate in HMR.</li><li>On WSL or mounted filesystems, verify that Vite itself receives filesystem events.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs"><span>Previous</span><b>Installation</b></Link><Link href="/docs/core/preflight"><span>Next</span><b>Preflight →</b></Link></div>
+      <div className="docs-next split"><Link href="/docs/tooling/css-toolchain"><span>Previous</span><b>← CSS toolchain</b></Link><Link href="/docs/installation/using-postcss"><span>Next</span><b>Using PostCSS →</b></Link></div>
     </article>
   );
 }

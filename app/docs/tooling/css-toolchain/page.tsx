@@ -61,12 +61,12 @@ export default function CssToolchainPage() {
   toolchain: {
     minify: process.env.NODE_ENV === "production",
   },
-})`} /><CodeBlock title="CLI" code={`coordiation-css \
-  --input src/coordiation.css \
-  --output dist/coordiation.css \
-  --content src \
-  --minify \
-  --target chrome=111 \
+})`} /><CodeBlock title="CLI" code={`coordiation-css \\
+  --input src/coordiation.css \\
+  --output dist/coordiation.css \\
+  --content src \\
+  --minify \\
+  --target chrome=111 \\
   --target safari=15.4`} /></div></section>
 
       <section className="guide-step" id="direct-api"><div className="step-number">05</div><div><h2>Use the asynchronous build API</h2><p><code>compileWithToolchain()</code> is the production entry point. Supply a real filename whenever imports are enabled so relative resolution and diagnostics remain deterministic.</p><CodeBlock title="build.mjs" code={`import { readFile } from "node:fs/promises";
