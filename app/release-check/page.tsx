@@ -40,7 +40,7 @@ export default function ReleaseCheckPage() {
           <p>One honest checklist for humans and AI agents. Every capability has a stable ID, release target, examples, and a clearly defined status.</p>
         </div>
         <div className="readiness-card" aria-label={`${ready}% readiness score`}>
-          <span>0.2 development readiness</span>
+          <span>0.6 development readiness</span>
           <strong>{ready}<sup>%</sup></strong>
           <div className="readiness-meter"><i style={{ width: `${ready}%` }} /></div>
           <dl>

@@ -69,7 +69,7 @@ await writeFile("dist/coordiation.css.map", result.map);`} /><p><code>result.map
 
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI GENERATION CONTRACT</p><h2>Generate the right delivery mode</h2><p>Agents should match map output to the consumer rather than enabling an unused artifact.</p></div><ul><li>Prefer Vite&apos;s returned map and PostCSS runner maps over writing duplicate files.</li><li>Use external CLI maps for deployed debugging and inline maps for self-contained local output.</li><li>Set <code>sourcesContent: false</code> when source text must not be embedded.</li><li>Preserve <code>filename</code>, <code>outputFilename</code>, and literal imports.</li><li>Never infer template-to-CSS mappings; only CSS origins are represented.</li></ul></section>
 
-      <div className="docs-next split"><Link prefetch={false} href="/docs/tooling/incremental-cache"><span>Previous</span><b>← Incremental cache</b></Link><Link prefetch={false} href="/docs/installation/using-vite"><span>Next</span><b>Using Vite →</b></Link></div>
+      <div className="docs-next split"><Link prefetch={false} href="/docs/tooling/incremental-cache"><span>Previous</span><b>← Incremental cache</b></Link><Link prefetch={false} href="/docs/tooling/language-server"><span>Next</span><b>IntelliSense &amp; LSP →</b></Link></div>
     </article>
   );
 }

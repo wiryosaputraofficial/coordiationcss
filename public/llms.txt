@@ -45,6 +45,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - CSS toolchain: prefer `compileWithToolchain()` in build integrations; local imports, nesting, and target-aware prefixing are enabled by default, minification is opt-in, and the JSON-safe `toolchain` manifest lists exact targets, imported dependencies, and warnings
 - Incremental cache: reuse one `createIncrementalBuildCache()` instance for repeated direct builds; inspect `scan.cache` and `result.cache` for hit/miss data, use the CLI project-local `.coordiation-cache` by default, and treat runtime extractor/plugin functions as process-scoped contracts
 - Source maps: enable `sourceMap` for Source Map v3 output across imports, framework generation, transforms, and minification; inspect `result.toolchain.sourceMap`, use native Vite/PostCSS maps, and choose external or inline CLI delivery deliberately
+- IntelliSense/LSP: launch `coordiation-language-server --stdio`, configure the same literal CSS entry and prefix as the build, use completion for discovery, hover for compiled CSS, diagnostics for literal/dynamic source problems, and `coordiation/inspectCandidate` for concrete project-aware support
 
 ## Reliability rules for AI agents
 
@@ -57,6 +58,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 7. Read `result.toolchain` before assuming browser targets, imported CSS dependencies, or mapped source identities.
 8. Treat cache manifests as rebuild observability, never as class-support evidence; compiler rejection and the utility registry remain authoritative.
 9. Treat source maps as CSS-origin data, not template-to-class mappings; disable `sourcesContent` when original CSS must not be embedded.
+10. Treat language-server completion as discovery and `coordiation/inspectCandidate` as concrete support evidence; never suppress dynamic-candidate diagnostics by guessing runtime strings.
 
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
@@ -87,3 +89,4 @@ Complete JavaScript Plugin API guide: `/docs/core/plugin-api`
 Complete CSS toolchain guide: `/docs/tooling/css-toolchain`
 Complete incremental build cache guide: `/docs/tooling/incremental-cache`
 Complete Source Map v3 guide: `/docs/tooling/source-maps`
+Complete IntelliSense and LSP guide: `/docs/tooling/language-server`
