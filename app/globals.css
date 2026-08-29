@@ -862,3 +862,50 @@ footer > span { justify-self: end; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Readability pass: keep the compact editorial system without sub-10px UI copy. */
+.site-header nav, .reference-header nav, .header-cta { font-size: 13px; }
+.brand-product, footer { font-size: 11px; }
+.eyebrow, .kicker, .component-overline, .icons-kicker, .docs-overline { font-size: 11px; }
+.hero-proof, .window-bar, .compile-line, .marquee-label { font-size: 11px; }
+.homepage-stats span { font-size: 10px; }
+.homepage-stats p { font-size: 12px; }
+.feature-suite-topline, .showcase-meta, .ai-contract-card > div, .homepage-integration-grid > a > div { font-size: 9px; }
+.feature-suite-topline b, .feature-suite-list span { font-size: 9px; }
+.feature-suite-footer code, .showcase-card > code, .registry-visual code, .homepage-integration-grid code { font-size: 10px; }
+.feature-suite-footer a, .engine-steps small, .ai-native-actions a, .ai-contract-card span, .homepage-integration-grid p { font-size: 12px; }
+.terminal-title, .engine-steps li > span, .install-tabs, .install-next a { font-size: 11px; }
+.terminal-title span:last-child, .terminal-result small, .ai-contract-card code, .roadmap-number, .roadmap-row strong small { font-size: 10px; }
+.roadmap-status { font-size: 10px; }
+
+.readiness-card > span, .readiness-card dt, .readiness-card dd { font-size: 12px; }
+.status-legend, .capability-table-head, .capability-name > span, .capability-name code { font-size: 10px; }
+.docs-status { font-size: 9px; }
+.capability-scope p { font-size: 12px; }
+.capability-scope code, .ai-links code { font-size: 10px; }
+
+.reference-sidebar h2, .docs-version code, .docs-search kbd, .docs-next > span, .docs-next a span { font-size: 9px; }
+.reference-sidebar li a, .docs-version, .docs-search input { font-size: 12px; }
+.docs-breadcrumb, .step-number, .reference-code > div, .registry-stats span, .family-support, .utility-mini-nav > span { font-size: 10px; }
+.reference-content p, .reference-content li, .reference-content td, .reference-content th { font-size: 12px; }
+.reference-content a, .reference-content button, .reference-content input, .reference-content select, .reference-content textarea { font-size: 11px; }
+.reference-content code, .reference-content kbd, .reference-content small { font-size: 10px; }
+.reference-content pre, .reference-content pre code { font-size: 12px; }
+.docs-search-results span, .docs-search-results p, .integration-grid p, .registry-family-grid .registry-family-summary, .registry-family-grid p, .utility-mini-nav a, .family-caveats li, .icon-attribution { font-size: 11px; }
+.docs-search-results small, .integration-grid span, .registry-family-grid > section > div:first-child > code, .registry-patterns code, .utility-explorer-head label span, .utility-result-count, .utility-index-header span, .family-reference-head span, .family-concepts li span, .modern-palette-instruction { font-size: 9px; }
+
+.icon-browser-controls label span, .icons-hero-stats dt, .icon-code-section h3 { font-size: 9px; }
+.icon-browser-controls input, .icon-browser-controls select, .icon-browser-heading > div:first-child > p:last-child, .icon-empty p { font-size: 12px; }
+.icon-browser-summary, .icon-export-name, .icon-card span, .icon-usage-note, .icon-browser-footer, .icon-copy-status { font-size: 10px; }
+.icon-browser-summary button, .icon-category-list button, .icon-category-list span, .icon-code-section button { font-size: 9px; }
+.icon-code-section pre, .icon-usage-empty p, .icon-browser-loading, .icon-browser-error { font-size: 11px; }
+
+.component-terminal-top, .component-terminal-result, .component-principles span, .component-filters label > span, .component-results button, .component-index, .component-preview-select { font-size: 9px; }
+.components-hero-copy > div a, .components-hero-demo pre, .component-gallery-heading > div:first-child > p:last-child, .component-filters input, .component-filters select, .component-card-meta p, .component-detail > h2 + p, .component-detail-empty p, .component-registry-footer p:last-child { font-size: 12px; }
+.component-results, .component-card-meta > span, .component-detail > section h3, .component-detail > section button, .component-a11y b { font-size: 9px; }
+.component-detail > section pre, .component-a11y p, .component-json-link { font-size: 10px; }
+.component-preview > :not(.component-index, .component-preview-select) { transform: scale(1.16); }
+
+@media (max-width: 680px) {
+  .component-preview > :not(.component-index, .component-preview-select), .component-detail-preview > * { transform: scale(1.07); }
+}
