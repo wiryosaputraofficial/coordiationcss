@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 488,
+    "staticUtilityCount": 499,
     "familyCount": 15,
-    "completeFamilies": 11,
-    "partialFamilies": 4,
+    "completeFamilies": 12,
+    "partialFamilies": 3,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -1173,41 +1173,62 @@
     },
     {
       "id": "tables-columns",
-      "label": "Tables and columns",
-      "status": "partial",
+      "label": "Tables and multi-column",
+      "status": "complete",
       "target": "0.3",
       "patterns": [
         "co-table-*",
         "co-border-collapse",
+        "co-border-separate",
+        "co-border-spacing-*",
         "co-caption-*",
-        "co-columns-*"
+        "co-columns-*",
+        "co-column-fill-*",
+        "co-column-span-*",
+        "co-column-rule-*",
+        "co-gap-*",
+        "co-break-*-*"
       ],
       "examples": [
         "co-table-fixed",
-        "co-border-collapse",
+        "co-border-separate",
+        "co-border-spacing-x-3",
         "co-caption-bottom",
-        "co-columns-3"
+        "co-columns-sm",
+        "co-column-span-all",
+        "co-column-rule-brand-500"
       ],
       "supportsNegative": false,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Control table formatting, collapse behavior, caption placement, and multi-column content flow.",
-        "guidance": "Use fixed table layout when predictable column widths matter and automatic layout when content should influence track sizing.",
+        "summary": "Control semantic table display, layout algorithms, collapsed or separated borders, cell spacing, captions, and multi-column content flow.",
+        "guidance": "Use table-auto when content should influence column widths, table-fixed for predictable tracks, and multi-column flow for editorial content rather than application grids.",
         "properties": [
           "display",
           "table-layout",
           "border-collapse",
+          "border-spacing",
           "caption-side",
-          "columns"
+          "columns",
+          "column-fill",
+          "column-span",
+          "column-rule",
+          "column-gap",
+          "break-before",
+          "break-after",
+          "break-inside"
         ],
         "concepts": [
-          "Table display utilities cover row, cell, caption, column, and grouping roles.",
-          "Border collapse changes how adjacent table borders are resolved.",
-          "Column counts accept numeric and arbitrary values."
+          "Table display utilities cover table, row, cell, caption, column, and header/footer/body grouping roles.",
+          "Border spacing supports shared, horizontal, and vertical values and only applies when borders are separated.",
+          "Column count utilities accept numbers while container-size tokens such as co-columns-sm define an ideal column width.",
+          "Multi-column gaps reuse gap utilities and page or column break controls reuse the complete Layout family.",
+          "Column fill, spanning, and rule width/color/style provide explicit editorial flow controls beyond the baseline table utilities."
         ],
         "caveats": [
-          "Column gaps reuse the shared gap utilities and page/column breaks live in Layout; column-rule styling remains incomplete.",
-          "Responsive table overflow still requires an explicit wrapper."
+          "Responsive table overflow still requires an explicit wrapper because table layout does not create a scroll container.",
+          "Multi-column layout follows source order vertically before continuing horizontally, so it is unsuitable for data grids or reading orders that must remain row-based.",
+          "Column rules occupy the gap without changing its calculated width."
         ]
       },
       "resolvedExamples": [
@@ -1222,12 +1243,26 @@
           ]
         },
         {
-          "candidate": "co-border-collapse",
+          "candidate": "co-border-separate",
           "supported": true,
           "declarations": [
             [
               "border-collapse",
-              "collapse"
+              "separate"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-border-spacing-x-3",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-border-spacing-x",
+              "calc(var(--co-space-unit) * 3)"
+            ],
+            [
+              "border-spacing",
+              "var(--co-border-spacing-x) var(--co-border-spacing-y, 0px)"
             ]
           ]
         },
@@ -1242,12 +1277,32 @@
           ]
         },
         {
-          "candidate": "co-columns-3",
+          "candidate": "co-columns-sm",
           "supported": true,
           "declarations": [
             [
               "columns",
-              "3"
+              "var(--co-container-sm)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-column-span-all",
+          "supported": true,
+          "declarations": [
+            [
+              "column-span",
+              "all"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-column-rule-brand-500",
+          "supported": true,
+          "declarations": [
+            [
+              "column-rule-color",
+              "var(--co-color-brand-500)"
             ]
           ]
         }
@@ -2892,6 +2947,105 @@
         [
           "visibility",
           "collapse"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-fill-auto",
+      "declarations": [
+        [
+          "column-fill",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-fill-balance",
+      "declarations": [
+        [
+          "column-fill",
+          "balance"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-fill-balance-all",
+      "declarations": [
+        [
+          "column-fill",
+          "balance-all"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-rule-dashed",
+      "declarations": [
+        [
+          "column-rule-style",
+          "dashed"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-rule-dotted",
+      "declarations": [
+        [
+          "column-rule-style",
+          "dotted"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-rule-double",
+      "declarations": [
+        [
+          "column-rule-style",
+          "double"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-rule-hidden",
+      "declarations": [
+        [
+          "column-rule-style",
+          "hidden"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-rule-none",
+      "declarations": [
+        [
+          "column-rule-style",
+          "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-rule-solid",
+      "declarations": [
+        [
+          "column-rule-style",
+          "solid"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-span-all",
+      "declarations": [
+        [
+          "column-span",
+          "all"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-column-span-none",
+      "declarations": [
+        [
+          "column-span",
+          "none"
         ]
       ]
     },

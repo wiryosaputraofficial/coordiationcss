@@ -30,6 +30,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Backgrounds: `co-bg-black/50`, `co-bg-[url(/hero.svg)]`, `co-bg-linear-to-r/oklch`, `co-from-brand-500`, `co-via-40%`, `co-to-transparent`, `co-bg-position-(--focus)`, `co-bg-size-[auto_12rem]`
 - Borders: `co-border-bs-2`, `co-border-e-brand-500/50`, `co-rounded-se-(--radius)`, `focus-visible:co-outline-2`, `-co-outline-offset-2`, `co-ring-2`, `co-inset-ring-brand-500`, `co-divide-x-reverse`, `co-divide-dashed`
 - Effects: `co-shadow-lg`, `co-shadow-brand-500/40`, `co-text-shadow-sm`, `co-opacity-50`, `co-mix-blend-multiply`, `co-blur-md`, `co-brightness-125`, `co-drop-shadow-lg`, `co-backdrop-blur-sm`, `co-mask-[url(/mask.svg)]`, `co-mask-clip-content`
+- Tables/columns: `co-table-fixed`, `co-border-separate`, `co-border-spacing-x-3`, `co-caption-bottom`, `co-columns-sm`, `co-gap-6`, `co-break-inside-avoid-column`, `co-column-span-all`, `co-column-rule-brand-500`
 
 ## Reliability rules for AI agents
 
@@ -54,3 +55,4 @@ Typography documentation: `/docs/utilities/typography`
 Background utility documentation: `/docs/utilities/backgrounds`
 Border, outline, ring, and divide documentation: `/docs/utilities/borders-rings`
 Effects, filter, backdrop-filter, and mask documentation: `/docs/utilities/effects`
+Table and multi-column documentation: `/docs/utilities/tables-columns`
