@@ -40,8 +40,8 @@ export const capabilities: Capability[] = [
   { id: "custom-utility", area: "Custom utility registration", status: "planned", target: "0.4", examples: ["@co-utility"], note: "Registry API is designed but not public yet." },
   { id: "custom-variant", area: "Custom variant registration", status: "planned", target: "0.4", examples: ["@co-variant"], note: "User-defined selector and at-rule variants are planned." },
   { id: "plugin-api", area: "Plugin API", status: "planned", target: "0.4", examples: ["defineCoordiationPlugin()"], note: "Stable hooks will follow the utility registry." },
-  { id: "sources", area: "Source include, exclude, and safelist", status: "planned", target: "0.2", examples: ["sources: []"], note: "Explicit discovery controls are next in the scanner milestone." },
-  { id: "extraction-hooks", area: "Framework extraction hooks", status: "planned", target: "0.2", examples: ["extract()"], note: "Compiler-owned candidate hooks are planned." },
+  { id: "sources", area: "Source include, exclude, and safelist", status: "complete", target: "0.2", examples: ["include: []", "exclude: []", "safelist: []"], note: "Glob filters, explicit candidates, CLI flags, validation, and dynamic-class diagnostics are implemented and tested." },
+  { id: "extraction-hooks", area: "Framework extraction hooks", status: "complete", target: "0.2", examples: ["extractors: { '.coord': extract }"], note: "Extension and global extraction hooks supplement plain-text scanning and validate every returned candidate." },
   { id: "vite", area: "Vite adapter", status: "partial", target: "0.2", examples: ["coordiationCSS()"], note: "An initial adapter ships; HMR and invalidation hardening remain." },
   { id: "postcss", area: "PostCSS adapter", status: "partial", target: "0.2", examples: ["coordiationPostCSS()"], note: "An initial adapter ships; ecosystem compatibility remains." },
   { id: "cli", area: "CLI and watch mode", status: "partial", target: "0.2", examples: ["coordiation-css --content src"], note: "Build mode ships; durable watch mode remains." },
@@ -69,4 +69,3 @@ export const capabilityManifest = {
   },
   capabilities,
 };
-
