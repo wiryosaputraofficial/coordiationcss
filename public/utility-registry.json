@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 345,
+    "staticUtilityCount": 371,
     "familyCount": 15,
-    "completeFamilies": 3,
-    "partialFamilies": 12,
+    "completeFamilies": 4,
+    "partialFamilies": 11,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -17,20 +17,26 @@
     {
       "id": "layout",
       "label": "Layout and positioning",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-{display}",
         "co-{position}",
         "co-inset-*",
         "co-overflow-*",
-        "co-object-*"
+        "co-object-*",
+        "co-aspect-*",
+        "co-break-*-*",
+        "co-z-*"
       ],
       "examples": [
-        "co-flow-root",
+        "co-inline-table",
         "co-sticky",
-        "co-inset-x-4",
-        "co-overflow-y-auto"
+        "-co-inset-x-4",
+        "co-aspect-3/2",
+        "co-break-inside-avoid",
+        "-co-z-10",
+        "co-object-[25%_75%]"
       ],
       "supportsNegative": true,
       "supportsArbitrary": true,
@@ -38,6 +44,12 @@
         "summary": "Control how elements participate in document flow, how they are positioned, and how overflowing or replaced content is handled.",
         "guidance": "Choose display first, add position only when the element must leave or track normal flow, then use logical inset utilities when the interface must work in both LTR and RTL directions.",
         "properties": [
+          "aspect-ratio",
+          "break-after",
+          "break-before",
+          "break-inside",
+          "box-decoration-break",
+          "box-sizing",
           "display",
           "position",
           "inset",
@@ -48,26 +60,29 @@
           "object-fit",
           "object-position",
           "visibility",
-          "isolation"
+          "isolation",
+          "z-index"
         ],
         "concepts": [
           "Display utilities determine the formatting context before flex or grid alignment is applied.",
           "Sticky positioning needs a scroll container and at least one inset such as co-top-0.",
-          "Logical start/end utilities follow the document writing direction."
+          "Logical start/end utilities follow the document writing direction.",
+          "Aspect ratios accept named tokens, numeric fractions, custom properties, and arbitrary values.",
+          "Page and column break utilities compose with print and responsive variants."
         ],
         "caveats": [
-          "Container utilities and aspect-aware replaced-content helpers are not complete yet.",
-          "Negative values are limited to inset and positional utilities."
+          "Multi-column count, gap, and rule styling are tracked in the separate Tables and columns family.",
+          "Negative values are intentionally limited to inset, positional offsets, and z-index."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-flow-root",
+          "candidate": "co-inline-table",
           "supported": true,
           "declarations": [
             [
               "display",
-              "flow-root"
+              "inline-table"
             ]
           ]
         },
@@ -82,22 +97,52 @@
           ]
         },
         {
-          "candidate": "co-inset-x-4",
+          "candidate": "-co-inset-x-4",
           "supported": true,
           "declarations": [
             [
               "inset-inline",
-              "calc(var(--co-space-unit) * 4)"
+              "calc(calc(var(--co-space-unit) * 4) * -1)"
             ]
           ]
         },
         {
-          "candidate": "co-overflow-y-auto",
+          "candidate": "co-aspect-3/2",
           "supported": true,
           "declarations": [
             [
-              "overflow-y",
-              "auto"
+              "aspect-ratio",
+              "3 / 2"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-break-inside-avoid",
+          "supported": true,
+          "declarations": [
+            [
+              "break-inside",
+              "avoid"
+            ]
+          ]
+        },
+        {
+          "candidate": "-co-z-10",
+          "supported": true,
+          "declarations": [
+            [
+              "z-index",
+              "-10"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-object-[25%_75%]",
+          "supported": true,
+          "declarations": [
+            [
+              "object-position",
+              "25% 75%"
             ]
           ]
         }
@@ -1902,6 +1947,10 @@
       "candidate": "co-box-decoration-clone",
       "declarations": [
         [
+          "-webkit-box-decoration-break",
+          "clone"
+        ],
+        [
           "box-decoration-break",
           "clone"
         ]
@@ -1911,8 +1960,84 @@
       "candidate": "co-box-decoration-slice",
       "declarations": [
         [
+          "-webkit-box-decoration-break",
+          "slice"
+        ],
+        [
           "box-decoration-break",
           "slice"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-all",
+      "declarations": [
+        [
+          "break-after",
+          "all"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-auto",
+      "declarations": [
+        [
+          "break-after",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-avoid",
+      "declarations": [
+        [
+          "break-after",
+          "avoid"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-avoid-page",
+      "declarations": [
+        [
+          "break-after",
+          "avoid-page"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-column",
+      "declarations": [
+        [
+          "break-after",
+          "column"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-left",
+      "declarations": [
+        [
+          "break-after",
+          "left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-page",
+      "declarations": [
+        [
+          "break-after",
+          "page"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-after-right",
+      "declarations": [
+        [
+          "break-after",
+          "right"
         ]
       ]
     },
@@ -1922,6 +2047,114 @@
         [
           "word-break",
           "break-all"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-all",
+      "declarations": [
+        [
+          "break-before",
+          "all"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-auto",
+      "declarations": [
+        [
+          "break-before",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-avoid",
+      "declarations": [
+        [
+          "break-before",
+          "avoid"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-avoid-page",
+      "declarations": [
+        [
+          "break-before",
+          "avoid-page"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-column",
+      "declarations": [
+        [
+          "break-before",
+          "column"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-left",
+      "declarations": [
+        [
+          "break-before",
+          "left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-page",
+      "declarations": [
+        [
+          "break-before",
+          "page"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-before-right",
+      "declarations": [
+        [
+          "break-before",
+          "right"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-inside-auto",
+      "declarations": [
+        [
+          "break-inside",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-inside-avoid",
+      "declarations": [
+        [
+          "break-inside",
+          "avoid"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-inside-avoid-column",
+      "declarations": [
+        [
+          "break-inside",
+          "avoid-column"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-break-inside-avoid-page",
+      "declarations": [
+        [
+          "break-inside",
+          "avoid-page"
         ]
       ]
     },
@@ -2686,6 +2919,15 @@
       ]
     },
     {
+      "candidate": "co-inline-table",
+      "declarations": [
+        [
+          "display",
+          "inline-table"
+        ]
+      ]
+    },
+    {
       "candidate": "co-invisible",
       "declarations": [
         [
@@ -3074,6 +3316,24 @@
       ]
     },
     {
+      "candidate": "co-object-bottom-left",
+      "declarations": [
+        [
+          "object-position",
+          "bottom left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-object-bottom-right",
+      "declarations": [
+        [
+          "object-position",
+          "bottom right"
+        ]
+      ]
+    },
+    {
       "candidate": "co-object-center",
       "declarations": [
         [
@@ -3187,6 +3447,24 @@
         [
           "object-position",
           "top"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-object-top-left",
+      "declarations": [
+        [
+          "object-position",
+          "top left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-object-top-right",
+      "declarations": [
+        [
+          "object-position",
+          "top right"
         ]
       ]
     },
@@ -4581,6 +4859,15 @@
         [
           "will-change",
           "transform"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-z-auto",
+      "declarations": [
+        [
+          "z-index",
+          "auto"
         ]
       ]
     }

@@ -49,10 +49,9 @@ export default async function UtilityFamilyPage({ params }: PageProps) {
 
       {family.supportsNegative && <section className="family-composition" id="negative-values"><p className="docs-overline">NEGATIVE VALUES</p><h2>Reverse supported values</h2><p>Place the minus sign before the framework prefix. Only properties where negative CSS values are meaningful accept this modifier.</p><CodeBlock title="Canonical negative syntax" code={`-co-{utility}\n${family.examples.find((example) => example.startsWith("-")) ?? "-co-mt-4"}`} /></section>}
 
-      <section className="family-caveats" id="limitations"><div><p className="docs-overline">CURRENT LIMITS</p><h2>What is not complete yet</h2><p>This family remains marked partial until these limitations are implemented and tested.</p></div><ul>{family.documentation.caveats.map((caveat) => <li key={caveat}>{caveat}</li>)}</ul></section>
+      <section className="family-caveats" id="limitations"><div><p className="docs-overline">{family.status === "complete" ? "SCOPE BOUNDARIES" : "CURRENT LIMITS"}</p><h2>{family.status === "complete" ? "Intentional boundaries" : "What is not complete yet"}</h2><p>{family.status === "complete" ? "This family is implemented, documented, and tested. These notes define where a neighboring family or browser behavior takes over." : "This family remains marked partial until these limitations are implemented and tested."}</p></div><ul>{family.documentation.caveats.map((caveat) => <li key={caveat}>{caveat}</li>)}</ul></section>
 
       <div className="docs-next split">{previous ? <Link href={`/docs/utilities/${previous.id}`}><span>Previous</span><b>← {previous.label}</b></Link> : <Link href="/docs/utilities"><span>Previous</span><b>← Utility registry</b></Link>}{next ? <Link href={`/docs/utilities/${next.id}`}><span>Next</span><b>{next.label} →</b></Link> : <Link href="/release-check"><span>Next</span><b>Release Check →</b></Link>}</div>
     </article>
   );
 }
-
