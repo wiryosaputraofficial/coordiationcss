@@ -199,10 +199,10 @@ code, pre { font-family: var(--font-geist-mono), monospace; }
 .install-next a { display: inline-flex; gap: 30px; font-size: 10px; font-weight: 700; }
 
 .integrations-section { background: #fff; }
-.homepage-integration-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #111; }
+.homepage-integration-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid #111; }
 .homepage-integration-grid > a { min-height: 340px; padding: 26px; display: flex; flex-direction: column; position: relative; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.homepage-integration-grid > a:nth-child(4n) { border-right: 0; }
-.homepage-integration-grid > a:nth-last-child(-n+4) { border-bottom: 0; }
+.homepage-integration-grid > a:nth-child(3n) { border-right: 0; }
+.homepage-integration-grid > a:nth-last-child(-n+3) { border-bottom: 0; }
 .homepage-integration-grid > a:hover { background: #f5f5f3; }
 .homepage-integration-grid > a > div { display: flex; justify-content: space-between; color: #888; font-family: var(--font-geist-mono); font-size: 8px; text-transform: uppercase; }
 .homepage-integration-grid h3 { margin: 52px 0 14px; font-size: clamp(25px, 2.5vw, 36px); line-height: 1; letter-spacing: -.05em; }
@@ -403,6 +403,15 @@ footer > span { justify-self: end; }
 .registry-machine-link > a span { font-size: 11px; font-weight: 650; }
 .family-support { margin-top: 38px; padding: 14px 0; display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #888; font-family: var(--font-geist-mono); font-size: 8px; text-transform: uppercase; }
 .family-support > a { margin-left: auto; color: #111; }
+.solar-icon-samples { margin-top: 46px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #111; }
+.solar-icon-samples > div { min-height: 165px; padding: 20px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.solar-icon-samples > div:nth-child(4n) { border-right: 0; }
+.solar-icon-samples > div:nth-last-child(-n+4) { border-bottom: 0; }
+.solar-icon-samples span { width: 42px; height: 42px; margin-bottom: auto; display: block; background: #050505; -webkit-mask: var(--solar-sample) center / contain no-repeat; mask: var(--solar-sample) center / contain no-repeat; }
+.solar-icon-samples strong { margin-top: 28px; font-size: 12px; }
+.solar-icon-samples code { margin-top: 6px; color: #888; font-size: 8px; }
+.icon-attribution { margin: 42px 0 0; padding: 17px 19px; border: 1px solid var(--line); color: #666; font-size: 10px; line-height: 1.6; }
+.icon-attribution a { padding-bottom: 2px; border-bottom: 1px solid #777; color: #111; }
 .family-intro { margin-top: 72px; padding: 35px; border: 1px solid #111; background: #f7f7f4; }
 .family-intro h2, .family-reference h2, .family-example h2, .family-concepts h2, .family-properties h2, .family-composition h2, .family-caveats h2 { margin: 15px 0; font-size: 31px; line-height: 1.05; letter-spacing: -.045em; }
 .family-intro > p:last-child, .family-reference > div:first-child > p:last-child, .family-example > p, .family-composition > p, .family-caveats > div > p:last-child { max-width: 740px; margin-bottom: 0; color: #666; font-size: 12px; line-height: 1.7; }
@@ -488,10 +497,6 @@ footer > span { justify-self: end; }
   .homepage-stats > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .ai-native-section { grid-template-columns: 1fr; }
   .ai-native-section > div:first-child { max-width: 720px; }
-  .homepage-integration-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .homepage-integration-grid > a, .homepage-integration-grid > a:nth-child(4n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .homepage-integration-grid > a:nth-child(2n) { border-right: 0; }
-  .homepage-integration-grid > a:nth-last-child(-n+2) { border-bottom: 0; }
   .docs-hero { grid-template-columns: 1fr; }
   .readiness-card { max-width: 600px; }
   .capability-table { overflow-x: auto; }
@@ -507,6 +512,10 @@ footer > span { justify-self: end; }
   .registry-family-grid > section { border-right: 0; }
   .registry-family-grid > section:nth-last-child(2) { border-bottom: 1px solid var(--line); }
   .family-concepts, .family-caveats { grid-template-columns: 1fr; gap: 30px; }
+  .solar-icon-samples { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .solar-icon-samples > div, .solar-icon-samples > div:nth-child(4n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .solar-icon-samples > div:nth-child(3n) { border-right: 0; }
+  .solar-icon-samples > div:nth-last-child(-n+3) { border-bottom: 0; }
   .mini-nav-page-frame { width: 100%; display: block; }
   .utility-mini-nav { display: none; }
 }
@@ -541,7 +550,7 @@ footer > span { justify-self: end; }
   .ai-contract-card li { grid-template-columns: 28px 1fr; }
   .ai-contract-card li code { grid-column: 2; }
   .homepage-integration-grid { grid-template-columns: 1fr; }
-  .homepage-integration-grid > a, .homepage-integration-grid > a:nth-child(2n), .homepage-integration-grid > a:nth-child(4n) { min-height: 270px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .homepage-integration-grid > a, .homepage-integration-grid > a:nth-child(3n) { min-height: 270px; border-right: 0; border-bottom: 1px solid var(--line); }
   .homepage-integration-grid > a:last-child { border-bottom: 0; }
   .feature-suite-grid { grid-template-columns: 1fr; }
   .feature-suite-card, .feature-suite-card:nth-child(2n) { min-height: 440px; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -587,6 +596,10 @@ footer > span { justify-self: end; }
   .family-support { align-items: flex-start; flex-direction: column; }
   .family-support > a { margin-left: 0; }
   .family-intro, .family-caveats { padding: 24px; }
+  .solar-icon-samples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .solar-icon-samples > div, .solar-icon-samples > div:nth-child(3n), .solar-icon-samples > div:nth-child(4n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .solar-icon-samples > div:nth-child(2n) { border-right: 0; }
+  .solar-icon-samples > div:nth-last-child(-n+2) { border-bottom: 0; }
   .family-reference-table { overflow-x: auto; }
   .family-reference-head, .family-reference-row { min-width: 620px; }
   .modern-palette-instruction, .modern-palette-group { align-items: flex-start; grid-template-columns: 1fr; }

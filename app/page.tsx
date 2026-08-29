@@ -60,7 +60,7 @@ const featureGroups = [
     title: "Style without leaving markup",
     description:
       "Typography, modern color, gradients, borders, rings, effects, masks, transforms, transitions, animation, and SVG share one token system.",
-    ids: ["typography", "backgrounds", "borders", "effects", "transforms", "transitions", "svg", "modern-color"],
+    ids: ["typography", "backgrounds", "borders", "effects", "transforms", "transitions", "svg", "icons", "modern-color"],
     example: "co-bg-linear-to-r/oklch co-shadow-lg",
     href: "/docs/utilities/backgrounds",
   },
@@ -124,6 +124,7 @@ const integrations = [
   { name: "Formatter", label: "Canonical", description: "Stable class sorting powered by the same candidate ordering used by the compiler.", href: "/docs/tooling/formatter", code: "@coordiation/formatter" },
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
+  { name: "Icons", label: "1,246 glyphs", description: "Tree-shakeable Solar Linear SVG strings, accessible rendering, CSS variables, provenance, and an AI-readable registry.", href: "/docs/icons/solar-linear", code: "@coordiation/icons" },
 ];
 
 export default function Home() {
@@ -131,7 +132,7 @@ export default function Home() {
     <main>
       <div className="announcement">
         <span className="announcement-dot" />
-        All 44 tracked capabilities are complete
+        All {completeCapabilityCount} tracked capabilities are complete
         <Link href="/release-check">View release readiness <span aria-hidden="true">→</span></Link>
       </div>
 
@@ -159,7 +160,7 @@ export default function Home() {
           <h1>Build interfaces.<br /><em>Keep the system.</em></h1>
           <p>
             A complete utility-first CSS system for Coordiation. Build responsive,
-            accessible interfaces with 44 verified capabilities, seven official packages,
+            accessible interfaces with {completeCapabilityCount} verified capabilities, eight official packages,
             CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">
@@ -220,7 +221,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker">THE SYSTEM</p>
           <h2>Small utilities.<br />Serious capability.</h2>
-          <p>All 44 completed capabilities are grouped below by the job they solve. Every item links back to the same tested registry used by the compiler and documentation.</p>
+          <p>All {completeCapabilityCount} completed capabilities are grouped below by the job they solve. Every item links back to the same tested registry used by the compiler and documentation.</p>
         </div>
         <div className="feature-suite-grid">
           {featureGroups.map((feature) => (
@@ -333,7 +334,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker">OFFICIAL PACKAGES</p>
           <h2>One system.<br />Every workflow.</h2>
-          <p>Eight entry points cover compilation, build integration, editor intelligence, formatting, upgrades, and optional native scanning.</p>
+          <p>Nine entry points cover compilation, icons, build integration, editor intelligence, formatting, upgrades, and optional native scanning.</p>
         </div>
         <div className="homepage-integration-grid">
           {integrations.map((integration, index) => <Link href={integration.href} key={integration.name}>
