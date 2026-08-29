@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
+import { createSeoMetadata } from "@/app/seo";
 import MobileNav from "./_components/MobileNav";
 import SolarIcon from "./_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
 import registry from "./docs/generated/utility-registry.json";
+
+export const metadata: Metadata = createSeoMetadata({
+  path: "/",
+  title: "Coordiation CSS — Build interfaces. Keep the system.",
+  description:
+    "Build accessible, responsive interfaces with a runtime-free utility-first CSS compiler, open-code components, icons, themes, and AI-readable registries.",
+  keywords: [
+    "Coordiation CSS",
+    "utility-first CSS",
+    "CSS framework",
+    "open-code components",
+    "AI-readable CSS",
+  ],
+});
 
 const utilityCount = registry.staticUtilities.length;
 const familyCount = registry.families.length;

@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/variants/attribute-selectors", ...{
   title: "Attribute and selector variants",
   description: "Use ARIA, data, has, not, group, peer, and arbitrary selector variants in Coordiation CSS.",
-};
+} });
 
 const ariaStates = ["busy", "checked", "disabled", "expanded", "hidden", "pressed", "readonly", "required", "selected"];
 

@@ -1,3 +1,4 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../../_components/MobileNav";
@@ -5,7 +6,7 @@ import SolarIcon from "../../_components/SolarIcon";
 import registry from "../../docs/generated/theme-registry.json";
 import ThemeCommand from "../ThemeCommand";
 
-export const metadata: Metadata = { title: "Editorial Advisor theme — Coordiation CSS", description: "Preview and install the Editorial Advisor open-code application theme.", openGraph: { title: "Editorial Advisor — Coordiation Themes", description: "A complete editorial consultant portfolio built with Coordiation.", images: ["/themes/editorial-advisor/hero-advisor.png"] }, twitter: { card: "summary_large_image", title: "Editorial Advisor — Coordiation Themes", description: "A complete editorial consultant portfolio built with Coordiation.", images: ["/themes/editorial-advisor/hero-advisor.png"] } };
+export const metadata: Metadata = createSeoMetadata({ path: "/themes/editorial-advisor", ...{ title: "Editorial Advisor theme — Coordiation CSS", description: "Preview and install the Editorial Advisor open-code application theme.", openGraph: { title: "Editorial Advisor — Coordiation Themes", description: "A complete editorial consultant portfolio built with Coordiation.", images: ["/themes/editorial-advisor/hero-advisor.png"] }, twitter: { card: "summary_large_image", title: "Editorial Advisor — Coordiation Themes", description: "A complete editorial consultant portfolio built with Coordiation.", images: ["/themes/editorial-advisor/hero-advisor.png"] } } });
 
 export default function EditorialAdvisorThemePage() {
   const theme = registry.themes.find((item) => item.name === "editorial-advisor")!;

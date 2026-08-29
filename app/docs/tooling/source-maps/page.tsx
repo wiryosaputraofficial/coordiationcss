@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/source-maps", ...{
   title: "Source maps — Coordiation CSS",
   description: "Trace generated Coordiation CSS through imports, framework layers, nesting, prefixing, and minification with Source Map v3.",
-};
+} });
 
 export default function SourceMapsPage() {
   return (

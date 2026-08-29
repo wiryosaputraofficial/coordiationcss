@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-html-css", ...{
   title: "Install Coordiation CSS with plain HTML and CSS",
   description: "Compile Coordiation CSS for a framework-free HTML site with the official CLI in build or watch mode.",
-};
+} });
 
 export default function UsingHtmlCssPage() {
   return <FrameworkGuide

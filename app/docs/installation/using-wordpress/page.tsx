@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-wordpress", ...{
   title: "Install Coordiation CSS with WordPress",
   description: "Compile Coordiation CSS inside a WordPress theme, scan PHP templates and block patterns, and enqueue the generated stylesheet correctly.",
-};
+} });
 
 export default function UsingWordpressPage() {
   return <FrameworkGuide

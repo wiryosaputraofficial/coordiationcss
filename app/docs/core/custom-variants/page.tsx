@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/custom-variants", ...{
   title: "Custom variants — Coordiation CSS",
   description: "Register project selector, conditional, and compound variants with validation and an AI-readable manifest.",
-};
+} });
 
 export default function CustomVariantsPage() {
   return (

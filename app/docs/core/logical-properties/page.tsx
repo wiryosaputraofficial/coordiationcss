@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/logical-properties", ...{
   title: "Logical properties and writing modes",
   description: "Build direction-aware horizontal, vertical, and bidirectional layouts with Coordiation CSS.",
-};
+} });
 
 const writingModes = [
   ["co-writing-horizontal-tb", "writing-mode: horizontal-tb", "Horizontal lines; blocks flow top to bottom"],

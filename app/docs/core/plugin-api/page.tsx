@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/plugin-api", ...{
   title: "Plugin API — Coordiation CSS",
   description: "Build reusable Coordiation extensions with deterministic utilities, variants, theme values, extractors, safelists, and AI-readable manifests.",
-};
+} });
 
 export default function PluginApiPage() {
   return (

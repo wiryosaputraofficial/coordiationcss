@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/language-server", ...{
   title: "IntelliSense and language server — Coordiation CSS",
   description: "Connect any LSP-capable editor to registry-backed Coordiation completion, compiled CSS hover previews, and project-aware diagnostics.",
-};
+} });
 
 export default function LanguageServerPage() {
   return (

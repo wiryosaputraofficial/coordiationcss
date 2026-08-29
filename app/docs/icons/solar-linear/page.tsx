@@ -1,12 +1,13 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/icons/solar-linear", ...{
   title: "Solar Linear icons — Coordiation CSS",
   description: "Use 1,246 tree-shakeable Solar Linear icons with accessible rendering, CSS variables, registry-backed discovery, and correct attribution.",
-};
+} });
 
 const samples = [
   ["home", "Home"], ["heart", "Heart"], ["bell", "Bell"], ["calendar", "Calendar"],

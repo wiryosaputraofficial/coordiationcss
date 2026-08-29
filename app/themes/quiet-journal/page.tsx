@@ -1,3 +1,4 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../../_components/MobileNav";
@@ -5,7 +6,7 @@ import SolarIcon from "../../_components/SolarIcon";
 import registry from "../../docs/generated/theme-registry.json";
 import ThemeCommand from "../ThemeCommand";
 
-export const metadata: Metadata = { title: "Quiet Journal theme — Coordiation CSS", description: "Preview and install the Quiet Journal open-code application theme.", openGraph: { title: "Quiet Journal — Coordiation Themes", description: "A warm illustrated personal journal built with Coordiation.", images: ["/themes/quiet-journal/hero-desk.webp"] }, twitter: { card: "summary_large_image", title: "Quiet Journal — Coordiation Themes", description: "A warm illustrated personal journal built with Coordiation.", images: ["/themes/quiet-journal/hero-desk.webp"] } };
+export const metadata: Metadata = createSeoMetadata({ path: "/themes/quiet-journal", ...{ title: "Quiet Journal theme — Coordiation CSS", description: "Preview and install the Quiet Journal open-code application theme.", openGraph: { title: "Quiet Journal — Coordiation Themes", description: "A warm illustrated personal journal built with Coordiation.", images: ["/themes/quiet-journal/hero-desk.webp"] }, twitter: { card: "summary_large_image", title: "Quiet Journal — Coordiation Themes", description: "A warm illustrated personal journal built with Coordiation.", images: ["/themes/quiet-journal/hero-desk.webp"] } } });
 
 export default function QuietJournalThemePage() {
   const theme = registry.themes.find((item) => item.name === "quiet-journal")!;

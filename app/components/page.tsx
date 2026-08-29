@@ -1,3 +1,4 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../_components/MobileNav";
@@ -5,10 +6,10 @@ import SolarIcon from "../_components/SolarIcon";
 import registry from "../docs/generated/component-registry.json";
 import ComponentGallery from "./ComponentGallery";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/components", ...{
   title: "Open-code components — Coordiation CSS",
   description: "Browse and install accessible, customizable React components built entirely with Coordiation CSS utilities.",
-};
+} });
 
 export default function ComponentsPage() {
   return (

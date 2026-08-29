@@ -1,12 +1,13 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/icons/iconsax-line-oval", ...{
   title: "Iconsax Line Oval icons — Coordiation CSS",
   description: "Use all 919 Iconsax Line Oval icons with literal imports, accessible rendering, local assets, and registry-backed discovery.",
-};
+} });
 
 const samples = [
   ["airdrop", "Airdrop"], ["home", "Home"], ["message", "Message"], ["notification", "Notification"],

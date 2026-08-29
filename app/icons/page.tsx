@@ -1,13 +1,14 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../_components/MobileNav";
 import SolarIcon from "../_components/SolarIcon";
 import IconBrowser from "./IconBrowser";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/icons", ...{
   title: "Icon browser — Coordiation CSS",
   description: "Search, preview, and copy literal usage for all 2,165 Solar Linear and Iconsax Line Oval icons included with Coordiation.",
-};
+} });
 
 export default function IconsPage() {
   return (

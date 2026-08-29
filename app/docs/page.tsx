@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
+import { createSeoMetadata } from "@/app/seo";
 import { capabilities } from "./capabilities";
+
+export const metadata: Metadata = createSeoMetadata({
+  path: "/docs",
+  title: "Coordiation CSS documentation",
+  description:
+    "Install Coordiation CSS and learn its utilities, variants, components, icons, themes, build adapters, and framework integrations.",
+});
 
 export default function DocsOverview() {
   return (

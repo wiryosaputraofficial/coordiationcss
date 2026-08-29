@@ -1,8 +1,9 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = { title: "Compatibility and deprecations — Coordiation CSS", description: "Understand Coordiation semantic versioning, deprecation windows, compiler diagnostics, and migration ownership." };
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/compatibility", ...{ title: "Compatibility and deprecations — Coordiation CSS", description: "Understand Coordiation semantic versioning, deprecation windows, compiler diagnostics, and migration ownership." } });
 
 export default function CompatibilityPage() {
   return <article className="docs-article vite-guide">

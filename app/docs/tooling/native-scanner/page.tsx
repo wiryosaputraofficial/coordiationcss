@@ -1,8 +1,9 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = { title: "Native scanner — Coordiation CSS", description: "Use optional cross-platform C11 candidate extraction with explicit JavaScript fallback." };
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/native-scanner", ...{ title: "Native scanner — Coordiation CSS", description: "Use optional cross-platform C11 candidate extraction with explicit JavaScript fallback." } });
 
 export default function NativeScannerPage() {
   return <article className="docs-article vite-guide">

@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import ThemeIcon from "./ThemeIcon";
 import "./editorial-advisor.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/themes/editorial-advisor/preview", ...{
   title: "Maya Aruna — Editorial Advisor",
   description: "An original editorial portfolio template for independent advisors and consultants.",
-};
+} });
 
 const events = [
   { date: "18 SEP 2026", title: "Building Trust in Public Systems", place: "Nusantara Forum · Jakarta", type: "KEYNOTE" },

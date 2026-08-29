@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-php", ...{
   title: "Install Coordiation CSS with PHP",
   description: "Scan PHP templates with the Coordiation CLI and generate a static production stylesheet without a browser runtime.",
-};
+} });
 
 export default function UsingPhpPage() {
   return <FrameworkGuide

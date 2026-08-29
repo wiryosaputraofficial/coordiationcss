@@ -1,12 +1,13 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/theme-variables", ...{
   title: "Theme variables",
   description: "Define project-owned design tokens and generate consistent Coordiation CSS utilities with the @co-theme directive.",
-};
+} });
 
 const namespaces = [
   ["--co-color-*", "Colors", "co-bg-product · co-text-product · co-border-product"],

@@ -1,9 +1,10 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import ThemeIcon, { type ThemeIconName } from "./ThemeIcon";
 import { Avatar, Badge, Button, Card, CardHeader, IconButton, Progress, SearchField, SelectControl } from "./DashboardComponents";
 import "./finance-dashboard.css";
 
-export const metadata: Metadata = { title: "Nusa Ledger — Finance operations dashboard", description: "An original finance operations dashboard template built with Coordiation components and utilities." };
+export const metadata: Metadata = createSeoMetadata({ path: "/themes/finance-dashboard/preview", ...{ title: "Nusa Ledger — Finance operations dashboard", description: "An original finance operations dashboard template built with Coordiation components and utilities." } });
 
 const navigation: Array<{ label: string; icon: ThemeIconName; badge?: string }> = [
   { label: "Overview", icon: "home-2" }, { label: "Payments", icon: "wallet-money" }, { label: "Transactions", icon: "transfer-horizontal" }, { label: "Cards", icon: "card", badge: "12" }, { label: "Customers", icon: "users-group-rounded" }, { label: "Messages", icon: "chat-round", badge: "4" }, { label: "Calendar", icon: "calendar" }, { label: "Invoices", icon: "bill-list" },

@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-svelte", ...{
   title: "Install Coordiation CSS with SvelteKit",
   description: "Configure Coordiation CSS through SvelteKit's Vite pipeline and import the generated stylesheet from the root layout.",
-};
+} });
 
 export default function UsingSveltePage() {
   return <FrameworkGuide

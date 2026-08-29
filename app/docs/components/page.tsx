@@ -1,12 +1,13 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import registry from "../generated/component-registry.json";
 import CodeBlock from "../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/components", ...{
   title: "Component registry — Coordiation CSS",
   description: "Install and customize open-code React components powered by Coordiation CSS.",
-};
+} });
 
 export default function ComponentGuidePage() {
   return <article className="docs-article vite-guide">

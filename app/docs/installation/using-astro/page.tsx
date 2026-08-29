@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-astro", ...{
   title: "Install Coordiation CSS with Astro",
   description: "Use the official Coordiation Vite adapter inside Astro and scan Astro components, layouts, scripts, and content.",
-};
+} });
 
 export default function UsingAstroPage() {
   return <FrameworkGuide

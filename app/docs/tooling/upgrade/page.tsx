@@ -1,8 +1,9 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = { title: "Upgrade and codemods — Coordiation CSS", description: "Plan and apply versioned, auditable Coordiation CSS source migrations." };
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/upgrade", ...{ title: "Upgrade and codemods — Coordiation CSS", description: "Plan and apply versioned, auditable Coordiation CSS source migrations." } });
 
 export default function UpgradePage() {
   return <article className="docs-article vite-guide">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
+import { createSeoMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import CodeBlock from "../../_components/CodeBlock";
 import AccessibilityExamples, { AccessibilityMiniNavigation } from "./AccessibilityExamples";
@@ -29,7 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { family: familyId } = await params;
   const family = registry.families.find((item) => item.id === familyId);
   if (!family) return {};
-  return { title: family.label, description: family.documentation.summary };
+  return createSeoMetadata({
+    path: `/docs/utilities/${family.id}`,
+    title: `${family.label} utilities — Coordiation CSS`,
+    description: family.documentation.summary,
+  });
 }
 
 export default async function UtilityFamilyPage({ params }: PageProps) {

@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/incremental-cache", ...{
   title: "Incremental build cache — Coordiation CSS",
   description: "Reuse unchanged source extraction and stylesheet compilation safely across Coordiation CSS builds.",
-};
+} });
 
 export default function IncrementalCachePage() {
   return (

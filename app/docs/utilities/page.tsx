@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
+import { createSeoMetadata } from "@/app/seo";
 import UtilityExplorer from "../_components/UtilityExplorer";
 import registry from "../generated/utility-registry.json";
+
+export const metadata: Metadata = createSeoMetadata({
+  path: "/docs/utilities",
+  title: "Utility reference — Coordiation CSS",
+  description:
+    "Browse every Coordiation CSS utility family, exact class pattern, generated declaration, and machine-readable registry entry.",
+});
 
 export default function UtilitiesPage() {
   return (

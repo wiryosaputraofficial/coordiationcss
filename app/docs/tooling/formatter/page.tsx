@@ -1,8 +1,9 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = { title: "Class formatter — Coordiation CSS", description: "Sort literal Coordiation class lists with the compiler's canonical order." };
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/formatter", ...{ title: "Class formatter — Coordiation CSS", description: "Sort literal Coordiation class lists with the compiler's canonical order." } });
 
 export default function FormatterPage() {
   return <article className="docs-article vite-guide">

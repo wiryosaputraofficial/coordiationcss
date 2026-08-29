@@ -1,12 +1,13 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import ThemeIcon, { type ThemeIconName } from "./ThemeIcon";
 import "./quiet-journal.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/themes/quiet-journal/preview", ...{
   title: "Quiet Journal — Alya Senja",
   description: "An original personal essay and slow-living journal template.",
-};
+} });
 
 const stories = [
   { image: "/themes/quiet-journal/story-reading.webp", category: "Slow living", date: "August 24, 2026", title: "The room that taught me how to pause", excerpt: "A blue chair, a small stack of books, and the quiet ritual of making space for an unhurried hour." },

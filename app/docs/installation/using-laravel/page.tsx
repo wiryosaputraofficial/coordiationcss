@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-laravel", ...{
   title: "Install Coordiation CSS with Laravel",
   description: "Add Coordiation CSS to Laravel's Vite pipeline and scan Blade, JavaScript, TypeScript, Vue, and React source files.",
-};
+} });
 
 export default function UsingLaravelPage() {
   return <FrameworkGuide

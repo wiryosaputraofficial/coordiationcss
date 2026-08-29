@@ -1,12 +1,13 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 import ModernColorPalette from "./ModernColorPalette";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/modern-color", ...{
   title: "Modern color and Display-P3",
   description: "Author perceptual colors, wide-gamut fallbacks, color mixing, and modern gradient interpolation with Coordiation CSS.",
-};
+} });
 
 const interpolationSpaces = [
   ["/srgb", "in srgb", "Compatibility-oriented RGB interpolation"],

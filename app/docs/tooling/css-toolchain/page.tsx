@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/tooling/css-toolchain", ...{
   title: "CSS toolchain — Coordiation CSS",
   description: "Bundle imports, lower CSS nesting, apply target-aware vendor prefixes, and minify Coordiation CSS with one inspectable pipeline.",
-};
+} });
 
 export default function CssToolchainPage() {
   return (

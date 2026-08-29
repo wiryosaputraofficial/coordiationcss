@@ -1,10 +1,11 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import FrameworkGuide from "../_components/FrameworkGuide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-nextjs", ...{
   title: "Install Coordiation CSS with Next.js",
   description: "Configure Coordiation CSS in a Next.js App Router or Pages Router project through the official PostCSS adapter.",
-};
+} });
 
 export default function UsingNextjsPage() {
   return <FrameworkGuide

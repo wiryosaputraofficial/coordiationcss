@@ -1,9 +1,10 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../_components/CodeBlock";
 import registry from "../generated/theme-registry.json";
 
-export const metadata: Metadata = { title: "Application themes", description: "Discover, install, and safely customize complete Coordiation application templates." };
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/themes", ...{ title: "Application themes", description: "Discover, install, and safely customize complete Coordiation application templates." } });
 
 export default function ThemeGuidePage() {
   return <article className="docs-article vite-guide">

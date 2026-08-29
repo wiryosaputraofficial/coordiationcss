@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/installation/using-vite", ...{
   title: "Using Coordiation CSS with Vite",
   description: "Install the Coordiation Vite adapter with root-aware scanning, virtual CSS, and hardened hot updates.",
-};
+} });
 
 export default function UsingVitePage() {
   return (

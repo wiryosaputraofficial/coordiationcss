@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/custom-utilities", ...{
   title: "Custom utilities — Coordiation CSS",
   description: "Register static and functional Coordiation utilities with CSS-first values, modifiers, validation, and AI-readable manifests.",
-};
+} });
 
 export default function CustomUtilitiesPage() {
   return (

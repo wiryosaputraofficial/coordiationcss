@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/preflight", ...{
   title: "Preflight base styles",
   description: "Understand, extend, or disable the normalized base styles included with Coordiation CSS.",
-};
+} });
 
 export default function PreflightPage() {
   return (

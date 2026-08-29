@@ -1,13 +1,14 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../_components/MobileNav";
 import SolarIcon from "../_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "../docs/capabilities";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/release-check", ...{
   title: "Release Check — Coordiation CSS",
   description: "A human- and AI-readable checklist of every Coordiation CSS capability.",
-};
+} });
 
 const statusLabel: Record<CapabilityStatus, string> = {
   complete: "Complete",

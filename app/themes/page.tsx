@@ -1,3 +1,4 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../_components/MobileNav";
@@ -5,10 +6,10 @@ import SolarIcon from "../_components/SolarIcon";
 import registry from "../docs/generated/theme-registry.json";
 import ThemeCommand from "./ThemeCommand";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/themes", ...{
   title: "Application themes — Coordiation CSS",
   description: "Preview and install complete open-code application templates built for Coordiation CSS.",
-};
+} });
 
 export default function ThemesPage() {
   const showcase = {

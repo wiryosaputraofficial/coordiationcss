@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/core/responsive-design", ...{
   title: "Responsive design",
   description: "Build mobile-first interfaces with named, ranged, arbitrary, and project-owned responsive breakpoints in Coordiation CSS.",
-};
+} });
 
 const breakpoints = [
   ["sm", "40rem", "640px", "Small landscape phones and compact panels"],

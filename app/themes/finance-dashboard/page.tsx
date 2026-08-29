@@ -1,3 +1,4 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import MobileNav from "../../_components/MobileNav";
@@ -5,12 +6,12 @@ import SolarIcon from "../../_components/SolarIcon";
 import registry from "../../docs/generated/theme-registry.json";
 import ThemeCommand from "../ThemeCommand";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/themes/finance-dashboard", ...{
   title: "Finance Dashboard theme — Coordiation CSS",
   description: "Preview and install the Finance Dashboard open-code application theme.",
   openGraph: { title: "Finance Dashboard — Coordiation Themes", description: "A finance operations workspace built entirely with Coordiation components and CSS utilities.", images: [] },
   twitter: { card: "summary", title: "Finance Dashboard — Coordiation Themes", description: "A finance operations workspace built entirely with Coordiation components and CSS utilities.", images: [] },
-};
+} });
 
 export default function FinanceDashboardThemePage() {
   const theme = registry.themes.find((item) => item.name === "finance-dashboard")!;

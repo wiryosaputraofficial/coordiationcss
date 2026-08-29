@@ -1,11 +1,12 @@
+import { createSeoMetadata } from "@/app/seo";
 import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import ConditionalExamples, { ConditionalMiniNavigation } from "./ConditionalExamples";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createSeoMetadata({ path: "/docs/variants/conditional-rules", ...{
   title: "Conditional variants",
   description: "Use media, feature, container, starting-style, and arbitrary conditional variants in Coordiation CSS.",
-};
+} });
 
 const quickReference = [
   ["motion-safe:co-*", "@media (prefers-reduced-motion: no-preference)"],
