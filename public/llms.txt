@@ -40,6 +40,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - PostCSS: place `coordiation({ content: ["src"], cwd: process.cwd() })` before downstream plugins, add `@coordiation;` only to the intended CSS entry, and let standard dependency/warning messages drive the runner
 - CLI: pass literal `--input`, `--output`, and `--content` paths; use `--watch` for portable edit/create/delete polling during development, one-shot mode for production, and `--poll` only when the default 250ms interval needs tuning
 - Custom utilities: read project `@co-utility` blocks or the compile result's `customUtilities` manifest before emitting project-specific classes; `co-value()` resolves theme/bare/arbitrary/default values, `co-modifier()` resolves slash modifiers, and negative patterns must be declared separately
+- Custom variants: read project `@co-variant` directives or the compile result's `customVariants` manifest before emitting project variant names; selector formats require `&`, conditional shorthand supports media/supports/container, and compound blocks wrap exactly one `@co-slot;`
 
 ## Reliability rules for AI agents
 
@@ -74,3 +75,4 @@ Complete Vite installation and HMR guide: `/docs/installation/using-vite`
 Complete PostCSS integration guide: `/docs/installation/using-postcss`
 Complete standalone CLI and watch guide: `/docs/installation/using-cli`
 Complete CSS-first custom utility guide: `/docs/core/custom-utilities`
+Complete CSS-first custom variant guide: `/docs/core/custom-variants`
