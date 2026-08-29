@@ -7,7 +7,7 @@ const familyCount = registry.families.length;
 const verifiedExampleCount = registry.families.reduce((total, family) => total + family.resolvedExamples.length, 0);
 const completeCapabilityCount = capabilities.filter((capability) => capability.status === "complete").length;
 
-function combinedStatus(ids: string[]): CapabilityStatus {
+function combinedStatus(ids: readonly string[]): CapabilityStatus {
   const statuses = ids.map((id) => capabilities.find((capability) => capability.id === id)?.status ?? "planned");
   if (statuses.includes("planned")) return "planned";
   if (statuses.includes("partial")) return "partial";
@@ -23,51 +23,107 @@ const utilities = [
   "dark:co-text-white",
 ];
 
-const features = [
+const featureGroups = [
   {
     index: "01",
-    title: "Framework-native scanning",
+    eyebrow: "COMPILER FOUNDATION",
+    title: "Scan, theme, and compile",
     description:
-      "Reads .coord templates alongside HTML, JSX, Vue, Svelte, Astro, and Markdown without asking you to change how you build.",
-    visual: "scan",
+      "A runtime-free compiler scans every supported template, resolves CSS-first tokens, applies Preflight, and emits only the utilities your project uses.",
+    ids: ["source-detection", "framework-scanning", "static-output", "theme-variables", "custom-prefix", "important", "arbitrary", "preflight"],
+    example: "@coordiation;",
+    href: "/docs/core/theme-variables",
   },
   {
     index: "02",
-    title: "CSS-first theme system",
+    eyebrow: "ADAPTIVE VARIANTS",
+    title: "Compose every condition",
     description:
-      "Turn colors, spacing, typography, shadows, motion, and breakpoints into project-owned utility APIs without a JavaScript config.",
-    visual: "tokens",
+      "Responsive, state, structural, dark, RTL, group, peer, ARIA, data, media, supports, and container conditions stack predictably.",
+    ids: ["responsive", "state-variants", "context-variants", "attribute-variants", "conditional-variants"],
+    example: "md:hover:aria-expanded:co-block",
+    href: "/docs/variants/conditional-rules",
   },
   {
     index: "03",
-    title: "Conditions that compose",
+    eyebrow: "LAYOUT SYSTEM",
+    title: "Structure every interface",
     description:
-      "Stack responsive, state, dark mode, group, peer, ARIA, data, supports, media, and container conditions in one literal class.",
-    visual: "variants",
+      "Complete layout, positioning, Flexbox, Grid, spacing, sizing, tables, columns, and logical properties work across writing modes.",
+    ids: ["layout", "flex-grid", "spacing-sizing", "tables-columns", "logical"],
+    example: "co-grid co-gap-6 md:co-grid-cols-3",
+    href: "/docs/utilities/layout",
   },
   {
     index: "04",
-    title: "Machine-readable by design",
+    eyebrow: "VISUAL SYSTEM",
+    title: "Style without leaving markup",
     description:
-      "Capabilities, utilities, generated declarations, and support status are exposed as JSON so AI agents can verify before generating.",
-    visual: "registry",
+      "Typography, modern color, gradients, borders, rings, effects, masks, transforms, transitions, animation, and SVG share one token system.",
+    ids: ["typography", "backgrounds", "borders", "effects", "transforms", "transitions", "svg", "modern-color"],
+    example: "co-bg-linear-to-r/oklch co-shadow-lg",
+    href: "/docs/utilities/backgrounds",
   },
-];
+  {
+    index: "05",
+    eyebrow: "INCLUSIVE INTERACTION",
+    title: "Accessible by construction",
+    description:
+      "Screen-reader helpers, forced colors, color schemes, cursors, selection, scrollbars, snapping, touch gestures, and reduced motion are built in.",
+    ids: ["accessibility", "interaction"],
+    example: "co-sr-only motion-reduce:co-animate-none",
+    href: "/docs/utilities/interaction",
+  },
+  {
+    index: "06",
+    eyebrow: "EXTENSIBILITY",
+    title: "Make the framework yours",
+    description:
+      "Register CSS-first utilities and variants, install reusable plugins, control source discovery, add safelists, and plug in framework extractors.",
+    ids: ["custom-utility", "custom-variant", "plugin-api", "sources", "extraction-hooks"],
+    example: "@co-utility card-* { ... }",
+    href: "/docs/core/plugin-api",
+  },
+  {
+    index: "07",
+    eyebrow: "BUILD PIPELINE",
+    title: "Fits the tools you already use",
+    description:
+      "Vite, PostCSS, and CLI adapters share bundling, nesting, prefixing, minification, incremental caching, source maps, and watch diagnostics.",
+    ids: ["vite", "postcss", "cli", "css-toolchain", "cache", "source-maps"],
+    example: "coordiation-css --content src --watch",
+    href: "/docs/installation/using-vite",
+  },
+  {
+    index: "08",
+    eyebrow: "DEVELOPER + AI TOOLING",
+    title: "Understand, format, and upgrade",
+    description:
+      "The language server, canonical formatter, codemods, native scanner, compatibility manifest, and deprecation diagnostics keep every change traceable.",
+    ids: ["language-server", "formatter", "codemods", "native-scanner", "compatibility"],
+    example: "coordiation-format src --write",
+    href: "/docs/tooling/language-server",
+  },
+ ] as const;
 
-const roadmap = [
-  { name: "Foundation", status: combinedStatus(["source-detection", "framework-scanning", "static-output", "theme-variables"]) },
-  { name: "Core utilities", status: registry.families.every((family) => family.status === "complete") ? "complete" as const : "partial" as const },
-  { name: "Plugin API", status: combinedStatus(["plugin-api", "custom-utility", "custom-variant"]) },
-  { name: "Language tools", status: combinedStatus(["language-server", "formatter", "codemods"]) },
-];
+const roadmap = featureGroups.map((group) => ({
+  name: group.eyebrow,
+  count: group.ids.length,
+  status: combinedStatus(group.ids),
+}));
 
 const statusLabel: Record<CapabilityStatus, string> = { complete: "Complete", partial: "In progress", planned: "Planned" };
 const statusClass: Record<CapabilityStatus, string> = { complete: "is-complete", partial: "is-progress", planned: "is-planned" };
 
 const integrations = [
+  { name: "Core", label: "Compiler", description: "The scanner, CSS-first theme engine, utility registry, variants, diagnostics, and static CSS emitter.", href: "/docs", code: "@coordiation/css" },
   { name: "Vite", label: "Recommended", description: "Virtual CSS, root-aware scanning, watched theme files, and dependency-aware hot updates.", href: "/docs/installation/using-vite", code: "@coordiation/vite" },
   { name: "PostCSS", label: "Pipeline", description: "A standard PostCSS 8 adapter with dependency messages, warnings, and multi-entry safety.", href: "/docs/installation/using-postcss", code: "@coordiation/postcss" },
   { name: "CLI", label: "Standalone", description: "One-shot builds and durable watch mode with atomic output and no bundler requirement.", href: "/docs/installation/using-cli", code: "coordiation-css" },
+  { name: "Language Server", label: "Editor", description: "Completion, compiler-authored hover previews, project configuration, and actionable diagnostics over LSP 3.17.", href: "/docs/tooling/language-server", code: "@coordiation/language-server" },
+  { name: "Formatter", label: "Canonical", description: "Stable class sorting powered by the same candidate ordering used by the compiler.", href: "/docs/tooling/formatter", code: "@coordiation/formatter" },
+  { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
+  { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
 ];
 
 export default function Home() {
@@ -102,8 +158,9 @@ export default function Home() {
           <div className="eyebrow"><span>CO</span> Utility-first · AI-readable · Runtime-free</div>
           <h1>Build interfaces.<br /><em>Keep the system.</em></h1>
           <p>
-            A complete utility-first CSS compiler for Coordiation. Compose responsive,
-            accessible interfaces from predictable classes, CSS-first tokens, and a machine-readable registry.
+            A complete utility-first CSS system for Coordiation. Build responsive,
+            accessible interfaces with 44 verified capabilities, seven official packages,
+            CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="/docs/installation/using-vite">Start building <span>→</span></Link>
@@ -163,20 +220,18 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker">THE SYSTEM</p>
           <h2>Small utilities.<br />Serious capability.</h2>
-          <p>Every class does one job. Together, they form a design system that stays understandable as your product grows.</p>
+          <p>All 44 completed capabilities are grouped below by the job they solve. Every item links back to the same tested registry used by the compiler and documentation.</p>
         </div>
-        <div className="feature-grid">
-          {features.map((feature) => (
-            <article className={`feature-card feature-${feature.visual}`} key={feature.index}>
-              <div className="feature-topline"><span>{feature.index}</span><span>↗</span></div>
-              <div className="feature-visual" aria-hidden="true">
-                {feature.visual === "scan" && <div className="scan-visual"><i /><i /><i /><span /></div>}
-                {feature.visual === "tokens" && <div className="token-visual"><code>--co-space</code><b>04</b><span /></div>}
-                {feature.visual === "variants" && <div className="variant-visual"><code>md:</code><code>hover:</code><code>co-bg-black</code></div>}
-                {feature.visual === "registry" && <div className="registry-visual"><strong>{utilityCount}</strong><span>JSON ENTRIES</span><code>/api/utilities</code></div>}
-              </div>
+        <div className="feature-suite-grid">
+          {featureGroups.map((feature) => (
+            <article className="feature-suite-card" key={feature.index}>
+              <div className="feature-suite-topline"><span>{feature.index} · {feature.eyebrow}</span><b>{feature.ids.length} capabilities</b></div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
+              <div className="feature-suite-list">
+                {feature.ids.map((id) => <span key={id}>{capabilities.find((capability) => capability.id === id)?.area}</span>)}
+              </div>
+              <div className="feature-suite-footer"><code>{feature.example}</code><Link href={feature.href}>Explore <span aria-hidden="true">↗</span></Link></div>
             </article>
           ))}
         </div>
@@ -276,13 +331,13 @@ export default function Home() {
 
       <section className="section integrations-section" id="integrations">
         <div className="section-heading">
-          <p className="kicker">OFFICIAL ADAPTERS</p>
-          <h2>Use the pipeline<br />you already have.</h2>
-          <p>Every adapter shares one scanner, compiler, theme model, diagnostics contract, and static output.</p>
+          <p className="kicker">OFFICIAL PACKAGES</p>
+          <h2>One system.<br />Every workflow.</h2>
+          <p>Eight entry points cover compilation, build integration, editor intelligence, formatting, upgrades, and optional native scanning.</p>
         </div>
         <div className="homepage-integration-grid">
           {integrations.map((integration, index) => <Link href={integration.href} key={integration.name}>
-            <div><span>0{index + 1}</span><span>{integration.label}</span></div>
+            <div><span>{String(index + 1).padStart(2, "0")}</span><span>{integration.label}</span></div>
             <h3>{integration.name}</h3>
             <p>{integration.description}</p>
             <code>{integration.code}</code><b>→</b>
@@ -292,16 +347,16 @@ export default function Home() {
 
       <section className="section roadmap-section" id="roadmap">
         <div className="roadmap-copy">
-          <p className="kicker">ROAD TO 1.0</p>
-          <h2>Built in the open.<br />Measured honestly.</h2>
-          <p>Every capability is tracked, tested, and promoted only when it is truly ready. Planned developer tooling stays visibly separate from shipped framework behavior.</p>
+          <p className="kicker">COMPLETE FEATURE MAP</p>
+          <h2>Nothing hidden.<br />Nothing implied.</h2>
+          <p>Every shipped feature belongs to a named group, a tested capability ID, and a documentation path. The Release Check remains the exact source of truth.</p>
           <Link href="/release-check">Open release check <span>→</span></Link>
         </div>
         <div className="roadmap-list">
-          {roadmap.map(({ name, status }, index) => (
+          {roadmap.map(({ name, count, status }, index) => (
             <div className="roadmap-row" key={name}>
-              <span className="roadmap-number">0{index + 1}</span>
-              <strong>{name}</strong>
+              <span className="roadmap-number">{String(index + 1).padStart(2, "0")}</span>
+              <strong>{name}<small>{count} capabilities</small></strong>
               <span className={`roadmap-status ${statusClass[status]}`}><i />{statusLabel[status]}</span>
             </div>
           ))}
