@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "type": "registry:ui",
+  "title": "Label",
+  "description": "Form label that reflects disabled controls.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/label.tsx",
+      "type": "registry:ui",
+      "target": "@ui/label.tsx",
+      "content": "import { forwardRef, type LabelHTMLAttributes } from \"react\";\n\nexport const Label = forwardRef<HTMLLabelElement, LabelHTMLAttributes<HTMLLabelElement>>(({ className = \"\", ...props }, ref) => (\n  <label ref={ref} className={`co-text-sm co-font-medium co-leading-none has-[:disabled]:co-cursor-not-allowed has-[:disabled]:co-opacity-50 ${className}`.trim()} {...props} />\n));\nLabel.displayName = \"Label\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=label",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Label",
+    "accessibility": "Uses the native label element and should be connected with htmlFor."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox",
+  "type": "registry:ui",
+  "title": "Combobox",
+  "description": "Searchable listbox with keyboard selection.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/combobox.tsx",
+      "type": "registry:ui",
+      "target": "@ui/combobox.tsx",
+      "content": "\"use client\";\n\nimport { useId, type InputHTMLAttributes } from \"react\";\n\nexport type ComboboxOption = { value: string; label: string };\nexport function Combobox({ options, value, onValueChange, label = \"Choose an option\", className = \"\", ...props }: Omit<InputHTMLAttributes<HTMLInputElement>, \"value\" | \"onChange\" | \"list\"> & { options: ComboboxOption[]; value?: string; onValueChange?: (value: string) => void; label?: string }) { const id = useId(); return <><input role=\"combobox\" aria-label={label} aria-autocomplete=\"list\" list={id} value={value} onChange={(event) => onValueChange?.(event.target.value)} className={`co-h-10 co-w-full co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none focus-visible:co-ring-2 ${className}`.trim()} {...props} /><datalist id={id}>{options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</datalist></>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=combobox",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Combobox",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

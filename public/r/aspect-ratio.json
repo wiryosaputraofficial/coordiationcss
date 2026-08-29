@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "type": "registry:ui",
+  "title": "Aspect Ratio",
+  "description": "Media wrapper that preserves an explicit aspect ratio.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/aspect-ratio.tsx",
+      "type": "registry:ui",
+      "target": "@ui/aspect-ratio.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function AspectRatio({ ratio = 16 / 9, className = \"\", style, ...props }: HTMLAttributes<HTMLDivElement> & { ratio?: number }) { return <div className={`co-relative co-w-full co-overflow-hidden ${className}`.trim()} style={{ ...style, aspectRatio: ratio }} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=aspect-ratio",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "AspectRatio",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

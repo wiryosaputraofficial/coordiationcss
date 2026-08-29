@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "type": "registry:ui",
+  "title": "Select",
+  "description": "Custom listbox-style select with controlled value.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/select.tsx",
+      "type": "registry:ui",
+      "target": "@ui/select.tsx",
+      "content": "\"use client\";\n\nimport type { SelectHTMLAttributes } from \"react\";\n\nexport type SelectOption = { value: string; label: string; disabled?: boolean };\nexport function Select({ options, placeholder = \"Select…\", className = \"\", ...props }: SelectHTMLAttributes<HTMLSelectElement> & { options: SelectOption[]; placeholder?: string }) { return <select className={`co-h-10 co-w-full co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} {...props}><option value=\"\" disabled>{placeholder}</option>{options.map((option) => <option key={option.value} value={option.value} disabled={option.disabled}>{option.label}</option>)}</select>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=select",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Select",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

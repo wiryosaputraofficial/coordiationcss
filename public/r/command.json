@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command",
+  "type": "registry:ui",
+  "title": "Command",
+  "description": "Filterable command palette surface.",
+  "categories": [
+    "navigation"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/command.tsx",
+      "type": "registry:ui",
+      "target": "@ui/command.tsx",
+      "content": "\"use client\";\n\nimport { useMemo, useState } from \"react\";\n\nexport type CommandItem = { id: string; label: string; keywords?: string[] };\nexport function Command({ items, onSelect, placeholder = \"Type a command…\", className = \"\" }: { items: CommandItem[]; onSelect?: (item: CommandItem) => void; placeholder?: string; className?: string }) { const [query, setQuery] = useState(\"\"); const matches = useMemo(() => items.filter((item) => `${item.label} ${(item.keywords ?? []).join(\" \")}`.toLowerCase().includes(query.toLowerCase())), [items, query]); return <div className={`co-overflow-hidden co-rounded-xl co-border co-border-black/15 co-bg-white co-shadow-lg ${className}`.trim()}><input autoFocus aria-label=\"Search commands\" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={placeholder} className=\"co-h-12 co-w-full co-border-0 co-border-b co-border-black/15 co-px-4 co-outline-none\" /><ul role=\"listbox\" className=\"co-max-h-72 co-overflow-auto co-p-2\">{matches.map((item) => <li key={item.id}><button role=\"option\" type=\"button\" className=\"co-w-full co-rounded-md co-p-2 co-text-left co-text-sm hover:co-bg-black/5 focus-visible:co-ring-2\" onClick={() => onSelect?.(item)}>{item.label}</button></li>)}{!matches.length && <li className=\"co-p-4 co-text-center co-text-sm co-text-black/50\">No results.</li>}</ul></div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=command",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Command",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

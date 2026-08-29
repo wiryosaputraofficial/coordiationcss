@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "Pressed-state button with aria-pressed semantics.",
+  "categories": [
+    "actions"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/toggle.tsx",
+      "type": "registry:ui",
+      "target": "@ui/toggle.tsx",
+      "content": "\"use client\";\n\nimport { forwardRef, type ButtonHTMLAttributes } from \"react\";\n\nexport type ToggleProps = ButtonHTMLAttributes<HTMLButtonElement> & { pressed: boolean; onPressedChange?: (pressed: boolean) => void };\nexport const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(({ pressed, onPressedChange, className = \"\", onClick, ...props }, ref) => <button ref={ref} type=\"button\" aria-pressed={pressed} className={`co-inline-flex co-h-10 co-items-center co-justify-center co-rounded-md co-px-3 co-text-sm co-font-medium focus-visible:co-ring-2 disabled:co-opacity-50 ${pressed ? \"co-bg-black co-text-white\" : \"co-bg-transparent hover:co-bg-black/5\"} ${className}`.trim()} onClick={(event) => { onPressedChange?.(!pressed); onClick?.(event); }} {...props} />);\nToggle.displayName = \"Toggle\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=toggle",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Toggle",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

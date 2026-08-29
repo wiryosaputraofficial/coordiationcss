@@ -86,6 +86,7 @@ export default function ReleaseCheckPage() {
         <div className="ai-links">
           <a href="/api/capabilities"><span>JSON capability manifest</span><code>GET /api/capabilities</code><b>→</b></a>
           <a href="/api/utilities"><span>Generated utility registry</span><code>GET /api/utilities</code><b>→</b></a>
+          <a href="/api/components"><span>Open-code component manifest</span><code>GET /api/components</code><b>→</b></a>
           <a href="/llms.txt"><span>Concise AI usage guide</span><code>GET /llms.txt</code><b>→</b></a>
         </div>
       </section>

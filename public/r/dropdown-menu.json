@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu",
+  "type": "registry:ui",
+  "title": "Dropdown Menu",
+  "description": "Keyboard-operable disclosure menu for actions.",
+  "categories": [
+    "overlays"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/dropdown-menu.tsx",
+      "type": "registry:ui",
+      "target": "@ui/dropdown-menu.tsx",
+      "content": "import type { ButtonHTMLAttributes, DetailsHTMLAttributes, HTMLAttributes } from \"react\";\n\nexport function DropdownMenu({ className = \"\", ...props }: DetailsHTMLAttributes<HTMLDetailsElement>) { return <details className={`co-relative co-inline-block ${className}`.trim()} {...props} />; }\nexport function DropdownMenuTrigger({ className = \"\", children, ...props }: HTMLAttributes<HTMLElement>) { return <summary className={`co-cursor-pointer co-list-none focus-visible:co-ring-2 ${className}`.trim()} {...props}>{children}</summary>; }\nexport function DropdownMenuContent({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div role=\"menu\" className={`co-absolute co-end-0 co-z-50 co-mt-2 co-min-w-44 co-rounded-md co-border co-border-black/15 co-bg-white co-p-1 co-shadow-lg ${className}`.trim()} {...props} />; }\nexport function DropdownMenuItem({ className = \"\", ...props }: ButtonHTMLAttributes<HTMLButtonElement>) { return <button role=\"menuitem\" type=\"button\" className={`co-block co-w-full co-rounded co-px-3 co-py-2 co-text-left co-text-sm hover:co-bg-black/5 focus-visible:co-ring-2 disabled:co-opacity-40 ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=dropdown-menu",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "DropdownMenu",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

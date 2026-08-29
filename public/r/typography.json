@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography",
+  "type": "registry:ui",
+  "title": "Typography",
+  "description": "Semantic prose primitives with consistent rhythm.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/typography.tsx",
+      "type": "registry:ui",
+      "target": "@ui/typography.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nconst join = (base: string, extra = \"\") => `${base} ${extra}`.trim();\nexport function TypographyH1({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h1 className={join(\"co-scroll-m-20 co-text-4xl co-font-bold co-tracking-tight\", className)} {...props} />; }\nexport function TypographyH2({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h2 className={join(\"co-scroll-m-20 co-border-b co-pb-2 co-text-3xl co-font-semibold\", className)} {...props} />; }\nexport function TypographyH3({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h3 className={join(\"co-scroll-m-20 co-text-2xl co-font-semibold\", className)} {...props} />; }\nexport function TypographyP({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) { return <p className={join(\"co-leading-7 [&:not(:first-child)]:co-mt-6\", className)} {...props} />; }\nexport function TypographyLead({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) { return <p className={join(\"co-text-xl co-text-black/60\", className)} {...props} />; }\nexport function TypographyMuted({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) { return <p className={join(\"co-text-sm co-text-black/60\", className)} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=typography",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "TypographyH1",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

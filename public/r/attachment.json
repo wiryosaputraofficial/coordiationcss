@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "attachment",
+  "type": "registry:ui",
+  "title": "Attachment",
+  "description": "File attachment row with metadata and actions.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/attachment.tsx",
+      "type": "registry:ui",
+      "target": "@ui/attachment.tsx",
+      "content": "import type { HTMLAttributes, ReactNode } from \"react\";\n\nexport function Attachment({ name, meta, action, className = \"\", ...props }: HTMLAttributes<HTMLDivElement> & { name: string; meta?: string; action?: ReactNode }) { return <div className={`co-flex co-items-center co-gap-3 co-rounded-lg co-border co-border-black/15 co-p-3 ${className}`.trim()} {...props}><span aria-hidden=\"true\" className=\"co-grid co-size-9 co-place-items-center co-rounded-md co-bg-black/5\">＋</span><span className=\"co-min-w-0 co-flex-1\"><strong className=\"co-block co-truncate co-text-sm\">{name}</strong>{meta && <small className=\"co-text-black/50\">{meta}</small>}</span>{action}</div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=attachment",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Attachment",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

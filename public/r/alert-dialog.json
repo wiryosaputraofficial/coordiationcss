@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "title": "Alert Dialog",
+  "description": "Confirmation dialog for consequential actions.",
+  "categories": [
+    "overlays"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/alert-dialog.tsx",
+      "type": "registry:ui",
+      "target": "@ui/alert-dialog.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useRef, type ButtonHTMLAttributes, type DialogHTMLAttributes, type ReactNode } from \"react\";\n\nexport function AlertDialog({ open, onOpenChange, title, description, cancelLabel = \"Cancel\", actionLabel = \"Continue\", onAction, children }: { open: boolean; onOpenChange: (open: boolean) => void; title: string; description?: string; cancelLabel?: string; actionLabel?: string; onAction?: () => void; children?: ReactNode }) { const ref = useRef<HTMLDialogElement>(null); useEffect(() => { const dialog = ref.current; if (open && dialog && !dialog.open) dialog.showModal(); if (!open && dialog?.open) dialog.close(); }, [open]); return <>{children}<dialog ref={ref} aria-labelledby=\"co-alert-dialog-title\" aria-describedby={description ? \"co-alert-dialog-description\" : undefined} className=\"co-w-[min(30rem,calc(100%-2rem))] co-rounded-xl co-border co-border-black/20 co-bg-white co-p-6 co-shadow-xl backdrop:co-bg-black/55\" onCancel={(event) => { event.preventDefault(); onOpenChange(false); }}><h2 id=\"co-alert-dialog-title\" className=\"co-text-lg co-font-semibold\">{title}</h2>{description && <p id=\"co-alert-dialog-description\" className=\"co-mt-2 co-text-sm co-text-black/60\">{description}</p>}<div className=\"co-mt-6 co-flex co-justify-end co-gap-2\"><button className=\"co-h-10 co-rounded-md co-border co-border-black/20 co-px-4\" onClick={() => onOpenChange(false)}>{cancelLabel}</button><button className=\"co-h-10 co-rounded-md co-bg-black co-px-4 co-text-white\" onClick={() => { onAction?.(); onOpenChange(false); }}>{actionLabel}</button></div></dialog></>; }\nexport function AlertDialogTrigger(props: ButtonHTMLAttributes<HTMLButtonElement>) { return <button type=\"button\" {...props} />; }\nexport function AlertDialogContent(props: DialogHTMLAttributes<HTMLDialogElement>) { return <dialog {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=alert-dialog",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "AlertDialog",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:ui",
+  "title": "Skeleton",
+  "description": "Non-interactive loading placeholder.",
+  "categories": [
+    "feedback"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/skeleton.tsx",
+      "type": "registry:ui",
+      "target": "@ui/skeleton.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Skeleton({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) {\n  return <div aria-hidden=\"true\" className={`co-animate-pulse co-rounded-md co-bg-black/10 ${className}`.trim()} {...props} />;\n}\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=skeleton",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Skeleton",
+    "accessibility": "Hidden from assistive technology so real loading status can be announced separately."
+  }
+}

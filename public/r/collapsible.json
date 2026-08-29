@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "title": "Collapsible",
+  "description": "Controlled disclosure region with aria-expanded state.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/collapsible.tsx",
+      "type": "registry:ui",
+      "target": "@ui/collapsible.tsx",
+      "content": "\"use client\";\n\nimport type { DetailsHTMLAttributes, HTMLAttributes } from \"react\";\n\nexport function Collapsible({ open, onOpenChange, className = \"\", ...props }: Omit<DetailsHTMLAttributes<HTMLDetailsElement>, \"onToggle\"> & { open?: boolean; onOpenChange?: (open: boolean) => void }) { return <details open={open} className={`co-rounded-lg co-border co-border-black/15 ${className}`.trim()} onToggle={(event) => onOpenChange?.(event.currentTarget.open)} {...props} />; }\nexport function CollapsibleTrigger({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { return <summary className={`co-cursor-pointer co-list-none co-p-4 co-font-medium focus-visible:co-ring-2 ${className}`.trim()} {...props} />; }\nexport function CollapsibleContent({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-border-t co-border-black/15 co-p-4 co-text-sm ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=collapsible",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Collapsible",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

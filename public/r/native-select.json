@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select",
+  "type": "registry:ui",
+  "title": "Native Select",
+  "description": "Styled native select for resilient forms.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/native-select.tsx",
+      "type": "registry:ui",
+      "target": "@ui/native-select.tsx",
+      "content": "import { forwardRef, type SelectHTMLAttributes } from \"react\";\n\nexport const NativeSelect = forwardRef<HTMLSelectElement, SelectHTMLAttributes<HTMLSelectElement>>(({ className = \"\", ...props }, ref) => <select ref={ref} className={`co-h-10 co-w-full co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} {...props} />);\nNativeSelect.displayName = \"NativeSelect\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=native-select",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "NativeSelect",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

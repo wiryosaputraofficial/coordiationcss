@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "type": "registry:ui",
+  "title": "Button Group",
+  "description": "Related actions arranged as one control group.",
+  "categories": [
+    "actions"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/button-group.tsx",
+      "type": "registry:ui",
+      "target": "@ui/button-group.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function ButtonGroup({ className = \"\", orientation = \"horizontal\", ...props }: HTMLAttributes<HTMLDivElement> & { orientation?: \"horizontal\" | \"vertical\" }) { return <div role=\"group\" className={`co-inline-flex ${orientation === \"vertical\" ? \"co-flex-col co-divide-y co-divide-black/15\" : \"co-divide-x co-divide-black/15\"} co-overflow-hidden co-rounded-md co-border co-border-black/15 ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=button-group",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "ButtonGroup",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

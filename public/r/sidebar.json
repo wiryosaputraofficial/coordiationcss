@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar",
+  "type": "registry:ui",
+  "title": "Sidebar",
+  "description": "Composable responsive application sidebar.",
+  "categories": [
+    "navigation"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/sidebar.tsx",
+      "type": "registry:ui",
+      "target": "@ui/sidebar.tsx",
+      "content": "\"use client\";\n\nimport { createContext, useContext, useState, type ButtonHTMLAttributes, type HTMLAttributes, type ReactNode } from \"react\";\n\nconst SidebarContext = createContext<{ open: boolean; toggle: () => void } | null>(null);\nexport function SidebarProvider({ defaultOpen = true, children }: { defaultOpen?: boolean; children: ReactNode }) { const [open, setOpen] = useState(defaultOpen); return <SidebarContext.Provider value={{ open, toggle: () => setOpen((value) => !value) }}>{children}</SidebarContext.Provider>; }\nfunction useSidebar() { const context = useContext(SidebarContext); if (!context) throw new Error(\"Sidebar components require SidebarProvider.\"); return context; }\nexport function Sidebar({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { const { open } = useSidebar(); return <aside aria-hidden={!open} className={`${open ? \"co-w-64 co-opacity-100\" : \"co-w-0 co-overflow-hidden co-opacity-0\"} co-shrink-0 co-border-e co-border-black/15 co-transition ${className}`.trim()} {...props} />; }\nexport function SidebarTrigger({ className = \"\", onClick, ...props }: ButtonHTMLAttributes<HTMLButtonElement>) { const { open, toggle } = useSidebar(); return <button type=\"button\" aria-expanded={open} className={`co-grid co-size-10 co-place-items-center co-rounded-md co-border co-border-black/15 focus-visible:co-ring-2 ${className}`.trim()} onClick={(event) => { toggle(); onClick?.(event); }} {...props} />; }\nexport function SidebarContent({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-flex co-h-full co-flex-col co-gap-2 co-p-3 ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=sidebar",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "SidebarProvider",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

@@ -52,6 +52,8 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Compatibility: inspect compiler `compatibility` and `deprecations`, use the registered replacement and codemod, and do not infer stable guarantees from a prerelease version
 - Icons: read `/icon-registry.json`, select an exact kebab-case name, and emit a literal `@coordiation/icons/linear/{name}` import; preserve the Solar Icons by 480 Design CC BY 4.0 attribution
 - Human icon discovery: browse `/icons`; clicking any one of the 1,246 icons reveals its exact export, literal import path, renderer example, styling contract, and categories
+- Components: read `/component-registry.json` or `/api/components`, select a stable component by exact name, and install its owned source from `/r/{name}.json`; preserve literal `co-*` classes, explicit client boundaries, native semantics, and the component accessibility contract
+- Human component discovery: browse `/components`; every preview exposes its compatible install URL, local import, usage example, client/server boundary, and accessibility requirements
 
 ## Reliability rules for AI agents
 
@@ -70,6 +72,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 13. An installed native package does not prove native execution; report the actual engine and fallback reason.
 14. Use deprecation IDs, earliest-removal versions, and registered replacements from the compatibility manifest; feature completeness does not rename a prerelease as stable.
 15. Never guess an icon name or dynamically concatenate an icon import. Use the registry, keep imports literal for tree-shaking, pass `label` only when the icon conveys otherwise-unavailable meaning, and retain attribution.
+16. Never invent a component or import it from a runtime UI package. Use an item marked `stable`, install its source into the project, preserve its client boundary, and retain its documented accessibility behavior when customizing.
 
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
@@ -108,3 +111,7 @@ Compatibility and deprecation policy: `/docs/core/compatibility`
 Solar Linear icon library and attribution: `/docs/icons/solar-linear`
 Interactive visual browser for all Solar Linear icons: `/icons`
 Machine-readable icon registry: `/icon-registry.json`
+Open-code component architecture and installation: `/docs/components`
+Interactive component catalog: `/components`
+Machine-readable component manifest: `/component-registry.json`
+Compatible component catalog: `/r/registry.json`

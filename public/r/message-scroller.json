@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message-scroller",
+  "type": "registry:ui",
+  "title": "Message Scroller",
+  "description": "Live-region message viewport with follow-latest behavior.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/message-scroller.tsx",
+      "type": "registry:ui",
+      "target": "@ui/message-scroller.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useRef, type HTMLAttributes } from \"react\";\n\nexport function MessageScroller({ follow = true, className = \"\", children, ...props }: HTMLAttributes<HTMLDivElement> & { follow?: boolean }) { const ref = useRef<HTMLDivElement>(null); useEffect(() => { if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, [children, follow]); return <div ref={ref} role=\"log\" aria-live=\"polite\" aria-relevant=\"additions\" tabIndex={0} className={`co-max-h-96 co-overflow-y-auto co-rounded-lg focus-visible:co-ring-2 ${className}`.trim()} {...props}>{children}</div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=message-scroller",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "MessageScroller",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

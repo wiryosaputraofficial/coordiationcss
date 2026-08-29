@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "type": "registry:ui",
+  "title": "Table",
+  "description": "Responsive semantic data-table composition.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/table.tsx",
+      "type": "registry:ui",
+      "target": "@ui/table.tsx",
+      "content": "import type { HTMLAttributes, TableHTMLAttributes, TdHTMLAttributes, ThHTMLAttributes } from \"react\";\n\nfunction join(base: string, extra = \"\") { return `${base} ${extra}`.trim(); }\nexport function Table({ className, ...props }: TableHTMLAttributes<HTMLTableElement>) { return <div className=\"co-w-full co-overflow-auto\"><table className={join(\"co-w-full co-caption-bottom co-text-sm\", className)} {...props} /></div>; }\nexport function TableHeader({ className, ...props }: HTMLAttributes<HTMLTableSectionElement>) { return <thead className={join(\"[&_tr]:co-border-b\", className)} {...props} />; }\nexport function TableBody({ className, ...props }: HTMLAttributes<HTMLTableSectionElement>) { return <tbody className={join(\"[&_tr:last-child]:co-border-0\", className)} {...props} />; }\nexport function TableFooter({ className, ...props }: HTMLAttributes<HTMLTableSectionElement>) { return <tfoot className={join(\"co-border-t co-bg-black/5 co-font-medium\", className)} {...props} />; }\nexport function TableRow({ className, ...props }: HTMLAttributes<HTMLTableRowElement>) { return <tr className={join(\"co-border-b co-transition hover:co-bg-black/5\", className)} {...props} />; }\nexport function TableHead({ className, ...props }: ThHTMLAttributes<HTMLTableCellElement>) { return <th className={join(\"co-h-11 co-px-3 co-text-left co-align-middle co-font-medium co-text-black/60\", className)} {...props} />; }\nexport function TableCell({ className, ...props }: TdHTMLAttributes<HTMLTableCellElement>) { return <td className={join(\"co-p-3 co-align-middle\", className)} {...props} />; }\nexport function TableCaption({ className, ...props }: HTMLAttributes<HTMLTableCaptionElement>) { return <caption className={join(\"co-mt-4 co-text-sm co-text-black/60\", className)} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=table",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Table",
+    "accessibility": "Uses native table elements and keeps wide data horizontally scrollable."
+  }
+}

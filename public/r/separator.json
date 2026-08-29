@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "type": "registry:ui",
+  "title": "Separator",
+  "description": "Horizontal or vertical semantic divider.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/separator.tsx",
+      "type": "registry:ui",
+      "target": "@ui/separator.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Separator({ className = \"\", orientation = \"horizontal\", decorative = true, ...props }: HTMLAttributes<HTMLDivElement> & { orientation?: \"horizontal\" | \"vertical\"; decorative?: boolean }) {\n  return <div role={decorative ? \"none\" : \"separator\"} aria-orientation={decorative ? undefined : orientation} className={`${orientation === \"horizontal\" ? \"co-h-px co-w-full\" : \"co-h-full co-w-px\"} co-shrink-0 co-bg-black/15 ${className}`.trim()} {...props} />;\n}\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=separator",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Separator",
+    "accessibility": "Can be decorative or expose separator role and aria-orientation."
+  }
+}

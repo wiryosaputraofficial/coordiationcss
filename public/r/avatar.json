@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "type": "registry:ui",
+  "title": "Avatar",
+  "description": "Image avatar with deterministic text fallback.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/avatar.tsx",
+      "type": "registry:ui",
+      "target": "@ui/avatar.tsx",
+      "content": "\"use client\";\n\nimport { useState, type HTMLAttributes, type ImgHTMLAttributes } from \"react\";\n\nexport function Avatar({ className = \"\", ...props }: HTMLAttributes<HTMLSpanElement>) { return <span className={`co-relative co-flex co-size-10 co-shrink-0 co-overflow-hidden co-rounded-full co-bg-black/10 ${className}`.trim()} {...props} />; }\nexport function AvatarImage({ className = \"\", onError, ...props }: ImgHTMLAttributes<HTMLImageElement>) {\n  const [failed, setFailed] = useState(false);\n  if (failed) return null;\n  return <img className={`co-size-full co-object-cover ${className}`.trim()} onError={(event) => { setFailed(true); onError?.(event); }} {...props} />;\n}\nexport function AvatarFallback({ className = \"\", ...props }: HTMLAttributes<HTMLSpanElement>) { return <span className={`co-flex co-size-full co-items-center co-justify-center co-text-sm co-font-medium ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=avatar",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Avatar",
+    "accessibility": "Preserves image alt text and renders deterministic fallback content after image failure."
+  }
+}

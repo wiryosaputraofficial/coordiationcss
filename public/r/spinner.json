@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Accessible indeterminate progress indicator.",
+  "categories": [
+    "feedback"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/spinner.tsx",
+      "type": "registry:ui",
+      "target": "@ui/spinner.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Spinner({ className = \"\", \"aria-label\": label = \"Loading\", ...props }: HTMLAttributes<HTMLSpanElement>) {\n  return <span role=\"status\" aria-label={label} className={`co-inline-block co-size-5 co-animate-spin co-rounded-full co-border-2 co-border-black/20 co-border-t-black ${className}`.trim()} {...props} />;\n}\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=spinner",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Spinner",
+    "accessibility": "Uses role=status and requires a concise accessible label."
+  }
+}

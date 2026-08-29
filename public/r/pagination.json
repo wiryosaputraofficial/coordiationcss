@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination",
+  "type": "registry:ui",
+  "title": "Pagination",
+  "description": "Semantic page navigation with current-page state.",
+  "categories": [
+    "navigation"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/pagination.tsx",
+      "type": "registry:ui",
+      "target": "@ui/pagination.tsx",
+      "content": "import type { AnchorHTMLAttributes, HTMLAttributes } from \"react\";\n\nexport function Pagination({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { return <nav aria-label=\"Pagination\" className={`co-flex co-justify-center ${className}`.trim()} {...props} />; }\nexport function PaginationContent({ className = \"\", ...props }: HTMLAttributes<HTMLUListElement>) { return <ul className={`co-flex co-items-center co-gap-1 ${className}`.trim()} {...props} />; }\nexport function PaginationLink({ current = false, className = \"\", ...props }: AnchorHTMLAttributes<HTMLAnchorElement> & { current?: boolean }) { return <a aria-current={current ? \"page\" : undefined} className={`co-grid co-size-9 co-place-items-center co-rounded-md co-text-sm hover:co-bg-black/5 focus-visible:co-ring-2 ${current ? \"co-bg-black co-text-white\" : \"\"} ${className}`.trim()} {...props} />; }\nexport function PaginationEllipsis() { return <span aria-hidden=\"true\" className=\"co-grid co-size-9 co-place-items-center\">…</span>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=pagination",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Pagination",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

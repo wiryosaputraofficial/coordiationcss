@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart",
+  "type": "registry:ui",
+  "title": "Chart",
+  "description": "Accessible chart container with tabular fallback guidance.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/chart.tsx",
+      "type": "registry:ui",
+      "target": "@ui/chart.tsx",
+      "content": "import type { HTMLAttributes, ReactNode } from \"react\";\n\nexport function Chart({ title, description, table, className = \"\", children, ...props }: HTMLAttributes<HTMLElement> & { title: string; description?: string; table?: ReactNode }) { return <figure className={`co-grid co-gap-3 ${className}`.trim()} {...props}><figcaption><strong className=\"co-block\">{title}</strong>{description && <span className=\"co-text-sm co-text-black/55\">{description}</span>}</figcaption><div role=\"img\" aria-label={`${title}. ${description ?? \"\"}`} className=\"co-min-h-48 co-rounded-lg co-border co-border-black/15 co-p-4\">{children}</div>{table && <div className=\"co-sr-only\">{table}</div>}</figure>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=chart",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Chart",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

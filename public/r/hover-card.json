@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card",
+  "type": "registry:ui",
+  "title": "Hover Card",
+  "description": "Supplementary preview revealed by hover or focus.",
+  "categories": [
+    "overlays"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/hover-card.tsx",
+      "type": "registry:ui",
+      "target": "@ui/hover-card.tsx",
+      "content": "import { useId, type HTMLAttributes, type ReactNode } from \"react\";\n\nexport function HoverCard({ trigger, children, className = \"\" }: { trigger: ReactNode; children: ReactNode; className?: string }) { const id = useId(); return <span className={`co-group co-relative co-inline-block ${className}`.trim()}><span tabIndex={0} aria-describedby={id} className=\"co-outline-none focus-visible:co-ring-2\">{trigger}</span><span role=\"tooltip\" id={id} className=\"co-invisible co-absolute co-start-0 co-z-40 co-mt-2 co-w-72 co-rounded-lg co-border co-border-black/15 co-bg-white co-p-4 co-opacity-0 co-shadow-lg co-transition group-hover:co-visible group-hover:co-opacity-100 group-focus-within:co-visible group-focus-within:co-opacity-100\">{children}</span></span>; }\nexport function HoverCardContent(props: HTMLAttributes<HTMLSpanElement>) { return <span {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=hover-card",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "HoverCard",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

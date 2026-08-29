@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker",
+  "type": "registry:ui",
+  "title": "Date Picker",
+  "description": "Native-first date selection control.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/date-picker.tsx",
+      "type": "registry:ui",
+      "target": "@ui/date-picker.tsx",
+      "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const DatePicker = forwardRef<HTMLInputElement, Omit<InputHTMLAttributes<HTMLInputElement>, \"type\">>(({ className = \"\", ...props }, ref) => <input ref={ref} type=\"date\" className={`co-h-10 co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} {...props} />);\nDatePicker.displayName = \"DatePicker\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=date-picker",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "DatePicker",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

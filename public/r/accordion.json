@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion",
+  "type": "registry:ui",
+  "title": "Accordion",
+  "description": "Expandable disclosure sections with native semantics.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/accordion.tsx",
+      "type": "registry:ui",
+      "target": "@ui/accordion.tsx",
+      "content": "import type { DetailsHTMLAttributes, HTMLAttributes } from \"react\";\n\nexport function Accordion({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-w-full co-divide-y co-divide-black/15 ${className}`.trim()} {...props} />; }\nexport function AccordionItem({ className = \"\", ...props }: DetailsHTMLAttributes<HTMLDetailsElement>) { return <details className={`co-group co-py-1 ${className}`.trim()} {...props} />; }\nexport function AccordionTrigger({ className = \"\", children, ...props }: HTMLAttributes<HTMLElement>) { return <summary className={`co-flex co-cursor-pointer co-list-none co-items-center co-justify-between co-py-4 co-font-medium focus-visible:co-ring-2 ${className}`.trim()} {...props}>{children}<span aria-hidden=\"true\" className=\"co-transition group-open:co-rotate-45\">＋</span></summary>; }\nexport function AccordionContent({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-pb-4 co-text-sm co-text-black/60 ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=accordion",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Accordion",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

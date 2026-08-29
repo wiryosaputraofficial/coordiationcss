@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction",
+  "type": "registry:ui",
+  "title": "Direction",
+  "description": "Writing-direction provider for bidirectional interfaces.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/direction.tsx",
+      "type": "registry:ui",
+      "target": "@ui/direction.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Direction({ dir, className = \"\", ...props }: HTMLAttributes<HTMLDivElement> & { dir: \"ltr\" | \"rtl\" }) { return <div dir={dir} className={`${dir === \"rtl\" ? \"co-direction-rtl\" : \"co-direction-ltr\"} ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=direction",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Direction",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

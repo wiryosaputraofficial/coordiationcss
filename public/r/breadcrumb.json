@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb",
+  "type": "registry:ui",
+  "title": "Breadcrumb",
+  "description": "Semantic hierarchy navigation with current-page support.",
+  "categories": [
+    "navigation"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/breadcrumb.tsx",
+      "type": "registry:ui",
+      "target": "@ui/breadcrumb.tsx",
+      "content": "import type { AnchorHTMLAttributes, HTMLAttributes, LiHTMLAttributes, OlHTMLAttributes } from \"react\";\n\nexport function Breadcrumb({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { return <nav aria-label=\"Breadcrumb\" className={className} {...props} />; }\nexport function BreadcrumbList({ className = \"\", ...props }: OlHTMLAttributes<HTMLOListElement>) { return <ol className={`co-flex co-flex-wrap co-items-center co-gap-2 co-text-sm co-text-black/60 ${className}`.trim()} {...props} />; }\nexport function BreadcrumbItem({ className = \"\", ...props }: LiHTMLAttributes<HTMLLIElement>) { return <li className={`co-inline-flex co-items-center co-gap-2 ${className}`.trim()} {...props} />; }\nexport function BreadcrumbLink({ className = \"\", ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) { return <a className={`hover:co-text-black focus-visible:co-ring-2 ${className}`.trim()} {...props} />; }\nexport function BreadcrumbPage({ className = \"\", ...props }: HTMLAttributes<HTMLSpanElement>) { return <span aria-current=\"page\" className={`co-font-medium co-text-black ${className}`.trim()} {...props} />; }\nexport function BreadcrumbSeparator({ className = \"\", children = \"/\", ...props }: LiHTMLAttributes<HTMLLIElement>) { return <li role=\"presentation\" aria-hidden=\"true\" className={className} {...props}>{children}</li>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=breadcrumb",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Breadcrumb",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

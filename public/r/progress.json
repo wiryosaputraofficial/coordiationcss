@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "title": "Progress",
+  "description": "Determinate progress indicator with native semantics.",
+  "categories": [
+    "feedback"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/progress.tsx",
+      "type": "registry:ui",
+      "target": "@ui/progress.tsx",
+      "content": "import type { ProgressHTMLAttributes } from \"react\";\n\nexport function Progress({ className = \"\", max = 100, value, ...props }: ProgressHTMLAttributes<HTMLProgressElement>) { return <progress className={`co-h-2 co-w-full co-overflow-hidden co-rounded-full co-bg-black/10 [&::-moz-progress-bar]:co-bg-black [&::-webkit-progress-bar]:co-bg-black/10 [&::-webkit-progress-value]:co-bg-black ${className}`.trim()} max={max} value={value} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=progress",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Progress",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

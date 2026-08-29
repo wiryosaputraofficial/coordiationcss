@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area",
+  "type": "registry:ui",
+  "title": "Scroll Area",
+  "description": "Bounded native scroll container with keyboard access.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/scroll-area.tsx",
+      "type": "registry:ui",
+      "target": "@ui/scroll-area.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function ScrollArea({ className = \"\", tabIndex = 0, ...props }: HTMLAttributes<HTMLDivElement>) { return <div tabIndex={tabIndex} className={`co-relative co-overflow-auto co-rounded-md focus-visible:co-ring-2 ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=scroll-area",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "ScrollArea",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

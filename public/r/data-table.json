@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table",
+  "type": "registry:ui",
+  "title": "Data Table",
+  "description": "Sortable generic data table with semantic headers.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/data-table.tsx",
+      "type": "registry:ui",
+      "target": "@ui/data-table.tsx",
+      "content": "\"use client\";\n\nimport { useMemo, useState, type ReactNode } from \"react\";\n\nexport type DataTableColumn<Row> = { key: keyof Row; header: string; cell?: (row: Row) => ReactNode };\nexport function DataTable<Row extends Record<string, unknown>>({ rows, columns, caption = \"Data table\" }: { rows: Row[]; columns: DataTableColumn<Row>[]; caption?: string }) { const [sort, setSort] = useState<keyof Row | null>(null); const [ascending, setAscending] = useState(true); const sorted = useMemo(() => sort ? [...rows].sort((a, b) => String(a[sort]).localeCompare(String(b[sort])) * (ascending ? 1 : -1)) : rows, [ascending, rows, sort]); return <div className=\"co-w-full co-overflow-auto\"><table className=\"co-w-full co-text-sm\"><caption className=\"co-sr-only\">{caption}</caption><thead className=\"co-border-b\"><tr>{columns.map((column) => <th scope=\"col\" className=\"co-p-3 co-text-left\"><button type=\"button\" className=\"co-font-medium focus-visible:co-ring-2\" onClick={() => { setAscending(sort === column.key ? !ascending : true); setSort(column.key); }}>{column.header}{sort === column.key ? (ascending ? \" ↑\" : \" ↓\") : \"\"}</button></th>)}</tr></thead><tbody>{sorted.map((row, rowIndex) => <tr className=\"co-border-b hover:co-bg-black/5\" key={rowIndex}>{columns.map((column) => <td className=\"co-p-3\" key={String(column.key)}>{column.cell ? column.cell(row) : String(row[column.key] ?? \"\")}</td>)}</tr>)}</tbody></table></div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=data-table",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "DataTable",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

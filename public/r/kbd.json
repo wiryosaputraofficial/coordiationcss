@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "type": "registry:ui",
+  "title": "Kbd",
+  "description": "Semantic keyboard shortcut display.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/kbd.tsx",
+      "type": "registry:ui",
+      "target": "@ui/kbd.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Kbd({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { return <kbd className={`co-inline-flex co-min-w-6 co-items-center co-justify-center co-rounded co-border co-border-black/20 co-bg-black/5 co-px-1.5 co-py-0.5 co-font-mono co-text-xs ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=kbd",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Kbd",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

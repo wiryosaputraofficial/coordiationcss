@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message",
+  "type": "registry:ui",
+  "title": "Message",
+  "description": "Chat message composition with author and timestamp.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/message.tsx",
+      "type": "registry:ui",
+      "target": "@ui/message.tsx",
+      "content": "import type { HTMLAttributes, ReactNode } from \"react\";\n\nexport function Message({ author, time, avatar, side = \"incoming\", className = \"\", children, ...props }: HTMLAttributes<HTMLElement> & { author: string; time?: string; avatar?: ReactNode; side?: \"incoming\" | \"outgoing\" }) { return <article className={`co-flex co-gap-3 ${side === \"outgoing\" ? \"co-flex-row-reverse\" : \"\"} ${className}`.trim()} {...props}>{avatar}<div className={`co-grid co-max-w-[80%] co-gap-1 ${side === \"outgoing\" ? \"co-justify-items-end\" : \"\"}`}><header className=\"co-flex co-gap-2 co-text-xs\"><strong>{author}</strong>{time && <time className=\"co-text-black/45\">{time}</time>}</header><div className={`${side === \"outgoing\" ? \"co-bg-black co-text-white\" : \"co-bg-black/5\"} co-rounded-xl co-px-4 co-py-3 co-text-sm`}>{children}</div></div></article>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=message",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Message",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

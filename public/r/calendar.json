@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:ui",
+  "title": "Calendar",
+  "description": "Keyboard-friendly single-date calendar grid.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/calendar.tsx",
+      "type": "registry:ui",
+      "target": "@ui/calendar.tsx",
+      "content": "\"use client\";\n\nimport { useMemo } from \"react\";\n\nexport function Calendar({ month = new Date(), value, onValueChange, className = \"\" }: { month?: Date; value?: Date; onValueChange?: (date: Date) => void; className?: string }) { const year = month.getFullYear(); const monthIndex = month.getMonth(); const days = useMemo(() => Array.from({ length: new Date(year, monthIndex + 1, 0).getDate() }, (_, index) => new Date(year, monthIndex, index + 1)), [year, monthIndex]); const offset = new Date(year, monthIndex, 1).getDay(); const selected = value?.toDateString(); return <div className={`co-w-72 co-rounded-xl co-border co-border-black/15 co-bg-white co-p-4 ${className}`.trim()}><div className=\"co-mb-3 co-text-center co-font-semibold\">{month.toLocaleDateString(undefined, { month: \"long\", year: \"numeric\" })}</div><div className=\"co-grid co-grid-cols-7 co-gap-1\" role=\"grid\" aria-label=\"Calendar\">{\"SMTWTFS\".split(\"\").map((day, index) => <span aria-hidden=\"true\" className=\"co-grid co-size-8 co-place-items-center co-text-xs co-text-black/45\" key={`${day}-${index}`}>{day}</span>)}{Array.from({ length: offset }, (_, index) => <span key={`empty-${index}`} />)}{days.map((day) => <button type=\"button\" key={day.toISOString()} aria-pressed={selected === day.toDateString()} className={`co-size-8 co-rounded-md co-text-sm focus-visible:co-ring-2 ${selected === day.toDateString() ? \"co-bg-black co-text-white\" : \"hover:co-bg-black/5\"}`} onClick={() => onValueChange?.(day)}>{day.getDate()}</button>)}</div></div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=calendar",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Calendar",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

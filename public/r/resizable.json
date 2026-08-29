@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable",
+  "type": "registry:ui",
+  "title": "Resizable",
+  "description": "Keyboard-adjustable two-panel layout.",
+  "categories": [
+    "layout"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/resizable.tsx",
+      "type": "registry:ui",
+      "target": "@ui/resizable.tsx",
+      "content": "\"use client\";\n\nimport { useState, type ReactNode } from \"react\";\n\nexport function Resizable({ first, second, defaultSize = 50, min = 20, max = 80, label = \"Resize panels\", className = \"\" }: { first: ReactNode; second: ReactNode; defaultSize?: number; min?: number; max?: number; label?: string; className?: string }) { const [size, setSize] = useState(defaultSize); return <div className={`co-flex co-min-h-48 co-overflow-hidden co-rounded-lg co-border co-border-black/15 ${className}`.trim()}><div className=\"co-min-w-0 co-p-4\" style={{ width: `${size}%` }}>{first}</div><input type=\"range\" aria-label={label} min={min} max={max} value={size} onChange={(event) => setSize(Number(event.target.value))} className=\"co-w-2 co-cursor-col-resize co-appearance-none co-bg-black/10 focus-visible:co-ring-2\" /><div className=\"co-min-w-0 co-flex-1 co-p-4\">{second}</div></div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=resizable",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Resizable",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

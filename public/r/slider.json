@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "type": "registry:ui",
+  "title": "Slider",
+  "description": "Styled native range input.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/slider.tsx",
+      "type": "registry:ui",
+      "target": "@ui/slider.tsx",
+      "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const Slider = forwardRef<HTMLInputElement, Omit<InputHTMLAttributes<HTMLInputElement>, \"type\">>(({ className = \"\", style, ...props }, ref) => <input ref={ref} type=\"range\" className={`co-h-2 co-w-full co-cursor-pointer co-appearance-none co-rounded-full co-bg-black/15 focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} style={{ accentColor: \"black\", ...style }} {...props} />);\nSlider.displayName = \"Slider\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=slider",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Slider",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

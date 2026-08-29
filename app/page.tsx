@@ -60,7 +60,7 @@ const featureGroups = [
     title: "Style without leaving markup",
     description:
       "Typography, modern color, gradients, borders, rings, effects, masks, transforms, transitions, animation, and SVG share one token system.",
-    ids: ["typography", "backgrounds", "borders", "effects", "transforms", "transitions", "svg", "icons", "modern-color"],
+    ids: ["typography", "backgrounds", "borders", "effects", "transforms", "transitions", "svg", "icons", "component-registry", "modern-color"],
     example: "co-bg-linear-to-r/oklch co-shadow-lg",
     href: "/docs/utilities/backgrounds",
   },
@@ -125,6 +125,7 @@ const integrations = [
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
   { name: "Icons", label: "1,246 glyphs", description: "Tree-shakeable Solar Linear SVG strings, accessible rendering, CSS variables, provenance, and an AI-readable registry.", href: "/icons", code: "@coordiation/icons" },
+  { name: "Components", label: "64 open-code components", description: "Full current shadcn catalog parity through independent React source, compatible registry endpoints, Coordiation utilities, and AI-readable contracts.", href: "/components", code: "@coordiation/ui" },
 ];
 
 export default function Home() {
@@ -146,6 +147,7 @@ export default function Home() {
           <a href="#features">Features</a>
           <a href="#engine">Engine</a>
           <a href="#integrations">Integrations</a>
+          <Link href="/components">Components</Link>
           <Link href="/icons">Icons</Link>
           <Link href="/docs">Docs</Link>
           <Link href="/release-check">Release Check</Link>
@@ -161,7 +163,7 @@ export default function Home() {
           <h1>Build interfaces.<br /><em>Keep the system.</em></h1>
           <p>
             A complete utility-first CSS system for Coordiation. Build responsive,
-            accessible interfaces with {completeCapabilityCount} verified capabilities, eight official packages,
+            accessible interfaces with {completeCapabilityCount} verified capabilities, nine official packages,
             CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">
@@ -312,7 +314,7 @@ export default function Home() {
         </div>
         <div className="ai-contract-card">
           <div><span>AGENT CHECKLIST</span><span>LIVE</span></div>
-          <ol><li><b>01</b><span>Read framework instructions</span><code>/llms.txt</code></li><li><b>02</b><span>Inspect support status</span><code>/api/capabilities</code></li><li><b>03</b><span>Resolve exact utilities</span><code>/api/utilities</code></li><li><b>04</b><span>Emit literal candidates</span><code>co-*</code></li></ol>
+          <ol><li><b>01</b><span>Read framework instructions</span><code>/llms.txt</code></li><li><b>02</b><span>Inspect support status</span><code>/api/capabilities</code></li><li><b>03</b><span>Discover owned UI source</span><code>/api/components</code></li><li><b>04</b><span>Resolve exact utilities</span><code>/api/utilities</code></li><li><b>05</b><span>Emit literal candidates</span><code>co-*</code></li></ol>
         </div>
       </section>
 

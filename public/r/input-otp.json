@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp",
+  "type": "registry:ui",
+  "title": "Input OTP",
+  "description": "One-time-password input with segmented visual cells.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/input-otp.tsx",
+      "type": "registry:ui",
+      "target": "@ui/input-otp.tsx",
+      "content": "\"use client\";\n\nimport { useId, type ChangeEvent, type InputHTMLAttributes } from \"react\";\n\nexport function InputOTP({ length = 6, value, onValueChange, label = \"One-time password\", className = \"\", ...props }: Omit<InputHTMLAttributes<HTMLInputElement>, \"value\" | \"onChange\" | \"maxLength\"> & { length?: number; value: string; onValueChange: (value: string) => void; label?: string }) { const id = useId(); function change(event: ChangeEvent<HTMLInputElement>) { onValueChange(event.target.value.replace(/\\D/g, \"\").slice(0, length)); } return <div className={`co-relative co-inline-grid co-gap-2 ${className}`.trim()} style={{ gridTemplateColumns: `repeat(${length}, minmax(0, 2.5rem))` }}><label htmlFor={id} className=\"co-sr-only\">{label}</label><input id={id} inputMode=\"numeric\" autoComplete=\"one-time-code\" value={value} onChange={change} maxLength={length} className=\"co-absolute co-inset-0 co-z-10 co-size-full co-cursor-text co-opacity-0\" {...props} />{Array.from({ length }, (_, index) => <span aria-hidden=\"true\" className={`co-grid co-h-11 co-place-items-center co-rounded-md co-border co-text-sm co-font-medium ${index === value.length ? \"co-border-black co-ring-2\" : \"co-border-black/20\"}`} key={index}>{value[index] ?? \"\"}</span>)}</div>; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=input-otp",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "InputOTP",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:ui",
+  "title": "Popover",
+  "description": "Anchored non-modal content using the Popover API.",
+  "categories": [
+    "overlays"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/popover.tsx",
+      "type": "registry:ui",
+      "target": "@ui/popover.tsx",
+      "content": "\"use client\";\n\nimport { useId, useRef, type HTMLAttributes, type ReactNode } from \"react\";\n\nexport function Popover({ trigger, children, className = \"\" }: { trigger: ReactNode; children: ReactNode; className?: string }) { const ref = useRef<HTMLDivElement>(null); const id = useId(); return <span className={`co-relative co-inline-block ${className}`.trim()}><button type=\"button\" aria-haspopup=\"dialog\" aria-controls={id} onClick={() => ref.current?.togglePopover()}>{trigger}</button><div ref={ref} id={id} popover=\"auto\" className=\"co-m-0 co-w-72 co-rounded-lg co-border co-border-black/15 co-bg-white co-p-4 co-shadow-lg\">{children}</div></span>; }\nexport function PopoverContent(props: HTMLAttributes<HTMLDivElement>) { return <div {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=popover",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Popover",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

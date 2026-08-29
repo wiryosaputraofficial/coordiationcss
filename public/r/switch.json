@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "type": "registry:ui",
+  "title": "Switch",
+  "description": "Controlled accessible toggle with keyboard support.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/switch.tsx",
+      "type": "registry:ui",
+      "target": "@ui/switch.tsx",
+      "content": "\"use client\";\n\nimport { forwardRef, type ButtonHTMLAttributes } from \"react\";\n\nexport type SwitchProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, \"onChange\"> & { checked: boolean; onCheckedChange?: (checked: boolean) => void };\nexport const Switch = forwardRef<HTMLButtonElement, SwitchProps>(({ checked, onCheckedChange, className = \"\", disabled, ...props }, ref) => (\n  <button ref={ref} type=\"button\" role=\"switch\" aria-checked={checked} disabled={disabled} onClick={() => onCheckedChange?.(!checked)} className={`co-relative co-inline-flex co-h-6 co-w-11 co-shrink-0 co-cursor-pointer co-items-center co-rounded-full co-border-2 co-border-transparent co-transition co-outline-none focus-visible:co-ring-2 focus-visible:co-ring-black disabled:co-cursor-not-allowed disabled:co-opacity-50 ${checked ? \"co-bg-black\" : \"co-bg-black/20\"} ${className}`.trim()} {...props}>\n    <span aria-hidden=\"true\" className={`co-pointer-events-none co-block co-size-5 co-rounded-full co-bg-white co-shadow-sm co-transition ${checked ? \"co-translate-x-5\" : \"co-translate-x-0\"}`} />\n  </button>\n));\nSwitch.displayName = \"Switch\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=switch",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": true,
+    "export": "Switch",
+    "accessibility": "Uses role=switch, aria-checked, native button keyboard behavior, and controlled state."
+  }
+}

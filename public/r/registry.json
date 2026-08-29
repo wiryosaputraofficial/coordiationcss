@@ -1,0 +1,1351 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "coordiation",
+  "homepage": "https://coordiation.dev/components",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Accessible action button with visual and size variants.",
+      "categories": [
+        "actions"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Compact status or metadata label.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Composable surface with header, content, and footer slots.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Styled native text input with invalid and disabled states.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multiline native text control with accessible focus states.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Form label that reflects disabled controls.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Native checkbox wrapped in a consistent control surface.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Controlled accessible toggle with keyboard support.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Semantic feedback surface with title and description.",
+      "categories": [
+        "feedback"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Horizontal or vertical semantic divider.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Non-interactive loading placeholder.",
+      "categories": [
+        "feedback"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Accessible indeterminate progress indicator.",
+      "categories": [
+        "feedback"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Image avatar with deterministic text fallback.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Responsive semantic data-table composition.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Keyboard-navigable controlled tab interface.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Modal dialog built on the native dialog element.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Expandable disclosure sections with native semantics.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Confirmation dialog for consequential actions.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Media wrapper that preserves an explicit aspect ratio.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "File attachment row with metadata and actions.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/attachment.tsx",
+          "type": "registry:ui",
+          "target": "@ui/attachment.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Semantic hierarchy navigation with current-page support.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Compact conversational content bubble.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/bubble.tsx",
+          "type": "registry:ui",
+          "target": "@ui/bubble.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Related actions arranged as one control group.",
+      "categories": [
+        "actions"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Keyboard-friendly single-date calendar grid.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Accessible content carousel with explicit navigation.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Accessible chart container with tabular fallback guidance.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Controlled disclosure region with aria-expanded state.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Searchable listbox with keyboard selection.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Filterable command palette surface.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Contextual action menu with keyboard fallback.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Sortable generic data table with semantic headers.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/data-table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/data-table.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Native-first date selection control.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-picker.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "Writing-direction provider for bidirectional interfaces.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/direction.tsx",
+          "type": "registry:ui",
+          "target": "@ui/direction.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Edge-mounted modal surface using native dialog behavior.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Keyboard-operable disclosure menu for actions.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Composable empty-state message and action area.",
+      "categories": [
+        "feedback"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/empty.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Form-field composition with description and errors.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Supplementary preview revealed by hover or focus.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Input with leading, trailing, and action slots.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "One-time-password input with segmented visual cells.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-otp.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "Composable content row with media and actions.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/item.tsx",
+          "type": "registry:ui",
+          "target": "@ui/item.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Semantic keyboard shortcut display.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Inline marker for annotations and status.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/marker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/marker.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Application menubar with semantic menu controls.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Chat message composition with author and timestamp.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/message.tsx",
+          "type": "registry:ui",
+          "target": "@ui/message.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "Live-region message viewport with follow-latest behavior.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/message-scroller.tsx",
+          "type": "registry:ui",
+          "target": "@ui/message-scroller.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "Styled native select for resilient forms.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/native-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Site navigation composition with accessible links.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Semantic page navigation with current-page state.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Anchored non-modal content using the Popover API.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Determinate progress indicator with native semantics.",
+      "categories": [
+        "feedback"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "Composable question flow with progress semantics.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/questionnaire.tsx",
+          "type": "registry:ui",
+          "target": "@ui/questionnaire.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Native radio group composition.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Keyboard-adjustable two-panel layout.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/resizable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Bounded native scroll container with keyboard access.",
+      "categories": [
+        "layout"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Custom listbox-style select with controlled value.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Side sheet using native modal behavior.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Composable responsive application sidebar.",
+      "categories": [
+        "navigation"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Styled native range input.",
+      "categories": [
+        "forms"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Live-region notification viewport and items.",
+      "categories": [
+        "feedback"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Pressed-state button with aria-pressed semantics.",
+      "categories": [
+        "actions"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Single- or multi-select group of toggle buttons.",
+      "categories": [
+        "actions"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Focus and hover description linked with aria-describedby.",
+      "categories": [
+        "overlays"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    },
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "Semantic prose primitives with consistent rhythm.",
+      "categories": [
+        "data-display"
+      ],
+      "files": [
+        {
+          "path": "registry/monochrome/typography.tsx",
+          "type": "registry:ui",
+          "target": "@ui/typography.tsx"
+        }
+      ],
+      "meta": {
+        "framework": "Coordiation CSS",
+        "prefix": "co-",
+        "status": "stable"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker",
+  "type": "registry:ui",
+  "title": "Marker",
+  "description": "Inline marker for annotations and status.",
+  "categories": [
+    "data-display"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/marker.tsx",
+      "type": "registry:ui",
+      "target": "@ui/marker.tsx",
+      "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Marker({ className = \"\", ...props }: HTMLAttributes<HTMLSpanElement>) { return <span className={`co-inline-flex co-items-center co-rounded-sm co-bg-black co-px-1.5 co-py-0.5 co-text-xs co-font-medium co-text-white ${className}`.trim()} {...props} />; }\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=marker",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Marker",
+    "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
+  }
+}

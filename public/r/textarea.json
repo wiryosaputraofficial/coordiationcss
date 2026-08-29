@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:ui",
+  "title": "Textarea",
+  "description": "Multiline native text control with accessible focus states.",
+  "categories": [
+    "forms"
+  ],
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/monochrome/textarea.tsx",
+      "type": "registry:ui",
+      "target": "@ui/textarea.tsx",
+      "content": "import { forwardRef, type TextareaHTMLAttributes } from \"react\";\n\nexport const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<HTMLTextAreaElement>>(({ className = \"\", ...props }, ref) => (\n  <textarea ref={ref} className={`co-flex co-min-h-24 co-w-full co-resize-y co-rounded-md co-border co-border-black/20 co-bg-white co-p-3 co-text-sm co-outline-none placeholder:co-text-black/40 focus-visible:co-ring-2 focus-visible:co-ring-black invalid:co-border-black invalid:co-ring-2 disabled:co-cursor-not-allowed disabled:co-opacity-50 ${className}`.trim()} {...props} />\n));\nTextarea.displayName = \"Textarea\";\n"
+    }
+  ],
+  "docs": "Requires Coordiation CSS. Documentation: /components?component=textarea",
+  "meta": {
+    "framework": "Coordiation CSS",
+    "prefix": "co-",
+    "style": "monochrome",
+    "status": "stable",
+    "client": false,
+    "export": "Textarea",
+    "accessibility": "Uses a native textarea and preserves resize, invalid, disabled, and focus behavior."
+  }
+}
