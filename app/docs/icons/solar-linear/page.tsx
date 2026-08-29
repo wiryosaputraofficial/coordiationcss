@@ -20,6 +20,7 @@ export default function SolarLinearIconsPage() {
     <p className="docs-overline">ICON SYSTEM · COMPLETE</p><h1>Solar Linear icons</h1>
     <p className="docs-lead">Use all 1,246 Solar Linear icons through literal, tree-shakeable imports that work in Coordiation templates, server rendering, static sites, and any JavaScript framework.</p>
     <div className="docs-note"><span>i</span><p>Solar icon artwork is created by 480 Design and licensed under CC BY 4.0. Commercial use is allowed, but attribution is required.</p></div>
+    <div className="family-support"><span>Need the complete visual catalog?</span><Link prefetch={false} href="/icons">Browse all 1,246 icons →</Link></div>
 
     <div className="solar-icon-samples" aria-label="Solar Linear icon examples">
       {samples.map(([name, label]) => <div key={name}><span aria-hidden="true" style={{ "--solar-sample": `url(/icons/solar-linear/${name}.svg)` } as CSSProperties} /><strong>{label}</strong><code>{name}</code></div>)}
@@ -49,6 +50,6 @@ const meaningful = renderIcon(HomeLinearIcon, {
 }`} /><p><a href="/icon-registry.json">The icon registry</a> is the exact source for search interfaces and AI generation. Emit its literal import path so Node and bundlers load only the selected icon.</p></div></section>
     <section className="family-caveats" id="license"><div><p className="docs-overline">ATTRIBUTION REQUIRED</p><h2>Keep the credit with the product</h2><p>The wrapper and the artwork use different licenses.</p></div><ul><li>Coordiation wrapper code is MIT licensed.</li><li>Solar icon artwork remains CC BY 4.0.</li><li>Credit Solar Icons by 480 Design in a visible credits, about, legal, or documentation surface.</li><li>Keep LICENSE-THIRD-PARTY when redistributing the package.</li><li>Indicate material modifications to the artwork.</li></ul></section>
     <p className="icon-attribution">Icons shown on this page: Solar Icons by <a href="https://www.figma.com/community/file/1166831539721848736">480 Design</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
-    <div className="docs-next split"><Link prefetch={false} href="/docs/utilities/svg"><span>Related</span><b>← SVG utilities</b></Link><Link prefetch={false} href="/docs/tooling/language-server"><span>Next</span><b>IntelliSense &amp; LSP →</b></Link></div>
+    <div className="docs-next split"><Link prefetch={false} href="/icons"><span>Interactive catalog</span><b>← Browse all icons</b></Link><Link prefetch={false} href="/docs/tooling/language-server"><span>Next</span><b>IntelliSense &amp; LSP →</b></Link></div>
   </article>;
 }

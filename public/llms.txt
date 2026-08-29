@@ -51,6 +51,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Native scanner: call `scanSourcesNative()` and inspect `engine` plus `native.fallbackReason`; use `fallback: false` only when native execution is a hard requirement
 - Compatibility: inspect compiler `compatibility` and `deprecations`, use the registered replacement and codemod, and do not infer stable guarantees from a prerelease version
 - Icons: read `/icon-registry.json`, select an exact kebab-case name, and emit a literal `@coordiation/icons/linear/{name}` import; preserve the Solar Icons by 480 Design CC BY 4.0 attribution
+- Human icon discovery: browse `/icons`; clicking any one of the 1,246 icons reveals its exact export, literal import path, renderer example, styling contract, and categories
 
 ## Reliability rules for AI agents
 
@@ -105,4 +106,5 @@ Complete upgrade and codemod guide: `/docs/tooling/upgrade`
 Complete native scanner guide: `/docs/tooling/native-scanner`
 Compatibility and deprecation policy: `/docs/core/compatibility`
 Solar Linear icon library and attribution: `/docs/icons/solar-linear`
+Interactive visual browser for all Solar Linear icons: `/icons`
 Machine-readable icon registry: `/icon-registry.json`

@@ -124,7 +124,7 @@ const integrations = [
   { name: "Formatter", label: "Canonical", description: "Stable class sorting powered by the same candidate ordering used by the compiler.", href: "/docs/tooling/formatter", code: "@coordiation/formatter" },
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
-  { name: "Icons", label: "1,246 glyphs", description: "Tree-shakeable Solar Linear SVG strings, accessible rendering, CSS variables, provenance, and an AI-readable registry.", href: "/docs/icons/solar-linear", code: "@coordiation/icons" },
+  { name: "Icons", label: "1,246 glyphs", description: "Tree-shakeable Solar Linear SVG strings, accessible rendering, CSS variables, provenance, and an AI-readable registry.", href: "/icons", code: "@coordiation/icons" },
 ];
 
 export default function Home() {
@@ -146,6 +146,7 @@ export default function Home() {
           <a href="#features">Features</a>
           <a href="#engine">Engine</a>
           <a href="#integrations">Integrations</a>
+          <Link href="/icons">Icons</Link>
           <Link href="/docs">Docs</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
