@@ -138,7 +138,7 @@ const integrations = [
   { name: "Icons", label: "2,165 glyphs", description: "Complete Solar Linear and Iconsax Line Oval collections with tree-shakeable SVG strings, accessible rendering, provenance, and an AI-readable registry.", href: "/icons", code: "@coordiation/icons" },
   { name: "Components", label: "64 open-code components", description: "A complete independent React catalog with owned source, Coordiation utilities, install endpoints, and AI-readable contracts.", href: "/components", code: "@coordiation/ui" },
   { name: "Installer", label: "First-party CLI", description: "Install owned component or application theme source, bundled SVG icons, and declared media with safe paths and explicit overwrite protection.", href: "/docs/themes", code: "@coordiation/cli" },
-  { name: "Themes", label: "2 complete applications", description: "Original, responsive application templates with live previews, owned source, media manifests, install endpoints, and section-level AI contracts.", href: "/themes", code: "@coordiation/themes" },
+  { name: "Themes", label: "3 complete applications", description: "Original, responsive portfolios, journals, and dashboards with live previews, owned source, Coordiation components, install endpoints, and section-level AI contracts.", href: "/themes", code: "@coordiation/themes" },
 ];
 
 export default function Home() {

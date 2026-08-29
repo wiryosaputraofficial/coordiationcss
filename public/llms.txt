@@ -126,3 +126,4 @@ Installable application theme guide: `/docs/themes`
 Interactive application theme showcase: `/themes`
 Machine-readable theme manifest: `/theme-registry.json`
 Coordiation theme catalog: `/r/themes/registry.json`
+Stable themes: `editorial-advisor`, `quiet-journal`, and `finance-dashboard`

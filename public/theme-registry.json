@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "generatedAt": "2026-08-29",
   "distribution": "open-code page registry",
-  "themeCount": 2,
+  "themeCount": 3,
   "themes": [
     {
       "name": "editorial-advisor",
@@ -23,6 +23,8 @@
       "palette": "warm cream",
       "namespace": "editorial-theme",
       "classPrefix": "ea-",
+      "assetStrategy": "bundled-media",
+      "components": [],
       "preview": "/themes/editorial-advisor/preview",
       "cover": "/themes/editorial-advisor/hero-advisor.png",
       "installPath": "/r/themes/editorial-advisor.json",
@@ -125,6 +127,8 @@
       "palette": "ivory and terracotta",
       "namespace": "quiet-journal",
       "classPrefix": "qj-",
+      "assetStrategy": "bundled-media",
+      "components": [],
       "preview": "/themes/quiet-journal/preview",
       "cover": "/themes/quiet-journal/hero-desk.webp",
       "installPath": "/r/themes/quiet-journal.json",
@@ -229,6 +233,253 @@
         "selectionKey": "quiet-journal",
         "sourceOwnership": "open-code",
         "customization": "Preserve the literal co-* utility foundation, quiet-journal namespace, qj- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
+      }
+    },
+    {
+      "name": "finance-dashboard",
+      "title": "Finance Dashboard",
+      "description": "A responsive finance operations workspace for revenue, payments, customers, cash health, transactions, and collaborator payouts.",
+      "categories": [
+        "dashboard",
+        "finance",
+        "operations"
+      ],
+      "status": "stable",
+      "copyright": "Coordiation",
+      "framework": "Next.js App Router",
+      "style": "fintech operations dashboard",
+      "palette": "midnight, white and cobalt",
+      "namespace": "coordiation-finance-dashboard",
+      "classPrefix": "fd-",
+      "assetStrategy": "css-only",
+      "components": [
+        "Avatar",
+        "Badge",
+        "Button",
+        "Card",
+        "CardHeader",
+        "IconButton",
+        "Progress",
+        "SearchField",
+        "SelectControl",
+        "Table"
+      ],
+      "preview": "/themes/finance-dashboard/preview",
+      "cover": null,
+      "installPath": "/r/themes/finance-dashboard.json",
+      "command": "npx @coordiation/cli@latest add theme finance-dashboard",
+      "sections": [
+        "sidebar",
+        "topbar",
+        "page header",
+        "financial summary",
+        "revenue report",
+        "cash health",
+        "currency snapshot",
+        "fund allocation",
+        "transaction history",
+        "collaborator payouts",
+        "footer"
+      ],
+      "assets": [],
+      "files": [
+        {
+          "path": "site/app/themes/finance-dashboard/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/finance-dashboard/page.tsx"
+        },
+        {
+          "path": "site/app/themes/finance-dashboard/preview/finance-dashboard.css",
+          "type": "registry:style",
+          "target": "app/finance-dashboard/finance-dashboard.css"
+        },
+        {
+          "path": "site/app/themes/finance-dashboard/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/finance-dashboard/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/finance-dashboard/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/finance-dashboard/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/alt-arrow-down.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/alt-arrow-down.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/bell.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/bell.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/bill-list.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/bill-list.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/card.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/card.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/cart-large-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/cart-large-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/chart-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/chart-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/chat-round.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/chat-round.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/check-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/check-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/clock-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/clock-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/close-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/close-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/dollar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/dollar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/document-text.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/document-text.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/graph-new-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/graph-new-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/home-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/home-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/magnifier.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/magnifier.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/menu-dots.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/menu-dots.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/pie-chart-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/pie-chart-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/printer.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/printer.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/refresh.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/refresh.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/settings.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/settings.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/sun.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/sun.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/transfer-horizontal.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/transfer-horizontal.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/trash-bin-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/trash-bin-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/user-plus.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/user-plus.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/user-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/user-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/users-group-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/users-group-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/wallet.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/wallet.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/wallet-money.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/wallet-money.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/widget-4.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/widget-4.svg"
+        }
+      ],
+      "coordiationUtilityCount": 46,
+      "ai": {
+        "selectionKey": "finance-dashboard",
+        "sourceOwnership": "open-code",
+        "customization": "Preserve the literal co-* utility foundation, coordiation-finance-dashboard namespace, fd- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
         "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
       }
     }
