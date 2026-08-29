@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
       <>Map conditional styles to complete literal class strings; do not concatenate <code>co-</code> candidates.</>,
     ]}
     official={{ href: "https://nextjs.org/docs/app/getting-started/css", label: "Next.js CSS" }}
-    previous={{ href: "/docs/installation/using-cli", label: "Using the CLI" }}
+    previous={{ href: "/docs/installation/using-react", label: "Using React" }}
     next={{ href: "/docs/installation/using-astro", label: "Using Astro" }}
   />;
 }

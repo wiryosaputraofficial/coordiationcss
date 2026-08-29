@@ -105,6 +105,7 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/docs/installation/using-npm",
   "/docs/installation/using-php",
   "/docs/installation/using-postcss",
+  "/docs/installation/using-react",
   "/docs/installation/using-svelte",
   "/docs/installation/using-vite",
   "/docs/installation/using-wordpress",

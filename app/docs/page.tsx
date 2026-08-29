@@ -27,6 +27,7 @@ export default function DocsOverview() {
       </div>
       <h2 id="framework-guides">Framework guides</h2>
       <div className="integration-grid framework-integration-grid">
+        <Link href="/docs/installation/using-react"><span>Vite</span><strong>React</strong><p>Scan JSX and TSX files with fast updates and zero styling runtime.</p><code>vite.config.js</code><b>→</b></Link>
         <Link href="/docs/installation/using-nextjs"><span>PostCSS</span><strong>Next.js</strong><p>App Router and Pages Router setup through the official PostCSS adapter.</p><code>postcss.config.mjs</code><b>→</b></Link>
         <Link href="/docs/installation/using-astro"><span>Vite</span><strong>Astro</strong><p>Scan Astro components and import the generated virtual stylesheet.</p><code>astro.config.mjs</code><b>→</b></Link>
         <Link href="/docs/installation/using-laravel"><span>Blade + Vite</span><strong>Laravel</strong><p>Compile utilities found in Blade templates and frontend components.</p><code>resources/**</code><b>→</b></Link>
