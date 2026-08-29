@@ -1,0 +1,25 @@
+name: coordiation-web
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: coordiation-web:latest
+    container_name: coordiation-web
+    restart: unless-stopped
+    networks:
+      - proxy_public
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: proxy_public
+      traefik.http.routers.coordiation-web.entrypoints: websecure
+      traefik.http.routers.coordiation-web.priority: "100"
+      traefik.http.routers.coordiation-web.rule: "Host(`coordiation.com`)"
+      traefik.http.routers.coordiation-web.tls: "true"
+      traefik.http.routers.coordiation-web.tls.certresolver: letsencrypt
+      traefik.http.services.coordiation-web.loadbalancer.server.port: "3000"
+
+networks:
+  proxy_public:
+    external: true
