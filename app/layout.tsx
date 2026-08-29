@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   creator: "Wiryo Saputra",
   publisher: "Coordiation",
   category: "technology",
+  verification: {
+    google: "JaE1uWUGQh4A0hyN0jcZ4vzKd18HpEXKE7PzDsM31vM",
+  },
   manifest: "/manifest.webmanifest",
   formatDetection: {
     email: false,
