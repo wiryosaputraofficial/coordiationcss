@@ -6,7 +6,7 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 341,
+    "staticUtilityCount": 345,
     "familyCount": 15,
     "completeFamilies": 3,
     "partialFamilies": 12,
@@ -2043,6 +2043,42 @@
         [
           "visibility",
           "collapse"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-container-inline-size",
+      "declarations": [
+        [
+          "container-type",
+          "inline-size"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-container-name-none",
+      "declarations": [
+        [
+          "container-name",
+          "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-container-normal",
+      "declarations": [
+        [
+          "container-type",
+          "normal"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-container-size",
+      "declarations": [
+        [
+          "container-type",
+          "size"
         ]
       ]
     },

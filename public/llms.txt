@@ -17,6 +17,10 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Data variant: `data-[state=open]:co-block`
 - Descendant/negation variants: `has-checked:co-ring-2`, `not-focus:co-opacity-50`
 - Arbitrary selector: `[&.is-ready]:co-block`
+- Conditional media: `motion-safe:co-transition`, `pointer-fine:co-cursor-pointer`
+- Feature query: `supports-[display:grid]:co-grid`, `not-supports-[display:grid]:co-block`
+- Named container query: `@md/sidebar:co-grid-cols-2`
+- Arbitrary conditional at-rule: `[@media(pointer:fine)]:co-block`
 
 ## Reliability rules for AI agents
 
@@ -31,3 +35,4 @@ Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
 Machine-readable utility registry: `/api/utilities`
 Attribute and selector variant documentation: `/docs/variants/attribute-selectors`
+Conditional variant documentation: `/docs/variants/conditional-rules`
