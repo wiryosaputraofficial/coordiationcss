@@ -854,8 +854,8 @@
       ],
       "examples": [
         "co-bg-black/50",
-        "co-bg-[url(/hero.svg)]",
-        "co-bg-linear-to-r/oklch",
+        "co-bg-[color:color(display-p3_1_0_0)]",
+        "co-bg-linear-to-r/display-p3",
         "co-from-brand-500",
         "co-via-40%",
         "co-to-transparent",
@@ -882,13 +882,14 @@
         ],
         "concepts": [
           "Theme colors compile through --co-color-* variables and named images through --co-background-image-* variables.",
+          "A paired --co-color-{name}--p3 token progressively overrides its fallback only when both Display-P3 syntax and a P3 output gamut are available.",
           "Slash opacity uses color-mix in OKLab instead of duplicating palette entries.",
           "Linear, radial, and conic gradients share composable from/via/to colors and percentage positions.",
-          "Gradient interpolation modifiers support sRGB, HSL, OKLab, OKLCH, and OKLCH hue-path controls.",
+          "Gradient interpolation modifiers support sRGB, linear sRGB, HSL, Lab, LCH, OKLab, OKLCH, Display-P3, and OKLCH hue-path controls.",
           "Position and size accept named values, CSS custom-property shorthand, and safe arbitrary values."
         ],
         "caveats": [
-          "Wide-gamut palette design and Display-P3 authoring are tracked separately by the Modern color capability.",
+          "Always pair a P3 token with a normal --co-color-* fallback; the compiler intentionally ignores orphan or unsafe P3 metadata.",
           "Background images referenced by URL remain application assets and are not bundled by the compiler."
         ]
       },
@@ -905,23 +906,23 @@
           "globalCss": null
         },
         {
-          "candidate": "co-bg-[url(/hero.svg)]",
+          "candidate": "co-bg-[color:color(display-p3_1_0_0)]",
           "supported": true,
           "declarations": [
             [
-              "background-image",
-              "url(/hero.svg)"
+              "background-color",
+              "color(display-p3 1 0 0)"
             ]
           ],
           "globalCss": null
         },
         {
-          "candidate": "co-bg-linear-to-r/oklch",
+          "candidate": "co-bg-linear-to-r/display-p3",
           "supported": true,
           "declarations": [
             [
               "background-image",
-              "linear-gradient(to right in oklch, var(--co-gradient-stops))"
+              "linear-gradient(to right in display-p3, var(--co-gradient-stops))"
             ]
           ],
           "globalCss": null
