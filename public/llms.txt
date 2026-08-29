@@ -32,6 +32,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Effects: `co-shadow-lg`, `co-shadow-brand-500/40`, `co-text-shadow-sm`, `co-opacity-50`, `co-mix-blend-multiply`, `co-blur-md`, `co-brightness-125`, `co-drop-shadow-lg`, `co-backdrop-blur-sm`, `co-mask-[url(/mask.svg)]`, `co-mask-clip-content`
 - Tables/columns: `co-table-fixed`, `co-border-separate`, `co-border-spacing-x-3`, `co-caption-bottom`, `co-columns-sm`, `co-gap-6`, `co-break-inside-avoid-column`, `co-column-span-all`, `co-column-rule-brand-500`
 - Transforms: `-co-translate-x-4`, `co-translate-z-8`, `co-rotate-y-45`, `co-scale-95`, `co-skew-x-6`, `co-transform-3d`, `co-perspective-normal`, `co-perspective-origin-top`, `co-backface-hidden`, `co-zoom-110`
+- Transitions/animations: `co-transition`, `co-transition-discrete`, `co-transition-[width,opacity]`, `co-duration-300`, `co-delay-75`, `co-ease-out`, `co-animate-spin`, `motion-reduce:co-animate-none`, `starting:co-opacity-0`
 
 ## Reliability rules for AI agents
 
@@ -58,3 +59,4 @@ Border, outline, ring, and divide documentation: `/docs/utilities/borders-rings`
 Effects, filter, backdrop-filter, and mask documentation: `/docs/utilities/effects`
 Table and multi-column documentation: `/docs/utilities/tables-columns`
 Transform and perspective documentation: `/docs/utilities/transforms`
+Transition and animation documentation: `/docs/utilities/transitions`
