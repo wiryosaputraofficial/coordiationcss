@@ -150,6 +150,7 @@ export default function Home() {
           <a href="#integrations">Integrations</a>
           <Link href="/components">Components</Link>
           <Link href="/icons">Icons</Link>
+          <a href="#about">About</a>
           <Link href="/docs">Docs</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
@@ -365,6 +366,23 @@ export default function Home() {
               <span className={`roadmap-status ${statusClass[status]}`}><i />{statusLabel[status]}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="creator-section" id="about" aria-labelledby="creator-heading">
+        <figure className="creator-portrait">
+          <img src="/wiryo-saputra.png" alt="Wiryo Saputra, creator of Coordiation" width="1254" height="1254" loading="lazy" decoding="async" />
+          <figcaption><span>CREATOR / FOUNDER</span><span>COORDIATION · 2026</span></figcaption>
+        </figure>
+        <div className="creator-copy">
+          <p className="kicker">WHY I BUILT COORDIATION</p>
+          <h2 id="creator-heading">Make products that<br /><em>matter to people.</em></h2>
+          <p className="creator-lede">Coordiation exists to help you move from a good idea to a dependable product without rebuilding the same foundations every time.</p>
+          <blockquote>I built this framework so human and AI teams can spend less time fighting their tools and spend more time understanding real needs, creating useful products, and helping more people.</blockquote>
+          <div className="creator-signoff">
+            <div><strong>Wiryo Saputra</strong><span>Creator of Coordiation</span></div>
+            <a href="mailto:wiryosaputra@coordiation.com"><SolarIcon name="letter" size={19} />wiryosaputra@coordiation.com</a>
+          </div>
         </div>
       </section>
 

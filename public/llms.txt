@@ -2,6 +2,8 @@
 
 Coordiation CSS is an independent utility-first CSS compiler for the Coordiation framework. It has no Tailwind dependency and uses the `co-` prefix.
 
+Creator: Wiryo Saputra (`wiryosaputra@coordiation.com`). Coordiation is built to help human and AI teams spend less time rebuilding foundations and more time creating useful products that can help many people.
+
 ## Canonical usage
 
 - Base utility: `co-flex`
