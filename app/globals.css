@@ -342,9 +342,12 @@ footer > span { justify-self: end; }
 .family-reference-head span { padding: 12px 15px; font-family: var(--font-geist-mono); font-size: 8px; text-transform: uppercase; }
 .family-reference-row { border-bottom: 1px solid var(--line); }
 .family-reference-row:last-child { border-bottom: 0; }
-.family-reference-row code { padding: 15px; font-size: 9px; line-height: 1.6; overflow-wrap: anywhere; }
-.family-reference-row code:first-child { border-right: 1px solid var(--line); color: #111; font-weight: 650; }
-.family-reference-row code:last-child { color: #666; }
+.family-reference-row > code, .family-reference-row > span { min-width: 0; padding: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+.family-reference-row > code { font-size: 9px; }
+.family-reference-row > code:first-child { border-right: 1px solid var(--line); color: #111; font-weight: 650; }
+.family-reference-row > code:last-child { color: #666; }
+.family-reference-row > span { color: #555; font-size: 11px; }
+.family-reference-row > span > code { padding: 0; border: 0; color: #666; font-size: 9px; font-weight: 400; }
 .family-concepts { display: grid; grid-template-columns: .65fr 1fr; gap: 60px; }
 .family-concepts ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid #111; }
 .family-concepts li { padding: 18px 0; display: grid; grid-template-columns: 32px 1fr; gap: 15px; border-bottom: 1px solid var(--line); }
