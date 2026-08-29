@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function CssToolchainPage() {
   return (
     <article className="docs-article vite-guide">
-      <div className="docs-breadcrumb"><Link href="/docs">Docs</Link><b>/</b><span>Tooling</span><b>/</b><span>CSS toolchain</span></div>
+      <div className="docs-breadcrumb"><Link prefetch={false} href="/docs">Docs</Link><b>/</b><span>Tooling</span><b>/</b><span>CSS toolchain</span></div>
       <p className="docs-overline">TOOLING · COMPLETE</p>
       <h1>CSS toolchain</h1>
       <p className="docs-lead">Turn one CSS entry into production-ready static output with local import bundling, native nesting transforms, explicit browser-target prefixing, and optional minification.</p>
@@ -101,7 +101,7 @@ console.log(result.toolchain);`} /><p>Use synchronous <code>compile()</code> onl
 
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI GENERATION CONTRACT</p><h2>Inspect before generating configuration</h2><p>Agents should make the build stages observable, not infer them from a package name.</p></div><ul><li>Prefer <code>compileWithToolchain()</code> for new build integrations.</li><li>Keep import paths and CLI targets literal and auditable.</li><li>Match the manifest targets before explaining browser compatibility.</li><li>Use imported dependency paths from the manifest for watchers and caches.</li><li>Report toolchain errors or warnings instead of returning partially transformed CSS.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs/core/plugin-api"><span>Previous</span><b>← Plugin API</b></Link><Link href="/docs/installation/using-vite"><span>Next</span><b>Using Vite →</b></Link></div>
+      <div className="docs-next split"><Link prefetch={false} href="/docs/core/plugin-api"><span>Previous</span><b>← Plugin API</b></Link><Link prefetch={false} href="/docs/installation/using-vite"><span>Next</span><b>Using Vite →</b></Link></div>
     </article>
   );
 }

@@ -29,14 +29,14 @@ export default function DocsShell({ children }: { children: ReactNode }) {
   return (
     <div className="reference-page">
       <header className="reference-header">
-        <Link className="brand" href="/" aria-label="Coordiation CSS home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link>
-        <div className="docs-search"><span aria-hidden="true">⌕</span><input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Search documentation…" aria-label="Search documentation" /><kbd>⌘ K</kbd>{query && <div className="docs-search-results">{results.length ? results.map((item) => <Link href={item.href} key={`${item.section}-${item.label}`} onClick={() => setQuery("")}><span>{item.label}</span><small>{item.section}</small></Link>) : <p>No matching documentation.</p>}</div>}</div>
-        <nav aria-label="Documentation links"><Link href="/release-check">Release Check</Link><a href="/api/capabilities">API</a><Link className="docs-home-link" href="/">Home ↗</Link></nav>
+        <Link prefetch={false} className="brand" href="/" aria-label="Coordiation CSS home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link>
+        <div className="docs-search"><span aria-hidden="true">⌕</span><input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Search documentation…" aria-label="Search documentation" /><kbd>⌘ K</kbd>{query && <div className="docs-search-results">{results.length ? results.map((item) => <Link prefetch={false} href={item.href} key={`${item.section}-${item.label}`} onClick={() => setQuery("")}><span>{item.label}</span><small>{item.section}</small></Link>) : <p>No matching documentation.</p>}</div>}</div>
+        <nav aria-label="Documentation links"><Link prefetch={false} href="/release-check">Release Check</Link><a href="/api/capabilities">API</a><Link prefetch={false} className="docs-home-link" href="/">Home ↗</Link></nav>
       </header>
       <div className="reference-layout">
         <aside className="reference-sidebar" aria-label="Documentation sections">
           <div className="docs-version"><span>Documentation</span><code>v0.2-dev</code></div>
-          {navigation.map((section) => <section key={section.title}><h2>{section.title}</h2><ul>{section.items.map(([label, href]) => <li key={label}><Link href={href}>{label}</Link></li>)}</ul></section>)}
+          {navigation.map((section) => <section key={section.title}><h2>{section.title}</h2><ul>{section.items.map(([label, href]) => <li key={label}><Link prefetch={false} href={href}>{label}</Link></li>)}</ul></section>)}
         </aside>
         <div className="reference-content">{children}</div>
       </div>
