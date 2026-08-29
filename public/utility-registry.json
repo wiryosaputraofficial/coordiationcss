@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 390,
+    "staticUtilityCount": 404,
     "familyCount": 15,
-    "completeFamilies": 7,
-    "partialFamilies": 8,
+    "completeFamilies": 8,
+    "partialFamilies": 7,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -538,103 +538,166 @@
     {
       "id": "typography",
       "label": "Typography",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-font-*",
+        "co-font-stretch-*",
+        "co-font-features-*",
         "co-text-*",
         "co-leading-*",
         "co-tracking-*",
-        "co-line-clamp-*"
+        "co-line-clamp-*",
+        "co-list-*",
+        "co-decoration-*",
+        "co-underline-offset-*",
+        "co-indent-*",
+        "co-tab-*",
+        "co-align-*",
+        "co-wrap-*",
+        "co-content-*"
       ],
       "examples": [
-        "co-text-2xl",
-        "co-font-bold",
-        "co-tracking-tight",
-        "co-line-clamp-3"
+        "co-text-sm/6",
+        "co-font-stretch-condensed",
+        "co-font-features-(--features)",
+        "co-tabular-nums",
+        "co-list-image-none",
+        "co-wrap-anywhere",
+        "-co-tracking-wide",
+        "before:co-content-['AI_ready']"
       ],
       "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Control font family, size, weight, line height, letter spacing, alignment, decoration, wrapping, hyphenation, indentation, and line clamping.",
-        "guidance": "Start with the theme type scale, adjust leading only when the design calls for it, and reserve arbitrary sizes for values that cannot be represented as reusable tokens.",
+        "summary": "Control font families, variable-font width and features, type scale, weight, leading, tracking, numeric glyphs, lists, alignment, decoration, wrapping, indentation, tab width, and generated content.",
+        "guidance": "Start with the CSS-first font and text tokens, use a font-size/line-height modifier when the pair belongs together, and reserve arbitrary values for type decisions that should not become reusable design tokens.",
         "properties": [
           "font-family",
           "font-size",
+          "font-style",
           "font-weight",
+          "font-stretch",
+          "font-feature-settings",
+          "font-variation-settings",
+          "font-variant-numeric",
+          "font-smoothing",
           "line-height",
           "letter-spacing",
+          "list-style",
           "text-align",
+          "color",
           "text-decoration",
+          "text-transform",
+          "text-overflow",
           "text-wrap",
-          "white-space",
           "text-indent",
+          "tab-size",
+          "vertical-align",
+          "white-space",
+          "word-break",
+          "overflow-wrap",
+          "hyphens",
+          "content",
           "-webkit-line-clamp"
         ],
         "concepts": [
-          "Theme font-size entries may emit both font-size and line-height.",
+          "Font-size tokens may carry default line-height, letter-spacing, and font-weight metadata, while slash modifiers such as co-text-sm/6 override only line height.",
+          "Font-family tokens may carry feature and variation defaults; standalone font-features utilities provide explicit OpenType control.",
+          "Font stretch accepts named widths, percentages, CSS custom properties, and arbitrary values.",
           "Line clamp combines overflow, display, box orientation, and clamp declarations.",
-          "Text colors share the same theme color namespace as backgrounds and borders."
+          "Text colors and decoration colors share the theme color namespace.",
+          "Overflow wrapping distinguishes break-word from anywhere so intrinsic flex sizing can be handled intentionally.",
+          "Generated content composes with before/after variants and preserves scanner-visible literal values."
         ],
         "caveats": [
-          "OpenType feature and variation-setting utilities are not implemented.",
-          "Only indentation accepts the canonical negative modifier."
+          "Font files and @font-face declarations remain authored CSS assets rather than generated utilities.",
+          "OpenType and variable-font results depend on glyph support in the selected font.",
+          "Only tracking and indentation accept the canonical negative modifier; content utilities are normally paired with before or after variants."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-text-2xl",
+          "candidate": "co-text-sm/6",
           "supported": true,
           "declarations": [
             [
               "font-size",
-              "1.5rem"
+              "0.875rem"
             ],
             [
               "line-height",
-              "2rem"
+              "calc(var(--co-space-unit) * 6)"
             ]
           ]
         },
         {
-          "candidate": "co-font-bold",
+          "candidate": "co-font-stretch-condensed",
           "supported": true,
           "declarations": [
             [
-              "font-weight",
-              "700"
+              "font-stretch",
+              "condensed"
             ]
           ]
         },
         {
-          "candidate": "co-tracking-tight",
+          "candidate": "co-font-features-(--features)",
+          "supported": true,
+          "declarations": [
+            [
+              "font-feature-settings",
+              "var(--features)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-tabular-nums",
+          "supported": true,
+          "declarations": [
+            [
+              "font-variant-numeric",
+              "tabular-nums"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-list-image-none",
+          "supported": true,
+          "declarations": [
+            [
+              "list-style-image",
+              "none"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-wrap-anywhere",
+          "supported": true,
+          "declarations": [
+            [
+              "overflow-wrap",
+              "anywhere"
+            ]
+          ]
+        },
+        {
+          "candidate": "-co-tracking-wide",
           "supported": true,
           "declarations": [
             [
               "letter-spacing",
-              "-0.025em"
+              "calc(0.025em * -1)"
             ]
           ]
         },
         {
-          "candidate": "co-line-clamp-3",
+          "candidate": "before:co-content-['AI_ready']",
           "supported": true,
           "declarations": [
             [
-              "overflow",
-              "hidden"
-            ],
-            [
-              "display",
-              "-webkit-box"
-            ],
-            [
-              "-webkit-box-orient",
-              "vertical"
-            ],
-            [
-              "-webkit-line-clamp",
-              "3"
+              "content",
+              "'AI ready'"
             ]
           ]
         }
@@ -2476,6 +2539,15 @@
       ]
     },
     {
+      "candidate": "co-content-none",
+      "declarations": [
+        [
+          "content",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-content-normal",
       "declarations": [
         [
@@ -2616,6 +2688,15 @@
         [
           "text-decoration-style",
           "wavy"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-diagonal-fractions",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "diagonal-fractions"
         ]
       ]
     },
@@ -3385,6 +3466,15 @@
       ]
     },
     {
+      "candidate": "co-lining-nums",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "lining-nums"
+        ]
+      ]
+    },
+    {
       "candidate": "co-list-decimal",
       "declarations": [
         [
@@ -3399,6 +3489,15 @@
         [
           "list-style-type",
           "disc"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-list-image-none",
+      "declarations": [
+        [
+          "list-style-image",
+          "none"
         ]
       ]
     },
@@ -3462,6 +3561,15 @@
         [
           "text-transform",
           "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-normal-nums",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "normal"
         ]
       ]
     },
@@ -3674,6 +3782,15 @@
       ]
     },
     {
+      "candidate": "co-oldstyle-nums",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "oldstyle-nums"
+        ]
+      ]
+    },
+    {
       "candidate": "co-order-first",
       "declarations": [
         [
@@ -3697,6 +3814,15 @@
         [
           "order",
           "0"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-ordinal",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "ordinal"
         ]
       ]
     },
@@ -4231,6 +4357,15 @@
       ]
     },
     {
+      "candidate": "co-proportional-nums",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "proportional-nums"
+        ]
+      ]
+    },
+    {
       "candidate": "co-relative",
       "declarations": [
         [
@@ -4483,6 +4618,15 @@
       ]
     },
     {
+      "candidate": "co-slashed-zero",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "slashed-zero"
+        ]
+      ]
+    },
+    {
       "candidate": "co-snap-align-none",
       "declarations": [
         [
@@ -4610,6 +4754,15 @@
         [
           "border-width",
           "0"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-stacked-fractions",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "stacked-fractions"
         ]
       ]
     },
@@ -4767,6 +4920,15 @@
         [
           "display",
           "table-row-group"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-tabular-nums",
+      "declarations": [
+        [
+          "font-variant-numeric",
+          "tabular-nums"
         ]
       ]
     },
@@ -5145,6 +5307,33 @@
         [
           "will-change",
           "transform"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-wrap-anywhere",
+      "declarations": [
+        [
+          "overflow-wrap",
+          "anywhere"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-wrap-break-word",
+      "declarations": [
+        [
+          "overflow-wrap",
+          "break-word"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-wrap-normal",
+      "declarations": [
+        [
+          "overflow-wrap",
+          "normal"
         ]
       ]
     },

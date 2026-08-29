@@ -26,6 +26,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Flex/Grid: `co-flex-[3_1_auto]`, `co-grow-3`, `co-basis-sm`, `co-items-center-safe`, `co-grid-cols-subgrid`, `-co-col-start-2`
 - Spacing: `co-pbs-4`, `-co-mbe-2`, `co-gap-x-6`, `co-space-x-reverse`, `co-scroll-pbe-(--offset)`
 - Sizing: `co-w-md`, `co-h-dvh`, `co-size-12`, `co-inline-full`, `co-max-inline-lg`, `co-min-block-24`
+- Typography: `co-text-sm/6`, `co-font-stretch-condensed`, `co-font-features-(--features)`, `co-tabular-nums`, `co-wrap-anywhere`, `before:co-content-['AI_ready']`
 
 ## Reliability rules for AI agents
 
@@ -46,3 +47,4 @@ Layout utility documentation: `/docs/utilities/layout`
 Flexbox and Grid documentation: `/docs/utilities/flex-grid`
 Spacing documentation: `/docs/utilities/spacing`
 Sizing documentation: `/docs/utilities/sizing`
+Typography documentation: `/docs/utilities/typography`
