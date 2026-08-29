@@ -86,6 +86,8 @@
     "framework": "Next.js App Router",
     "style": "editorial",
     "palette": "warm cream",
+    "namespace": "editorial-theme",
+    "classPrefix": "ea-",
     "preview": "/themes/editorial-advisor/preview",
     "cover": "/themes/editorial-advisor/hero-advisor.png",
     "sections": [

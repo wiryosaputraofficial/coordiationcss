@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "generatedAt": "2026-08-29",
   "distribution": "open-code page registry",
-  "themeCount": 1,
+  "themeCount": 2,
   "themes": [
     {
       "name": "editorial-advisor",
@@ -21,6 +21,8 @@
       "framework": "Next.js App Router",
       "style": "editorial",
       "palette": "warm cream",
+      "namespace": "editorial-theme",
+      "classPrefix": "ea-",
       "preview": "/themes/editorial-advisor/preview",
       "cover": "/themes/editorial-advisor/hero-advisor.png",
       "installPath": "/r/themes/editorial-advisor.json",
@@ -103,7 +105,130 @@
       "ai": {
         "selectionKey": "editorial-advisor",
         "sourceOwnership": "open-code",
-        "customization": "Preserve the literal co-* utility foundation, editorial-theme namespace, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "customization": "Preserve the literal co-* utility foundation, editorial-theme namespace, ea- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
+      }
+    },
+    {
+      "name": "quiet-journal",
+      "title": "Quiet Journal",
+      "description": "A warm illustrated personal journal for essays, slow-living notes, travel stories, and thoughtful newsletters.",
+      "categories": [
+        "blog",
+        "editorial",
+        "personal"
+      ],
+      "status": "stable",
+      "copyright": "Coordiation",
+      "framework": "Next.js App Router",
+      "style": "illustrated journal",
+      "palette": "ivory and terracotta",
+      "namespace": "quiet-journal",
+      "classPrefix": "qj-",
+      "preview": "/themes/quiet-journal/preview",
+      "cover": "/themes/quiet-journal/hero-desk.webp",
+      "installPath": "/r/themes/quiet-journal.json",
+      "command": "npx @coordiation/cli@latest add theme quiet-journal",
+      "sections": [
+        "header",
+        "hero",
+        "about",
+        "featured stories",
+        "archive",
+        "topics",
+        "newsletter",
+        "footer"
+      ],
+      "assets": [
+        "/themes/quiet-journal/hero-desk.webp",
+        "/themes/quiet-journal/writer-portrait.webp",
+        "/themes/quiet-journal/story-reading.webp",
+        "/themes/quiet-journal/story-plant.webp",
+        "/themes/quiet-journal/story-travel.webp",
+        "/themes/quiet-journal/story-books-camera.webp"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/quiet-journal/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/quiet-journal/page.tsx"
+        },
+        {
+          "path": "site/app/themes/quiet-journal/preview/quiet-journal.css",
+          "type": "registry:style",
+          "target": "app/quiet-journal/quiet-journal.css"
+        },
+        {
+          "path": "site/app/themes/quiet-journal/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/quiet-journal/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-down.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-down.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/book.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/book.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/camera.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/camera.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/clock-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/clock-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hashtag.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hashtag.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/heart.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/heart.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/map-point.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/map-point.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/user.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/user.svg"
+        }
+      ],
+      "coordiationUtilityCount": 40,
+      "ai": {
+        "selectionKey": "quiet-journal",
+        "sourceOwnership": "open-code",
+        "customization": "Preserve the literal co-* utility foundation, quiet-journal namespace, qj- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
         "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
       }
     }

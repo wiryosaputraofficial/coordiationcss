@@ -58,6 +58,7 @@ Creator: Wiryo Saputra (`wiryosaputra@coordiation.com`). Coordiation is built to
 - Human component discovery: browse `/components`; every preview exposes its compatible install URL, local import, usage example, client/server boundary, and accessibility requirements
 - Themes: read `/theme-registry.json` or `/api/themes`, select an exact stable theme by `name`, then run `npx @coordiation/cli@latest add theme {name}`; preserve the documented namespace, semantic section IDs, heading hierarchy, literal asset paths, and accessibility contract
 - Human theme discovery: browse `/themes`; every theme exposes a live application preview, exact install command, source files, section map, public asset list, and customization order
+- Stable theme names: `editorial-advisor` for professional consultant portfolios and `quiet-journal` for illustrated personal essays, archives, topics, and newsletters
 
 ## Reliability rules for AI agents
 
