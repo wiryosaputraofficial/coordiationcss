@@ -7,17 +7,24 @@ type IconEntry = {
   name: string;
   export: string;
   style: "linear";
+  collectionId: string;
+  collection: string;
   categories: string[];
   import: string;
+  asset: string;
+};
+
+type IconCollection = {
+  id: string;
+  name: string;
+  iconCount: number;
+  source: { creator: string; license: string; attributionRequired: boolean };
 };
 
 type IconRegistry = {
   iconCount: number;
   collection: string;
-  source: {
-    creator: string;
-    license: string;
-  };
+  collections: IconCollection[];
   icons: IconEntry[];
 };
 
@@ -25,13 +32,10 @@ function readable(value: string) {
   return value.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
 }
 
-function iconUrl(name: string) {
-  return `/icons/solar-linear/${name}.svg`;
-}
-
 export default function IconBrowser() {
   const [registry, setRegistry] = useState<IconRegistry | null>(null);
   const [query, setQuery] = useState("");
+  const [collection, setCollection] = useState("all");
   const [category, setCategory] = useState("all");
   const [selected, setSelected] = useState<IconEntry | null>(null);
   const [copied, setCopied] = useState("");
@@ -53,18 +57,19 @@ export default function IconBrowser() {
 
   const categories = useMemo(() => {
     if (!registry) return [];
-    return [...new Set(registry.icons.flatMap((icon) => icon.categories))].sort();
-  }, [registry]);
+    return [...new Set(registry.icons.filter((icon) => collection === "all" || icon.collectionId === collection).flatMap((icon) => icon.categories))].sort();
+  }, [collection, registry]);
 
   const filtered = useMemo(() => {
     if (!registry) return [];
     const needle = query.trim().toLowerCase();
     return registry.icons.filter((icon) => {
+      const matchesCollection = collection === "all" || icon.collectionId === collection;
       const matchesCategory = category === "all" || icon.categories.includes(category);
-      const searchable = `${icon.name} ${icon.export} ${icon.categories.join(" ")}`.toLowerCase();
-      return matchesCategory && (!needle || searchable.includes(needle));
+      const searchable = `${icon.name} ${icon.export} ${icon.collection} ${icon.categories.join(" ")}`.toLowerCase();
+      return matchesCollection && matchesCategory && (!needle || searchable.includes(needle));
     });
-  }, [category, query, registry]);
+  }, [category, collection, query, registry]);
 
   const importCode = selected
     ? `import { ${selected.export} } from "${selected.import}";\nimport { renderIcon } from "@coordiation/icons";`
@@ -93,25 +98,26 @@ export default function IconBrowser() {
         <div>
           <p className="icons-kicker">COMPLETE CATALOG</p>
           <h2>Find your icon</h2>
-          <p>All assets are served locally from this site. Images outside the viewport load lazily.</p>
+          <p>Both complete collections are served locally. Filter by collection, then copy an exact literal import.</p>
         </div>
         <div className="icon-browser-controls">
           <label><span>Search icons</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try home, arrow, user…" /></label>
+          <label><span>Collection</span><select value={collection} onChange={(event) => { setCollection(event.target.value); setCategory("all"); }}><option value="all">All collections</option>{registry?.collections.map((item) => <option value={item.id} key={item.id}>{item.name} ({item.iconCount.toLocaleString("en-US")})</option>)}</select></label>
           <label><span>Category</span><select value={category} onChange={(event) => setCategory(event.target.value)}><option value="all">All categories</option>{categories.map((item) => <option value={item} key={item}>{readable(item)}</option>)}</select></label>
         </div>
       </div>
 
       <div className="icon-browser-summary" aria-live="polite">
-        <span><b>{filtered.length.toLocaleString("en-US")}</b> of {registry?.iconCount.toLocaleString("en-US") ?? "1,246"} icons</span>
-        {(query || category !== "all") && <button type="button" onClick={() => { setQuery(""); setCategory("all"); }}>Clear filters</button>}
+        <span><b>{filtered.length.toLocaleString("en-US")}</b> of {registry?.iconCount.toLocaleString("en-US") ?? "2,165"} icons</span>
+        {(query || collection !== "all" || category !== "all") && <button type="button" onClick={() => { setQuery(""); setCollection("all"); setCategory("all"); }}>Clear filters</button>}
       </div>
 
       {error ? <p className="icon-browser-error">{error}</p> : !registry ? <p className="icon-browser-loading">Loading all icon names…</p> : (
         <div className="icon-browser-layout">
-          <div className="icon-grid" aria-label="Solar Linear icons">
+          <div className="icon-grid" aria-label="Coordiation icon collections">
             {filtered.map((icon) => (
-              <button className={`icon-card${selected?.name === icon.name ? " is-selected" : ""}`} type="button" key={icon.name} onClick={() => selectIcon(icon)} aria-label={`Show usage for ${readable(icon.name)}`} aria-pressed={selected?.name === icon.name}>
-                <img loading="lazy" decoding="async" src={iconUrl(icon.name)} alt="" />
+              <button className={`icon-card${selected?.name === icon.name && selected.collectionId === icon.collectionId ? " is-selected" : ""}`} type="button" key={`${icon.collectionId}:${icon.name}`} onClick={() => selectIcon(icon)} aria-label={`Show usage for ${readable(icon.name)} from ${icon.collection}`} aria-pressed={selected?.name === icon.name && selected.collectionId === icon.collectionId}>
+                <img loading="lazy" decoding="async" src={icon.asset} alt="" />
                 <span>{icon.name}</span>
               </button>
             ))}
@@ -120,7 +126,7 @@ export default function IconBrowser() {
 
           <aside className={`icon-usage${selected ? " has-selection" : ""}`} id="icon-usage" aria-live="polite">
             {selected ? <>
-              <div className="icon-usage-preview"><img src={iconUrl(selected.name)} alt="" /><span>{selected.style}</span></div>
+              <div className="icon-usage-preview"><img src={selected.asset} alt="" /><span>{selected.collection}</span></div>
               <p className="icons-kicker">SELECTED ICON</p>
               <h2>{readable(selected.name)}</h2>
               <code className="icon-export-name">{selected.export}</code>
@@ -136,7 +142,7 @@ export default function IconBrowser() {
       )}
 
       <footer className="icon-browser-footer">
-        <p>Solar Icons by <a href="https://www.figma.com/community/file/1166831539721848736">480 Design</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Attribution is required.</p>
+        <p>Includes Solar Linear by <a href="https://www.figma.com/community/file/1166831539721848736">480 Design</a> (CC BY 4.0, attribution required) and Iconsax Line Oval from the pinned MIT source package.</p>
         <a href="/icon-registry.json">Open machine-readable registry <SolarIcon name="arrow-to-top-right" size={14} /></a>
       </footer>
       <p className={`icon-copy-status${copied ? " visible" : ""}`} role="status">{copied || "Copied"}</p>

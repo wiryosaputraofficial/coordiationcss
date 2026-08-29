@@ -125,7 +125,7 @@ const integrations = [
   { name: "Formatter", label: "Canonical", description: "Stable class sorting powered by the same candidate ordering used by the compiler.", href: "/docs/tooling/formatter", code: "@coordiation/formatter" },
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
-  { name: "Icons", label: "1,246 glyphs", description: "Tree-shakeable Solar Linear SVG strings, accessible rendering, CSS variables, provenance, and an AI-readable registry.", href: "/icons", code: "@coordiation/icons" },
+  { name: "Icons", label: "2,165 glyphs", description: "Complete Solar Linear and Iconsax Line Oval collections with tree-shakeable SVG strings, accessible rendering, provenance, and an AI-readable registry.", href: "/icons", code: "@coordiation/icons" },
   { name: "Components", label: "64 open-code components", description: "Full current shadcn catalog parity through independent React source, compatible registry endpoints, Coordiation utilities, and AI-readable contracts.", href: "/components", code: "@coordiation/ui" },
 ];
 
