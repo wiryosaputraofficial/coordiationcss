@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CodeBlock from "../../_components/CodeBlock";
+import ModernColorPalette from "./ModernColorPalette";
 
 export const metadata: Metadata = {
   title: "Modern color and Display-P3",
@@ -26,6 +27,16 @@ export default function ModernColorPage() {
       <h1>Modern color and Display-P3</h1>
       <p className="docs-lead">Use perceptual color spaces, wide-gamut theme tokens, explicit fallbacks, opacity mixing, and predictable gradient interpolation without adding browser runtime code.</p>
       <div className="docs-note"><span>✓</span><p>The release gate covers OKLab and OKLCH palettes, Lab, LCH, Display-P3, CSS <code>color-mix()</code>, eight gradient interpolation spaces, hue-path controls, slash opacity, and progressive wide-gamut fallback behavior.</p></div>
+
+      <section className="family-example modern-palette-section" id="default-palette">
+        <p className="docs-overline">DEFAULT COLOR PALETTE</p><h2>Every built-in Coordiation color</h2>
+        <p>The default palette includes complete brand and neutral scales plus focused single-step semantic hues. Every token works across color-aware utilities such as <code>co-bg-*</code>, <code>co-text-*</code>, <code>co-border-*</code>, <code>co-fill-*</code>, and <code>co-stroke-*</code>.</p>
+        <ModernColorPalette />
+        <CodeBlock title="component.coord" code={`<article class="co-bg-neutral-950 co-text-neutral-50 co-border-brand-500">
+  <svg class="co-fill-blue co-stroke-white">...</svg>
+  <a class="co-text-brand-400 hover:co-text-brand-300">Learn more</a>
+</article>`} />
+      </section>
 
       <section className="family-example" id="p3-theme-tokens">
         <p className="docs-overline">CSS-FIRST PALETTE</p><h2>Pair every P3 color with a fallback</h2>

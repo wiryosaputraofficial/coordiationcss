@@ -93,7 +93,7 @@ export default defineConfig({
 
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI GENERATION CONTRACT</p><h2>Resolve identity before capability</h2><p>Agents should use the effective manifest and compiler result instead of guessing from a package name.</p></div><ul><li>Match the exact plugin name and version before using its registered surface.</li><li>Generate only utility patterns and variant names present in the effective project contract.</li><li>Keep safelist and extractor output as complete literal candidates.</li><li>Respect plugin, application-option, and CSS-first precedence.</li><li>Report rejected candidates and plugin validation errors instead of inventing a fallback.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs/core/custom-variants"><span>Previous</span><b>← Custom variants</b></Link><Link href="/release-check"><span>Next</span><b>Release Check →</b></Link></div>
+      <div className="docs-next split"><Link href="/docs/core/custom-variants"><span>Previous</span><b>← Custom variants</b></Link><Link href="/docs/tooling/css-toolchain"><span>Next</span><b>CSS toolchain →</b></Link></div>
     </article>
   );
 }

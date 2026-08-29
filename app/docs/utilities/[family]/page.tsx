@@ -2,6 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CodeBlock from "../../_components/CodeBlock";
+import AccessibilityExamples, { AccessibilityMiniNavigation } from "./AccessibilityExamples";
+import ArbitraryPropertiesExamples, { ArbitraryPropertiesMiniNavigation } from "./ArbitraryPropertiesExamples";
+import BackgroundExamples, { BackgroundMiniNavigation } from "./BackgroundExamples";
+import BorderRingExamples, { BorderRingMiniNavigation } from "./BorderRingExamples";
+import EffectsExamples, { EffectsMiniNavigation } from "./EffectsExamples";
+import FlexGridExamples, { FlexGridMiniNavigation } from "./FlexGridExamples";
+import InteractionExamples, { InteractionMiniNavigation } from "./InteractionExamples";
+import LayoutExamples, { LayoutMiniNavigation } from "./LayoutExamples";
+import SizingExamples, { SizingMiniNavigation } from "./SizingExamples";
+import SpacingExamples, { SpacingMiniNavigation } from "./SpacingExamples";
+import SvgExamples, { SvgMiniNavigation } from "./SvgExamples";
+import TablesColumnsExamples, { TablesColumnsMiniNavigation } from "./TablesColumnsExamples";
+import TransformsExamples, { TransformsMiniNavigation } from "./TransformsExamples";
+import TransitionsExamples, { TransitionsMiniNavigation } from "./TransitionsExamples";
+import TypographyExamples, { TypographyMiniNavigation } from "./TypographyExamples";
 import registry from "../../generated/utility-registry.json";
 
 type PageProps = { params: Promise<{ family: string }> };
@@ -26,6 +41,7 @@ export default async function UtilityFamilyPage({ params }: PageProps) {
   const next = registry.families[index + 1];
 
   return (
+    <div className={["layout", "flex-grid", "spacing", "sizing", "typography", "backgrounds", "borders-rings", "effects", "tables-columns", "transforms", "transitions", "svg", "accessibility", "interaction", "arbitrary-properties"].includes(family.id) ? "family-page-frame mini-nav-page-frame" : "family-page-frame"}>
     <article className="docs-article family-guide">
       <div className="docs-breadcrumb"><Link href="/docs">Docs</Link><b>/</b><Link href="/docs/utilities">Utilities</Link><b>/</b><span>{family.label}</span></div>
       <p className="docs-overline">CORE UTILITY FAMILY</p>
@@ -36,6 +52,22 @@ export default async function UtilityFamilyPage({ params }: PageProps) {
       <section className="family-intro" id="overview"><p className="docs-overline">WHEN TO USE IT</p><h2>Choose the right tool for the layout.</h2><p>{family.documentation.guidance}</p></section>
 
       <section className="family-reference" id="quick-reference"><div><p className="docs-overline">QUICK REFERENCE</p><h2>Classes and generated CSS</h2><p>These examples are resolved by the compiler when the registry manifest is generated. A broken example fails the test suite.</p></div><div className="family-reference-table" role="table"><div className="family-reference-head" role="row"><span>Class</span><span>Generated declarations and keyframes</span></div>{family.resolvedExamples.map((example) => <div className="family-reference-row" role="row" key={example.candidate}><code>{example.candidate}</code><code>{example.declarations.map(([property, value]) => `${property}: ${value};`).join(" ")}{example.globalCss ? ` ${example.globalCss}` : ""}</code></div>)}</div></section>
+
+      {family.id === "layout" && <LayoutExamples />}
+      {family.id === "flex-grid" && <FlexGridExamples />}
+      {family.id === "spacing" && <SpacingExamples />}
+      {family.id === "sizing" && <SizingExamples />}
+      {family.id === "typography" && <TypographyExamples />}
+      {family.id === "backgrounds" && <BackgroundExamples />}
+      {family.id === "borders-rings" && <BorderRingExamples />}
+      {family.id === "effects" && <EffectsExamples />}
+      {family.id === "tables-columns" && <TablesColumnsExamples />}
+      {family.id === "transforms" && <TransformsExamples />}
+      {family.id === "transitions" && <TransitionsExamples />}
+      {family.id === "svg" && <SvgExamples />}
+      {family.id === "accessibility" && <AccessibilityExamples />}
+      {family.id === "interaction" && <InteractionExamples />}
+      {family.id === "arbitrary-properties" && <ArbitraryPropertiesExamples />}
 
       <section className="family-example" id="basic-usage"><p className="docs-overline">BASIC USAGE</p><h2>Apply a utility directly.</h2><p>Keep the complete class string in your template so the plain-text scanner can discover it without evaluating application code.</p><CodeBlock title="component.coord" code={`<div class="${family.examples.join(" ")}">\n  Your content\n</div>`} /></section>
 
@@ -53,5 +85,21 @@ export default async function UtilityFamilyPage({ params }: PageProps) {
 
       <div className="docs-next split">{previous ? <Link href={`/docs/utilities/${previous.id}`}><span>Previous</span><b>← {previous.label}</b></Link> : <Link href="/docs/utilities"><span>Previous</span><b>← Utility registry</b></Link>}{next ? <Link href={`/docs/utilities/${next.id}`}><span>Next</span><b>{next.label} →</b></Link> : <Link href="/release-check"><span>Next</span><b>Release Check →</b></Link>}</div>
     </article>
+    {family.id === "layout" && <LayoutMiniNavigation />}
+    {family.id === "flex-grid" && <FlexGridMiniNavigation />}
+    {family.id === "spacing" && <SpacingMiniNavigation />}
+    {family.id === "sizing" && <SizingMiniNavigation />}
+    {family.id === "typography" && <TypographyMiniNavigation />}
+    {family.id === "backgrounds" && <BackgroundMiniNavigation />}
+    {family.id === "borders-rings" && <BorderRingMiniNavigation />}
+    {family.id === "effects" && <EffectsMiniNavigation />}
+    {family.id === "tables-columns" && <TablesColumnsMiniNavigation />}
+    {family.id === "transforms" && <TransformsMiniNavigation />}
+    {family.id === "transitions" && <TransitionsMiniNavigation />}
+    {family.id === "svg" && <SvgMiniNavigation />}
+    {family.id === "accessibility" && <AccessibilityMiniNavigation />}
+    {family.id === "interaction" && <InteractionMiniNavigation />}
+    {family.id === "arbitrary-properties" && <ArbitraryPropertiesMiniNavigation />}
+    </div>
   );
 }

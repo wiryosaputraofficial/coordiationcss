@@ -13,29 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coordiation CSS — Utility-first styling for Coordiation",
+  title: "Coordiation CSS — Build interfaces. Keep the system.",
   description:
-    "An independent utility-first CSS compiler designed from scratch for the Coordiation framework.",
+    "A complete utility-first CSS compiler for Coordiation with CSS-first themes, composable variants, zero browser runtime, and an AI-readable registry.",
   icons: {
     icon: "/coordiation-logo.png",
   },
   openGraph: {
     title: "Coordiation CSS",
-    description: "Utility-first. Framework-native. Zero browser runtime.",
+    description: "Utility-first. AI-readable. Framework-native. Zero browser runtime.",
     type: "website",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Coordiation CSS — Utility-first. Framework-native. Zero browser runtime.",
+        alt: "Coordiation CSS — Build interfaces. Keep the system.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Coordiation CSS",
-    description: "Utility-first. Framework-native. Zero browser runtime.",
+    description: "Utility-first. AI-readable. Framework-native. Zero browser runtime.",
     images: ["/og.png"],
   },
 };
