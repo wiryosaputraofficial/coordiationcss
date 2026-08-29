@@ -46,6 +46,10 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Incremental cache: reuse one `createIncrementalBuildCache()` instance for repeated direct builds; inspect `scan.cache` and `result.cache` for hit/miss data, use the CLI project-local `.coordiation-cache` by default, and treat runtime extractor/plugin functions as process-scoped contracts
 - Source maps: enable `sourceMap` for Source Map v3 output across imports, framework generation, transforms, and minification; inspect `result.toolchain.sourceMap`, use native Vite/PostCSS maps, and choose external or inline CLI delivery deliberately
 - IntelliSense/LSP: launch `coordiation-language-server --stdio`, configure the same literal CSS entry and prefix as the build, use completion for discovery, hover for compiled CSS, diagnostics for literal/dynamic source problems, and `coordiation/inspectCandidate` for concrete project-aware support
+- Formatter: use `coordiation-format --check` or `--write`; its API reuses canonical compiler ordering, preserves application-class order, and leaves dynamic expressions unchanged
+- Upgrade: inspect `upgradeManifest`, create a `--json` plan, then use `--check` or `--write`; registered transforms share compiler deprecation IDs and never evaluate dynamic source
+- Native scanner: call `scanSourcesNative()` and inspect `engine` plus `native.fallbackReason`; use `fallback: false` only when native execution is a hard requirement
+- Compatibility: inspect compiler `compatibility` and `deprecations`, use the registered replacement and codemod, and do not infer stable guarantees from a prerelease version
 
 ## Reliability rules for AI agents
 
@@ -59,6 +63,10 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 8. Treat cache manifests as rebuild observability, never as class-support evidence; compiler rejection and the utility registry remain authoritative.
 9. Treat source maps as CSS-origin data, not template-to-class mappings; disable `sourcesContent` when original CSS must not be embedded.
 10. Treat language-server completion as discovery and `coordiation/inspectCandidate` as concrete support evidence; never suppress dynamic-candidate diagnostics by guessing runtime strings.
+11. Delegate class ordering to the formatter and preserve unknown application classes or dynamic expressions exactly as its manifest specifies.
+12. Review the JSON upgrade plan before write mode; never apply a class-like replacement outside registered literal-source boundaries.
+13. An installed native package does not prove native execution; report the actual engine and fallback reason.
+14. Use deprecation IDs, earliest-removal versions, and registered replacements from the compatibility manifest; feature completeness does not rename a prerelease as stable.
 
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
@@ -90,3 +98,7 @@ Complete CSS toolchain guide: `/docs/tooling/css-toolchain`
 Complete incremental build cache guide: `/docs/tooling/incremental-cache`
 Complete Source Map v3 guide: `/docs/tooling/source-maps`
 Complete IntelliSense and LSP guide: `/docs/tooling/language-server`
+Complete class formatter guide: `/docs/tooling/formatter`
+Complete upgrade and codemod guide: `/docs/tooling/upgrade`
+Complete native scanner guide: `/docs/tooling/native-scanner`
+Compatibility and deprecation policy: `/docs/core/compatibility`

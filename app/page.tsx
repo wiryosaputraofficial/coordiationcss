@@ -75,7 +75,7 @@ export default function Home() {
     <main>
       <div className="announcement">
         <span className="announcement-dot" />
-        The core utility registry is complete
+        All 44 tracked capabilities are complete
         <Link href="/release-check">View release readiness <span aria-hidden="true">→</span></Link>
       </div>
 

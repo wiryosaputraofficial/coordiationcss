@@ -45,7 +45,10 @@ coordiation-language-server --stdio`} /><p>Configure your editor&apos;s LSP clie
   co-bg-not-a-token
 
 dynamic-candidate
-  \`co-bg-\${color}\``} /><p><code>unsupported-candidate</code> means the active compiler rejected a literal class. <code>dynamic-candidate</code> means the source scanner cannot see every runtime result. Replace interpolation with a literal lookup table or add deliberate literal entries to the build safelist.</p></div></section>
+  \`co-bg-\${color}\`
+
+deprecated-candidate
+  hover:co--mt-4 → hover:-co-mt-4`} /><p><code>unsupported-candidate</code> means the active compiler rejected a literal class. <code>deprecated-candidate</code> carries the registered replacement. <code>dynamic-candidate</code> means the source scanner cannot see every runtime result. Replace interpolation with a literal lookup table or add deliberate literal entries to the build safelist.</p></div></section>
 
       <section className="guide-step" id="ai-inspection"><div className="step-number">06</div><div><h2>Inspect the live contract programmatically</h2><CodeBlock title="Custom LSP requests" code={`coordiation/manifest
 → { prefix, candidateCount, variantCount, capabilities }
@@ -58,7 +61,7 @@ coordiation/inspectCandidate
 
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI GENERATION CONTRACT</p><h2>Let the project configuration decide</h2><p>Agents should connect editor suggestions to verifiable compiler behavior.</p></div><ul><li>Configure the same literal CSS entry and prefix used by the build.</li><li>Query <code>coordiation/manifest</code> before describing the active editor surface.</li><li>Use <code>coordiation/inspectCandidate</code> before claiming a project-specific class is supported.</li><li>Keep generated class strings literal so diagnostics and the build scanner agree.</li><li>Never hide a dynamic-candidate warning by inventing a likely runtime value.</li></ul></section>
 
-      <div className="docs-next split"><Link prefetch={false} href="/docs/tooling/source-maps"><span>Previous</span><b>← Source maps</b></Link><Link prefetch={false} href="/docs/installation/using-vite"><span>Next</span><b>Using Vite →</b></Link></div>
+      <div className="docs-next split"><Link prefetch={false} href="/docs/tooling/source-maps"><span>Previous</span><b>← Source maps</b></Link><Link prefetch={false} href="/docs/tooling/formatter"><span>Next</span><b>Class formatter →</b></Link></div>
     </article>
   );
 }

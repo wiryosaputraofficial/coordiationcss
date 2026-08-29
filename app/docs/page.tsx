@@ -7,7 +7,7 @@ export default function DocsOverview() {
       <p className="docs-overline">GETTING STARTED</p>
       <h1>Installation</h1>
       <p className="docs-lead">Get Coordiation CSS running in your project. Choose the integration that matches your build tool.</p>
-      <div className="docs-callout"><strong>Alpha software</strong><p>Coordiation CSS is usable today, but not every planned utility has shipped. Check the release tracker before relying on advanced families.</p><Link href="/release-check">Open Release Check →</Link></div>
+      <div className="docs-callout"><strong>Feature implementation complete</strong><p>All 44 tracked capability areas are implemented and documented. The project remains prerelease until the stable release process, signed native artifacts, and supported-platform checks pass.</p><Link href="/release-check">Open Release Check →</Link></div>
       <h2 id="choose-integration">Choose your integration</h2>
       <div className="integration-grid">
         <Link href="/docs/installation/using-vite"><span>Recommended</span><strong>Using Vite</strong><p>Fast development, automatic template scanning, and stylesheet updates through the official Vite adapter.</p><code>@coordiation/vite</code><b>→</b></Link>
