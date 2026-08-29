@@ -8,8 +8,8 @@
   "stats": {
     "staticUtilityCount": 341,
     "familyCount": 15,
-    "completeFamilies": 2,
-    "partialFamilies": 13,
+    "completeFamilies": 3,
+    "partialFamilies": 12,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -1293,14 +1293,16 @@
     {
       "id": "arbitrary-properties",
       "label": "Arbitrary properties",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
-        "co-[{property}:{value}]"
+        "co-[{property}:{value}]",
+        "co-{utility}-[{type}:{value}]"
       ],
       "examples": [
         "co-[mask-type:luminance]",
-        "co-[content-visibility:auto]"
+        "co-text-[length:2rem]",
+        "co-bg-[image:linear-gradient(to_right,#000,#fff)]"
       ],
       "supportsNegative": false,
       "supportsArbitrary": true,
@@ -1313,12 +1315,13 @@
         ],
         "concepts": [
           "Syntax is co-[property:value].",
-          "Underscores inside arbitrary values become spaces.",
-          "Property names are validated before CSS is emitted."
+          "Unescaped underscores inside arbitrary values become spaces while \\_ remains an underscore.",
+          "Type hints disambiguate color, length, image, position, font family, and font weight values.",
+          "Property names and declaration values are validated before CSS is emitted."
         ],
         "caveats": [
-          "Type hints and ambiguity resolution are not complete.",
-          "User-provided arbitrary values are emitted as CSS and should come from trusted source code, not runtime input."
+          "User-provided arbitrary values are emitted as CSS and should come from trusted source code, not runtime input.",
+          "Repeated arbitrary values should be promoted to theme tokens for consistency."
         ]
       },
       "resolvedExamples": [
@@ -1333,12 +1336,22 @@
           ]
         },
         {
-          "candidate": "co-[content-visibility:auto]",
+          "candidate": "co-text-[length:2rem]",
           "supported": true,
           "declarations": [
             [
-              "content-visibility",
-              "auto"
+              "font-size",
+              "2rem"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-bg-[image:linear-gradient(to_right,#000,#fff)]",
+          "supported": true,
+          "declarations": [
+            [
+              "background-image",
+              "linear-gradient(to right,#000,#fff)"
             ]
           ]
         }
