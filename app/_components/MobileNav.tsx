@@ -8,6 +8,7 @@ const links = [
   ["Themes", "/themes"],
   ["Icons", "/icons"],
   ["Release Check", "/release-check"],
+  ["Get started", "/docs/installation/using-vite"],
 ] as const;
 
 export default function MobileNav() {
@@ -19,7 +20,7 @@ export default function MobileNav() {
       </summary>
       <nav aria-label="Mobile navigation">
         {links.map(([label, href]) => (
-          <Link href={href} prefetch={false} key={href}>
+          <Link className={label === "Get started" ? "mobile-nav-cta" : undefined} href={href} prefetch={false} key={href}>
             <span>{label}</span>
             <SolarIcon name="arrow-right" size={14} />
           </Link>

@@ -151,7 +151,7 @@ export default function Home() {
         <Link href="/release-check">View release readiness <SolarIcon name="arrow-right" size={14} /></Link>
       </div>
 
-      <header className="site-header">
+      <header className="site-header home-header">
         <a className="brand" href="#top" aria-label="Coordiation CSS home">
           <img src="/coordiation-logo.png" alt="" />
           <span>Coordiation</span>
@@ -169,7 +169,7 @@ export default function Home() {
           <Link href="/release-check">Release Check</Link>
         </nav>
         <MobileNav />
-        <Link className="header-cta" href="/docs/installation/using-vite">Get started <SolarIcon name="arrow-to-top-right" size={15} /></Link>
+        <Link className="header-cta mobile-menu-cta" href="/docs/installation/using-vite">Get started <SolarIcon name="arrow-to-top-right" size={15} /></Link>
       </header>
 
       <section className="hero" id="top">
