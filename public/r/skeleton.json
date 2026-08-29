@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "skeleton",
   "type": "registry:ui",
   "title": "Skeleton",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/skeleton.tsx",
       "type": "registry:ui",
-      "target": "@ui/skeleton.tsx",
+      "target": "components/ui/skeleton.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Skeleton({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) {\n  return <div aria-hidden=\"true\" className={`co-animate-pulse co-rounded-md co-bg-black/10 ${className}`.trim()} {...props} />;\n}\n"
     }
   ],

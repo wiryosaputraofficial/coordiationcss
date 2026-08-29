@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "direction",
   "type": "registry:ui",
   "title": "Direction",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/direction.tsx",
       "type": "registry:ui",
-      "target": "@ui/direction.tsx",
+      "target": "components/ui/direction.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Direction({ dir, className = \"\", ...props }: HTMLAttributes<HTMLDivElement> & { dir: \"ltr\" | \"rtl\" }) { return <div dir={dir} className={`${dir === \"rtl\" ? \"co-direction-rtl\" : \"co-direction-ltr\"} ${className}`.trim()} {...props} />; }\n"
     }
   ],

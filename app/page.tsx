@@ -105,6 +105,16 @@ const featureGroups = [
     example: "coordiation-format src --write",
     href: "/docs/tooling/language-server",
   },
+  {
+    index: "09",
+    eyebrow: "APPLICATION THEMES",
+    title: "Begin with the whole story",
+    description:
+      "Install complete application templates with editable source, responsive composition, original media, documented sections, and AI-readable customization contracts.",
+    ids: ["registry-cli", "themes"],
+    example: "npx @coordiation/cli@latest add theme editorial-advisor",
+    href: "/themes",
+  },
  ] as const;
 
 const roadmap = featureGroups.map((group) => ({
@@ -126,7 +136,9 @@ const integrations = [
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
   { name: "Icons", label: "2,165 glyphs", description: "Complete Solar Linear and Iconsax Line Oval collections with tree-shakeable SVG strings, accessible rendering, provenance, and an AI-readable registry.", href: "/icons", code: "@coordiation/icons" },
-  { name: "Components", label: "64 open-code components", description: "Full current shadcn catalog parity through independent React source, compatible registry endpoints, Coordiation utilities, and AI-readable contracts.", href: "/components", code: "@coordiation/ui" },
+  { name: "Components", label: "64 open-code components", description: "A complete independent React catalog with owned source, Coordiation utilities, install endpoints, and AI-readable contracts.", href: "/components", code: "@coordiation/ui" },
+  { name: "Installer", label: "First-party CLI", description: "Install owned component or application theme source, bundled SVG icons, and declared media with safe paths and explicit overwrite protection.", href: "/docs/themes", code: "@coordiation/cli" },
+  { name: "Themes", label: "Complete applications", description: "Original, responsive application templates with live previews, owned source, media manifests, install endpoints, and section-level AI contracts.", href: "/themes", code: "@coordiation/themes" },
 ];
 
 export default function Home() {
@@ -149,6 +161,7 @@ export default function Home() {
           <a href="#engine">Engine</a>
           <a href="#integrations">Integrations</a>
           <Link href="/components">Components</Link>
+          <Link href="/themes">Themes</Link>
           <Link href="/icons">Icons</Link>
           <a href="#about">About</a>
           <Link href="/docs">Docs</Link>
@@ -165,7 +178,7 @@ export default function Home() {
           <h1>Build interfaces.<br /><em>Keep the system.</em></h1>
           <p>
             A complete utility-first CSS system for Coordiation. Build responsive,
-            accessible interfaces with {completeCapabilityCount} verified capabilities, nine official packages,
+            accessible interfaces with {completeCapabilityCount} verified capabilities, twelve official packages,
             CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">
@@ -339,7 +352,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="kicker">OFFICIAL PACKAGES</p>
           <h2>One system.<br />Every workflow.</h2>
-          <p>Nine entry points cover compilation, icons, build integration, editor intelligence, formatting, upgrades, and optional native scanning.</p>
+          <p>Twelve entry points cover compilation, installation, themes, components, icons, build integration, editor intelligence, formatting, upgrades, and optional native scanning.</p>
         </div>
         <div className="homepage-integration-grid">
           {integrations.map((integration, index) => <Link href={integration.href} key={integration.name}>

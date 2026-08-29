@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "date-picker",
   "type": "registry:ui",
   "title": "Date Picker",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/date-picker.tsx",
       "type": "registry:ui",
-      "target": "@ui/date-picker.tsx",
+      "target": "components/ui/date-picker.tsx",
       "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const DatePicker = forwardRef<HTMLInputElement, Omit<InputHTMLAttributes<HTMLInputElement>, \"type\">>(({ className = \"\", ...props }, ref) => <input ref={ref} type=\"date\" className={`co-h-10 co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} {...props} />);\nDatePicker.displayName = \"DatePicker\";\n"
     }
   ],

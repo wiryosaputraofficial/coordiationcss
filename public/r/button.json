@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "button",
   "type": "registry:ui",
   "title": "Button",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/button.tsx",
       "type": "registry:ui",
-      "target": "@ui/button.tsx",
+      "target": "components/ui/button.tsx",
       "content": "import { forwardRef, type ButtonHTMLAttributes } from \"react\";\n\ntype ButtonVariant = \"default\" | \"outline\" | \"ghost\" | \"danger\";\ntype ButtonSize = \"sm\" | \"md\" | \"lg\" | \"icon\";\nexport type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant; size?: ButtonSize };\n\nconst base = \"co-inline-flex co-items-center co-justify-center co-gap-2 co-rounded-md co-font-medium co-transition co-outline-none focus-visible:co-ring-2 focus-visible:co-ring-black disabled:co-pointer-events-none disabled:co-opacity-50\";\nconst variants: Record<ButtonVariant, string> = {\n  default: \"co-bg-black co-text-white hover:co-bg-black/80\",\n  outline: \"co-border co-border-black/20 co-bg-white co-text-black hover:co-bg-black/5\",\n  ghost: \"co-bg-transparent co-text-black hover:co-bg-black/5\",\n  danger: \"co-bg-black co-text-white hover:co-opacity-80\",\n};\nconst sizes: Record<ButtonSize, string> = { sm: \"co-h-8 co-px-3 co-text-xs\", md: \"co-h-10 co-px-4 co-text-sm\", lg: \"co-h-12 co-px-6\", icon: \"co-size-10\" };\n\nexport const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className = \"\", variant = \"default\", size = \"md\", type = \"button\", ...props }, ref) => (\n  <button ref={ref} type={type} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`.trim()} {...props} />\n));\nButton.displayName = \"Button\";\n"
     }
   ],

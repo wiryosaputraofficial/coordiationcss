@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "separator",
   "type": "registry:ui",
   "title": "Separator",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/separator.tsx",
       "type": "registry:ui",
-      "target": "@ui/separator.tsx",
+      "target": "components/ui/separator.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Separator({ className = \"\", orientation = \"horizontal\", decorative = true, ...props }: HTMLAttributes<HTMLDivElement> & { orientation?: \"horizontal\" | \"vertical\"; decorative?: boolean }) {\n  return <div role={decorative ? \"none\" : \"separator\"} aria-orientation={decorative ? undefined : orientation} className={`${orientation === \"horizontal\" ? \"co-h-px co-w-full\" : \"co-h-full co-w-px\"} co-shrink-0 co-bg-black/15 ${className}`.trim()} {...props} />;\n}\n"
     }
   ],

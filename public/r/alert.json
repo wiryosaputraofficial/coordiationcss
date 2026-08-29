@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "alert",
   "type": "registry:ui",
   "title": "Alert",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/alert.tsx",
       "type": "registry:ui",
-      "target": "@ui/alert.tsx",
+      "target": "components/ui/alert.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\ntype AlertVariant = \"default\" | \"danger\";\nexport function Alert({ className = \"\", variant = \"default\", ...props }: HTMLAttributes<HTMLDivElement> & { variant?: AlertVariant }) {\n  const tone = variant === \"danger\" ? \"co-border-black co-bg-black co-text-white\" : \"co-border-black/20 co-text-black\";\n  return <div role=\"alert\" className={`co-relative co-w-full co-rounded-lg co-border co-bg-white co-p-4 ${tone} ${className}`.trim()} {...props} />;\n}\nexport function AlertTitle({ className = \"\", ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h5 className={`co-mb-1 co-font-medium co-leading-none ${className}`.trim()} {...props} />; }\nexport function AlertDescription({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-text-sm co-leading-relaxed co-opacity-70 ${className}`.trim()} {...props} />; }\n"
     }
   ],

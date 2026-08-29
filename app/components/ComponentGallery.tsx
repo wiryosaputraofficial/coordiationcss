@@ -4,19 +4,17 @@ import { useEffect, useMemo, useState } from "react";
 import SolarIcon from "../_components/SolarIcon";
 import ComponentDemo from "./ComponentDemo";
 
-type ComponentItem = { name: string; title: string; description: string; category: string; status: string; client: boolean; export: string; installPath: string; import: string; usage: string; accessibility: string };
+type ComponentItem = { name: string; title: string; description: string; category: string; status: string; client: boolean; export: string; installPath: string; command: string; import: string; usage: string; accessibility: string };
 type ComponentRegistry = { componentCount: number; categories: string[]; components: ComponentItem[] };
 
 export default function ComponentGallery({ registry }: { registry: ComponentRegistry }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [selected, setSelected] = useState<ComponentItem | null>(null);
-  const [origin, setOrigin] = useState("https://your-domain.com");
   const [copied, setCopied] = useState("");
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
-      setOrigin(window.location.origin);
       const requested = new URL(window.location.href).searchParams.get("component");
       if (requested) setSelected(registry.components.find((item) => item.name === requested) ?? null);
     });
@@ -36,7 +34,7 @@ export default function ComponentGallery({ registry }: { registry: ComponentRegi
     if (window.matchMedia("(max-width: 760px)").matches) window.requestAnimationFrame(() => document.querySelector("#component-detail")?.scrollIntoView({ behavior: "smooth" }));
   }
   async function copy(value: string, label: string) { await navigator.clipboard.writeText(value); setCopied(label); window.setTimeout(() => setCopied(""), 1500); }
-  const install = selected ? `npx shadcn@latest add ${origin}${selected.installPath}` : "";
+  const install = selected?.command ?? "";
   const importCode = selected ? `import { ${selected.export} } from "${selected.import}";` : "";
 
   return <section className="component-gallery" id="component-catalog">
@@ -46,7 +44,7 @@ export default function ComponentGallery({ registry }: { registry: ComponentRegi
       <div className="component-card-grid">{filtered.map((item, index) => <article className={`component-catalog-card${selected?.name === item.name ? " is-selected" : ""}`} key={item.name}><div className="component-preview"><span className="component-index">{String(index + 1).padStart(2, "0")}</span><button className="component-preview-select" type="button" onClick={() => choose(item)} aria-label={`Show installation for ${item.title}`}>Usage <SolarIcon name="arrow-to-top-right" size={12} /></button><ComponentDemo name={item.name} title={item.title} /></div><div className="component-card-meta"><div><h3>{item.title}</h3><p>{item.description}</p></div><span>{item.client ? "CLIENT" : "SERVER"}</span></div></article>)}</div>
       <aside className="component-detail" id="component-detail">{selected ? <><div className="component-detail-preview"><ComponentDemo name={selected.name} title={selected.title} /></div><p className="component-overline">{selected.category} · {selected.status}</p><h2>{selected.title}</h2><p>{selected.description}</p><section><div><h3>Install source</h3><button onClick={() => copy(install, "Install command copied")}>Copy</button></div><pre><code>{install}</code></pre></section><section><div><h3>Import</h3><button onClick={() => copy(importCode, "Import copied")}>Copy</button></div><pre><code>{importCode}</code></pre></section><section><div><h3>Usage</h3><button onClick={() => copy(selected.usage, "Usage copied")}>Copy</button></div><pre><code>{selected.usage}</code></pre></section><div className="component-a11y"><b>Accessibility contract</b><p>{selected.accessibility}</p></div><a className="component-json-link" href={selected.installPath}>Inspect registry JSON <SolarIcon name="arrow-to-top-right" size={14} /></a></> : <div className="component-detail-empty"><span>CO</span><h2>Select a component</h2><p>Use a card&apos;s Usage control to inspect its install URL, import, usage, and accessibility contract.</p></div>}</aside>
     </div>
-    <div className="component-registry-footer"><div><p className="component-overline">FOR HUMANS + AGENTS</p><h2>One registry, two readers.</h2><p>Developers browse previews. AI reads exact names, files, stability, client boundaries, usage, and accessibility requirements.</p></div><div><a href="/r/registry.json"><span>Compatible catalog</span><code>/r/registry.json</code></a><a href="/component-registry.json"><span>AI manifest</span><code>/component-registry.json</code></a></div></div>
+    <div className="component-registry-footer"><div><p className="component-overline">FOR HUMANS + AGENTS</p><h2>One registry, two readers.</h2><p>Developers browse previews. AI reads exact names, files, stability, client boundaries, usage, and accessibility requirements.</p></div><div><a href="/r/registry.json"><span>Coordiation catalog</span><code>/r/registry.json</code></a><a href="/component-registry.json"><span>AI manifest</span><code>/component-registry.json</code></a></div></div>
     <p className={`component-copy-status${copied ? " visible" : ""}`} role="status">{copied || "Copied"}</p>
   </section>;
 }

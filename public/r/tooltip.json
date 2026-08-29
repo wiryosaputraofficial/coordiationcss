@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "tooltip",
   "type": "registry:ui",
   "title": "Tooltip",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/tooltip.tsx",
       "type": "registry:ui",
-      "target": "@ui/tooltip.tsx",
+      "target": "components/ui/tooltip.tsx",
       "content": "import { useId, type ReactNode } from \"react\";\n\nexport function Tooltip({ content, children, className = \"\" }: { content: ReactNode; children: ReactNode; className?: string }) { const id = useId(); return <span className={`co-group co-relative co-inline-flex ${className}`.trim()}><span tabIndex={0} aria-describedby={id} className=\"co-outline-none focus-visible:co-ring-2\">{children}</span><span role=\"tooltip\" id={id} className=\"co-invisible co-absolute co-bottom-full co-start-1/2 co-z-50 co-mb-2 co-w-max co-max-w-64 -co-translate-x-1/2 co-rounded co-bg-black co-px-2 co-py-1 co-text-xs co-text-white co-opacity-0 co-transition group-hover:co-visible group-hover:co-opacity-100 group-focus-within:co-visible group-focus-within:co-opacity-100\">{content}</span></span>; }\n"
     }
   ],

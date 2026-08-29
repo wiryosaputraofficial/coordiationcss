@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "radio-group",
   "type": "registry:ui",
   "title": "Radio Group",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/radio-group.tsx",
       "type": "registry:ui",
-      "target": "@ui/radio-group.tsx",
+      "target": "components/ui/radio-group.tsx",
       "content": "import { createContext, useContext, type HTMLAttributes, type InputHTMLAttributes, type ReactNode } from \"react\";\n\nconst RadioContext = createContext<string | undefined>(undefined);\nexport function RadioGroup({ name, label, className = \"\", children, ...props }: HTMLAttributes<HTMLFieldSetElement> & { name: string; label: string; children: ReactNode }) { return <RadioContext.Provider value={name}><fieldset className={`co-grid co-gap-3 ${className}`.trim()} {...props}><legend className=\"co-mb-2 co-text-sm co-font-medium\">{label}</legend>{children}</fieldset></RadioContext.Provider>; }\nexport function RadioGroupItem({ label, className = \"\", ...props }: Omit<InputHTMLAttributes<HTMLInputElement>, \"type\" | \"name\"> & { label: string }) { const name = useContext(RadioContext); return <label className={`co-flex co-min-h-5 co-cursor-pointer co-items-center co-gap-2 co-text-sm ${className}`.trim()}><input type=\"radio\" name={name} className=\"co-m-0 co-size-4 co-shrink-0 co-appearance-none co-rounded-full co-border co-border-black/30 checked:co-border-[5px] checked:co-border-black focus-visible:co-ring-2\" {...props} /><span className=\"co-leading-none\">{label}</span></label>; }\n"
     }
   ],

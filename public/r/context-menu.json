@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "context-menu",
   "type": "registry:ui",
   "title": "Context Menu",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/context-menu.tsx",
       "type": "registry:ui",
-      "target": "@ui/context-menu.tsx",
+      "target": "components/ui/context-menu.tsx",
       "content": "\"use client\";\n\nimport { useState, type ReactNode } from \"react\";\n\nexport type ContextMenuItem = { label: string; onSelect: () => void; disabled?: boolean };\nexport function ContextMenu({ items, children, className = \"\" }: { items: ContextMenuItem[]; children: ReactNode; className?: string }) { const [position, setPosition] = useState<{ x: number; y: number } | null>(null); return <div className={`co-relative ${className}`.trim()} onContextMenu={(event) => { event.preventDefault(); setPosition({ x: event.clientX, y: event.clientY }); }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPosition(null); }}>{children}{position && <div role=\"menu\" aria-label=\"Context actions\" className=\"co-fixed co-z-50 co-min-w-40 co-rounded-md co-border co-border-black/15 co-bg-white co-p-1 co-shadow-lg\" style={{ left: position.x, top: position.y }}>{items.map((item) => <button role=\"menuitem\" type=\"button\" disabled={item.disabled} key={item.label} className=\"co-block co-w-full co-rounded co-px-3 co-py-2 co-text-left co-text-sm hover:co-bg-black/5 focus-visible:co-ring-2 disabled:co-opacity-40\" onClick={() => { item.onSelect(); setPosition(null); }}>{item.label}</button>)}</div>}</div>; }\n"
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "badge",
   "type": "registry:ui",
   "title": "Badge",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/badge.tsx",
       "type": "registry:ui",
-      "target": "@ui/badge.tsx",
+      "target": "components/ui/badge.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\ntype BadgeVariant = \"default\" | \"outline\" | \"muted\" | \"danger\";\nexport type BadgeProps = HTMLAttributes<HTMLSpanElement> & { variant?: BadgeVariant };\nconst variants: Record<BadgeVariant, string> = {\n  default: \"co-bg-black co-text-white\",\n  outline: \"co-border co-border-black/20 co-bg-white co-text-black\",\n  muted: \"co-bg-black/5 co-text-black\",\n  danger: \"co-bg-black co-text-white co-ring-2 co-ring-black/20\",\n};\n\nexport function Badge({ className = \"\", variant = \"default\", ...props }: BadgeProps) {\n  return <span className={`co-inline-flex co-items-center co-rounded-full co-px-2.5 co-py-1 co-text-xs co-font-medium ${variants[variant]} ${className}`.trim()} {...props} />;\n}\n"
     }
   ],

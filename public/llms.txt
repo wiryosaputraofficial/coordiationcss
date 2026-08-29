@@ -54,8 +54,10 @@ Creator: Wiryo Saputra (`wiryosaputra@coordiation.com`). Coordiation is built to
 - Compatibility: inspect compiler `compatibility` and `deprecations`, use the registered replacement and codemod, and do not infer stable guarantees from a prerelease version
 - Icons: read `/icon-registry.json`, select an exact record by `collectionId` and kebab-case `name`, then emit its literal `import` value unchanged; use `@coordiation/icons/linear/{name}` for Solar or `@coordiation/icons/iconsax-line-oval/{name}` for Iconsax Line Oval, and preserve each collection's license metadata
 - Human icon discovery: browse `/icons`; clicking any one of the 2,165 icons across Solar Linear and Iconsax Line Oval reveals its collection, exact export, literal import path, renderer example, styling contract, and categories
-- Components: read `/component-registry.json` or `/api/components`, select a stable component by exact name, and install its owned source from `/r/{name}.json`; preserve literal `co-*` classes, explicit client boundaries, native semantics, and the component accessibility contract
+- Components: read `/component-registry.json` or `/api/components`, select a stable component by exact name, and run `npx @coordiation/cli@latest add component {name}`; preserve literal `co-*` classes, explicit client boundaries, native semantics, and the component accessibility contract
 - Human component discovery: browse `/components`; every preview exposes its compatible install URL, local import, usage example, client/server boundary, and accessibility requirements
+- Themes: read `/theme-registry.json` or `/api/themes`, select an exact stable theme by `name`, then run `npx @coordiation/cli@latest add theme {name}`; preserve the documented namespace, semantic section IDs, heading hierarchy, literal asset paths, and accessibility contract
+- Human theme discovery: browse `/themes`; every theme exposes a live application preview, exact install command, source files, section map, public asset list, and customization order
 
 ## Reliability rules for AI agents
 
@@ -75,6 +77,7 @@ Creator: Wiryo Saputra (`wiryosaputra@coordiation.com`). Coordiation is built to
 14. Use deprecation IDs, earliest-removal versions, and registered replacements from the compatibility manifest; feature completeness does not rename a prerelease as stable.
 15. Never guess an icon name, assume names are unique across collections, or dynamically concatenate an icon import. Use `collectionId` plus `name` from the registry, keep the recorded import literal for tree-shaking, pass `label` only when the icon conveys otherwise-unavailable meaning, and retain the collection's required attribution.
 16. Never invent a component or import it from a runtime UI package. Use an item marked `stable`, install its source into the project, preserve its client boundary, and retain its documented accessibility behavior when customizing.
+17. Never reconstruct a theme from its screenshot. Select it by exact registry name, install its source, copy or replace every listed media asset, and preserve its namespace plus semantic structure while customizing identity and content.
 
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
@@ -117,4 +120,8 @@ Machine-readable icon registry: `/icon-registry.json`
 Open-code component architecture and installation: `/docs/components`
 Interactive component catalog: `/components`
 Machine-readable component manifest: `/component-registry.json`
-Compatible component catalog: `/r/registry.json`
+Coordiation component catalog: `/r/registry.json`
+Installable application theme guide: `/docs/themes`
+Interactive application theme showcase: `/themes`
+Machine-readable theme manifest: `/theme-registry.json`
+Coordiation theme catalog: `/r/themes/registry.json`

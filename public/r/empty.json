@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "empty",
   "type": "registry:ui",
   "title": "Empty",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/empty.tsx",
       "type": "registry:ui",
-      "target": "@ui/empty.tsx",
+      "target": "components/ui/empty.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Empty({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-flex co-min-h-56 co-flex-col co-items-center co-justify-center co-gap-3 co-rounded-xl co-border co-border-dashed co-border-black/20 co-p-8 co-text-center ${className}`.trim()} {...props} />; }\nexport function EmptyTitle({ className = \"\", ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h3 className={`co-font-semibold ${className}`.trim()} {...props} />; }\nexport function EmptyDescription({ className = \"\", ...props }: HTMLAttributes<HTMLParagraphElement>) { return <p className={`co-max-w-md co-text-sm co-text-black/60 ${className}`.trim()} {...props} />; }\nexport function EmptyActions({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-mt-2 co-flex co-gap-2 ${className}`.trim()} {...props} />; }\n"
     }
   ],

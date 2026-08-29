@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0",
+  "framework": "Coordiation CSS",
+  "package": "@coordiation/themes",
+  "version": "0.1.0",
+  "generatedAt": "2026-08-29",
+  "distribution": "open-code page registry",
+  "themeCount": 1,
+  "themes": [
+    {
+      "name": "editorial-advisor",
+      "title": "Editorial Advisor",
+      "description": "A warm editorial portfolio for independent advisors, consultants, and public-facing leaders.",
+      "categories": [
+        "portfolio",
+        "consulting",
+        "editorial"
+      ],
+      "status": "stable",
+      "copyright": "Coordiation",
+      "framework": "Next.js App Router",
+      "style": "editorial",
+      "palette": "warm cream",
+      "preview": "/themes/editorial-advisor/preview",
+      "cover": "/themes/editorial-advisor/hero-advisor.png",
+      "installPath": "/r/themes/editorial-advisor.json",
+      "command": "npx @coordiation/cli@latest add theme editorial-advisor",
+      "sections": [
+        "hero",
+        "principle",
+        "events",
+        "insights",
+        "testimonial",
+        "about",
+        "trust",
+        "background",
+        "statistics",
+        "contact"
+      ],
+      "assets": [
+        "/themes/editorial-advisor/hero-advisor.png",
+        "/themes/editorial-advisor/insight-tower.png",
+        "/themes/editorial-advisor/testimonial-meeting.png"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/editorial-advisor/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/editorial-advisor/page.tsx"
+        },
+        {
+          "path": "site/app/themes/editorial-advisor/preview/editorial-advisor.css",
+          "type": "registry:style",
+          "target": "app/editorial-advisor/editorial-advisor.css"
+        },
+        {
+          "path": "site/app/themes/editorial-advisor/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/editorial-advisor/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/medal-star.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/medal-star.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/play-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/play-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/share-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/share-circle.svg"
+        }
+      ],
+      "coordiationUtilityCount": 22,
+      "ai": {
+        "selectionKey": "editorial-advisor",
+        "sourceOwnership": "open-code",
+        "customization": "Preserve the literal co-* utility foundation, editorial-theme namespace, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
+      }
+    }
+  ]
+}

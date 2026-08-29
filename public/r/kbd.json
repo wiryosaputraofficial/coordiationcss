@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "kbd",
   "type": "registry:ui",
   "title": "Kbd",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/kbd.tsx",
       "type": "registry:ui",
-      "target": "@ui/kbd.tsx",
+      "target": "components/ui/kbd.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Kbd({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { return <kbd className={`co-inline-flex co-min-w-6 co-items-center co-justify-center co-rounded co-border co-border-black/20 co-bg-black/5 co-px-1.5 co-py-0.5 co-font-mono co-text-xs ${className}`.trim()} {...props} />; }\n"
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "spinner",
   "type": "registry:ui",
   "title": "Spinner",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/spinner.tsx",
       "type": "registry:ui",
-      "target": "@ui/spinner.tsx",
+      "target": "components/ui/spinner.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Spinner({ className = \"\", \"aria-label\": label = \"Loading\", ...props }: HTMLAttributes<HTMLSpanElement>) {\n  return <span role=\"status\" aria-label={label} className={`co-inline-block co-size-5 co-animate-spin co-rounded-full co-border-2 co-border-black/20 co-border-t-black ${className}`.trim()} {...props} />;\n}\n"
     }
   ],

@@ -88,6 +88,7 @@ export default function ReleaseCheckPage() {
           <a href="/api/capabilities"><span>JSON capability manifest</span><code>GET /api/capabilities</code><SolarIcon name="arrow-right" size={17} /></a>
           <a href="/api/utilities"><span>Generated utility registry</span><code>GET /api/utilities</code><SolarIcon name="arrow-right" size={17} /></a>
           <a href="/api/components"><span>Open-code component manifest</span><code>GET /api/components</code><SolarIcon name="arrow-right" size={17} /></a>
+          <a href="/api/themes"><span>Application theme manifest</span><code>GET /api/themes</code><SolarIcon name="arrow-right" size={17} /></a>
           <a href="/llms.txt"><span>Concise AI usage guide</span><code>GET /llms.txt</code><SolarIcon name="arrow-right" size={17} /></a>
         </div>
       </section>

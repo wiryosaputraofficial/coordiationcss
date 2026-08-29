@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/schemas/registry-item.json",
+  "title": "Coordiation open-code registry item",
+  "type": "object",
+  "required": ["name", "type", "files"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "type": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "type", "target"],
+        "properties": {
+          "path": { "type": "string" },
+          "type": { "type": "string" },
+          "target": { "type": "string" },
+          "content": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -31,10 +31,11 @@
         {
           "path": "registry/monochrome/button.tsx",
           "type": "registry:ui",
-          "target": "@ui/button.tsx"
+          "target": "components/ui/button.tsx"
         }
       ],
       "installPath": "/r/button.json",
+      "command": "npx @coordiation/cli@latest add component button",
       "import": "@/components/ui/button",
       "usage": "<Button variant=\"outline\">Continue</Button>",
       "accessibility": "Uses a native button, preserves disabled semantics, and exposes a visible keyboard focus ring."
@@ -52,10 +53,11 @@
         {
           "path": "registry/monochrome/badge.tsx",
           "type": "registry:ui",
-          "target": "@ui/badge.tsx"
+          "target": "components/ui/badge.tsx"
         }
       ],
       "installPath": "/r/badge.json",
+      "command": "npx @coordiation/cli@latest add component badge",
       "import": "@/components/ui/badge",
       "usage": "<Badge variant=\"outline\">Beta</Badge>",
       "accessibility": "Text is always visible; color is never the only information channel."
@@ -73,10 +75,11 @@
         {
           "path": "registry/monochrome/card.tsx",
           "type": "registry:ui",
-          "target": "@ui/card.tsx"
+          "target": "components/ui/card.tsx"
         }
       ],
       "installPath": "/r/card.json",
+      "command": "npx @coordiation/cli@latest add component card",
       "import": "@/components/ui/card",
       "usage": "<Card><CardHeader><CardTitle>Project</CardTitle></CardHeader><CardContent>Ready.</CardContent></Card>",
       "accessibility": "Uses neutral containers so consumers choose the correct heading and landmark structure."
@@ -94,10 +97,11 @@
         {
           "path": "registry/monochrome/input.tsx",
           "type": "registry:ui",
-          "target": "@ui/input.tsx"
+          "target": "components/ui/input.tsx"
         }
       ],
       "installPath": "/r/input.json",
+      "command": "npx @coordiation/cli@latest add component input",
       "import": "@/components/ui/input",
       "usage": "<Input aria-label=\"Email\" type=\"email\" placeholder=\"you@example.com\" />",
       "accessibility": "Uses a native input and exposes invalid, disabled, placeholder, and focus states."
@@ -115,10 +119,11 @@
         {
           "path": "registry/monochrome/textarea.tsx",
           "type": "registry:ui",
-          "target": "@ui/textarea.tsx"
+          "target": "components/ui/textarea.tsx"
         }
       ],
       "installPath": "/r/textarea.json",
+      "command": "npx @coordiation/cli@latest add component textarea",
       "import": "@/components/ui/textarea",
       "usage": "<Textarea aria-label=\"Message\" placeholder=\"Write a message…\" />",
       "accessibility": "Uses a native textarea and preserves resize, invalid, disabled, and focus behavior."
@@ -136,10 +141,11 @@
         {
           "path": "registry/monochrome/label.tsx",
           "type": "registry:ui",
-          "target": "@ui/label.tsx"
+          "target": "components/ui/label.tsx"
         }
       ],
       "installPath": "/r/label.json",
+      "command": "npx @coordiation/cli@latest add component label",
       "import": "@/components/ui/label",
       "usage": "<Label htmlFor=\"email\">Email</Label>",
       "accessibility": "Uses the native label element and should be connected with htmlFor."
@@ -157,10 +163,11 @@
         {
           "path": "registry/monochrome/checkbox.tsx",
           "type": "registry:ui",
-          "target": "@ui/checkbox.tsx"
+          "target": "components/ui/checkbox.tsx"
         }
       ],
       "installPath": "/r/checkbox.json",
+      "command": "npx @coordiation/cli@latest add component checkbox",
       "import": "@/components/ui/checkbox",
       "usage": "<Checkbox aria-label=\"Accept terms\" />",
       "accessibility": "Uses a native checkbox, including keyboard, checked, disabled, and form semantics."
@@ -178,10 +185,11 @@
         {
           "path": "registry/monochrome/switch.tsx",
           "type": "registry:ui",
-          "target": "@ui/switch.tsx"
+          "target": "components/ui/switch.tsx"
         }
       ],
       "installPath": "/r/switch.json",
+      "command": "npx @coordiation/cli@latest add component switch",
       "import": "@/components/ui/switch",
       "usage": "<Switch checked={enabled} onCheckedChange={setEnabled} aria-label=\"Notifications\" />",
       "accessibility": "Uses role=switch, aria-checked, native button keyboard behavior, and controlled state."
@@ -199,10 +207,11 @@
         {
           "path": "registry/monochrome/alert.tsx",
           "type": "registry:ui",
-          "target": "@ui/alert.tsx"
+          "target": "components/ui/alert.tsx"
         }
       ],
       "installPath": "/r/alert.json",
+      "command": "npx @coordiation/cli@latest add component alert",
       "import": "@/components/ui/alert",
       "usage": "<Alert><AlertTitle>Saved</AlertTitle><AlertDescription>Your changes are live.</AlertDescription></Alert>",
       "accessibility": "Uses role=alert for important feedback and composable title/description content."
@@ -220,10 +229,11 @@
         {
           "path": "registry/monochrome/separator.tsx",
           "type": "registry:ui",
-          "target": "@ui/separator.tsx"
+          "target": "components/ui/separator.tsx"
         }
       ],
       "installPath": "/r/separator.json",
+      "command": "npx @coordiation/cli@latest add component separator",
       "import": "@/components/ui/separator",
       "usage": "<Separator orientation=\"horizontal\" />",
       "accessibility": "Can be decorative or expose separator role and aria-orientation."
@@ -241,10 +251,11 @@
         {
           "path": "registry/monochrome/skeleton.tsx",
           "type": "registry:ui",
-          "target": "@ui/skeleton.tsx"
+          "target": "components/ui/skeleton.tsx"
         }
       ],
       "installPath": "/r/skeleton.json",
+      "command": "npx @coordiation/cli@latest add component skeleton",
       "import": "@/components/ui/skeleton",
       "usage": "<Skeleton className=\"co-h-4 co-w-48\" />",
       "accessibility": "Hidden from assistive technology so real loading status can be announced separately."
@@ -262,10 +273,11 @@
         {
           "path": "registry/monochrome/spinner.tsx",
           "type": "registry:ui",
-          "target": "@ui/spinner.tsx"
+          "target": "components/ui/spinner.tsx"
         }
       ],
       "installPath": "/r/spinner.json",
+      "command": "npx @coordiation/cli@latest add component spinner",
       "import": "@/components/ui/spinner",
       "usage": "<Spinner aria-label=\"Saving\" />",
       "accessibility": "Uses role=status and requires a concise accessible label."
@@ -283,10 +295,11 @@
         {
           "path": "registry/monochrome/avatar.tsx",
           "type": "registry:ui",
-          "target": "@ui/avatar.tsx"
+          "target": "components/ui/avatar.tsx"
         }
       ],
       "installPath": "/r/avatar.json",
+      "command": "npx @coordiation/cli@latest add component avatar",
       "import": "@/components/ui/avatar",
       "usage": "<Avatar><AvatarImage src=\"/avatar.jpg\" alt=\"Ayu\" /><AvatarFallback>AY</AvatarFallback></Avatar>",
       "accessibility": "Preserves image alt text and renders deterministic fallback content after image failure."
@@ -304,10 +317,11 @@
         {
           "path": "registry/monochrome/table.tsx",
           "type": "registry:ui",
-          "target": "@ui/table.tsx"
+          "target": "components/ui/table.tsx"
         }
       ],
       "installPath": "/r/table.json",
+      "command": "npx @coordiation/cli@latest add component table",
       "import": "@/components/ui/table",
       "usage": "<Table><TableHeader>…</TableHeader><TableBody>…</TableBody></Table>",
       "accessibility": "Uses native table elements and keeps wide data horizontally scrollable."
@@ -325,10 +339,11 @@
         {
           "path": "registry/monochrome/tabs.tsx",
           "type": "registry:ui",
-          "target": "@ui/tabs.tsx"
+          "target": "components/ui/tabs.tsx"
         }
       ],
       "installPath": "/r/tabs.json",
+      "command": "npx @coordiation/cli@latest add component tabs",
       "import": "@/components/ui/tabs",
       "usage": "<Tabs value={tab} onValueChange={setTab}>…</Tabs>",
       "accessibility": "Implements tablist, tab, tabpanel, aria linkage, roving focus, Home/End, and arrow keys."
@@ -346,10 +361,11 @@
         {
           "path": "registry/monochrome/dialog.tsx",
           "type": "registry:ui",
-          "target": "@ui/dialog.tsx"
+          "target": "components/ui/dialog.tsx"
         }
       ],
       "installPath": "/r/dialog.json",
+      "command": "npx @coordiation/cli@latest add component dialog",
       "import": "@/components/ui/dialog",
       "usage": "<Dialog open={open} onOpenChange={setOpen}>…</Dialog>",
       "accessibility": "Uses the native modal dialog for focus containment, Escape handling, backdrop, and dismissal."
@@ -367,10 +383,11 @@
         {
           "path": "registry/monochrome/accordion.tsx",
           "type": "registry:ui",
-          "target": "@ui/accordion.tsx"
+          "target": "components/ui/accordion.tsx"
         }
       ],
       "installPath": "/r/accordion.json",
+      "command": "npx @coordiation/cli@latest add component accordion",
       "import": "@/components/ui/accordion",
       "usage": "<Accordion />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -388,10 +405,11 @@
         {
           "path": "registry/monochrome/alert-dialog.tsx",
           "type": "registry:ui",
-          "target": "@ui/alert-dialog.tsx"
+          "target": "components/ui/alert-dialog.tsx"
         }
       ],
       "installPath": "/r/alert-dialog.json",
+      "command": "npx @coordiation/cli@latest add component alert-dialog",
       "import": "@/components/ui/alert-dialog",
       "usage": "<AlertDialog />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -409,10 +427,11 @@
         {
           "path": "registry/monochrome/aspect-ratio.tsx",
           "type": "registry:ui",
-          "target": "@ui/aspect-ratio.tsx"
+          "target": "components/ui/aspect-ratio.tsx"
         }
       ],
       "installPath": "/r/aspect-ratio.json",
+      "command": "npx @coordiation/cli@latest add component aspect-ratio",
       "import": "@/components/ui/aspect-ratio",
       "usage": "<AspectRatio />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -430,10 +449,11 @@
         {
           "path": "registry/monochrome/attachment.tsx",
           "type": "registry:ui",
-          "target": "@ui/attachment.tsx"
+          "target": "components/ui/attachment.tsx"
         }
       ],
       "installPath": "/r/attachment.json",
+      "command": "npx @coordiation/cli@latest add component attachment",
       "import": "@/components/ui/attachment",
       "usage": "<Attachment />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -451,10 +471,11 @@
         {
           "path": "registry/monochrome/breadcrumb.tsx",
           "type": "registry:ui",
-          "target": "@ui/breadcrumb.tsx"
+          "target": "components/ui/breadcrumb.tsx"
         }
       ],
       "installPath": "/r/breadcrumb.json",
+      "command": "npx @coordiation/cli@latest add component breadcrumb",
       "import": "@/components/ui/breadcrumb",
       "usage": "<Breadcrumb />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -472,10 +493,11 @@
         {
           "path": "registry/monochrome/bubble.tsx",
           "type": "registry:ui",
-          "target": "@ui/bubble.tsx"
+          "target": "components/ui/bubble.tsx"
         }
       ],
       "installPath": "/r/bubble.json",
+      "command": "npx @coordiation/cli@latest add component bubble",
       "import": "@/components/ui/bubble",
       "usage": "<Bubble />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -493,10 +515,11 @@
         {
           "path": "registry/monochrome/button-group.tsx",
           "type": "registry:ui",
-          "target": "@ui/button-group.tsx"
+          "target": "components/ui/button-group.tsx"
         }
       ],
       "installPath": "/r/button-group.json",
+      "command": "npx @coordiation/cli@latest add component button-group",
       "import": "@/components/ui/button-group",
       "usage": "<ButtonGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -514,10 +537,11 @@
         {
           "path": "registry/monochrome/calendar.tsx",
           "type": "registry:ui",
-          "target": "@ui/calendar.tsx"
+          "target": "components/ui/calendar.tsx"
         }
       ],
       "installPath": "/r/calendar.json",
+      "command": "npx @coordiation/cli@latest add component calendar",
       "import": "@/components/ui/calendar",
       "usage": "<Calendar />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -535,10 +559,11 @@
         {
           "path": "registry/monochrome/carousel.tsx",
           "type": "registry:ui",
-          "target": "@ui/carousel.tsx"
+          "target": "components/ui/carousel.tsx"
         }
       ],
       "installPath": "/r/carousel.json",
+      "command": "npx @coordiation/cli@latest add component carousel",
       "import": "@/components/ui/carousel",
       "usage": "<Carousel />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -556,10 +581,11 @@
         {
           "path": "registry/monochrome/chart.tsx",
           "type": "registry:ui",
-          "target": "@ui/chart.tsx"
+          "target": "components/ui/chart.tsx"
         }
       ],
       "installPath": "/r/chart.json",
+      "command": "npx @coordiation/cli@latest add component chart",
       "import": "@/components/ui/chart",
       "usage": "<Chart />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -577,10 +603,11 @@
         {
           "path": "registry/monochrome/collapsible.tsx",
           "type": "registry:ui",
-          "target": "@ui/collapsible.tsx"
+          "target": "components/ui/collapsible.tsx"
         }
       ],
       "installPath": "/r/collapsible.json",
+      "command": "npx @coordiation/cli@latest add component collapsible",
       "import": "@/components/ui/collapsible",
       "usage": "<Collapsible />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -598,10 +625,11 @@
         {
           "path": "registry/monochrome/combobox.tsx",
           "type": "registry:ui",
-          "target": "@ui/combobox.tsx"
+          "target": "components/ui/combobox.tsx"
         }
       ],
       "installPath": "/r/combobox.json",
+      "command": "npx @coordiation/cli@latest add component combobox",
       "import": "@/components/ui/combobox",
       "usage": "<Combobox />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -619,10 +647,11 @@
         {
           "path": "registry/monochrome/command.tsx",
           "type": "registry:ui",
-          "target": "@ui/command.tsx"
+          "target": "components/ui/command.tsx"
         }
       ],
       "installPath": "/r/command.json",
+      "command": "npx @coordiation/cli@latest add component command",
       "import": "@/components/ui/command",
       "usage": "<Command />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -640,10 +669,11 @@
         {
           "path": "registry/monochrome/context-menu.tsx",
           "type": "registry:ui",
-          "target": "@ui/context-menu.tsx"
+          "target": "components/ui/context-menu.tsx"
         }
       ],
       "installPath": "/r/context-menu.json",
+      "command": "npx @coordiation/cli@latest add component context-menu",
       "import": "@/components/ui/context-menu",
       "usage": "<ContextMenu />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -661,10 +691,11 @@
         {
           "path": "registry/monochrome/data-table.tsx",
           "type": "registry:ui",
-          "target": "@ui/data-table.tsx"
+          "target": "components/ui/data-table.tsx"
         }
       ],
       "installPath": "/r/data-table.json",
+      "command": "npx @coordiation/cli@latest add component data-table",
       "import": "@/components/ui/data-table",
       "usage": "<DataTable />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -682,10 +713,11 @@
         {
           "path": "registry/monochrome/date-picker.tsx",
           "type": "registry:ui",
-          "target": "@ui/date-picker.tsx"
+          "target": "components/ui/date-picker.tsx"
         }
       ],
       "installPath": "/r/date-picker.json",
+      "command": "npx @coordiation/cli@latest add component date-picker",
       "import": "@/components/ui/date-picker",
       "usage": "<DatePicker />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -703,10 +735,11 @@
         {
           "path": "registry/monochrome/direction.tsx",
           "type": "registry:ui",
-          "target": "@ui/direction.tsx"
+          "target": "components/ui/direction.tsx"
         }
       ],
       "installPath": "/r/direction.json",
+      "command": "npx @coordiation/cli@latest add component direction",
       "import": "@/components/ui/direction",
       "usage": "<Direction />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -724,10 +757,11 @@
         {
           "path": "registry/monochrome/drawer.tsx",
           "type": "registry:ui",
-          "target": "@ui/drawer.tsx"
+          "target": "components/ui/drawer.tsx"
         }
       ],
       "installPath": "/r/drawer.json",
+      "command": "npx @coordiation/cli@latest add component drawer",
       "import": "@/components/ui/drawer",
       "usage": "<Drawer />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -745,10 +779,11 @@
         {
           "path": "registry/monochrome/dropdown-menu.tsx",
           "type": "registry:ui",
-          "target": "@ui/dropdown-menu.tsx"
+          "target": "components/ui/dropdown-menu.tsx"
         }
       ],
       "installPath": "/r/dropdown-menu.json",
+      "command": "npx @coordiation/cli@latest add component dropdown-menu",
       "import": "@/components/ui/dropdown-menu",
       "usage": "<DropdownMenu />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -766,10 +801,11 @@
         {
           "path": "registry/monochrome/empty.tsx",
           "type": "registry:ui",
-          "target": "@ui/empty.tsx"
+          "target": "components/ui/empty.tsx"
         }
       ],
       "installPath": "/r/empty.json",
+      "command": "npx @coordiation/cli@latest add component empty",
       "import": "@/components/ui/empty",
       "usage": "<Empty />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -787,10 +823,11 @@
         {
           "path": "registry/monochrome/field.tsx",
           "type": "registry:ui",
-          "target": "@ui/field.tsx"
+          "target": "components/ui/field.tsx"
         }
       ],
       "installPath": "/r/field.json",
+      "command": "npx @coordiation/cli@latest add component field",
       "import": "@/components/ui/field",
       "usage": "<Field />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -808,10 +845,11 @@
         {
           "path": "registry/monochrome/hover-card.tsx",
           "type": "registry:ui",
-          "target": "@ui/hover-card.tsx"
+          "target": "components/ui/hover-card.tsx"
         }
       ],
       "installPath": "/r/hover-card.json",
+      "command": "npx @coordiation/cli@latest add component hover-card",
       "import": "@/components/ui/hover-card",
       "usage": "<HoverCard />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -829,10 +867,11 @@
         {
           "path": "registry/monochrome/input-group.tsx",
           "type": "registry:ui",
-          "target": "@ui/input-group.tsx"
+          "target": "components/ui/input-group.tsx"
         }
       ],
       "installPath": "/r/input-group.json",
+      "command": "npx @coordiation/cli@latest add component input-group",
       "import": "@/components/ui/input-group",
       "usage": "<InputGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -850,10 +889,11 @@
         {
           "path": "registry/monochrome/input-otp.tsx",
           "type": "registry:ui",
-          "target": "@ui/input-otp.tsx"
+          "target": "components/ui/input-otp.tsx"
         }
       ],
       "installPath": "/r/input-otp.json",
+      "command": "npx @coordiation/cli@latest add component input-otp",
       "import": "@/components/ui/input-otp",
       "usage": "<InputOTP />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -871,10 +911,11 @@
         {
           "path": "registry/monochrome/item.tsx",
           "type": "registry:ui",
-          "target": "@ui/item.tsx"
+          "target": "components/ui/item.tsx"
         }
       ],
       "installPath": "/r/item.json",
+      "command": "npx @coordiation/cli@latest add component item",
       "import": "@/components/ui/item",
       "usage": "<Item />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -892,10 +933,11 @@
         {
           "path": "registry/monochrome/kbd.tsx",
           "type": "registry:ui",
-          "target": "@ui/kbd.tsx"
+          "target": "components/ui/kbd.tsx"
         }
       ],
       "installPath": "/r/kbd.json",
+      "command": "npx @coordiation/cli@latest add component kbd",
       "import": "@/components/ui/kbd",
       "usage": "<Kbd />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -913,10 +955,11 @@
         {
           "path": "registry/monochrome/marker.tsx",
           "type": "registry:ui",
-          "target": "@ui/marker.tsx"
+          "target": "components/ui/marker.tsx"
         }
       ],
       "installPath": "/r/marker.json",
+      "command": "npx @coordiation/cli@latest add component marker",
       "import": "@/components/ui/marker",
       "usage": "<Marker />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -934,10 +977,11 @@
         {
           "path": "registry/monochrome/menubar.tsx",
           "type": "registry:ui",
-          "target": "@ui/menubar.tsx"
+          "target": "components/ui/menubar.tsx"
         }
       ],
       "installPath": "/r/menubar.json",
+      "command": "npx @coordiation/cli@latest add component menubar",
       "import": "@/components/ui/menubar",
       "usage": "<Menubar />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -955,10 +999,11 @@
         {
           "path": "registry/monochrome/message.tsx",
           "type": "registry:ui",
-          "target": "@ui/message.tsx"
+          "target": "components/ui/message.tsx"
         }
       ],
       "installPath": "/r/message.json",
+      "command": "npx @coordiation/cli@latest add component message",
       "import": "@/components/ui/message",
       "usage": "<Message />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -976,10 +1021,11 @@
         {
           "path": "registry/monochrome/message-scroller.tsx",
           "type": "registry:ui",
-          "target": "@ui/message-scroller.tsx"
+          "target": "components/ui/message-scroller.tsx"
         }
       ],
       "installPath": "/r/message-scroller.json",
+      "command": "npx @coordiation/cli@latest add component message-scroller",
       "import": "@/components/ui/message-scroller",
       "usage": "<MessageScroller />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -997,10 +1043,11 @@
         {
           "path": "registry/monochrome/native-select.tsx",
           "type": "registry:ui",
-          "target": "@ui/native-select.tsx"
+          "target": "components/ui/native-select.tsx"
         }
       ],
       "installPath": "/r/native-select.json",
+      "command": "npx @coordiation/cli@latest add component native-select",
       "import": "@/components/ui/native-select",
       "usage": "<NativeSelect />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1018,10 +1065,11 @@
         {
           "path": "registry/monochrome/navigation-menu.tsx",
           "type": "registry:ui",
-          "target": "@ui/navigation-menu.tsx"
+          "target": "components/ui/navigation-menu.tsx"
         }
       ],
       "installPath": "/r/navigation-menu.json",
+      "command": "npx @coordiation/cli@latest add component navigation-menu",
       "import": "@/components/ui/navigation-menu",
       "usage": "<NavigationMenu />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1039,10 +1087,11 @@
         {
           "path": "registry/monochrome/pagination.tsx",
           "type": "registry:ui",
-          "target": "@ui/pagination.tsx"
+          "target": "components/ui/pagination.tsx"
         }
       ],
       "installPath": "/r/pagination.json",
+      "command": "npx @coordiation/cli@latest add component pagination",
       "import": "@/components/ui/pagination",
       "usage": "<Pagination />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1060,10 +1109,11 @@
         {
           "path": "registry/monochrome/popover.tsx",
           "type": "registry:ui",
-          "target": "@ui/popover.tsx"
+          "target": "components/ui/popover.tsx"
         }
       ],
       "installPath": "/r/popover.json",
+      "command": "npx @coordiation/cli@latest add component popover",
       "import": "@/components/ui/popover",
       "usage": "<Popover />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1081,10 +1131,11 @@
         {
           "path": "registry/monochrome/progress.tsx",
           "type": "registry:ui",
-          "target": "@ui/progress.tsx"
+          "target": "components/ui/progress.tsx"
         }
       ],
       "installPath": "/r/progress.json",
+      "command": "npx @coordiation/cli@latest add component progress",
       "import": "@/components/ui/progress",
       "usage": "<Progress />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1102,10 +1153,11 @@
         {
           "path": "registry/monochrome/questionnaire.tsx",
           "type": "registry:ui",
-          "target": "@ui/questionnaire.tsx"
+          "target": "components/ui/questionnaire.tsx"
         }
       ],
       "installPath": "/r/questionnaire.json",
+      "command": "npx @coordiation/cli@latest add component questionnaire",
       "import": "@/components/ui/questionnaire",
       "usage": "<Questionnaire />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1123,10 +1175,11 @@
         {
           "path": "registry/monochrome/radio-group.tsx",
           "type": "registry:ui",
-          "target": "@ui/radio-group.tsx"
+          "target": "components/ui/radio-group.tsx"
         }
       ],
       "installPath": "/r/radio-group.json",
+      "command": "npx @coordiation/cli@latest add component radio-group",
       "import": "@/components/ui/radio-group",
       "usage": "<RadioGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1144,10 +1197,11 @@
         {
           "path": "registry/monochrome/resizable.tsx",
           "type": "registry:ui",
-          "target": "@ui/resizable.tsx"
+          "target": "components/ui/resizable.tsx"
         }
       ],
       "installPath": "/r/resizable.json",
+      "command": "npx @coordiation/cli@latest add component resizable",
       "import": "@/components/ui/resizable",
       "usage": "<Resizable />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1165,10 +1219,11 @@
         {
           "path": "registry/monochrome/scroll-area.tsx",
           "type": "registry:ui",
-          "target": "@ui/scroll-area.tsx"
+          "target": "components/ui/scroll-area.tsx"
         }
       ],
       "installPath": "/r/scroll-area.json",
+      "command": "npx @coordiation/cli@latest add component scroll-area",
       "import": "@/components/ui/scroll-area",
       "usage": "<ScrollArea />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1186,10 +1241,11 @@
         {
           "path": "registry/monochrome/select.tsx",
           "type": "registry:ui",
-          "target": "@ui/select.tsx"
+          "target": "components/ui/select.tsx"
         }
       ],
       "installPath": "/r/select.json",
+      "command": "npx @coordiation/cli@latest add component select",
       "import": "@/components/ui/select",
       "usage": "<Select />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1207,10 +1263,11 @@
         {
           "path": "registry/monochrome/sheet.tsx",
           "type": "registry:ui",
-          "target": "@ui/sheet.tsx"
+          "target": "components/ui/sheet.tsx"
         }
       ],
       "installPath": "/r/sheet.json",
+      "command": "npx @coordiation/cli@latest add component sheet",
       "import": "@/components/ui/sheet",
       "usage": "<Sheet />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1228,10 +1285,11 @@
         {
           "path": "registry/monochrome/sidebar.tsx",
           "type": "registry:ui",
-          "target": "@ui/sidebar.tsx"
+          "target": "components/ui/sidebar.tsx"
         }
       ],
       "installPath": "/r/sidebar.json",
+      "command": "npx @coordiation/cli@latest add component sidebar",
       "import": "@/components/ui/sidebar",
       "usage": "<SidebarProvider />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1249,10 +1307,11 @@
         {
           "path": "registry/monochrome/slider.tsx",
           "type": "registry:ui",
-          "target": "@ui/slider.tsx"
+          "target": "components/ui/slider.tsx"
         }
       ],
       "installPath": "/r/slider.json",
+      "command": "npx @coordiation/cli@latest add component slider",
       "import": "@/components/ui/slider",
       "usage": "<Slider />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1270,10 +1329,11 @@
         {
           "path": "registry/monochrome/toast.tsx",
           "type": "registry:ui",
-          "target": "@ui/toast.tsx"
+          "target": "components/ui/toast.tsx"
         }
       ],
       "installPath": "/r/toast.json",
+      "command": "npx @coordiation/cli@latest add component toast",
       "import": "@/components/ui/toast",
       "usage": "<ToastProvider />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1291,10 +1351,11 @@
         {
           "path": "registry/monochrome/toggle.tsx",
           "type": "registry:ui",
-          "target": "@ui/toggle.tsx"
+          "target": "components/ui/toggle.tsx"
         }
       ],
       "installPath": "/r/toggle.json",
+      "command": "npx @coordiation/cli@latest add component toggle",
       "import": "@/components/ui/toggle",
       "usage": "<Toggle />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1312,10 +1373,11 @@
         {
           "path": "registry/monochrome/toggle-group.tsx",
           "type": "registry:ui",
-          "target": "@ui/toggle-group.tsx"
+          "target": "components/ui/toggle-group.tsx"
         }
       ],
       "installPath": "/r/toggle-group.json",
+      "command": "npx @coordiation/cli@latest add component toggle-group",
       "import": "@/components/ui/toggle-group",
       "usage": "<ToggleGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1333,10 +1395,11 @@
         {
           "path": "registry/monochrome/tooltip.tsx",
           "type": "registry:ui",
-          "target": "@ui/tooltip.tsx"
+          "target": "components/ui/tooltip.tsx"
         }
       ],
       "installPath": "/r/tooltip.json",
+      "command": "npx @coordiation/cli@latest add component tooltip",
       "import": "@/components/ui/tooltip",
       "usage": "<Tooltip />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1354,10 +1417,11 @@
         {
           "path": "registry/monochrome/typography.tsx",
           "type": "registry:ui",
-          "target": "@ui/typography.tsx"
+          "target": "components/ui/typography.tsx"
         }
       ],
       "installPath": "/r/typography.json",
+      "command": "npx @coordiation/cli@latest add component typography",
       "import": "@/components/ui/typography",
       "usage": "<TypographyH1 />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "navigation-menu",
   "type": "registry:ui",
   "title": "Navigation Menu",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/navigation-menu.tsx",
       "type": "registry:ui",
-      "target": "@ui/navigation-menu.tsx",
+      "target": "components/ui/navigation-menu.tsx",
       "content": "import type { AnchorHTMLAttributes, HTMLAttributes, LiHTMLAttributes } from \"react\";\n\nexport function NavigationMenu({ className = \"\", ...props }: HTMLAttributes<HTMLElement>) { return <nav aria-label=\"Main\" className={className} {...props} />; }\nexport function NavigationMenuList({ className = \"\", ...props }: HTMLAttributes<HTMLUListElement>) { return <ul className={`co-flex co-items-center co-gap-1 ${className}`.trim()} {...props} />; }\nexport function NavigationMenuItem({ className = \"\", ...props }: LiHTMLAttributes<HTMLLIElement>) { return <li className={className} {...props} />; }\nexport function NavigationMenuLink({ className = \"\", ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) { return <a className={`co-inline-flex co-h-10 co-items-center co-rounded-md co-px-4 co-text-sm co-font-medium hover:co-bg-black/5 focus-visible:co-ring-2 ${className}`.trim()} {...props} />; }\n"
     }
   ],

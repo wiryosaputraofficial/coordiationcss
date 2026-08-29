@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "message-scroller",
   "type": "registry:ui",
   "title": "Message Scroller",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/message-scroller.tsx",
       "type": "registry:ui",
-      "target": "@ui/message-scroller.tsx",
+      "target": "components/ui/message-scroller.tsx",
       "content": "\"use client\";\n\nimport { useEffect, useRef, type HTMLAttributes } from \"react\";\n\nexport function MessageScroller({ follow = true, className = \"\", children, ...props }: HTMLAttributes<HTMLDivElement> & { follow?: boolean }) { const ref = useRef<HTMLDivElement>(null); useEffect(() => { if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, [children, follow]); return <div ref={ref} role=\"log\" aria-live=\"polite\" aria-relevant=\"additions\" tabIndex={0} className={`co-max-h-96 co-overflow-y-auto co-rounded-lg focus-visible:co-ring-2 ${className}`.trim()} {...props}>{children}</div>; }\n"
     }
   ],

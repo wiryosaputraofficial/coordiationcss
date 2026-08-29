@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "toggle-group",
   "type": "registry:ui",
   "title": "Toggle Group",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/toggle-group.tsx",
       "type": "registry:ui",
-      "target": "@ui/toggle-group.tsx",
+      "target": "components/ui/toggle-group.tsx",
       "content": "\"use client\";\n\nimport { createContext, useContext, type ButtonHTMLAttributes, type HTMLAttributes, type ReactNode } from \"react\";\n\ntype ToggleGroupValue = { value: string[]; type: \"single\" | \"multiple\"; change: (value: string) => void };\nconst ToggleGroupContext = createContext<ToggleGroupValue | null>(null);\nexport function ToggleGroup({ type = \"single\", value, onValueChange, className = \"\", children, ...props }: HTMLAttributes<HTMLDivElement> & { type?: \"single\" | \"multiple\"; value: string[]; onValueChange: (value: string[]) => void; children: ReactNode }) { function change(item: string) { if (type === \"single\") onValueChange(value.includes(item) ? [] : [item]); else onValueChange(value.includes(item) ? value.filter((entry) => entry !== item) : [...value, item]); } return <ToggleGroupContext.Provider value={{ value, type, change }}><div role=\"group\" className={`co-inline-flex co-rounded-md co-border co-border-black/15 co-p-1 ${className}`.trim()} {...props}>{children}</div></ToggleGroupContext.Provider>; }\nexport function ToggleGroupItem({ value, className = \"\", ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { value: string }) { const group = useContext(ToggleGroupContext); if (!group) throw new Error(\"ToggleGroupItem requires ToggleGroup.\"); const pressed = group.value.includes(value); return <button type=\"button\" aria-pressed={pressed} className={`co-h-8 co-rounded co-px-3 co-text-sm focus-visible:co-ring-2 ${pressed ? \"co-bg-black co-text-white\" : \"hover:co-bg-black/5\"} ${className}`.trim()} onClick={() => group.change(value)} {...props} />; }\n"
     }
   ],

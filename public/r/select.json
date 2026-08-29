@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "select",
   "type": "registry:ui",
   "title": "Select",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/select.tsx",
       "type": "registry:ui",
-      "target": "@ui/select.tsx",
+      "target": "components/ui/select.tsx",
       "content": "\"use client\";\n\nimport type { SelectHTMLAttributes } from \"react\";\n\nexport type SelectOption = { value: string; label: string; disabled?: boolean };\nexport function Select({ options, placeholder = \"Select…\", className = \"\", ...props }: SelectHTMLAttributes<HTMLSelectElement> & { options: SelectOption[]; placeholder?: string }) { return <select className={`co-h-10 co-w-full co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} {...props}><option value=\"\" disabled>{placeholder}</option>{options.map((option) => <option key={option.value} value={option.value} disabled={option.disabled}>{option.label}</option>)}</select>; }\n"
     }
   ],

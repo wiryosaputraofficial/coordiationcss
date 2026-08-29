@@ -1,0 +1,105 @@
+{
+  "$schema": "/schemas/registry.json",
+  "name": "coordiation-themes",
+  "homepage": "/themes",
+  "items": [
+    {
+      "name": "editorial-advisor",
+      "type": "registry:page",
+      "title": "Editorial Advisor",
+      "description": "A warm editorial portfolio for independent advisors, consultants, and public-facing leaders.",
+      "categories": [
+        "portfolio",
+        "consulting",
+        "editorial"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/editorial-advisor/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/editorial-advisor/page.tsx"
+        },
+        {
+          "path": "site/app/themes/editorial-advisor/preview/editorial-advisor.css",
+          "type": "registry:style",
+          "target": "app/editorial-advisor/editorial-advisor.css"
+        },
+        {
+          "path": "site/app/themes/editorial-advisor/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/editorial-advisor/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/medal-star.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/medal-star.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/play-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/play-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/share-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/share-circle.svg"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [],
+      "meta": {
+        "status": "stable",
+        "copyright": "Coordiation",
+        "framework": "Next.js App Router",
+        "style": "editorial",
+        "palette": "warm cream",
+        "preview": "/themes/editorial-advisor/preview",
+        "cover": "/themes/editorial-advisor/hero-advisor.png",
+        "sections": [
+          "hero",
+          "principle",
+          "events",
+          "insights",
+          "testimonial",
+          "about",
+          "trust",
+          "background",
+          "statistics",
+          "contact"
+        ],
+        "assets": [
+          "/themes/editorial-advisor/hero-advisor.png",
+          "/themes/editorial-advisor/insight-tower.png",
+          "/themes/editorial-advisor/testimonial-meeting.png"
+        ],
+        "frameworkName": "Coordiation CSS",
+        "sourceOwnership": "open-code"
+      }
+    }
+  ]
+}

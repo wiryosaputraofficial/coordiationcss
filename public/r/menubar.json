@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "menubar",
   "type": "registry:ui",
   "title": "Menubar",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/menubar.tsx",
       "type": "registry:ui",
-      "target": "@ui/menubar.tsx",
+      "target": "components/ui/menubar.tsx",
       "content": "import type { ButtonHTMLAttributes, HTMLAttributes } from \"react\";\n\nexport function Menubar({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div role=\"menubar\" className={`co-flex co-h-10 co-items-center co-gap-1 co-rounded-md co-border co-border-black/15 co-bg-white co-p-1 ${className}`.trim()} {...props} />; }\nexport function MenubarMenu({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div role=\"none\" className={className} {...props} />; }\nexport function MenubarTrigger({ className = \"\", ...props }: ButtonHTMLAttributes<HTMLButtonElement>) { return <button role=\"menuitem\" type=\"button\" className={`co-rounded co-px-3 co-py-1.5 co-text-sm hover:co-bg-black/5 focus-visible:co-ring-2 ${className}`.trim()} {...props} />; }\n"
     }
   ],

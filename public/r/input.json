@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "input",
   "type": "registry:ui",
   "title": "Input",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/input.tsx",
       "type": "registry:ui",
-      "target": "@ui/input.tsx",
+      "target": "components/ui/input.tsx",
       "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(({ className = \"\", type = \"text\", ...props }, ref) => (\n  <input ref={ref} type={type} className={`co-flex co-h-10 co-w-full co-rounded-md co-border co-border-black/20 co-bg-white co-px-3 co-text-sm co-outline-none placeholder:co-text-black/40 focus-visible:co-ring-2 focus-visible:co-ring-black invalid:co-border-black invalid:co-ring-2 disabled:co-cursor-not-allowed disabled:co-opacity-50 ${className}`.trim()} {...props} />\n));\nInput.displayName = \"Input\";\n"
     }
   ],

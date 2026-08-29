@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "questionnaire",
   "type": "registry:ui",
   "title": "Questionnaire",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/questionnaire.tsx",
       "type": "registry:ui",
-      "target": "@ui/questionnaire.tsx",
+      "target": "components/ui/questionnaire.tsx",
       "content": "\"use client\";\n\nimport { useState, type ReactNode } from \"react\";\n\nexport type QuestionnaireStep = { id: string; title: string; description?: string; content: ReactNode };\nexport function Questionnaire({ steps, onComplete, className = \"\" }: { steps: QuestionnaireStep[]; onComplete?: () => void; className?: string }) { const [index, setIndex] = useState(0); const step = steps[index]; const progress = steps.length ? ((index + 1) / steps.length) * 100 : 0; if (!step) return null; return <section aria-labelledby={`question-${step.id}`} className={`co-grid co-gap-6 ${className}`.trim()}><div><div className=\"co-mb-2 co-flex co-justify-between co-text-xs co-text-black/55\"><span>Question {index + 1}</span><span>{steps.length}</span></div><progress aria-label=\"Questionnaire progress\" className=\"co-h-2 co-w-full\" max={100} value={progress} /></div><div><h2 id={`question-${step.id}`} className=\"co-text-xl co-font-semibold\">{step.title}</h2>{step.description && <p className=\"co-mt-2 co-text-sm co-text-black/55\">{step.description}</p>}<div className=\"co-mt-5\">{step.content}</div></div><div className=\"co-flex co-justify-between\"><button type=\"button\" className=\"co-h-10 co-rounded-md co-border co-border-black/20 co-px-4 disabled:co-opacity-40\" disabled={index === 0} onClick={() => setIndex(index - 1)}>Back</button><button type=\"button\" className=\"co-h-10 co-rounded-md co-bg-black co-px-4 co-text-white\" onClick={() => index === steps.length - 1 ? onComplete?.() : setIndex(index + 1)}>{index === steps.length - 1 ? \"Complete\" : \"Next\"}</button></div></section>; }\n"
     }
   ],

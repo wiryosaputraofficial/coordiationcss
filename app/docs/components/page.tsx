@@ -13,11 +13,11 @@ export default function ComponentGuidePage() {
     <div className="docs-breadcrumb"><Link prefetch={false} href="/docs">Docs</Link><b>/</b><span>Components</span></div>
     <p className="docs-overline">OPEN-CODE UI · {registry.componentCount} STABLE COMPONENTS</p><h1>Component registry</h1>
     <p className="docs-lead">Add accessible React component source directly to your project. The installer is only a delivery mechanism: the resulting files use Coordiation classes, live in your repository, and remain fully editable.</p>
-    <div className="docs-note"><span>i</span><p>This is an independent Coordiation registry. It does not install Tailwind CSS or a shadcn runtime package.</p></div>
+    <div className="docs-note"><span>i</span><p>This is an independent Coordiation registry and installer. It does not install Tailwind CSS or a third-party UI runtime.</p></div>
     <div className="family-support"><span>Want to compare every preview?</span><Link prefetch={false} href="/components">Browse the component catalog →</Link></div>
 
     <section className="guide-step" id="prerequisite"><div className="step-number">01</div><div><h2>Install Coordiation CSS first</h2><CodeBlock title="Terminal" code={`npm install @coordiation/css @coordiation/vite`} /><p>Components contain literal <code>co-*</code> classes. Your existing scanner detects them after the source file is added.</p></div></section>
-    <section className="guide-step" id="install"><div className="step-number">02</div><div><h2>Add a component from your site</h2><CodeBlock title="Terminal" code={`npx shadcn@latest add https://your-domain.com/r/button.json`} /><p>Replace <code>your-domain.com</code> with the domain where this documentation is published. The registry item contains the full component source and writes it to your configured UI directory.</p></div></section>
+    <section className="guide-step" id="install"><div className="step-number">02</div><div><h2>Add a component with Coordiation CLI</h2><CodeBlock title="Terminal" code="npx @coordiation/cli@latest add component button" /><p>The official installer resolves the Coordiation registry, verifies safe target paths, refuses accidental overwrites, and writes the full source into <code>components/ui</code>.</p></div></section>
     <section className="guide-step" id="use"><div className="step-number">03</div><div><h2>Import the owned source</h2><CodeBlock title="app.tsx" code={`import { Button } from "@/components/ui/button";
 
 export function SaveAction() {

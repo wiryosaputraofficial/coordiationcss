@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "label",
   "type": "registry:ui",
   "title": "Label",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/label.tsx",
       "type": "registry:ui",
-      "target": "@ui/label.tsx",
+      "target": "components/ui/label.tsx",
       "content": "import { forwardRef, type LabelHTMLAttributes } from \"react\";\n\nexport const Label = forwardRef<HTMLLabelElement, LabelHTMLAttributes<HTMLLabelElement>>(({ className = \"\", ...props }, ref) => (\n  <label ref={ref} className={`co-text-sm co-font-medium co-leading-none has-[:disabled]:co-cursor-not-allowed has-[:disabled]:co-opacity-50 ${className}`.trim()} {...props} />\n));\nLabel.displayName = \"Label\";\n"
     }
   ],

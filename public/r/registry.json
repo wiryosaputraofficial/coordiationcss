@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "$schema": "/schemas/registry.json",
   "name": "coordiation",
   "homepage": "https://coordiation.dev/components",
   "items": [

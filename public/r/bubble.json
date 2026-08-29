@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "bubble",
   "type": "registry:ui",
   "title": "Bubble",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/bubble.tsx",
       "type": "registry:ui",
-      "target": "@ui/bubble.tsx",
+      "target": "components/ui/bubble.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function Bubble({ className = \"\", side = \"incoming\", ...props }: HTMLAttributes<HTMLDivElement> & { side?: \"incoming\" | \"outgoing\" }) { return <div className={`co-max-w-[80%] co-rounded-xl co-px-4 co-py-3 co-text-sm ${side === \"outgoing\" ? \"co-ms-auto co-bg-black co-text-white\" : \"co-bg-black/5 co-text-black\"} ${className}`.trim()} {...props} />; }\n"
     }
   ],

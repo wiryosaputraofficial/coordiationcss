@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "slider",
   "type": "registry:ui",
   "title": "Slider",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/slider.tsx",
       "type": "registry:ui",
-      "target": "@ui/slider.tsx",
+      "target": "components/ui/slider.tsx",
       "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const Slider = forwardRef<HTMLInputElement, Omit<InputHTMLAttributes<HTMLInputElement>, \"type\">>(({ className = \"\", style, ...props }, ref) => <input ref={ref} type=\"range\" className={`co-h-2 co-w-full co-cursor-pointer co-appearance-none co-rounded-full co-bg-black/15 focus-visible:co-ring-2 disabled:co-opacity-50 ${className}`.trim()} style={{ accentColor: \"black\", ...style }} {...props} />);\nSlider.displayName = \"Slider\";\n"
     }
   ],

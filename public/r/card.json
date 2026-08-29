@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "card",
   "type": "registry:ui",
   "title": "Card",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/card.tsx",
       "type": "registry:ui",
-      "target": "@ui/card.tsx",
+      "target": "components/ui/card.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nfunction part(base: string, className = \"\") { return `${base} ${className}`.trim(); }\nexport function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={part(\"co-rounded-xl co-border co-border-black/15 co-bg-white co-text-black co-shadow-sm\", className)} {...props} />; }\nexport function CardHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={part(\"co-flex co-flex-col co-gap-1.5 co-p-6\", className)} {...props} />; }\nexport function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h3 className={part(\"co-text-lg co-font-semibold co-leading-none\", className)} {...props} />; }\nexport function CardDescription({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) { return <p className={part(\"co-text-sm co-text-black/60\", className)} {...props} />; }\nexport function CardContent({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={part(\"co-px-6 co-pb-6\", className)} {...props} />; }\nexport function CardFooter({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={part(\"co-flex co-items-center co-gap-3 co-px-6 co-pb-6\", className)} {...props} />; }\n"
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "item",
   "type": "registry:ui",
   "title": "Item",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/item.tsx",
       "type": "registry:ui",
-      "target": "@ui/item.tsx",
+      "target": "components/ui/item.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nconst join = (base: string, extra = \"\") => `${base} ${extra}`.trim();\nexport function Item({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={join(\"co-flex co-items-center co-gap-3 co-rounded-lg co-p-3 hover:co-bg-black/5\", className)} {...props} />; }\nexport function ItemMedia({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={join(\"co-grid co-size-10 co-shrink-0 co-place-items-center co-rounded-md co-bg-black/5\", className)} {...props} />; }\nexport function ItemContent({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={join(\"co-min-w-0 co-flex-1\", className)} {...props} />; }\nexport function ItemTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) { return <h3 className={join(\"co-font-medium\", className)} {...props} />; }\nexport function ItemDescription({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) { return <p className={join(\"co-text-sm co-text-black/55\", className)} {...props} />; }\nexport function ItemActions({ className, ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={join(\"co-ms-auto co-flex co-items-center co-gap-2\", className)} {...props} />; }\n"
     }
   ],

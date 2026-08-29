@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "drawer",
   "type": "registry:ui",
   "title": "Drawer",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/drawer.tsx",
       "type": "registry:ui",
-      "target": "@ui/drawer.tsx",
+      "target": "components/ui/drawer.tsx",
       "content": "\"use client\";\n\nimport { useEffect, useRef, type HTMLAttributes, type ReactNode } from \"react\";\n\nexport function Drawer({ open, onOpenChange, children, side = \"bottom\", className = \"\" }: { open: boolean; onOpenChange: (open: boolean) => void; children: ReactNode; side?: \"bottom\" | \"left\" | \"right\"; className?: string }) { const ref = useRef<HTMLDialogElement>(null); useEffect(() => { const node = ref.current; if (open && node && !node.open) node.showModal(); if (!open && node?.open) node.close(); }, [open]); const placement = side === \"left\" ? \"co-me-auto co-h-full co-max-h-none co-w-[min(24rem,90vw)]\" : side === \"right\" ? \"co-ms-auto co-h-full co-max-h-none co-w-[min(24rem,90vw)]\" : \"co-mt-auto co-w-full co-max-w-none co-rounded-b-none\"; return <dialog ref={ref} className={`${placement} co-rounded-xl co-border co-border-black/15 co-bg-white co-p-6 co-shadow-xl backdrop:co-bg-black/55 ${className}`.trim()} onCancel={() => onOpenChange(false)} onClose={() => onOpenChange(false)}>{children}</dialog>; }\nexport function DrawerHeader({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-grid co-gap-2 ${className}`.trim()} {...props} />; }\nexport function DrawerFooter({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-mt-6 co-flex co-justify-end co-gap-2 ${className}`.trim()} {...props} />; }\n"
     }
   ],

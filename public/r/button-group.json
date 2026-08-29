@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "button-group",
   "type": "registry:ui",
   "title": "Button Group",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/button-group.tsx",
       "type": "registry:ui",
-      "target": "@ui/button-group.tsx",
+      "target": "components/ui/button-group.tsx",
       "content": "import type { HTMLAttributes } from \"react\";\n\nexport function ButtonGroup({ className = \"\", orientation = \"horizontal\", ...props }: HTMLAttributes<HTMLDivElement> & { orientation?: \"horizontal\" | \"vertical\" }) { return <div role=\"group\" className={`co-inline-flex ${orientation === \"vertical\" ? \"co-flex-col co-divide-y co-divide-black/15\" : \"co-divide-x co-divide-black/15\"} co-overflow-hidden co-rounded-md co-border co-border-black/15 ${className}`.trim()} {...props} />; }\n"
     }
   ],

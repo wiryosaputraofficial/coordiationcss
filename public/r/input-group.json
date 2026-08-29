@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "input-group",
   "type": "registry:ui",
   "title": "Input Group",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/input-group.tsx",
       "type": "registry:ui",
-      "target": "@ui/input-group.tsx",
+      "target": "components/ui/input-group.tsx",
       "content": "import type { HTMLAttributes, InputHTMLAttributes } from \"react\";\n\nexport function InputGroup({ className = \"\", ...props }: HTMLAttributes<HTMLDivElement>) { return <div className={`co-flex co-h-10 co-w-full co-items-center co-overflow-hidden co-rounded-md co-border co-border-black/20 co-bg-white focus-within:co-ring-2 ${className}`.trim()} {...props} />; }\nexport function InputGroupAddon({ className = \"\", ...props }: HTMLAttributes<HTMLSpanElement>) { return <span className={`co-flex co-h-full co-items-center co-bg-black/5 co-px-3 co-text-sm co-text-black/55 ${className}`.trim()} {...props} />; }\nexport function InputGroupInput({ className = \"\", ...props }: InputHTMLAttributes<HTMLInputElement>) { return <input className={`co-h-full co-min-w-0 co-flex-1 co-border-0 co-bg-transparent co-px-3 co-text-sm co-outline-none ${className}`.trim()} {...props} />; }\n"
     }
   ],

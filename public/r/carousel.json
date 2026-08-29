@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "/schemas/registry-item.json",
   "name": "carousel",
   "type": "registry:ui",
   "title": "Carousel",
@@ -13,7 +13,7 @@
     {
       "path": "registry/monochrome/carousel.tsx",
       "type": "registry:ui",
-      "target": "@ui/carousel.tsx",
+      "target": "components/ui/carousel.tsx",
       "content": "\"use client\";\n\nimport { useState, type ReactNode } from \"react\";\n\nexport function Carousel({ items, label = \"Carousel\", className = \"\" }: { items: ReactNode[]; label?: string; className?: string }) { const [index, setIndex] = useState(0); const count = items.length; return <section aria-roledescription=\"carousel\" aria-label={label} className={`co-grid co-gap-3 ${className}`.trim()}><div className=\"co-overflow-hidden co-rounded-lg co-border co-border-black/15 co-p-6\" aria-live=\"polite\">{items[index]}</div><div className=\"co-flex co-items-center co-justify-between\"><button type=\"button\" className=\"co-rounded-md co-border co-border-black/20 co-px-3 co-py-2 disabled:co-opacity-40\" disabled={index === 0} onClick={() => setIndex(index - 1)}>Previous</button><span className=\"co-text-xs co-text-black/55\">{index + 1} / {count}</span><button type=\"button\" className=\"co-rounded-md co-border co-border-black/20 co-px-3 co-py-2 disabled:co-opacity-40\" disabled={index >= count - 1} onClick={() => setIndex(index + 1)}>Next</button></div></section>; }\n"
     }
   ],
