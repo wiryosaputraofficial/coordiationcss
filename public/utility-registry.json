@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 411,
+    "staticUtilityCount": 488,
     "familyCount": 15,
-    "completeFamilies": 10,
-    "partialFamilies": 5,
+    "completeFamilies": 11,
+    "partialFamilies": 4,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -1007,34 +1007,65 @@
     },
     {
       "id": "effects",
-      "label": "Effects",
-      "status": "partial",
+      "label": "Effects, filters, and masks",
+      "status": "complete",
       "target": "0.3",
       "patterns": [
         "co-shadow-*",
-        "co-opacity-*"
+        "co-inset-shadow-*",
+        "co-text-shadow-*",
+        "co-opacity-*",
+        "co-*-blend-*",
+        "co-filter-*",
+        "co-blur-*",
+        "co-drop-shadow-*",
+        "co-backdrop-*",
+        "co-mask-*"
       ],
       "examples": [
         "co-shadow-lg",
-        "co-opacity-50"
+        "co-text-shadow-sm",
+        "co-opacity-50",
+        "co-mix-blend-multiply",
+        "co-blur-md",
+        "-co-hue-rotate-30",
+        "co-backdrop-blur-sm",
+        "co-mask-[url(/mask.svg)]"
       ],
-      "supportsNegative": false,
+      "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Control box shadows and element opacity with theme tokens or arbitrary values.",
-        "guidance": "Use named shadow tokens for consistent elevation and opacity utilities for whole-element transparency, not as a substitute for color opacity.",
+        "summary": "Control elevation, text shadows, opacity, blending, composable filters, backdrop filters, and CSS or SVG masks.",
+        "guidance": "Use named shadow and blur tokens for repeatable visual depth, combine filter utilities freely, and use masks only when clipping cannot express the intended alpha or luminance shape.",
         "properties": [
           "box-shadow",
-          "opacity"
+          "text-shadow",
+          "opacity",
+          "mix-blend-mode",
+          "background-blend-mode",
+          "filter",
+          "backdrop-filter",
+          "mask-image",
+          "mask-mode",
+          "mask-clip",
+          "mask-composite",
+          "mask-origin",
+          "mask-position",
+          "mask-repeat",
+          "mask-size",
+          "mask-type"
         ],
         "concepts": [
-          "Named shadows resolve through --co-shadow-* variables.",
-          "Opacity values are expressed as percentages in class names and decimals in CSS.",
-          "Arbitrary shadows support custom layered effects."
+          "Box shadows remain composable with outward and inset rings through shared shadow layers.",
+          "Shadow, text-shadow, and drop-shadow colors use dedicated custom properties so theme colors and opacity modifiers can recolor named geometry.",
+          "Filter and backdrop-filter functions are stored in independent custom properties, allowing blur, brightness, contrast, hue rotation, and other functions to compose regardless of class order.",
+          "Mask utilities cover image sources, alpha or luminance mode, geometry boxes, positioning, repetition, sizing, compositing, SVG mask type, and linear fade helpers.",
+          "Opacity values are expressed as percentages in class names and decimals in CSS."
         ],
         "caveats": [
-          "Blend modes, filters, backdrop filters, and masks are not complete.",
-          "Opacity affects the element and all descendants as a composited group."
+          "Opacity affects the element and all descendants as a composited group.",
+          "Backdrop filters only become visible when content exists behind a translucent element.",
+          "Arbitrary mask and filter values must remain literal and are rejected when declaration-breaking characters are detected."
         ]
       },
       "resolvedExamples": [
@@ -1053,12 +1084,88 @@
           ]
         },
         {
+          "candidate": "co-text-shadow-sm",
+          "supported": true,
+          "declarations": [
+            [
+              "text-shadow",
+              "var(--co-text-shadow-sm)"
+            ]
+          ]
+        },
+        {
           "candidate": "co-opacity-50",
           "supported": true,
           "declarations": [
             [
               "opacity",
               "0.5"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-mix-blend-multiply",
+          "supported": true,
+          "declarations": [
+            [
+              "mix-blend-mode",
+              "multiply"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-blur-md",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-blur",
+              "blur(var(--co-blur-md))"
+            ],
+            [
+              "filter",
+              "var(--co-blur,) var(--co-brightness,) var(--co-contrast,) var(--co-grayscale,) var(--co-hue-rotate,) var(--co-invert,) var(--co-saturate,) var(--co-sepia,) var(--co-drop-shadow,)"
+            ]
+          ]
+        },
+        {
+          "candidate": "-co-hue-rotate-30",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-hue-rotate",
+              "hue-rotate(-30deg)"
+            ],
+            [
+              "filter",
+              "var(--co-blur,) var(--co-brightness,) var(--co-contrast,) var(--co-grayscale,) var(--co-hue-rotate,) var(--co-invert,) var(--co-saturate,) var(--co-sepia,) var(--co-drop-shadow,)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-backdrop-blur-sm",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-backdrop-blur",
+              "blur(var(--co-blur-sm))"
+            ],
+            [
+              "-webkit-backdrop-filter",
+              "var(--co-backdrop-blur,) var(--co-backdrop-brightness,) var(--co-backdrop-contrast,) var(--co-backdrop-grayscale,) var(--co-backdrop-hue-rotate,) var(--co-backdrop-invert,) var(--co-backdrop-opacity,) var(--co-backdrop-saturate,) var(--co-backdrop-sepia,)"
+            ],
+            [
+              "backdrop-filter",
+              "var(--co-backdrop-blur,) var(--co-backdrop-brightness,) var(--co-backdrop-contrast,) var(--co-backdrop-grayscale,) var(--co-backdrop-hue-rotate,) var(--co-backdrop-invert,) var(--co-backdrop-opacity,) var(--co-backdrop-saturate,) var(--co-backdrop-sepia,)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-mask-[url(/mask.svg)]",
+          "supported": true,
+          "declarations": [
+            [
+              "mask-image",
+              "url(/mask.svg)"
             ]
           ]
         }
@@ -1815,6 +1922,19 @@
       ]
     },
     {
+      "candidate": "co-backdrop-filter-none",
+      "declarations": [
+        [
+          "-webkit-backdrop-filter",
+          "none"
+        ],
+        [
+          "backdrop-filter",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-backface-hidden",
       "declarations": [
         [
@@ -1856,6 +1976,150 @@
         [
           "background-size",
           "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-color",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "color"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-color-burn",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "color-burn"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-color-dodge",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "color-dodge"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-darken",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "darken"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-difference",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "difference"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-exclusion",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "exclusion"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-hard-light",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "hard-light"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-hue",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "hue"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-lighten",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "lighten"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-luminosity",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "luminosity"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-multiply",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "multiply"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-normal",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "normal"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-overlay",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "overlay"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-saturation",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "saturation"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-screen",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "screen"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-bg-blend-soft-light",
+      "declarations": [
+        [
+          "background-blend-mode",
+          "soft-light"
         ]
       ]
     },
@@ -2875,6 +3139,15 @@
       ]
     },
     {
+      "candidate": "co-filter-none",
+      "declarations": [
+        [
+          "filter",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-fixed",
       "declarations": [
         [
@@ -3717,6 +3990,537 @@
         [
           "text-transform",
           "lowercase"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-add",
+      "declarations": [
+        [
+          "mask-composite",
+          "add"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-alpha",
+      "declarations": [
+        [
+          "mask-mode",
+          "alpha"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-auto",
+      "declarations": [
+        [
+          "mask-size",
+          "auto"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-bottom",
+      "declarations": [
+        [
+          "mask-position",
+          "bottom"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-bottom-left",
+      "declarations": [
+        [
+          "mask-position",
+          "bottom left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-bottom-right",
+      "declarations": [
+        [
+          "mask-position",
+          "bottom right"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-center",
+      "declarations": [
+        [
+          "mask-position",
+          "center"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-clip-border",
+      "declarations": [
+        [
+          "mask-clip",
+          "border-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-clip-content",
+      "declarations": [
+        [
+          "mask-clip",
+          "content-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-clip-fill",
+      "declarations": [
+        [
+          "mask-clip",
+          "fill-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-clip-padding",
+      "declarations": [
+        [
+          "mask-clip",
+          "padding-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-clip-stroke",
+      "declarations": [
+        [
+          "mask-clip",
+          "stroke-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-clip-view",
+      "declarations": [
+        [
+          "mask-clip",
+          "view-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-contain",
+      "declarations": [
+        [
+          "mask-size",
+          "contain"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-cover",
+      "declarations": [
+        [
+          "mask-size",
+          "cover"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-exclude",
+      "declarations": [
+        [
+          "mask-composite",
+          "exclude"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-intersect",
+      "declarations": [
+        [
+          "mask-composite",
+          "intersect"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-left",
+      "declarations": [
+        [
+          "mask-position",
+          "left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-luminance",
+      "declarations": [
+        [
+          "mask-mode",
+          "luminance"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-match",
+      "declarations": [
+        [
+          "mask-mode",
+          "match-source"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-no-clip",
+      "declarations": [
+        [
+          "mask-clip",
+          "no-clip"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-no-repeat",
+      "declarations": [
+        [
+          "mask-repeat",
+          "no-repeat"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-none",
+      "declarations": [
+        [
+          "mask-image",
+          "none"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-origin-border",
+      "declarations": [
+        [
+          "mask-origin",
+          "border-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-origin-content",
+      "declarations": [
+        [
+          "mask-origin",
+          "content-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-origin-fill",
+      "declarations": [
+        [
+          "mask-origin",
+          "fill-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-origin-padding",
+      "declarations": [
+        [
+          "mask-origin",
+          "padding-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-origin-stroke",
+      "declarations": [
+        [
+          "mask-origin",
+          "stroke-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-origin-view",
+      "declarations": [
+        [
+          "mask-origin",
+          "view-box"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-repeat",
+      "declarations": [
+        [
+          "mask-repeat",
+          "repeat"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-repeat-round",
+      "declarations": [
+        [
+          "mask-repeat",
+          "round"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-repeat-space",
+      "declarations": [
+        [
+          "mask-repeat",
+          "space"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-repeat-x",
+      "declarations": [
+        [
+          "mask-repeat",
+          "repeat-x"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-repeat-y",
+      "declarations": [
+        [
+          "mask-repeat",
+          "repeat-y"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-right",
+      "declarations": [
+        [
+          "mask-position",
+          "right"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-subtract",
+      "declarations": [
+        [
+          "mask-composite",
+          "subtract"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-top",
+      "declarations": [
+        [
+          "mask-position",
+          "top"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-top-left",
+      "declarations": [
+        [
+          "mask-position",
+          "top left"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-top-right",
+      "declarations": [
+        [
+          "mask-position",
+          "top right"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-type-alpha",
+      "declarations": [
+        [
+          "mask-type",
+          "alpha"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mask-type-luminance",
+      "declarations": [
+        [
+          "mask-type",
+          "luminance"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-color",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "color"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-color-burn",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "color-burn"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-color-dodge",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "color-dodge"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-darken",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "darken"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-difference",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "difference"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-exclusion",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "exclusion"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-hard-light",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "hard-light"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-hue",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "hue"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-lighten",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "lighten"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-luminosity",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "luminosity"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-multiply",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "multiply"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-normal",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "normal"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-overlay",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "overlay"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-plus-darker",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "plus-darker"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-plus-lighter",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "plus-lighter"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-saturation",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "saturation"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-screen",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "screen"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-mix-blend-soft-light",
+      "declarations": [
+        [
+          "mix-blend-mode",
+          "soft-light"
         ]
       ]
     },
