@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 const navigation = [
   { title: "Getting started", items: [["Installation", "/docs"], ["Using Vite", "/docs/installation/using-vite"], ["Editor setup", "#editor-setup"], ["Compatibility", "/release-check"]] },
   { title: "Core concepts", items: [["Utility classes", "#utility-classes"], ["Responsive design", "#responsive-design"], ["States and variants", "#states-and-variants"], ["Theme variables", "#theme-variables"]] },
-  { title: "Core utilities", items: [["Layout", "/release-check#layout"], ["Flexbox & Grid", "/release-check#flex-grid"], ["Spacing & Sizing", "/release-check#spacing-sizing"], ["Typography", "/release-check#typography"], ["Backgrounds", "/release-check#backgrounds"], ["Borders & Rings", "/release-check#borders"]] },
+  { title: "Core utilities", items: [["Utility registry", "/docs/utilities"], ["Layout", "/docs/utilities#layout"], ["Flexbox & Grid", "/docs/utilities#flex-grid"], ["Spacing & Sizing", "/docs/utilities#spacing"], ["Typography", "/docs/utilities#typography"], ["Backgrounds", "/docs/utilities#backgrounds"], ["Borders & Rings", "/docs/utilities#borders-rings"]] },
   { title: "Tooling", items: [["Vite", "/docs/installation/using-vite"], ["PostCSS", "#postcss"], ["CLI", "#cli"], ["AI integration", "#ai-integration"]] },
 ] as const;
 

@@ -24,3 +24,4 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
+Machine-readable utility registry: `/api/utilities`
