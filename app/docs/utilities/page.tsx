@@ -1,3 +1,4 @@
+import Link from "next/link";
 import UtilityExplorer from "../_components/UtilityExplorer";
 import registry from "../generated/utility-registry.json";
 
@@ -12,7 +13,7 @@ export default function UtilitiesPage() {
 
       <h2>Dynamic utility families</h2>
       <div className="registry-family-grid">
-        {registry.families.map((family) => <section key={family.id} id={family.id}><div><code>{family.id}</code><span className={`docs-status ${family.status}`}><i />{family.status}</span></div><h3>{family.label}</h3><div className="registry-patterns">{family.patterns.map((pattern) => <code key={pattern}>{pattern}</code>)}</div><p>Target v{family.target} · Arbitrary values {family.supportsArbitrary ? "supported" : "not supported"} · Negative values {family.supportsNegative ? "supported" : "not supported"}</p></section>)}
+        {registry.families.map((family) => <section key={family.id} id={family.id}><div><code>{family.id}</code><span className={`docs-status ${family.status}`}><i />{family.status}</span></div><h3>{family.label}</h3><p className="registry-family-summary">{family.documentation.summary}</p><div className="registry-patterns">{family.patterns.map((pattern) => <code key={pattern}>{pattern}</code>)}</div><p>Target v{family.target} · Arbitrary values {family.supportsArbitrary ? "supported" : "not supported"} · Negative values {family.supportsNegative ? "supported" : "not supported"}</p><Link href={`/docs/utilities/${family.id}`}>Read the guide <span>→</span></Link></section>)}
       </div>
 
       <UtilityExplorer utilities={registry.staticUtilities} />
@@ -20,4 +21,3 @@ export default function UtilitiesPage() {
     </article>
   );
 }
-

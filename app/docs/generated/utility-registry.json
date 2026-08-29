@@ -10,7 +10,8 @@
     "familyCount": 15,
     "completeFamilies": 0,
     "partialFamilies": 15,
-    "plannedFamilies": 0
+    "plannedFamilies": 0,
+    "documentedFamilies": 15
   },
   "families": [
     {
@@ -32,7 +33,75 @@
         "co-overflow-y-auto"
       ],
       "supportsNegative": true,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Control how elements participate in document flow, how they are positioned, and how overflowing or replaced content is handled.",
+        "guidance": "Choose display first, add position only when the element must leave or track normal flow, then use logical inset utilities when the interface must work in both LTR and RTL directions.",
+        "properties": [
+          "display",
+          "position",
+          "inset",
+          "float",
+          "clear",
+          "overflow",
+          "overscroll-behavior",
+          "object-fit",
+          "object-position",
+          "visibility",
+          "isolation"
+        ],
+        "concepts": [
+          "Display utilities determine the formatting context before flex or grid alignment is applied.",
+          "Sticky positioning needs a scroll container and at least one inset such as co-top-0.",
+          "Logical start/end utilities follow the document writing direction."
+        ],
+        "caveats": [
+          "Container utilities and aspect-aware replaced-content helpers are not complete yet.",
+          "Negative values are limited to inset and positional utilities."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-flow-root",
+          "supported": true,
+          "declarations": [
+            [
+              "display",
+              "flow-root"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-sticky",
+          "supported": true,
+          "declarations": [
+            [
+              "position",
+              "sticky"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-inset-x-4",
+          "supported": true,
+          "declarations": [
+            [
+              "inset-inline",
+              "calc(var(--co-space-unit) * 4)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-overflow-y-auto",
+          "supported": true,
+          "declarations": [
+            [
+              "overflow-y",
+              "auto"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "flex-grid",
@@ -53,7 +122,75 @@
         "co-place-content-between"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Build one- and two-dimensional layouts with flex direction, wrapping, grid tracks, spans, automatic placement, and alignment utilities.",
+        "guidance": "Use flex for content distributed along one primary axis and grid when rows and columns must coordinate. Apply gap on the container and span/start/end utilities on children.",
+        "properties": [
+          "display",
+          "flex",
+          "flex-direction",
+          "flex-wrap",
+          "flex-basis",
+          "grid-template-columns",
+          "grid-template-rows",
+          "grid-auto-flow",
+          "grid-column",
+          "grid-row",
+          "place-content"
+        ],
+        "concepts": [
+          "co-flex and co-grid only establish layout mode; direction and track definitions remain explicit.",
+          "Numeric grid tracks use repeat(n, minmax(0, 1fr)) to prevent content overflow.",
+          "Alignment utilities map directly to CSS alignment properties."
+        ],
+        "caveats": [
+          "Subgrid and masonry values are not implemented.",
+          "Named grid lines require arbitrary values."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-flex-1",
+          "supported": true,
+          "declarations": [
+            [
+              "flex",
+              "1 1 0%"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-grid-cols-12",
+          "supported": true,
+          "declarations": [
+            [
+              "grid-template-columns",
+              "repeat(12, minmax(0, 1fr))"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-col-span-6",
+          "supported": true,
+          "declarations": [
+            [
+              "grid-column",
+              "span 6 / span 6"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-place-content-between",
+          "supported": true,
+          "declarations": [
+            [
+              "place-content",
+              "space-between"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "spacing",
@@ -75,7 +212,78 @@
         "co-space-y-8"
       ],
       "supportsNegative": true,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Apply physical and logical padding, margin, gaps, sibling spacing, scroll margin, and scroll padding from the shared spacing scale.",
+        "guidance": "Prefer gap for flex and grid children, space utilities for ordinary sibling flow, and logical ms/me or ps/pe utilities when direction-aware layouts are required.",
+        "properties": [
+          "padding",
+          "margin",
+          "gap",
+          "inset",
+          "scroll-margin",
+          "scroll-padding"
+        ],
+        "concepts": [
+          "Numeric values multiply --co-space-unit, which defaults to 0.25rem.",
+          "Fractions resolve to percentages and px resolves to one device-independent CSS pixel.",
+          "Sibling space utilities target every direct child except the last child."
+        ],
+        "caveats": [
+          "Negative values are valid for margin, inset, scroll margin, and sibling spacing—not padding or gap.",
+          "Dynamically concatenated spacing classes cannot be detected by the scanner."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-p-4",
+          "supported": true,
+          "declarations": [
+            [
+              "padding",
+              "calc(var(--co-space-unit) * 4)"
+            ]
+          ]
+        },
+        {
+          "candidate": "-co-mt-2",
+          "supported": true,
+          "declarations": [
+            [
+              "margin-top",
+              "calc(calc(var(--co-space-unit) * 2) * -1)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-gap-x-6",
+          "supported": true,
+          "declarations": [
+            [
+              "column-gap",
+              "calc(var(--co-space-unit) * 6)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-space-y-8",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-space-y-reverse",
+              "0"
+            ],
+            [
+              "margin-top",
+              "calc(calc(var(--co-space-unit) * 8) * calc(1 - var(--co-space-y-reverse)))"
+            ],
+            [
+              "margin-bottom",
+              "calc(calc(var(--co-space-unit) * 8) * var(--co-space-y-reverse))"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "sizing",
@@ -97,7 +305,75 @@
         "co-basis-1/3"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Set width, height, minimum and maximum constraints, square size, and flex basis using tokens, fractions, viewport units, or arbitrary values.",
+        "guidance": "Use size when width and height share a value, min/max constraints for responsive components, and basis for the initial size of flex items.",
+        "properties": [
+          "width",
+          "height",
+          "min-width",
+          "min-height",
+          "max-width",
+          "max-height",
+          "flex-basis"
+        ],
+        "concepts": [
+          "Fraction utilities produce percentages such as co-w-1/2 → 50%.",
+          "screen, svh/svw, lvh/lvw, and dvh/dvw cover modern viewport behavior.",
+          "min, max, and fit map to intrinsic sizing keywords."
+        ],
+        "caveats": [
+          "Container-relative units are available through arbitrary values only.",
+          "Sizing utilities do not accept negative values."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-w-1/2",
+          "supported": true,
+          "declarations": [
+            [
+              "width",
+              "50%"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-min-h-screen",
+          "supported": true,
+          "declarations": [
+            [
+              "min-height",
+              "100vh"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-size-12",
+          "supported": true,
+          "declarations": [
+            [
+              "width",
+              "calc(var(--co-space-unit) * 12)"
+            ],
+            [
+              "height",
+              "calc(var(--co-space-unit) * 12)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-basis-1/3",
+          "supported": true,
+          "declarations": [
+            [
+              "flex-basis",
+              "33.33333333333333%"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "typography",
@@ -118,7 +394,91 @@
         "co-line-clamp-3"
       ],
       "supportsNegative": true,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Control font family, size, weight, line height, letter spacing, alignment, decoration, wrapping, hyphenation, indentation, and line clamping.",
+        "guidance": "Start with the theme type scale, adjust leading only when the design calls for it, and reserve arbitrary sizes for values that cannot be represented as reusable tokens.",
+        "properties": [
+          "font-family",
+          "font-size",
+          "font-weight",
+          "line-height",
+          "letter-spacing",
+          "text-align",
+          "text-decoration",
+          "text-wrap",
+          "white-space",
+          "text-indent",
+          "-webkit-line-clamp"
+        ],
+        "concepts": [
+          "Theme font-size entries may emit both font-size and line-height.",
+          "Line clamp combines overflow, display, box orientation, and clamp declarations.",
+          "Text colors share the same theme color namespace as backgrounds and borders."
+        ],
+        "caveats": [
+          "OpenType feature and variation-setting utilities are not implemented.",
+          "Only indentation accepts the canonical negative modifier."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-text-2xl",
+          "supported": true,
+          "declarations": [
+            [
+              "font-size",
+              "1.5rem"
+            ],
+            [
+              "line-height",
+              "2rem"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-font-bold",
+          "supported": true,
+          "declarations": [
+            [
+              "font-weight",
+              "700"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-tracking-tight",
+          "supported": true,
+          "declarations": [
+            [
+              "letter-spacing",
+              "-0.025em"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-line-clamp-3",
+          "supported": true,
+          "declarations": [
+            [
+              "overflow",
+              "hidden"
+            ],
+            [
+              "display",
+              "-webkit-box"
+            ],
+            [
+              "-webkit-box-orient",
+              "vertical"
+            ],
+            [
+              "-webkit-line-clamp",
+              "3"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "backgrounds",
@@ -138,7 +498,77 @@
         "co-bg-clip-text"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Apply theme or arbitrary colors and control background attachment, clipping, origin, position, repetition, and sizing.",
+        "guidance": "Prefer theme colors so components remain adaptable. Use slash opacity for transparent variants and bg-clip-text when a background should be constrained to glyphs.",
+        "properties": [
+          "background-color",
+          "background-attachment",
+          "background-clip",
+          "background-origin",
+          "background-position",
+          "background-repeat",
+          "background-size",
+          "accent-color",
+          "caret-color"
+        ],
+        "concepts": [
+          "Theme colors compile through --co-color-* variables.",
+          "Slash opacity uses color-mix in OKLab instead of duplicating palette entries.",
+          "Arbitrary color values remain available when a token is inappropriate."
+        ],
+        "caveats": [
+          "Gradient stop composition and image utilities are still planned for v0.3.",
+          "Full Display-P3 token authoring is not complete."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-bg-black",
+          "supported": true,
+          "declarations": [
+            [
+              "background-color",
+              "var(--co-color-black)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-bg-black/50",
+          "supported": true,
+          "declarations": [
+            [
+              "background-color",
+              "color-mix(in oklab, var(--co-color-black) 50%, transparent)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-bg-cover",
+          "supported": true,
+          "declarations": [
+            [
+              "background-size",
+              "cover"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-bg-clip-text",
+          "supported": true,
+          "declarations": [
+            [
+              "background-clip",
+              "text"
+            ],
+            [
+              "-webkit-background-clip",
+              "text"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "borders-rings",
@@ -159,7 +589,82 @@
         "co-divide-y"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Define border widths and styles, logical edges, corner radii, outlines, focus rings, and borders between direct children.",
+        "guidance": "Use borders for element geometry, outlines for accessibility that must not affect layout, and rings for composable focus treatment.",
+        "properties": [
+          "border-width",
+          "border-style",
+          "border-color",
+          "border-radius",
+          "outline",
+          "box-shadow"
+        ],
+        "concepts": [
+          "Logical border start/end utilities adapt to writing direction.",
+          "Ring utilities compose CSS custom properties into box-shadow.",
+          "Divide utilities apply border width to direct children except the last."
+        ],
+        "caveats": [
+          "Ring inset and complete divide color/style composition remain.",
+          "Complex per-corner logical combinations should be verified against browser support."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-border-x-2",
+          "supported": true,
+          "declarations": [
+            [
+              "border-inline-width",
+              "2px"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-rounded-t-lg",
+          "supported": true,
+          "declarations": [
+            [
+              "border-top-left-radius",
+              "var(--co-radius-lg)"
+            ],
+            [
+              "border-top-right-radius",
+              "var(--co-radius-lg)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-ring-2",
+          "supported": true,
+          "declarations": [
+            [
+              "--co-ring-offset-shadow",
+              "0 0 #0000"
+            ],
+            [
+              "--co-ring-shadow",
+              "0 0 0 calc(2px + var(--co-ring-offset-width, 0px)) var(--co-ring-color, currentColor)"
+            ],
+            [
+              "box-shadow",
+              "var(--co-ring-offset-shadow), var(--co-ring-shadow), var(--co-shadow, 0 0 #0000)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-divide-y",
+          "supported": true,
+          "declarations": [
+            [
+              "border-top-width",
+              "1px"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "effects",
@@ -175,7 +680,46 @@
         "co-opacity-50"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Control box shadows and element opacity with theme tokens or arbitrary values.",
+        "guidance": "Use named shadow tokens for consistent elevation and opacity utilities for whole-element transparency, not as a substitute for color opacity.",
+        "properties": [
+          "box-shadow",
+          "opacity"
+        ],
+        "concepts": [
+          "Named shadows resolve through --co-shadow-* variables.",
+          "Opacity values are expressed as percentages in class names and decimals in CSS.",
+          "Arbitrary shadows support custom layered effects."
+        ],
+        "caveats": [
+          "Blend modes, filters, backdrop filters, and masks are not complete.",
+          "Opacity affects the element and all descendants as a composited group."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-shadow-lg",
+          "supported": true,
+          "declarations": [
+            [
+              "box-shadow",
+              "var(--co-shadow-lg)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-opacity-50",
+          "supported": true,
+          "declarations": [
+            [
+              "opacity",
+              "0.5"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "tables-columns",
@@ -195,7 +739,69 @@
         "co-columns-3"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Control table formatting, collapse behavior, caption placement, and multi-column content flow.",
+        "guidance": "Use fixed table layout when predictable column widths matter and automatic layout when content should influence track sizing.",
+        "properties": [
+          "display",
+          "table-layout",
+          "border-collapse",
+          "caption-side",
+          "columns"
+        ],
+        "concepts": [
+          "Table display utilities cover row, cell, caption, column, and grouping roles.",
+          "Border collapse changes how adjacent table borders are resolved.",
+          "Column counts accept numeric and arbitrary values."
+        ],
+        "caveats": [
+          "Column gap/rule/break utilities are not complete.",
+          "Responsive table overflow still requires an explicit wrapper."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-table-fixed",
+          "supported": true,
+          "declarations": [
+            [
+              "table-layout",
+              "fixed"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-border-collapse",
+          "supported": true,
+          "declarations": [
+            [
+              "border-collapse",
+              "collapse"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-caption-bottom",
+          "supported": true,
+          "declarations": [
+            [
+              "caption-side",
+              "bottom"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-columns-3",
+          "supported": true,
+          "declarations": [
+            [
+              "columns",
+              "3"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "transforms",
@@ -216,7 +822,70 @@
         "co-origin-top"
       ],
       "supportsNegative": true,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Translate, rotate, scale, skew, and change transform origin using independent modern CSS transform properties where possible.",
+        "guidance": "Apply transform utilities to the element being moved, keep layout spacing separate, and use negative modifiers for reverse translation or rotation.",
+        "properties": [
+          "translate",
+          "rotate",
+          "scale",
+          "transform",
+          "transform-origin",
+          "backface-visibility"
+        ],
+        "concepts": [
+          "Translate values reuse the spacing and fraction scales.",
+          "Rotation and skew numeric values are interpreted as degrees.",
+          "Transform origin accepts named positions or arbitrary values."
+        ],
+        "caveats": [
+          "3D translate/rotate, transform-style, perspective, and perspective-origin remain planned.",
+          "Skew currently uses the transform shorthand and should not be mixed carelessly with other shorthand transforms."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "-co-translate-x-4",
+          "supported": true,
+          "declarations": [
+            [
+              "translate",
+              "calc(calc(var(--co-space-unit) * 4) * -1) 0"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-rotate-45",
+          "supported": true,
+          "declarations": [
+            [
+              "rotate",
+              "45deg"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-scale-95",
+          "supported": true,
+          "declarations": [
+            [
+              "scale",
+              "0.95"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-origin-top",
+          "supported": true,
+          "declarations": [
+            [
+              "transform-origin",
+              "top"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "transitions",
@@ -236,7 +905,76 @@
         "co-ease-out"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Choose transition properties, duration, delay, and easing without adding a browser runtime.",
+        "guidance": "Transition only properties that need animation, respect reduced-motion variants, and keep interaction durations short and consistent.",
+        "properties": [
+          "transition-property",
+          "transition-duration",
+          "transition-delay",
+          "transition-timing-function"
+        ],
+        "concepts": [
+          "The default transition covers common visual properties.",
+          "Duration and delay numeric values are interpreted as milliseconds.",
+          "motion-safe and motion-reduce variants can wrap transition utilities."
+        ],
+        "caveats": [
+          "Animation names and built-in keyframes are not implemented.",
+          "Starting-style and discrete transition helpers remain planned."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-transition",
+          "supported": true,
+          "declarations": [
+            [
+              "transition-property",
+              "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter"
+            ],
+            [
+              "transition-duration",
+              "150ms"
+            ],
+            [
+              "transition-timing-function",
+              "cubic-bezier(0.4,0,0.2,1)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-duration-300",
+          "supported": true,
+          "declarations": [
+            [
+              "transition-duration",
+              "300ms"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-delay-75",
+          "supported": true,
+          "declarations": [
+            [
+              "transition-delay",
+              "75ms"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-ease-out",
+          "supported": true,
+          "declarations": [
+            [
+              "transition-timing-function",
+              "cubic-bezier(0,0,0.2,1)"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "svg",
@@ -252,7 +990,46 @@
         "co-stroke-black"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Set SVG fill and stroke colors from theme tokens, currentColor, or arbitrary values.",
+        "guidance": "Use currentColor when an icon should inherit surrounding text color and theme colors when fill or stroke needs independent semantic meaning.",
+        "properties": [
+          "fill",
+          "stroke"
+        ],
+        "concepts": [
+          "Fill and stroke use the shared color resolver.",
+          "Arbitrary colors and slash opacity are available.",
+          "State and responsive variants compose with SVG color utilities."
+        ],
+        "caveats": [
+          "Stroke width, line cap, line join, dash array, and vector-effect utilities remain.",
+          "SVG presentation attributes may compete with generated CSS specificity."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-fill-current",
+          "supported": true,
+          "declarations": [
+            [
+              "fill",
+              "currentColor"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-stroke-black",
+          "supported": true,
+          "declarations": [
+            [
+              "stroke",
+              "var(--co-color-black)"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "accessibility",
@@ -268,7 +1045,113 @@
         "focus:co-not-sr-only"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": false
+      "supportsArbitrary": false,
+      "documentation": {
+        "summary": "Visually hide content while keeping it available to assistive technology, then restore it under focus or another variant.",
+        "guidance": "Use co-sr-only for descriptive labels and focus:co-not-sr-only for skip links that should appear during keyboard navigation.",
+        "properties": [
+          "position",
+          "width",
+          "height",
+          "padding",
+          "margin",
+          "overflow",
+          "clip",
+          "white-space",
+          "border-width"
+        ],
+        "concepts": [
+          "Screen-reader-only content remains in the accessibility tree.",
+          "not-sr-only restores the essential layout properties.",
+          "Forced-color variants are available for high-contrast environments."
+        ],
+        "caveats": [
+          "Do not use sr-only to hide interactive content that must remain unreachable.",
+          "Additional forced-color adjustment utilities are still incomplete."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-sr-only",
+          "supported": true,
+          "declarations": [
+            [
+              "position",
+              "absolute"
+            ],
+            [
+              "width",
+              "1px"
+            ],
+            [
+              "height",
+              "1px"
+            ],
+            [
+              "padding",
+              "0"
+            ],
+            [
+              "margin",
+              "-1px"
+            ],
+            [
+              "overflow",
+              "hidden"
+            ],
+            [
+              "clip",
+              "rect(0,0,0,0)"
+            ],
+            [
+              "white-space",
+              "nowrap"
+            ],
+            [
+              "border-width",
+              "0"
+            ]
+          ]
+        },
+        {
+          "candidate": "focus:co-not-sr-only",
+          "supported": true,
+          "declarations": [
+            [
+              "position",
+              "static"
+            ],
+            [
+              "width",
+              "auto"
+            ],
+            [
+              "height",
+              "auto"
+            ],
+            [
+              "padding",
+              "0"
+            ],
+            [
+              "margin",
+              "0"
+            ],
+            [
+              "overflow",
+              "visible"
+            ],
+            [
+              "clip",
+              "auto"
+            ],
+            [
+              "white-space",
+              "normal"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "interaction",
@@ -290,7 +1173,73 @@
         "co-touch-pan-y"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": false
+      "supportsArbitrary": false,
+      "documentation": {
+        "summary": "Control cursors, pointer events, text selection, resize handles, appearance, scroll snapping, touch gestures, and change hints.",
+        "guidance": "Use interaction utilities to reflect real behavior, not only visual intent, and preserve keyboard and assistive-technology access.",
+        "properties": [
+          "cursor",
+          "pointer-events",
+          "user-select",
+          "resize",
+          "appearance",
+          "scroll-behavior",
+          "scroll-snap-type",
+          "touch-action",
+          "will-change"
+        ],
+        "concepts": [
+          "Scroll snap needs a snap type on the container and snap alignment on children.",
+          "Touch action tells the browser which gestures the application handles.",
+          "will-change should be temporary and used sparingly."
+        ],
+        "caveats": [
+          "Additional cursor keywords and touch combinations remain.",
+          "pointer-events-none does not automatically remove descendants from keyboard navigation."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-cursor-pointer",
+          "supported": true,
+          "declarations": [
+            [
+              "cursor",
+              "pointer"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-select-none",
+          "supported": true,
+          "declarations": [
+            [
+              "user-select",
+              "none"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-snap-x",
+          "supported": true,
+          "declarations": [
+            [
+              "scroll-snap-type",
+              "x var(--co-scroll-snap-strictness)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-touch-pan-y",
+          "supported": true,
+          "declarations": [
+            [
+              "touch-action",
+              "pan-y"
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": "arbitrary-properties",
@@ -305,7 +1254,46 @@
         "co-[content-visibility:auto]"
       ],
       "supportsNegative": false,
-      "supportsArbitrary": true
+      "supportsArbitrary": true,
+      "documentation": {
+        "summary": "Emit a validated CSS property/value pair when no first-class utility represents a one-off requirement.",
+        "guidance": "Use arbitrary properties as an escape hatch, keep them literal for scanning, and promote repeated values into theme tokens or registered utilities later.",
+        "properties": [
+          "any validated CSS property",
+          "custom properties beginning with --"
+        ],
+        "concepts": [
+          "Syntax is co-[property:value].",
+          "Underscores inside arbitrary values become spaces.",
+          "Property names are validated before CSS is emitted."
+        ],
+        "caveats": [
+          "Type hints and ambiguity resolution are not complete.",
+          "User-provided arbitrary values are emitted as CSS and should come from trusted source code, not runtime input."
+        ]
+      },
+      "resolvedExamples": [
+        {
+          "candidate": "co-[mask-type:luminance]",
+          "supported": true,
+          "declarations": [
+            [
+              "mask-type",
+              "luminance"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-[content-visibility:auto]",
+          "supported": true,
+          "declarations": [
+            [
+              "content-visibility",
+              "auto"
+            ]
+          ]
+        }
+      ]
     }
   ],
   "staticUtilities": [
