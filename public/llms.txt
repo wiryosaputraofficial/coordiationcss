@@ -24,6 +24,8 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Preflight is enabled by default; disable it with `preflight: false` or CLI `--no-preflight`
 - Layout: `co-aspect-3/2`, `co-sticky`, `-co-inset-x-4`, `co-break-inside-avoid`, `-co-z-10`, `co-object-[25%_75%]`
 - Flex/Grid: `co-flex-[3_1_auto]`, `co-grow-3`, `co-basis-sm`, `co-items-center-safe`, `co-grid-cols-subgrid`, `-co-col-start-2`
+- Spacing: `co-pbs-4`, `-co-mbe-2`, `co-gap-x-6`, `co-space-x-reverse`, `co-scroll-pbe-(--offset)`
+- Sizing: `co-w-md`, `co-h-dvh`, `co-size-12`, `co-inline-full`, `co-max-inline-lg`, `co-min-block-24`
 
 ## Reliability rules for AI agents
 
@@ -42,3 +44,5 @@ Conditional variant documentation: `/docs/variants/conditional-rules`
 Preflight documentation: `/docs/core/preflight`
 Layout utility documentation: `/docs/utilities/layout`
 Flexbox and Grid documentation: `/docs/utilities/flex-grid`
+Spacing documentation: `/docs/utilities/spacing`
+Sizing documentation: `/docs/utilities/sizing`

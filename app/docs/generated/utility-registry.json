@@ -8,8 +8,8 @@
   "stats": {
     "staticUtilityCount": 390,
     "familyCount": 15,
-    "completeFamilies": 5,
-    "partialFamilies": 10,
+    "completeFamilies": 7,
+    "partialFamilies": 8,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -33,6 +33,7 @@
         "co-inline-table",
         "co-sticky",
         "-co-inset-x-4",
+        "co-inset-bs-4",
         "co-aspect-3/2",
         "co-break-inside-avoid",
         "-co-z-10",
@@ -66,7 +67,7 @@
         "concepts": [
           "Display utilities determine the formatting context before flex or grid alignment is applied.",
           "Sticky positioning needs a scroll container and at least one inset such as co-top-0.",
-          "Logical start/end utilities follow the document writing direction.",
+          "Logical inset-s/inset-e and inset-bs/inset-be utilities follow inline and block writing directions; start/end remain compatibility aliases.",
           "Aspect ratios accept named tokens, numeric fractions, custom properties, and arbitrary values.",
           "Page and column break utilities compose with print and responsive variants."
         ],
@@ -103,6 +104,16 @@
             [
               "inset-inline",
               "calc(calc(var(--co-space-unit) * 4) * -1)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-inset-bs-4",
+          "supported": true,
+          "declarations": [
+            [
+              "inset-block-start",
+              "calc(var(--co-space-unit) * 4)"
             ]
           ]
         },
@@ -304,7 +315,7 @@
     {
       "id": "spacing",
       "label": "Spacing",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-p*",
@@ -315,51 +326,58 @@
         "co-scroll-p*"
       ],
       "examples": [
-        "co-p-4",
-        "-co-mt-2",
+        "co-pbs-4",
+        "-co-mbe-2",
         "co-gap-x-6",
-        "co-space-y-8"
+        "co-space-x-reverse",
+        "co-scroll-pbe-(--offset)"
       ],
       "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
         "summary": "Apply physical and logical padding, margin, gaps, sibling spacing, scroll margin, and scroll padding from the shared spacing scale.",
-        "guidance": "Prefer gap for flex and grid children, space utilities for ordinary sibling flow, and logical ms/me or ps/pe utilities when direction-aware layouts are required.",
+        "guidance": "Prefer gap for flex and grid children, space utilities for ordinary sibling flow, and logical ps/pe/pbs/pbe or ms/me/mbs/mbe utilities when direction-aware writing modes are required.",
         "properties": [
           "padding",
+          "padding-inline",
+          "padding-block",
           "margin",
+          "margin-inline",
+          "margin-block",
           "gap",
-          "inset",
           "scroll-margin",
           "scroll-padding"
         ],
         "concepts": [
           "Numeric values multiply --co-space-unit, which defaults to 0.25rem.",
-          "Fractions resolve to percentages and px resolves to one device-independent CSS pixel.",
-          "Sibling space utilities target every direct child except the last child."
+          "Fractions resolve to percentages and px resolves to one CSS pixel.",
+          "Logical start/end utilities adapt to direction while block-start/block-end adapt to writing mode.",
+          "Sibling space utilities target every direct child except the last and include explicit reverse-axis controls.",
+          "Scroll spacing mirrors physical and logical padding/margin edges."
         ],
         "caveats": [
-          "Negative values are valid for margin, inset, scroll margin, and sibling spacing—not padding or gap.",
+          "Negative values are intentionally valid for margin, scroll margin, and sibling spacing—not padding, gap, or scroll padding.",
+          "Position offsets are documented in Layout even though they share the same value resolver.",
           "Dynamically concatenated spacing classes cannot be detected by the scanner."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-p-4",
+          "candidate": "co-pbs-4",
           "supported": true,
           "declarations": [
             [
-              "padding",
+              "padding-block-start",
               "calc(var(--co-space-unit) * 4)"
             ]
           ]
         },
         {
-          "candidate": "-co-mt-2",
+          "candidate": "-co-mbe-2",
           "supported": true,
           "declarations": [
             [
-              "margin-top",
+              "margin-block-end",
               "calc(calc(var(--co-space-unit) * 2) * -1)"
             ]
           ]
@@ -375,20 +393,22 @@
           ]
         },
         {
-          "candidate": "co-space-y-8",
+          "candidate": "co-space-x-reverse",
           "supported": true,
           "declarations": [
             [
-              "--co-space-y-reverse",
-              "0"
-            ],
+              "--co-space-x-reverse",
+              "1"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-scroll-pbe-(--offset)",
+          "supported": true,
+          "declarations": [
             [
-              "margin-top",
-              "calc(calc(var(--co-space-unit) * 8) * calc(1 - var(--co-space-y-reverse)))"
-            ],
-            [
-              "margin-bottom",
-              "calc(calc(var(--co-space-unit) * 8) * var(--co-space-y-reverse))"
+              "scroll-padding-block-end",
+              "var(--offset)"
             ]
           ]
         }
@@ -397,7 +417,7 @@
     {
       "id": "sizing",
       "label": "Sizing",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-w-*",
@@ -405,19 +425,22 @@
         "co-size-*",
         "co-min-*-*",
         "co-max-*-*",
-        "co-basis-*"
+        "co-inline-*",
+        "co-block-*"
       ],
       "examples": [
-        "co-w-1/2",
-        "co-min-h-screen",
+        "co-w-md",
+        "co-h-dvh",
         "co-size-12",
-        "co-basis-1/3"
+        "co-inline-full",
+        "co-max-inline-lg",
+        "co-min-block-24"
       ],
       "supportsNegative": false,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Set width, height, minimum and maximum constraints, square size, and flex basis using tokens, fractions, viewport units, or arbitrary values.",
-        "guidance": "Use size when width and height share a value, min/max constraints for responsive components, and basis for the initial size of flex items.",
+        "summary": "Set physical or logical dimensions, minimum and maximum constraints, and paired width/height with spacing, container, viewport, intrinsic, custom-property, or arbitrary values.",
+        "guidance": "Use size when width and height share a value, inline/block when components must respect writing mode, and min/max constraints when content or viewport changes must not break the component.",
         "properties": [
           "width",
           "height",
@@ -425,36 +448,44 @@
           "min-height",
           "max-width",
           "max-height",
-          "flex-basis"
+          "inline-size",
+          "block-size",
+          "min-inline-size",
+          "min-block-size",
+          "max-inline-size",
+          "max-block-size"
         ],
         "concepts": [
           "Fraction utilities produce percentages such as co-w-1/2 → 50%.",
-          "screen, svh/svw, lvh/lvw, and dvh/dvw cover modern viewport behavior.",
-          "min, max, and fit map to intrinsic sizing keywords."
+          "Named 3xs through 7xl container tokens provide reusable inline dimensions.",
+          "screen, svh/svw, lvh/lvw, and dvh/dvw cover viewport behavior while lh follows the current line height.",
+          "min, max, fit, and none map to intrinsic or unconstrained sizing keywords.",
+          "CSS custom properties use parenthesized shorthand such as co-inline-(--panel-size)."
         ],
         "caveats": [
-          "Container-relative units are available through arbitrary values only.",
-          "Sizing utilities do not accept negative values."
+          "Sizing utilities intentionally reject negative values.",
+          "Flex basis belongs to the Flexbox and grid family.",
+          "Logical sizes depend on the element's writing mode, which is controlled separately."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-w-1/2",
+          "candidate": "co-w-md",
           "supported": true,
           "declarations": [
             [
               "width",
-              "50%"
+              "var(--co-container-md)"
             ]
           ]
         },
         {
-          "candidate": "co-min-h-screen",
+          "candidate": "co-h-dvh",
           "supported": true,
           "declarations": [
             [
-              "min-height",
-              "100vh"
+              "height",
+              "100dvh"
             ]
           ]
         },
@@ -473,12 +504,32 @@
           ]
         },
         {
-          "candidate": "co-basis-1/3",
+          "candidate": "co-inline-full",
           "supported": true,
           "declarations": [
             [
-              "flex-basis",
-              "33.33333333333333%"
+              "inline-size",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-max-inline-lg",
+          "supported": true,
+          "declarations": [
+            [
+              "max-inline-size",
+              "var(--co-container-lg)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-min-block-24",
+          "supported": true,
+          "declarations": [
+            [
+              "min-block-size",
+              "calc(var(--co-space-unit) * 24)"
             ]
           ]
         }
