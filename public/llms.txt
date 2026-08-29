@@ -34,6 +34,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Transforms: `-co-translate-x-4`, `co-translate-z-8`, `co-rotate-y-45`, `co-scale-95`, `co-skew-x-6`, `co-transform-3d`, `co-perspective-normal`, `co-perspective-origin-top`, `co-backface-hidden`, `co-zoom-110`
 - Transitions/animations: `co-transition`, `co-transition-discrete`, `co-transition-[width,opacity]`, `co-duration-300`, `co-delay-75`, `co-ease-out`, `co-animate-spin`, `motion-reduce:co-animate-none`, `starting:co-opacity-0`
 - Interactivity: `co-cursor-(--control-cursor)`, `co-field-sizing-content`, `co-scrollbar-thumb-brand-500`, `co-scrollbar-track-white`, `co-scrollbar-gutter-stable`, `co-snap-x`, `co-snap-mandatory`, `co-snap-always`, `co-touch-pan-y`, `co-touch-pinch-zoom`, `co-will-change-[contents,transform]`
+- Logical writing: `co-direction-rtl`, `co-writing-vertical-rl`, `co-text-orientation-upright`, `co-unicode-bidi-isolate`, `co-text-combine-digits-2`, `co-pbs-4`, `co-inset-be-2`, `co-max-inline-lg`, `co-border-s-2`
 
 ## Reliability rules for AI agents
 
@@ -62,3 +63,4 @@ Table and multi-column documentation: `/docs/utilities/tables-columns`
 Transform and perspective documentation: `/docs/utilities/transforms`
 Transition and animation documentation: `/docs/utilities/transitions`
 Interactivity documentation: `/docs/utilities/interaction`
+Logical properties and writing modes: `/docs/core/logical-properties`

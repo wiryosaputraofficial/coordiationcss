@@ -6,7 +6,7 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 565,
+    "staticUtilityCount": 586,
     "familyCount": 15,
     "completeFamilies": 15,
     "partialFamilies": 0,
@@ -40,11 +40,16 @@
       "id": "layout",
       "label": "Layout and positioning",
       "status": "complete",
-      "target": "0.2",
+      "target": "0.3",
       "patterns": [
         "co-{display}",
         "co-{position}",
         "co-inset-*",
+        "co-direction-*",
+        "co-writing-*",
+        "co-text-orientation-*",
+        "co-unicode-bidi-*",
+        "co-text-combine-*",
         "co-overflow-*",
         "co-object-*",
         "co-aspect-*",
@@ -56,6 +61,11 @@
         "co-sticky",
         "-co-inset-x-4",
         "co-inset-bs-4",
+        "co-direction-rtl",
+        "co-writing-vertical-rl",
+        "co-text-orientation-upright",
+        "co-unicode-bidi-isolate",
+        "co-text-combine-digits-2",
         "co-aspect-3/2",
         "co-break-inside-avoid",
         "-co-z-10",
@@ -64,8 +74,8 @@
       "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
-        "summary": "Control how elements participate in document flow, how they are positioned, and how overflowing or replaced content is handled.",
-        "guidance": "Choose display first, add position only when the element must leave or track normal flow, then use logical inset utilities when the interface must work in both LTR and RTL directions.",
+        "summary": "Control document flow, positioning, logical directions, horizontal or vertical writing systems, overflow, and replaced content.",
+        "guidance": "Choose display first, establish semantic direction in markup, select a writing mode only when the content requires it, then use logical inset, spacing, sizing, and border utilities so the layout follows both inline and block flow.",
         "properties": [
           "aspect-ratio",
           "break-after",
@@ -78,6 +88,11 @@
           "inset",
           "float",
           "clear",
+          "direction",
+          "writing-mode",
+          "text-orientation",
+          "unicode-bidi",
+          "text-combine-upright",
           "overflow",
           "overscroll-behavior",
           "object-fit",
@@ -89,11 +104,16 @@
         "concepts": [
           "Display utilities determine the formatting context before flex or grid alignment is applied.",
           "Sticky positioning needs a scroll container and at least one inset such as co-top-0.",
-          "Logical inset-s/inset-e and inset-bs/inset-be utilities follow inline and block writing directions; start/end remain compatibility aliases.",
+          "Direction controls inline order while writing-mode controls block flow; text-orientation controls glyph rotation inside vertical lines.",
+          "Logical inset-s/inset-e and inset-bs/inset-be utilities follow the active inline and block directions; start/end remain compatibility aliases.",
+          "Unicode bidi isolation protects mixed-direction fragments, while override modes should be reserved for semantic bidi markup equivalents.",
+          "Text-combine utilities set short horizontal runs—commonly two to four digits—inside vertical text.",
           "Aspect ratios accept named tokens, numeric fractions, custom properties, and arbitrary values.",
           "Page and column break utilities compose with print and responsive variants."
         ],
         "caveats": [
+          "For HTML, prefer the dir attribute, bdi, and bdo elements when they express document semantics; CSS direction and unicode-bidi are primarily useful for generated or non-HTML structures.",
+          "Sideways writing modes and digit combination are progressive enhancements whose rendering depends on browser and font support.",
           "Multi-column count, gap, and rule styling are tracked in the separate Tables and columns family.",
           "Negative values are intentionally limited to inset, positional offsets, and z-index."
         ]
@@ -139,6 +159,61 @@
             [
               "inset-block-start",
               "calc(var(--co-space-unit) * 4)"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-direction-rtl",
+          "supported": true,
+          "declarations": [
+            [
+              "direction",
+              "rtl"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-writing-vertical-rl",
+          "supported": true,
+          "declarations": [
+            [
+              "writing-mode",
+              "vertical-rl"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-text-orientation-upright",
+          "supported": true,
+          "declarations": [
+            [
+              "text-orientation",
+              "upright"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-unicode-bidi-isolate",
+          "supported": true,
+          "declarations": [
+            [
+              "unicode-bidi",
+              "isolate"
+            ]
+          ],
+          "globalCss": null
+        },
+        {
+          "candidate": "co-text-combine-digits-2",
+          "supported": true,
+          "declarations": [
+            [
+              "text-combine-upright",
+              "digits 2"
             ]
           ],
           "globalCss": null
@@ -3967,6 +4042,24 @@
       ]
     },
     {
+      "candidate": "co-direction-ltr",
+      "declarations": [
+        [
+          "direction",
+          "ltr"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-direction-rtl",
+      "declarations": [
+        [
+          "direction",
+          "rtl"
+        ]
+      ]
+    },
+    {
       "candidate": "co-duration-initial",
       "declarations": [
         [
@@ -6942,6 +7035,51 @@
       ]
     },
     {
+      "candidate": "co-text-combine-all",
+      "declarations": [
+        [
+          "text-combine-upright",
+          "all"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-combine-digits-2",
+      "declarations": [
+        [
+          "text-combine-upright",
+          "digits 2"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-combine-digits-3",
+      "declarations": [
+        [
+          "text-combine-upright",
+          "digits 3"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-combine-digits-4",
+      "declarations": [
+        [
+          "text-combine-upright",
+          "digits 4"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-combine-none",
+      "declarations": [
+        [
+          "text-combine-upright",
+          "none"
+        ]
+      ]
+    },
+    {
       "candidate": "co-text-ellipsis",
       "declarations": [
         [
@@ -6983,6 +7121,33 @@
         [
           "text-wrap",
           "nowrap"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-orientation-mixed",
+      "declarations": [
+        [
+          "text-orientation",
+          "mixed"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-orientation-sideways",
+      "declarations": [
+        [
+          "text-orientation",
+          "sideways"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-text-orientation-upright",
+      "declarations": [
+        [
+          "text-orientation",
+          "upright"
         ]
       ]
     },
@@ -7350,6 +7515,60 @@
       ]
     },
     {
+      "candidate": "co-unicode-bidi-embed",
+      "declarations": [
+        [
+          "unicode-bidi",
+          "embed"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-unicode-bidi-isolate",
+      "declarations": [
+        [
+          "unicode-bidi",
+          "isolate"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-unicode-bidi-isolate-override",
+      "declarations": [
+        [
+          "unicode-bidi",
+          "isolate-override"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-unicode-bidi-normal",
+      "declarations": [
+        [
+          "unicode-bidi",
+          "normal"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-unicode-bidi-override",
+      "declarations": [
+        [
+          "unicode-bidi",
+          "bidi-override"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-unicode-bidi-plaintext",
+      "declarations": [
+        [
+          "unicode-bidi",
+          "plaintext"
+        ]
+      ]
+    },
+    {
       "candidate": "co-uppercase",
       "declarations": [
         [
@@ -7481,6 +7700,51 @@
         [
           "overflow-wrap",
           "normal"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-writing-horizontal-tb",
+      "declarations": [
+        [
+          "writing-mode",
+          "horizontal-tb"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-writing-sideways-lr",
+      "declarations": [
+        [
+          "writing-mode",
+          "sideways-lr"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-writing-sideways-rl",
+      "declarations": [
+        [
+          "writing-mode",
+          "sideways-rl"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-writing-vertical-lr",
+      "declarations": [
+        [
+          "writing-mode",
+          "vertical-lr"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-writing-vertical-rl",
+      "declarations": [
+        [
+          "writing-mode",
+          "vertical-rl"
         ]
       ]
     },
