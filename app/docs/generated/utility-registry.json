@@ -6,10 +6,10 @@
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",
   "stats": {
-    "staticUtilityCount": 371,
+    "staticUtilityCount": 390,
     "familyCount": 15,
-    "completeFamilies": 4,
-    "partialFamilies": 11,
+    "completeFamilies": 5,
+    "partialFamilies": 10,
     "plannedFamilies": 0,
     "documentedFamilies": 15
   },
@@ -151,22 +151,31 @@
     {
       "id": "flex-grid",
       "label": "Flexbox and grid",
-      "status": "partial",
+      "status": "complete",
       "target": "0.2",
       "patterns": [
         "co-flex-*",
+        "co-grow-*",
+        "co-shrink-*",
+        "co-basis-*",
+        "co-order-*",
         "co-grid-*",
+        "co-auto-*-*",
         "co-col-*",
         "co-row-*",
-        "co-place-*"
+        "co-{alignment}-*"
       ],
       "examples": [
-        "co-flex-1",
-        "co-grid-cols-12",
-        "co-col-span-6",
-        "co-place-content-between"
+        "co-flex-[3_1_auto]",
+        "co-grow-3",
+        "co-basis-sm",
+        "co-items-center-safe",
+        "co-grid-cols-subgrid",
+        "co-auto-rows-[minmax(0,2fr)]",
+        "-co-col-start-2",
+        "co-row-span-(--span)"
       ],
-      "supportsNegative": false,
+      "supportsNegative": true,
       "supportsArbitrary": true,
       "documentation": {
         "summary": "Build one- and two-dimensional layouts with flex direction, wrapping, grid tracks, spans, automatic placement, and alignment utilities.",
@@ -176,62 +185,117 @@
           "flex",
           "flex-direction",
           "flex-wrap",
+          "flex-grow",
+          "flex-shrink",
           "flex-basis",
+          "order",
           "grid-template-columns",
           "grid-template-rows",
+          "grid-auto-columns",
+          "grid-auto-rows",
           "grid-auto-flow",
           "grid-column",
           "grid-row",
-          "place-content"
+          "align-items",
+          "align-content",
+          "align-self",
+          "justify-content",
+          "justify-items",
+          "justify-self",
+          "place-content",
+          "place-items",
+          "place-self"
         ],
         "concepts": [
           "co-flex and co-grid only establish layout mode; direction and track definitions remain explicit.",
           "Numeric grid tracks use repeat(n, minmax(0, 1fr)) to prevent content overflow.",
-          "Alignment utilities map directly to CSS alignment properties."
+          "Subgrid adopts tracks from the parent grid instead of creating an independent track list.",
+          "Safe alignment falls back toward the start edge when centered or end-aligned content would overflow.",
+          "Grid lines and order accept canonical negative syntax before the co- prefix."
         ],
         "caveats": [
-          "Subgrid and masonry values are not implemented.",
-          "Named grid lines require arbitrary values."
+          "Masonry is intentionally excluded until interoperable browser support is stable.",
+          "Named grid lines use arbitrary values or CSS custom properties because names belong to the application schema."
         ]
       },
       "resolvedExamples": [
         {
-          "candidate": "co-flex-1",
+          "candidate": "co-flex-[3_1_auto]",
           "supported": true,
           "declarations": [
             [
               "flex",
-              "1 1 0%"
+              "3 1 auto"
             ]
           ]
         },
         {
-          "candidate": "co-grid-cols-12",
+          "candidate": "co-grow-3",
+          "supported": true,
+          "declarations": [
+            [
+              "flex-grow",
+              "3"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-basis-sm",
+          "supported": true,
+          "declarations": [
+            [
+              "flex-basis",
+              "var(--co-container-sm)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-items-center-safe",
+          "supported": true,
+          "declarations": [
+            [
+              "align-items",
+              "safe center"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-grid-cols-subgrid",
           "supported": true,
           "declarations": [
             [
               "grid-template-columns",
-              "repeat(12, minmax(0, 1fr))"
+              "subgrid"
             ]
           ]
         },
         {
-          "candidate": "co-col-span-6",
+          "candidate": "co-auto-rows-[minmax(0,2fr)]",
           "supported": true,
           "declarations": [
             [
-              "grid-column",
-              "span 6 / span 6"
+              "grid-auto-rows",
+              "minmax(0,2fr)"
             ]
           ]
         },
         {
-          "candidate": "co-place-content-between",
+          "candidate": "-co-col-start-2",
           "supported": true,
           "declarations": [
             [
-              "place-content",
-              "space-between"
+              "grid-column-start",
+              "calc(2 * -1)"
+            ]
+          ]
+        },
+        {
+          "candidate": "co-row-span-(--span)",
+          "supported": true,
+          "declarations": [
+            [
+              "grid-row",
+              "span var(--span) / span var(--span)"
             ]
           ]
         }
@@ -801,7 +865,7 @@
           "Column counts accept numeric and arbitrary values."
         ],
         "caveats": [
-          "Column gap/rule/break utilities are not complete.",
+          "Column gaps reuse the shared gap utilities and page/column breaks live in Layout; column-rule styling remains incomplete.",
           "Responsive table overflow still requires an explicit wrapper."
         ]
       },
@@ -2527,7 +2591,7 @@
       "declarations": [
         [
           "flex",
-          "1 1 0%"
+          "1"
         ]
       ]
     },
@@ -2536,7 +2600,7 @@
       "declarations": [
         [
           "flex",
-          "1 1 auto"
+          "auto"
         ]
       ]
     },
@@ -2563,7 +2627,7 @@
       "declarations": [
         [
           "flex",
-          "0 1 auto"
+          "0 auto"
         ]
       ]
     },
@@ -2991,11 +3055,29 @@
       ]
     },
     {
+      "candidate": "co-items-center-safe",
+      "declarations": [
+        [
+          "align-items",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-items-end",
       "declarations": [
         [
           "align-items",
           "flex-end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-items-end-safe",
+      "declarations": [
+        [
+          "align-items",
+          "safe flex-end"
         ]
       ]
     },
@@ -3027,6 +3109,15 @@
       ]
     },
     {
+      "candidate": "co-justify-baseline",
+      "declarations": [
+        [
+          "justify-content",
+          "baseline"
+        ]
+      ]
+    },
+    {
       "candidate": "co-justify-between",
       "declarations": [
         [
@@ -3045,11 +3136,29 @@
       ]
     },
     {
+      "candidate": "co-justify-center-safe",
+      "declarations": [
+        [
+          "justify-content",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-justify-end",
       "declarations": [
         [
           "justify-content",
           "flex-end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-justify-end-safe",
+      "declarations": [
+        [
+          "justify-content",
+          "safe flex-end"
         ]
       ]
     },
@@ -3072,11 +3181,38 @@
       ]
     },
     {
+      "candidate": "co-justify-items-center-safe",
+      "declarations": [
+        [
+          "justify-items",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-justify-items-end",
       "declarations": [
         [
           "justify-items",
           "end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-justify-items-end-safe",
+      "declarations": [
+        [
+          "justify-items",
+          "safe end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-justify-items-normal",
+      "declarations": [
+        [
+          "justify-items",
+          "normal"
         ]
       ]
     },
@@ -3126,11 +3262,29 @@
       ]
     },
     {
+      "candidate": "co-justify-self-center-safe",
+      "declarations": [
+        [
+          "justify-self",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-justify-self-end",
       "declarations": [
         [
           "justify-self",
           "end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-justify-self-end-safe",
+      "declarations": [
+        [
+          "justify-self",
+          "safe end"
         ]
       ]
     },
@@ -3828,11 +3982,29 @@
       ]
     },
     {
+      "candidate": "co-place-content-center-safe",
+      "declarations": [
+        [
+          "place-content",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-place-content-end",
       "declarations": [
         [
           "place-content",
           "end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-place-content-end-safe",
+      "declarations": [
+        [
+          "place-content",
+          "safe end"
         ]
       ]
     },
@@ -3882,11 +4054,29 @@
       ]
     },
     {
+      "candidate": "co-place-items-center-safe",
+      "declarations": [
+        [
+          "place-items",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-place-items-end",
       "declarations": [
         [
           "place-items",
           "end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-place-items-end-safe",
+      "declarations": [
+        [
+          "place-items",
+          "safe end"
         ]
       ]
     },
@@ -3927,11 +4117,29 @@
       ]
     },
     {
+      "candidate": "co-place-self-center-safe",
+      "declarations": [
+        [
+          "place-self",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-place-self-end",
       "declarations": [
         [
           "place-self",
           "end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-place-self-end-safe",
+      "declarations": [
+        [
+          "place-self",
+          "safe end"
         ]
       ]
     },
@@ -4143,6 +4351,15 @@
       ]
     },
     {
+      "candidate": "co-self-baseline-last",
+      "declarations": [
+        [
+          "align-self",
+          "last baseline"
+        ]
+      ]
+    },
+    {
       "candidate": "co-self-center",
       "declarations": [
         [
@@ -4152,11 +4369,29 @@
       ]
     },
     {
+      "candidate": "co-self-center-safe",
+      "declarations": [
+        [
+          "align-self",
+          "safe center"
+        ]
+      ]
+    },
+    {
       "candidate": "co-self-end",
       "declarations": [
         [
           "align-self",
           "flex-end"
+        ]
+      ]
+    },
+    {
+      "candidate": "co-self-end-safe",
+      "declarations": [
+        [
+          "align-self",
+          "safe flex-end"
         ]
       ]
     },

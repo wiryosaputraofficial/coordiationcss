@@ -23,6 +23,7 @@ Coordiation CSS is an independent utility-first CSS compiler for the Coordiation
 - Arbitrary conditional at-rule: `[@media(pointer:fine)]:co-block`
 - Preflight is enabled by default; disable it with `preflight: false` or CLI `--no-preflight`
 - Layout: `co-aspect-3/2`, `co-sticky`, `-co-inset-x-4`, `co-break-inside-avoid`, `-co-z-10`, `co-object-[25%_75%]`
+- Flex/Grid: `co-flex-[3_1_auto]`, `co-grow-3`, `co-basis-sm`, `co-items-center-safe`, `co-grid-cols-subgrid`, `-co-col-start-2`
 
 ## Reliability rules for AI agents
 
@@ -40,3 +41,4 @@ Attribute and selector variant documentation: `/docs/variants/attribute-selector
 Conditional variant documentation: `/docs/variants/conditional-rules`
 Preflight documentation: `/docs/core/preflight`
 Layout utility documentation: `/docs/utilities/layout`
+Flexbox and Grid documentation: `/docs/utilities/flex-grid`
