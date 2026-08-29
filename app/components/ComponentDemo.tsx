@@ -48,7 +48,7 @@ export default function ComponentDemo({ name, title }: ComponentDemoProps) {
     case "dialog":
       return <><button className="demo-button" type="button" onClick={() => dialogRef.current?.showModal()}>Open dialog</button><dialog ref={dialogRef} className="demo-dialog" onClick={(event) => { if (event.target === event.currentTarget) dialogRef.current?.close(); }}><b>Publish changes?</b><p>This will update your project.</p><button type="button" onClick={() => dialogRef.current?.close()}>Close</button></dialog></>;
     case "accordion":
-      return <details className="demo-accordion" open><summary>Is it accessible?</summary><p>Native disclosure semantics.</p></details>;
+      return <details className="demo-accordion" open><summary><span>Is it accessible?</span><SolarIcon className="demo-disclosure-icon" name="alt-arrow-down" size={14} /></summary><p>Native disclosure semantics.</p></details>;
     case "alert-dialog":
       return <><button className="demo-button demo-button-danger" type="button" onClick={() => dialogRef.current?.showModal()}>Delete project</button><dialog ref={dialogRef} className="demo-dialog"><b>Are you absolutely sure?</b><p>This action cannot be undone.</p><div><button type="button" onClick={() => dialogRef.current?.close()}>Cancel</button><button type="button" onClick={() => dialogRef.current?.close()}>Delete</button></div></dialog></>;
     case "aspect-ratio":
@@ -68,7 +68,7 @@ export default function ComponentDemo({ name, title }: ComponentDemoProps) {
     case "chart":
       return <div className="demo-chart"><div><i style={{ height: "38%" }} /><i style={{ height: "65%" }} /><i style={{ height: "48%" }} /><i style={{ height: "86%" }} /><i style={{ height: "72%" }} /></div><span><b>+24%</b> weekly adoption</span></div>;
     case "collapsible":
-      return <details className="demo-collapsible" open><summary><span>Framework settings</span><SolarIcon name="alt-arrow-down" size={14} /></summary><p>Prefix: <code>co-</code></p></details>;
+      return <details className="demo-collapsible" open><summary><span>Framework settings</span><SolarIcon className="demo-disclosure-icon" name="alt-arrow-down" size={14} /></summary><p>Prefix: <code>co-</code></p></details>;
     case "combobox":
       return <label className="demo-combobox"><span>Framework</span><input list="component-demo-frameworks" defaultValue="Coordiation" /><datalist id="component-demo-frameworks"><option value="Coordiation" /><option value="React" /><option value="Vue" /></datalist></label>;
     case "command":
@@ -84,7 +84,7 @@ export default function ComponentDemo({ name, title }: ComponentDemoProps) {
     case "drawer":
       return <div className={`demo-drawer${on ? " is-open" : ""}`}><button type="button" onClick={() => setOn(!on)}>{on ? "Close drawer" : "Open drawer"}</button><section><i /><b>Project settings</b><span>Configure your workspace.</span></section></div>;
     case "dropdown-menu":
-      return <details className="demo-menu" open><summary>Actions <SolarIcon name="alt-arrow-down" size={14} /></summary><div role="menu"><button type="button" role="menuitem">Edit project</button><button type="button" role="menuitem">Make a copy</button><hr /><button type="button" role="menuitem">Archive</button></div></details>;
+      return <details className="demo-menu" open><summary>Actions <SolarIcon className="demo-disclosure-icon" name="alt-arrow-down" size={14} /></summary><div role="menu"><button type="button" role="menuitem">Edit project</button><button type="button" role="menuitem">Make a copy</button><hr /><button type="button" role="menuitem">Archive</button></div></details>;
     case "empty":
       return <div className="demo-empty"><span><SolarIcon name="box-minimalistic" size={20} /></span><b>No projects yet</b><p>Create your first project to get started.</p><button type="button">New project</button></div>;
     case "field":
@@ -108,13 +108,13 @@ export default function ComponentDemo({ name, title }: ComponentDemoProps) {
     case "message-scroller":
       return <div className="demo-message-scroll"><p><b>You</b><span>Check the registry.</span></p><p><b>Agent</b><span>All 64 components are indexed.</span></p><p><b>You</b><span>Generate the install command.</span></p></div>;
     case "native-select":
-      return <label className="demo-native-select"><span>Deployment region</span><select defaultValue="sin"><option value="sin">Singapore</option><option value="fra">Frankfurt</option><option value="sfo">San Francisco</option></select></label>;
+      return <label className="demo-native-select"><span>Deployment region</span><select defaultValue="sin"><option value="sin">Singapore</option><option value="fra">Frankfurt</option><option value="sfo">San Francisco</option></select><SolarIcon className="demo-select-icon" name="alt-arrow-down" size={14} /></label>;
     case "navigation-menu":
       return <nav className="demo-navigation"><b>CO</b><a href="#component-catalog">Docs</a><a href="#component-catalog">Components</a><a href="#component-catalog">Examples</a><button type="button">Get started</button></nav>;
     case "pagination":
       return <nav className="demo-pagination" aria-label="Demo pagination"><button type="button" aria-label="Previous page"><SolarIcon name="arrow-left" size={15} /></button><button type="button">1</button><button type="button" className="active" aria-current="page">2</button><button type="button">3</button><button type="button" aria-label="Next page"><SolarIcon name="arrow-right" size={15} /></button></nav>;
     case "popover":
-      return <details className="demo-popover" open><summary>Share</summary><div><b>Share component</b><section><input aria-label="Share URL" readOnly value="coordiation.dev/c/button" /><button type="button">Copy</button></section></div></details>;
+      return <details className="demo-popover" open><summary><span>Share</span><SolarIcon className="demo-disclosure-icon" name="alt-arrow-down" size={13} /></summary><div><b>Share component</b><section><input aria-label="Share URL" readOnly value="coordiation.dev/c/button" /><button type="button">Copy</button></section></div></details>;
     case "progress":
       return <div className="demo-progress-wrap"><div><span>Installing components</span><b>68%</b></div><div className="demo-progress"><span style={{ width: "68%" }} /></div></div>;
     case "questionnaire":

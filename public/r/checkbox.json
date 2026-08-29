@@ -14,7 +14,7 @@
       "path": "registry/monochrome/checkbox.tsx",
       "type": "registry:ui",
       "target": "@ui/checkbox.tsx",
-      "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const Checkbox = forwardRef<HTMLInputElement, Omit<InputHTMLAttributes<HTMLInputElement>, \"type\">>(({ className = \"\", ...props }, ref) => (\n  <input ref={ref} type=\"checkbox\" className={`co-size-4 co-shrink-0 co-cursor-pointer co-appearance-none co-rounded-sm co-border co-border-black/30 co-bg-white co-outline-none checked:co-bg-black checked:co-shadow-[inset_0_0_0_3px_white] focus-visible:co-ring-2 focus-visible:co-ring-black disabled:co-cursor-not-allowed disabled:co-opacity-50 ${className}`.trim()} {...props} />\n));\nCheckbox.displayName = \"Checkbox\";\n"
+      "content": "import { forwardRef, type InputHTMLAttributes } from \"react\";\n\nexport const Checkbox = forwardRef<HTMLInputElement, Omit<InputHTMLAttributes<HTMLInputElement>, \"type\">>(({ className = \"\", ...props }, ref) => (\n  <input ref={ref} type=\"checkbox\" className={`co-m-0 co-size-4 co-shrink-0 co-cursor-pointer co-appearance-none co-rounded-sm co-border co-border-black/30 co-bg-white co-outline-none checked:co-bg-black checked:co-shadow-[inset_0_0_0_3px_white] focus-visible:co-ring-2 focus-visible:co-ring-black disabled:co-cursor-not-allowed disabled:co-opacity-50 ${className}`.trim()} {...props} />\n));\nCheckbox.displayName = \"Checkbox\";\n"
     }
   ],
   "docs": "Requires Coordiation CSS. Documentation: /components?component=checkbox",
