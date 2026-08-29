@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import SolarIcon from "../../_components/SolarIcon";
+import MobileNav from "../../_components/MobileNav";
 
 const navigation = [
   { title: "Getting started", items: [["Installation", "/docs"], ["Using Vite", "/docs/installation/using-vite"], ["Themes", "/docs/themes"], ["Components", "/docs/components"], ["Solar Linear icons", "/docs/icons/solar-linear"], ["Iconsax Line Oval icons", "/docs/icons/iconsax-line-oval"], ["Editor setup", "/docs/tooling/language-server"], ["Compatibility", "/docs/core/compatibility"]] },
@@ -36,6 +37,7 @@ export default function DocsShell({ children }: { children: ReactNode }) {
         <Link prefetch={false} className="brand" href="/" aria-label="Coordiation CSS home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link>
         <div className="docs-search"><SolarIcon name="magnifier" size={16} /><input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder="Search documentation…" aria-label="Search documentation" /><kbd>⌘ K</kbd>{query && <div className="docs-search-results">{results.length ? results.map((item) => <Link prefetch={false} href={item.href} key={`${item.section}-${item.label}`} onClick={() => setQuery("")}><span>{item.label}</span><small>{item.section}</small></Link>) : <p>No matching documentation.</p>}</div>}</div>
         <nav aria-label="Documentation links"><Link prefetch={false} href="/themes">Themes</Link><Link prefetch={false} href="/components">Components</Link><Link prefetch={false} href="/icons">Icons</Link><Link prefetch={false} href="/release-check">Release Check</Link><a href="/api/capabilities">API</a><Link prefetch={false} className="docs-home-link" href="/">Home <SolarIcon name="arrow-to-top-right" size={14} /></Link></nav>
+        <MobileNav />
       </header>
       <div className="reference-layout">
         <aside className="reference-sidebar" aria-label="Documentation sections">

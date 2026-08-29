@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
 export const metadata: Metadata = { title: "Native scanner — Coordiation CSS", description: "Use optional cross-platform C11 candidate extraction with explicit JavaScript fallback." };

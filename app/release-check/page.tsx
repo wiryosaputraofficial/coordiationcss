@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
+import MobileNav from "../_components/MobileNav";
 import SolarIcon from "../_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "../docs/capabilities";
 
@@ -31,6 +32,7 @@ export default function ReleaseCheckPage() {
         <nav aria-label="Documentation navigation">
           <a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#ai-access">AI access</a>
         </nav>
+        <MobileNav />
         <Link className="header-cta" href="/">Back home <SolarIcon name="arrow-to-top-right" size={15} /></Link>
       </header>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
+import MobileNav from "../_components/MobileNav";
 import SolarIcon from "../_components/SolarIcon";
 import IconBrowser from "./IconBrowser";
 
@@ -24,6 +25,7 @@ export default function IconsPage() {
           <Link href="/docs/icons/iconsax-line-oval">Icon guide</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
+        <MobileNav />
         <a className="header-cta" href="#icon-catalog">Browse icons <SolarIcon name="arrow-down" size={15} /></a>
       </header>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
+import MobileNav from "../_components/MobileNav";
 import SolarIcon from "../_components/SolarIcon";
 import registry from "../docs/generated/component-registry.json";
 import ComponentGallery from "./ComponentGallery";
@@ -15,6 +16,7 @@ export default function ComponentsPage() {
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Coordiation CSS home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">UI</span></Link>
         <nav aria-label="Main navigation"><Link href="/">Home</Link><Link href="/themes">Themes</Link><Link href="/icons">Icons</Link><Link href="/docs/components">Component guide</Link><Link href="/release-check">Release Check</Link></nav>
+        <MobileNav />
         <a className="header-cta" href="#component-catalog">Browse components <SolarIcon name="arrow-down" size={15} /></a>
       </header>
 

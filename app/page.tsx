@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
+import MobileNav from "./_components/MobileNav";
 import SolarIcon from "./_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
 import registry from "./docs/generated/utility-registry.json";
@@ -167,6 +168,7 @@ export default function Home() {
           <Link href="/docs">Docs</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
+        <MobileNav />
         <Link className="header-cta" href="/docs/installation/using-vite">Get started <SolarIcon name="arrow-to-top-right" size={15} /></Link>
       </header>
 

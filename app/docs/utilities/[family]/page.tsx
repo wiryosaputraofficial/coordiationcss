@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import { notFound } from "next/navigation";
 import CodeBlock from "../../_components/CodeBlock";
 import AccessibilityExamples, { AccessibilityMiniNavigation } from "./AccessibilityExamples";

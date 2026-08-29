@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import UtilityExplorer from "../_components/UtilityExplorer";
 import registry from "../generated/utility-registry.json";
 

@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
 export const metadata: Metadata = {

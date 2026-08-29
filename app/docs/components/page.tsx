@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import registry from "../generated/component-registry.json";
 import CodeBlock from "../_components/CodeBlock";
 

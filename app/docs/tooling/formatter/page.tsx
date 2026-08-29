@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/app/_components/SiteLink";
 import CodeBlock from "../../_components/CodeBlock";
 
 export const metadata: Metadata = { title: "Class formatter — Coordiation CSS", description: "Sort literal Coordiation class lists with the compiler's canonical order." };
