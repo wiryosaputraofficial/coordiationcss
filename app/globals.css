@@ -323,6 +323,8 @@ footer > span { justify-self: end; }
 .reference-page { min-height: 100vh; background: #fff; }
 .reference-header { height: 68px; padding: 0 24px; display: grid; grid-template-columns: minmax(250px, 1fr) minmax(320px, 560px) minmax(250px, 1fr); gap: 30px; align-items: center; position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); background: rgb(255 255 255 / .94); backdrop-filter: blur(18px); }
 .reference-header nav { display: flex; align-items: center; justify-content: flex-end; gap: 24px; font-size: 11px; }
+.site-header .mobile-nav > nav,
+.reference-header .mobile-nav > nav { display: grid; align-items: stretch; justify-content: stretch; gap: 2px; font-size: 12px; }
 .docs-home-link { padding: 9px 12px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid #111; border-radius: 6px; }
 .docs-search { height: 38px; padding: 0 11px; display: grid; grid-template-columns: 20px 1fr auto; gap: 8px; align-items: center; position: relative; border: 1px solid #d1d1ce; border-radius: 7px; background: #fafafa; color: #888; }
 .docs-search input { min-width: 0; border: 0; outline: 0; background: transparent; color: #111; font-size: 11px; }
@@ -843,6 +845,7 @@ footer > span { justify-self: end; }
   .ai-links code { grid-row: 2; }
   .ai-links > a > .site-icon { grid-column: 2; grid-row: 1 / span 2; }
   .reference-header { height: 64px; padding: 0 16px; }
+  .reference-header .mobile-nav > nav { width: min(280px, calc(100vw - 32px)); max-height: calc(100dvh - 82px); overflow-y: auto; }
   .reference-header > nav a:not(.docs-home-link) { display: none; }
   .reference-layout { display: block; }
   .reference-sidebar { height: auto; padding: 17px 20px; position: static; border-right: 0; border-bottom: 1px solid var(--line); overflow: hidden; }
