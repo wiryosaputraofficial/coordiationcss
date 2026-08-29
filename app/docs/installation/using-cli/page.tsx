@@ -16,7 +16,7 @@ export default function UsingCliPage() {
       <p className="docs-lead">Generate static Coordiation CSS without a bundler plugin, then use the same command as a durable development watcher across local filesystems and container mounts.</p>
       <div className="docs-note"><span>✓</span><p>Watch mode performs an initial build, detects the CSS entry, imported CSS, and source edits, additions, and deletions, and keeps running after temporary filesystem errors. A persistent incremental cache reuses unchanged extraction and compilation work by default.</p></div>
 
-      <section className="guide-step" id="install-package"><div className="step-number">01</div><div><h2>Install the compiler</h2><p>Install the core package as a development dependency. Its binary is exposed as <code>coordiation-css</code>.</p><CodeBlock title="Terminal" code="pnpm add -D @coordiation/css" /></div></section>
+      <section className="guide-step" id="install-package"><div className="step-number">01</div><div><h2>Install the compiler</h2><p>Install the core package as a development dependency. Its binary is exposed as <code>coordiation-css</code>.</p><CodeBlock title="Terminal" code="npm install -D @coordiation/css" /></div></section>
 
       <section className="guide-step" id="css-input"><div className="step-number">02</div><div><h2>Create the CSS input</h2><p>Add the framework marker and split repeatable design decisions into local imports when useful.</p><CodeBlock title="src/coordiation.css" code={`@import "./theme.css";
 @coordiation;`} /><CodeBlock title="src/theme.css" code={`@co-theme {

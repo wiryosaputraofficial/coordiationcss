@@ -11,14 +11,14 @@ export default function DocsOverview() {
       <div className="docs-callout"><strong>Feature implementation complete</strong><p>All {capabilities.length} tracked capability areas are implemented and documented. The project remains prerelease until the stable release process, signed native artifacts, and supported-platform checks pass.</p><Link href="/release-check">Open Release Check →</Link></div>
       <h2 id="choose-integration">Choose your integration</h2>
       <div className="integration-grid">
+        <Link href="/docs/installation/using-npm"><span>Published packages</span><strong>Using npm</strong><p>Install the compiler, adapters, icons, themes, components, and tooling from the public npm registry.</p><code>@coordiation/*</code><b>→</b></Link>
         <Link href="/docs/installation/using-vite"><span>Recommended</span><strong>Using Vite</strong><p>Fast development, automatic template scanning, and stylesheet updates through the official Vite adapter.</p><code>@coordiation/vite</code><b>→</b></Link>
         <Link href="/docs/installation/using-postcss"><span>Flexible</span><strong>Using PostCSS</strong><p>Add Coordiation CSS to an existing PostCSS pipeline.</p><code>@coordiation/postcss</code><b>→</b></Link>
         <Link href="/docs/installation/using-cli"><span>Framework agnostic</span><strong>Using the CLI</strong><p>Compile once or run a durable cross-platform watch process without a bundler plugin.</p><code>coordiation-css</code><b>→</b></Link>
-        <Link href="/docs/components"><span>Open code</span><strong>Component registry</strong><p>Install accessible React source that is built entirely with Coordiation utilities.</p><code>/r/registry.json</code><b>→</b></Link>
       </div>
       <h2 id="requirements">Requirements</h2>
       <ul className="docs-list"><li>Node.js 20 or newer</li><li>Static, complete class names in source files</li><li>Vite 5 or newer when using the Vite adapter</li></ul>
-      <div className="docs-next"><span>Next</span><Link href="/docs/installation/using-vite"><b>Install with Vite</b><i>→</i></Link></div>
+      <div className="docs-next"><span>Next</span><Link href="/docs/installation/using-npm"><b>Install from npm</b><i>→</i></Link></div>
     </article>
   );
 }

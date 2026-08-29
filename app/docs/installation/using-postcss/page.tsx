@@ -16,7 +16,7 @@ export default function UsingPostcssPage() {
       <p className="docs-lead">Add Coordiation to an existing PostCSS 8 pipeline with built-in import, nesting, prefixing, and minification controls plus standard dependency messages, warning channels, source-map support, and safe multi-entry processing.</p>
       <div className="docs-note"><span>✓</span><p>Only stylesheets containing a top-level <code>@coordiation</code> marker are transformed. Local CSS imports become standard PostCSS dependencies, and a process-local cache reuses unchanged source extraction and compilation.</p></div>
 
-      <section className="guide-step" id="install-packages"><div className="step-number">01</div><div><h2>Install the packages</h2><p>Install PostCSS, the compiler, and the official adapter as development dependencies.</p><CodeBlock title="Terminal" code="pnpm add -D postcss @coordiation/css @coordiation/postcss" /></div></section>
+      <section className="guide-step" id="install-packages"><div className="step-number">01</div><div><h2>Install the packages</h2><p>Install PostCSS, the compiler, and the official adapter as development dependencies.</p><CodeBlock title="Terminal" code="npm install -D postcss @coordiation/css @coordiation/postcss" /></div></section>
 
       <section className="guide-step" id="configure-postcss"><div className="step-number">02</div><div><h2>Configure the pipeline</h2><p>Coordiation owns import bundling, nesting, and target-aware prefixing by default. Enable minification for production without adding a second transformer.</p><CodeBlock title="postcss.config.mjs" code={`import coordiation from "@coordiation/postcss";
 

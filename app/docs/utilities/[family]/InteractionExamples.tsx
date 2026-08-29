@@ -135,12 +135,12 @@ export default function InteractionExamples() {
         description="Try selecting each line. Use select-none for disposable decoration, select-text for normal copy, and select-all when selecting one fragment should capture it completely."
         code={`<span class="co-select-none">Decorative label</span>
 <p class="co-select-text">Copy this sentence normally.</p>
-<code class="co-select-all">npm install coordiation-css</code>`}
+<code class="co-select-all">npm install @coordiation/css</code>`}
       >
         <div style={{ display: "grid", gap: 12 }}>
           <div style={{ padding: 15, border: "1px solid #ddd", background: "#fff", userSelect: "none", fontSize: 10 }}><b>SELECT NONE</b> · this decorative line cannot be selected</div>
           <div style={{ padding: 15, border: "1px solid #ddd", background: "#fff", userSelect: "text", fontSize: 10 }}><b>SELECT TEXT</b> · drag to select any part of this sentence</div>
-          <code style={{ padding: 15, border: "1px solid #111", background: "#111", color: "#fff", userSelect: "all", fontSize: 10 }}>npm install coordiation-css</code>
+          <code style={{ padding: 15, border: "1px solid #111", background: "#111", color: "#fff", userSelect: "all", fontSize: 10 }}>npm install @coordiation/css</code>
         </div>
       </Demo>
 

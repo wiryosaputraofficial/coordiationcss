@@ -16,7 +16,7 @@ export default function UsingVitePage() {
       <p className="docs-lead">Install Coordiation CSS as a Vite plugin, import its generated virtual stylesheet, and get dependency-aware updates while you develop.</p>
       <div className="docs-note"><span>✓</span><p>The adapter scans from the resolved Vite root, watches templates, the CSS entry, and every local CSS import, then refreshes the generated stylesheet when files change, appear, or disappear. A process-local incremental cache reuses unchanged work; no Coordiation runtime is added to the browser.</p></div>
 
-      <section className="guide-step" id="install-packages"><div className="step-number">01</div><div><h2>Install the packages</h2><p>Add the compiler and official Vite adapter as development dependencies.</p><CodeBlock title="Terminal" code="pnpm add -D @coordiation/css @coordiation/vite" /></div></section>
+      <section className="guide-step" id="install-packages"><div className="step-number">01</div><div><h2>Install the packages</h2><p>Add the compiler, official Vite adapter, and Vite as development dependencies.</p><CodeBlock title="Terminal" code="npm install -D @coordiation/css @coordiation/vite vite" /></div></section>
 
       <section className="guide-step" id="configure-vite"><div className="step-number">02</div><div><h2>Configure Vite</h2><p>Register the plugin, choose literal source roots, and point it to a watched CSS-first theme file.</p><CodeBlock title="vite.config.js" code={`import { defineConfig } from "vite";
 import coordiation from "@coordiation/vite";
@@ -69,7 +69,7 @@ Never treat a planned capability as implemented.`} /><div className="inline-link
 
       <section className="family-caveats" id="troubleshooting"><div><p className="docs-overline">TROUBLESHOOTING</p><h2>When a class does not appear</h2><p>The adapter reports scanner diagnostics through Vite and keeps unsupported candidates observable.</p></div><ul><li>Confirm the file lives inside a configured <code>content</code> root and is not excluded.</li><li>Keep complete utility strings in source; dynamic string concatenation cannot be discovered.</li><li>Import <code>virtual:coordiation.css</code> exactly once from the client entry.</li><li>Use <code>cssFile</code> when theme changes should participate in HMR.</li><li>On WSL or mounted filesystems, verify that Vite itself receives filesystem events.</li></ul></section>
 
-      <div className="docs-next split"><Link href="/docs/tooling/source-maps"><span>Previous</span><b>← Source maps</b></Link><Link href="/docs/installation/using-postcss"><span>Next</span><b>Using PostCSS →</b></Link></div>
+      <div className="docs-next split"><Link href="/docs/installation/using-npm"><span>Previous</span><b>← Using npm</b></Link><Link href="/docs/installation/using-postcss"><span>Next</span><b>Using PostCSS →</b></Link></div>
     </article>
   );
 }
