@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "generatedAt": "2026-08-29",
   "distribution": "open-code page registry",
-  "themeCount": 3,
+  "themeCount": 4,
   "themes": [
     {
       "name": "editorial-advisor",
@@ -480,6 +480,157 @@
         "selectionKey": "finance-dashboard",
         "sourceOwnership": "open-code",
         "customization": "Preserve the literal co-* utility foundation, coordiation-finance-dashboard namespace, fd- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
+      }
+    },
+    {
+      "name": "industrial-forge",
+      "title": "Industrial Forge",
+      "description": "A bold industrial engineering company site for infrastructure, manufacturing, energy, and field operations.",
+      "categories": [
+        "industrial",
+        "engineering",
+        "corporate"
+      ],
+      "status": "stable",
+      "copyright": "Coordiation",
+      "framework": "Next.js App Router",
+      "style": "industrial engineering editorial",
+      "palette": "black, white and safety orange",
+      "namespace": "industrial-forge",
+      "classPrefix": "if-",
+      "assetStrategy": "bundled-media",
+      "components": [
+        "ForgeButton",
+        "SectionLabel",
+        "ServiceCard",
+        "ValueCard",
+        "ThemeIcon"
+      ],
+      "preview": "/themes/industrial-forge/preview",
+      "cover": "/themes/industrial-forge/hero.jpg",
+      "installPath": "/r/themes/industrial-forge.json",
+      "command": "npx @coordiation/cli@latest add theme industrial-forge",
+      "sections": [
+        "header",
+        "hero",
+        "about",
+        "statistics",
+        "services",
+        "process",
+        "call to action",
+        "values",
+        "projects",
+        "testimonials",
+        "insights",
+        "contact",
+        "footer"
+      ],
+      "assets": [
+        "/themes/industrial-forge/hero.jpg",
+        "/themes/industrial-forge/about.jpg",
+        "/themes/industrial-forge/service-construction.jpg",
+        "/themes/industrial-forge/service-energy.jpg",
+        "/themes/industrial-forge/service-factory.jpg",
+        "/themes/industrial-forge/cta.jpg"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/industrial-forge/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/industrial-forge/page.tsx"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/industrial-forge.css",
+          "type": "registry:style",
+          "target": "app/industrial-forge/industrial-forge.css"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/industrial-forge/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/IndustrialComponents.tsx",
+          "type": "registry:component",
+          "target": "app/industrial-forge/IndustrialComponents.tsx"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/industrial-forge/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/bolt.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/bolt.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/shield-check.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/shield-check.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/graph-new-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/graph-new-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/map-point.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/map-point.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/settings-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/settings-minimalistic.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/buildings-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/buildings-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/target.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/target.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/clock-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/clock-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/users-group-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/users-group-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        }
+      ],
+      "coordiationUtilityCount": 30,
+      "ai": {
+        "selectionKey": "industrial-forge",
+        "sourceOwnership": "open-code",
+        "customization": "Preserve the literal co-* utility foundation, industrial-forge namespace, if- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
         "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
       }
     }

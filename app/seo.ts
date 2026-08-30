@@ -127,6 +127,8 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/themes/editorial-advisor/preview",
   "/themes/finance-dashboard",
   "/themes/finance-dashboard/preview",
+  "/themes/industrial-forge",
+  "/themes/industrial-forge/preview",
   "/themes/quiet-journal",
   "/themes/quiet-journal/preview",
 ] as const;

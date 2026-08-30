@@ -1,0 +1,57 @@
+import type { Metadata } from "next";
+import ThemeIcon from "./ThemeIcon";
+import { ForgeButton, SectionLabel, ServiceCard, ValueCard } from "./DashboardComponents";
+import "./industrial-forge.css";
+
+export const metadata: Metadata = { title: "Karya Forge — Industrial Engineering", description: "An original industrial engineering company template built with Coordiation." };
+
+const projects = [
+  ["01", "Metro Axis", "Transport infrastructure", "2026"], ["02", "Nusa Grid", "Electrical distribution", "2026"],
+  ["03", "Harbor North", "Mechanical systems", "2025"], ["04", "Astra Foundry", "Industrial automation", "2025"],
+  ["05", "Tirta Works", "Water infrastructure", "2024"], ["06", "Merapi Energy", "Renewable operations", "2024"],
+];
+
+const insights = [
+  ["service-construction.jpg", "Infrastructure", "Designing facilities that stay maintainable for decades"],
+  ["service-energy.jpg", "Energy", "How integrated teams reduce commissioning risk"],
+  ["service-factory.jpg", "Automation", "A practical roadmap for modernizing brownfield plants"],
+];
+
+export default function IndustrialForgePreview() {
+  return <main className="industrial-forge co-overflow-hidden" id="top">
+    <section className="if-hero co-relative co-flex co-flex-col co-justify-between">
+      <img className="if-hero-image co-absolute co-w-full co-h-full co-object-cover" src="/themes/industrial-forge/hero.jpg" alt="Industrial engineer working inside a modern production facility" />
+      <div className="if-hero-shade co-absolute" />
+      <header className="if-header co-relative co-flex co-items-center co-justify-between">
+        <a className="if-brand co-inline-flex co-items-center" href="#top"><span className="co-inline-flex co-items-center co-justify-center"><ThemeIcon name="settings-minimalistic" size={20} tone="light" /></span><b>Karya Forge</b></a>
+        <nav className="co-flex co-items-center" aria-label="Industrial Forge navigation"><a href="#about">Company</a><a href="#services">Services</a><a href="#process">Process</a><a href="#projects">Projects</a></nav>
+        <ForgeButton href="#contact">Start a project</ForgeButton>
+        <details className="if-mobile-menu"><summary aria-label="Open navigation"><ThemeIcon name="hamburger-menu" size={22} tone="light" /></summary><div><a href="#about">Company</a><a href="#services">Services</a><a href="#process">Process</a><a href="#projects">Projects</a><a href="#contact">Start a project</a></div></details>
+      </header>
+      <div className="if-hero-copy co-relative"><SectionLabel light>Engineering partner</SectionLabel><h1>Built for<br />real-world<br /><em>pressure.</em></h1><p>We design industrial systems that are safer to operate, simpler to maintain, and ready for the next stage of growth.</p></div>
+      <div className="if-hero-foot co-relative co-grid"><span><ThemeIcon name="shield-check" size={17} tone="accent" />Safety by design</span><span><ThemeIcon name="target" size={17} tone="accent" />Precision delivery</span><span><ThemeIcon name="bolt" size={17} tone="accent" />Efficient systems</span><a href="#about">Scroll to explore <ThemeIcon name="arrow-right" size={15} tone="light" /></a></div>
+    </section>
+
+    <section className="if-about co-grid co-items-center" id="about"><div><SectionLabel>About the company</SectionLabel><h2>Engineering clarity<br />for complex work.</h2></div><div className="if-about-copy"><p>For more than two decades, Karya Forge has helped teams plan, build, and improve critical industrial environments across Southeast Asia.</p><p>Our engineers work beside operators from the first site walk through commissioning, leaving behind systems people understand and trust.</p><ForgeButton href="#process" inverse>Our approach</ForgeButton></div><figure className="co-relative co-overflow-hidden"><img className="co-w-full co-h-full co-object-cover" src="/themes/industrial-forge/about.jpg" alt="Engineer inspecting equipment in a production facility" /><figcaption className="co-absolute"><strong>20+</strong><span>years solving<br />field problems</span></figcaption></figure></section>
+
+    <section className="if-stats co-grid"><div><strong>36+</strong><span>Specialists across<br />five disciplines</span></div><div><strong>540+</strong><span>Projects delivered<br />from study to startup</span></div><div><strong>210+</strong><span>Sites improved<br />across the region</span></div></section>
+
+    <section className="if-dark if-services" id="services"><div className="if-section-head co-flex co-items-end co-justify-between"><div><SectionLabel light>Core services</SectionLabel><h2>One team across the<br />entire engineering cycle.</h2></div><p>Specialists collaborate around one accountable plan, from early feasibility through handover.</p></div><div className="if-service-grid co-grid"><ServiceCard index="01" title="Civil & structural" copy="Facilities, foundations, access, and infrastructure designed around how the site must perform." image="/themes/industrial-forge/service-construction.jpg" /><ServiceCard index="02" title="Energy systems" copy="Reliable power, distribution, and efficiency programs for demanding industrial operations." image="/themes/industrial-forge/service-energy.jpg" /><ServiceCard index="03" title="Plant automation" copy="Controls, instrumentation, and data systems that make production visible and dependable." image="/themes/industrial-forge/service-factory.jpg" /></div></section>
+
+    <section className="if-dark if-process co-grid" id="process"><div><SectionLabel light>How we work</SectionLabel><h2>From first constraint<br />to confident operation.</h2><p>Every engagement is built around evidence, shared decisions, and a clear handover.</p></div><ol>{[["01","Discover","Walk the site, map constraints, and define the outcome."],["02","Engineer","Turn findings into coordinated, buildable decisions."],["03","Deliver","Manage quality, interfaces, and field changes visibly."],["04","Improve","Commission, measure, and strengthen the system."]].map(([n,t,c])=><li key={n}><span>{n}</span><div><h3>{t}</h3><p>{c}</p></div><ThemeIcon name="arrow-to-top-right" size={18} tone="light" /></li>)}</ol></section>
+
+    <section className="if-orange-cta co-flex co-items-center co-justify-between"><h2>Bring us the challenge<br />that cannot stay unresolved.</h2><ForgeButton href="#contact" inverse>Talk to an engineer</ForgeButton></section>
+
+    <section className="if-values"><div className="if-section-head co-flex co-items-end co-justify-between"><div><SectionLabel>Why Karya Forge</SectionLabel><h2>Measured by what works<br />after handover.</h2></div><p>Decisions are documented, risks stay visible, and every detail has an owner.</p></div><div className="if-value-grid co-grid"><ValueCard icon="users-group-rounded" title="One accountable team" copy="Disciplines coordinate in the same room, not through disconnected handoffs." /><ValueCard icon="shield-check" title="Safety made practical" copy="Hazards are designed out early and verified where the work happens." /><ValueCard icon="graph-new-up" title="Performance proven" copy="Targets become measurable acceptance criteria before construction begins." /><ValueCard icon="settings-minimalistic" title="Built to maintain" copy="Operators receive usable records, training, and systems they can support." /></div></section>
+
+    <section className="if-projects" id="projects"><div className="if-section-head co-flex co-items-end co-justify-between"><div><SectionLabel>Selected work</SectionLabel><h2>Infrastructure with<br />a useful life.</h2></div><ForgeButton href="#contact" inverse>Discuss your project</ForgeButton></div><div className="if-project-list">{projects.map(([n,name,type,year])=><a className="co-grid co-items-center" href="#contact" key={name}><span>{n}</span><h3>{name}</h3><p>{type}</p><time>{year}</time><ThemeIcon name="arrow-to-top-right" size={17} /></a>)}</div></section>
+
+    <section className="if-proof"><div className="if-section-head"><SectionLabel>Client perspective</SectionLabel><h2>Trust is built in the field.</h2></div><div className="if-proof-grid co-grid"><figure className="co-relative co-overflow-hidden"><img className="co-w-full co-h-full co-object-cover" src="/themes/industrial-forge/about.jpg" alt="Engineering partner at an industrial site" /><figcaption className="co-absolute">Field partnership, not distance</figcaption></figure><blockquote><span>“</span><p>Karya Forge challenged the brief, simplified the right things, and stayed with our operators until the new line was genuinely ready.</p><footer><b>Dimas Wardana</b><small>Operations Director, Nusa Materials</small></footer></blockquote><blockquote className="is-accent"><span>“</span><p>Their documentation is as useful as the equipment. Six months after startup, our team still reaches for it every week.</p><footer><b>Ratih Pranoto</b><small>Plant Manager, Sagara Energy</small></footer></blockquote></div></section>
+
+    <section className="if-dark if-insights"><div className="if-section-head co-flex co-items-end co-justify-between"><div><SectionLabel light>Field notes</SectionLabel><h2>Ideas for stronger<br />industrial systems.</h2></div><ForgeButton href="#contact">Explore insights</ForgeButton></div><div className="if-insight-grid co-grid">{insights.map(([image,category,title],index)=><article key={title}><img className="co-w-full co-object-cover" src={`/themes/industrial-forge/${image}`} alt="" /><small>{category} · 0{index+1}</small><h3>{title}</h3><a className="co-inline-flex co-items-center" href="#contact">Read field note <ThemeIcon name="arrow-right" size={15} tone="accent" /></a></article>)}</div></section>
+
+    <section className="if-contact co-relative co-flex co-items-center co-justify-center co-text-center" id="contact"><img className="co-absolute co-w-full co-h-full co-object-cover" src="/themes/industrial-forge/cta.jpg" alt="Renewable energy infrastructure at sunset" /><div className="co-absolute" /><div className="co-relative"><SectionLabel light>Build what lasts</SectionLabel><h2>Move the next critical<br />project forward.</h2><p>Tell us what must change. We will help make the path visible.</p><a className="if-contact-button co-inline-flex co-items-center co-justify-between" href="mailto:projects@karyaforge.example">projects@karyaforge.example <ThemeIcon name="letter" size={18} tone="dark" /></a></div></section>
+
+    <footer className="if-footer"><div className="if-footer-main co-grid"><div><a className="if-brand co-inline-flex co-items-center" href="#top"><span className="co-inline-flex co-items-center co-justify-center"><ThemeIcon name="settings-minimalistic" size={20} tone="light" /></span><b>Karya Forge</b></a><p>Engineering useful infrastructure for the people who build, operate, and depend on it.</p></div><div><b>Explore</b><a href="#about">Company</a><a href="#services">Services</a><a href="#projects">Projects</a></div><div><b>Connect</b><a href="mailto:projects@karyaforge.example">Email</a><a href="#contact">Jakarta, Indonesia</a><a href="#contact">+62 21 555 0184</a></div><div><b>Certainty starts with a conversation.</b><ForgeButton href="#contact">Start a project</ForgeButton></div></div><div className="if-footer-bottom co-flex co-items-center co-justify-between"><span>© 2026 Coordiation. All rights reserved.</span><a className="co-inline-flex co-items-center" href="#top">Back to top <ThemeIcon name="arrow-to-top-right" size={14} tone="light" /></a></div></footer>
+  </main>;
+}

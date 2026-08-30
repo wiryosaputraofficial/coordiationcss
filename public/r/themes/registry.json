@@ -477,6 +477,157 @@
         "frameworkName": "Coordiation CSS",
         "sourceOwnership": "open-code"
       }
+    },
+    {
+      "name": "industrial-forge",
+      "type": "registry:page",
+      "title": "Industrial Forge",
+      "description": "A bold industrial engineering company site for infrastructure, manufacturing, energy, and field operations.",
+      "categories": [
+        "industrial",
+        "engineering",
+        "corporate"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/industrial-forge/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/industrial-forge/page.tsx"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/industrial-forge.css",
+          "type": "registry:style",
+          "target": "app/industrial-forge/industrial-forge.css"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/industrial-forge/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/IndustrialComponents.tsx",
+          "type": "registry:component",
+          "target": "app/industrial-forge/IndustrialComponents.tsx"
+        },
+        {
+          "path": "site/app/themes/industrial-forge/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/industrial-forge/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/bolt.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/bolt.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/shield-check.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/shield-check.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/graph-new-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/graph-new-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/map-point.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/map-point.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/settings-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/settings-minimalistic.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/buildings-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/buildings-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/target.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/target.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/clock-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/clock-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/users-group-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/users-group-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "meta": {
+        "status": "stable",
+        "copyright": "Coordiation",
+        "framework": "Next.js App Router",
+        "style": "industrial engineering editorial",
+        "palette": "black, white and safety orange",
+        "namespace": "industrial-forge",
+        "classPrefix": "if-",
+        "preview": "/themes/industrial-forge/preview",
+        "cover": "/themes/industrial-forge/hero.jpg",
+        "components": [
+          "ForgeButton",
+          "SectionLabel",
+          "ServiceCard",
+          "ValueCard",
+          "ThemeIcon"
+        ],
+        "sections": [
+          "header",
+          "hero",
+          "about",
+          "statistics",
+          "services",
+          "process",
+          "call to action",
+          "values",
+          "projects",
+          "testimonials",
+          "insights",
+          "contact",
+          "footer"
+        ],
+        "assets": [
+          "/themes/industrial-forge/hero.jpg",
+          "/themes/industrial-forge/about.jpg",
+          "/themes/industrial-forge/service-construction.jpg",
+          "/themes/industrial-forge/service-energy.jpg",
+          "/themes/industrial-forge/service-factory.jpg",
+          "/themes/industrial-forge/cta.jpg"
+        ],
+        "frameworkName": "Coordiation CSS",
+        "sourceOwnership": "open-code"
+      }
     }
   ]
 }

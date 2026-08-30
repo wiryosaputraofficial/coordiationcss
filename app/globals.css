@@ -1111,6 +1111,10 @@ footer > span { justify-self: end; }
 .theme-detail-hero { min-height: 470px; padding: 95px clamp(24px, 7vw, 110px); display: grid; grid-template-columns: 1fr minmax(360px, .55fr); gap: 80px; align-items: end; background: #f4dab3; }
 .theme-detail-hero.quiet-journal-detail { background: #f4eee4; }
 .theme-detail-hero.finance-dashboard-detail { background: #e9ecff; }
+.theme-detail-hero.industrial-forge-detail { background: #111; color: #fff; }
+.theme-detail-hero.industrial-forge-detail .component-overline,
+.theme-detail-hero.industrial-forge-detail small { color: #aaa; }
+.theme-detail-hero.industrial-forge-detail .theme-tags span { border-color: #555; color: #fff; }
 .theme-detail-hero h1 { margin: 18px 0 24px; font-family: Georgia, serif; font-size: clamp(68px, 9vw, 132px); font-weight: 400; line-height: .85; letter-spacing: -.075em; }
 .theme-detail-hero > div:first-child > p:last-of-type { max-width: 760px; font-size: 15px; line-height: 1.7; }
 .theme-detail-hero .theme-tags { margin-bottom: 0; }
