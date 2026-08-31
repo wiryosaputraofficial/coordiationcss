@@ -4,6 +4,7 @@ import MobileNav from "@/app/_components/MobileNav";
 import SolarIcon from "@/app/_components/SolarIcon";
 import CodeBlock from "@/app/docs/_components/CodeBlock";
 import { createSeoMetadata } from "@/app/seo";
+import SectionPreview from "./SectionPreview";
 import {
   assemblyCode,
   buildCode,
@@ -103,7 +104,7 @@ export default function CookbookPage() {
 
           <section className="cookbook-step" id="icons"><div className="cookbook-step-heading"><span>02</span><div><p className="docs-overline">TREE-SHAKEABLE ICONS</p><h2>Create one safe icon boundary</h2><p>Every icon is imported from an exact Coordiation path. The helper renders trusted package-owned SVG strings and gives meaningful icons an accessible label.</p></div></div><CodeBlock title="src/Icon.jsx" code={iconCode} /><div className="cookbook-note"><SolarIcon name="shield-check" size={19} /><p>Never construct an icon import dynamically. Literal paths keep bundles tree-shakeable and let AI agents verify names against the registry.</p></div></section>
 
-          {recipes.map((recipe, index) => <section className="cookbook-step cookbook-recipe" id={recipe.id} key={recipe.id}><div className="cookbook-step-heading"><span>{String(index + 3).padStart(2, "0")}</span><div><p className="docs-overline">SECTION RECIPE</p><h2>{recipe.title}</h2><p>{recipe.role}</p></div></div><div className="cookbook-decisions"><strong>Design contract</strong><ul>{recipe.decisions.map((decision) => <li key={decision}>{decision}</li>)}</ul></div><CodeBlock title={recipe.file} code={recipe.code} /></section>)}
+          {recipes.map((recipe, index) => <section className="cookbook-step cookbook-recipe" id={recipe.id} key={recipe.id}><div className="cookbook-step-heading"><span>{String(index + 3).padStart(2, "0")}</span><div><p className="docs-overline">SECTION RECIPE</p><h2>{recipe.title}</h2><p>{recipe.role}</p></div></div><div className="cookbook-live-panel"><div><span>Live preview</span><code>{recipe.id}.section</code></div><SectionPreview section={recipe.id} /></div><div className="cookbook-decisions"><strong>Design contract</strong><ul>{recipe.decisions.map((decision) => <li key={decision}>{decision}</li>)}</ul></div><CodeBlock title={recipe.file} code={recipe.code} /></section>)}
 
           <section className="cookbook-step" id="assemble"><div className="cookbook-step-heading"><span>13</span><div><p className="docs-overline">FINAL ASSEMBLY</p><h2>Compose the page without hiding its structure</h2><p>The final file reads like the page outline. Each section remains independently editable, testable, and understandable to a human or AI agent.</p></div></div><CodeBlock title="src/App.jsx" code={assemblyCode} /><div className="cookbook-note"><SolarIcon name="accessibility" size={19} /><p>The skip link is visually hidden until keyboard focus reaches it. Keep <code>main</code>, section IDs, headings, navigation labels, lists, and disclosure elements semantic.</p></div></section>
 
