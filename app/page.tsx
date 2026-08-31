@@ -251,6 +251,7 @@ export default function Home() {
           <a href="#features">Features</a>
           <a href="#engine">Engine</a>
           <a href="#integrations">Integrations</a>
+          <Link href="/cookbook">Cookbook</Link>
           <Link href="/components">Components</Link>
           <Link href="/themes">Themes</Link>
           <Link href="/icons">Icons</Link>

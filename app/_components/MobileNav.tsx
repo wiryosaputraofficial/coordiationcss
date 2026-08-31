@@ -4,6 +4,7 @@ import SolarIcon from "./SolarIcon";
 const links = [
   ["Home", "/"],
   ["Docs", "/docs"],
+  ["Cookbook", "/cookbook"],
   ["Components", "/components"],
   ["Themes", "/themes"],
   ["Icons", "/icons"],

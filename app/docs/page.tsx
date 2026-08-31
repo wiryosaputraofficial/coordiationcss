@@ -18,6 +18,10 @@ export default function DocsOverview() {
       <h1>Installation</h1>
       <p className="docs-lead">Get Coordiation CSS running in your project. Choose the integration that matches your build tool.</p>
       <div className="docs-callout"><strong>Release candidate 1.0.0-rc.1 is available</strong><p>All {capabilities.length} tracked capability areas are implemented and documented across twelve public packages. Install the candidate with the npm <code>next</code> tag while <code>latest</code> remains unchanged.</p><Link href="/docs/releases/1.0.0-rc.1">Read the RC release notes →</Link></div>
+      <h2 id="cookbook">Build a complete page</h2>
+      <div className="integration-grid framework-integration-grid">
+        <Link href="/cookbook"><span>Complete recipe · React + Vite</span><strong>One-page product website</strong><p>Build a responsive landing page section by section, from theme tokens and Coordiation icons through navigation, hero, proof, features, workflow, pricing, FAQ, CTA, footer, and production checks.</p><code>10 sections · copy-ready source</code><b>→</b></Link>
+      </div>
       <h2 id="release-candidate">Release candidate</h2>
       <div className="integration-grid">
         <Link href="/docs/releases/1.0.0-rc.1"><span>Published · next</span><strong>1.0.0-rc.1 release notes</strong><p>See the complete package train, lifecycle capabilities, validation results, and stable-release boundary.</p><code>12 public packages</code><b>→</b></Link>

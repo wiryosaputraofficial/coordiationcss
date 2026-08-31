@@ -83,6 +83,7 @@ export function createSeoMetadata({ path, ...metadata }: SeoMetadataInput): Meta
 
 export const STATIC_INDEXABLE_ROUTES = [
   "/",
+  "/cookbook",
   "/components",
   "/docs",
   "/docs/components",
