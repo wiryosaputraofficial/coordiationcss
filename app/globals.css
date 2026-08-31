@@ -1115,6 +1115,10 @@ footer > span { justify-self: end; }
 .theme-detail-hero.industrial-forge-detail .component-overline,
 .theme-detail-hero.industrial-forge-detail small { color: #aaa; }
 .theme-detail-hero.industrial-forge-detail .theme-tags span { border-color: #555; color: #fff; }
+.theme-detail-hero.mono-portfolio-detail { background: #c9ff2f; color: #0a0a0a; }
+.theme-detail-hero.mono-portfolio-detail .component-overline,
+.theme-detail-hero.mono-portfolio-detail small { color: #30302b; }
+.theme-detail-hero.mono-portfolio-detail .theme-tags span { border-color: #0a0a0a; color: #0a0a0a; }
 .theme-detail-hero h1 { margin: 18px 0 24px; font-family: Georgia, serif; font-size: clamp(68px, 9vw, 132px); font-weight: 400; line-height: .85; letter-spacing: -.075em; }
 .theme-detail-hero > div:first-child > p:last-of-type { max-width: 760px; font-size: 15px; line-height: 1.7; }
 .theme-detail-hero .theme-tags { margin-bottom: 0; }

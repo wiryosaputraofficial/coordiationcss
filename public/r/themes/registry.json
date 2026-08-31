@@ -628,6 +628,189 @@
         "frameworkName": "Coordiation CSS",
         "sourceOwnership": "open-code"
       }
+    },
+    {
+      "name": "mono-portfolio",
+      "type": "registry:page",
+      "title": "Mono Portfolio",
+      "description": "A high-contrast creative portfolio for independent designers, digital studios, and brand-minded developers.",
+      "categories": [
+        "portfolio",
+        "creative",
+        "designer"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/mono-portfolio/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/mono-portfolio/page.tsx"
+        },
+        {
+          "path": "site/app/themes/mono-portfolio/preview/mono-portfolio.css",
+          "type": "registry:style",
+          "target": "app/mono-portfolio/mono-portfolio.css"
+        },
+        {
+          "path": "site/app/themes/mono-portfolio/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/mono-portfolio/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/mono-portfolio/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/mono-portfolio/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/map-point.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/map-point.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/users-group-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/users-group-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/heart.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/heart.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/code.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/code.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/palette.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/palette.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/lightbulb.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/lightbulb.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/monitor.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/monitor.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/pen-new-square.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/pen-new-square.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/widget-4.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/widget-4.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/star.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/star.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/eye.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/eye.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/shield-check.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/shield-check.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/crown.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/crown.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/check-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/check-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "meta": {
+        "status": "stable",
+        "copyright": "Coordiation",
+        "framework": "Next.js App Router",
+        "style": "editorial creative portfolio",
+        "palette": "ivory, black and electric lime",
+        "namespace": "mono-portfolio",
+        "classPrefix": "mp-",
+        "preview": "/themes/mono-portfolio/preview",
+        "cover": "/themes/mono-portfolio/hero.jpg",
+        "components": [
+          "PortfolioButton",
+          "SectionTag",
+          "ServiceCell",
+          "PlanCard",
+          "ThemeIcon"
+        ],
+        "sections": [
+          "header",
+          "hero",
+          "services marquee",
+          "about",
+          "tools",
+          "selected work",
+          "services",
+          "trust",
+          "pricing",
+          "reviews",
+          "faq",
+          "journal",
+          "footer"
+        ],
+        "assets": [
+          "/themes/mono-portfolio/hero.jpg",
+          "/themes/mono-portfolio/about.jpg",
+          "/themes/mono-portfolio/project.jpg",
+          "/themes/mono-portfolio/workspace.jpg",
+          "/themes/mono-portfolio/reviewer.jpg",
+          "/themes/mono-portfolio/blog-team.jpg",
+          "/themes/mono-portfolio/blog-design.jpg",
+          "/themes/mono-portfolio/blog-wireframe.jpg"
+        ],
+        "frameworkName": "Coordiation CSS",
+        "sourceOwnership": "open-code"
+      }
     }
   ]
 }
