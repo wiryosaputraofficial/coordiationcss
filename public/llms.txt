@@ -48,6 +48,7 @@ Creator: Wiryo Saputra (`wiryosaputra@coordiation.com`). Coordiation is built to
 - Incremental cache: reuse one `createIncrementalBuildCache()` instance for repeated direct builds; inspect `scan.cache` and `result.cache` for hit/miss data, use the CLI project-local `.coordiation-cache` by default, and treat runtime extractor/plugin functions as process-scoped contracts
 - Source maps: enable `sourceMap` for Source Map v3 output across imports, framework generation, transforms, and minification; inspect `result.toolchain.sourceMap`, use native Vite/PostCSS maps, and choose external or inline CLI delivery deliberately
 - IntelliSense/LSP: launch `coordiation-language-server --stdio`, configure the same literal CSS entry and prefix as the build, use completion for discovery, hover for compiled CSS, diagnostics for literal/dynamic source problems, and `coordiation/inspectCandidate` for concrete project-aware support
+- Agent context (release candidate): run `coordiation inspect --write` to create `.coordiation/agent-manifest.json`, then request only the task pack with `coordiation context {page|navigation|form|dashboard|pricing|component|theme} --json`; use `--full` only when file-level detail is necessary
 - Formatter: use `coordiation-format --check` or `--write`; its API reuses canonical compiler ordering, preserves application-class order, and leaves dynamic expressions unchanged
 - Upgrade: inspect `upgradeManifest`, create a `--json` plan, then use `--check` or `--write`; registered transforms share compiler deprecation IDs and never evaluate dynamic source
 - Native scanner: call `scanSourcesNative()` and inspect `engine` plus `native.fallbackReason`; use `fallback: false` only when native execution is a hard requirement
@@ -79,6 +80,7 @@ Creator: Wiryo Saputra (`wiryosaputra@coordiation.com`). Coordiation is built to
 15. Never guess an icon name, assume names are unique across collections, or dynamically concatenate an icon import. Use `collectionId` plus `name` from the registry, keep the recorded import literal for tree-shaking, pass `label` only when the icon conveys otherwise-unavailable meaning, and retain the collection's required attribution.
 16. Never invent a component or import it from a runtime UI package. Use an item marked `stable`, install its source into the project, preserve its client boundary, and retain its documented accessibility behavior when customizing.
 17. Never reconstruct a theme from its screenshot. Select it by exact registry name, install its source, copy or replace every listed media asset, and preserve its namespace plus semantic structure while customizing identity and content.
+18. Read the compact project manifest before broad source inspection. Select one task context pack, keep its checks visible, and report any dynamic-candidate warning instead of guessing runtime classes.
 
 Human release tracker: `/release-check`
 Machine-readable capability manifest: `/api/capabilities`
@@ -110,6 +112,7 @@ Complete CSS toolchain guide: `/docs/tooling/css-toolchain`
 Complete incremental build cache guide: `/docs/tooling/incremental-cache`
 Complete Source Map v3 guide: `/docs/tooling/source-maps`
 Complete IntelliSense and LSP guide: `/docs/tooling/language-server`
+AI agent manifests and task context packs: `/docs/tooling/agent-context`
 Complete class formatter guide: `/docs/tooling/formatter`
 Complete upgrade and codemod guide: `/docs/tooling/upgrade`
 Complete native scanner guide: `/docs/tooling/native-scanner`
@@ -126,4 +129,4 @@ Installable application theme guide: `/docs/themes`
 Interactive application theme showcase: `/themes`
 Machine-readable theme manifest: `/theme-registry.json`
 Coordiation theme catalog: `/r/themes/registry.json`
-Stable themes: `editorial-advisor`, `quiet-journal`, and `finance-dashboard`
+Stable themes: `editorial-advisor`, `quiet-journal`, `finance-dashboard`, `industrial-forge`, and `mono-portfolio`

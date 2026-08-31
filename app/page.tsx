@@ -24,6 +24,7 @@ const utilityCount = registry.staticUtilities.length;
 const familyCount = registry.families.length;
 const verifiedExampleCount = registry.families.reduce((total, family) => total + family.resolvedExamples.length, 0);
 const completeCapabilityCount = capabilities.filter((capability) => capability.status === "complete").length;
+const inProgressCapabilityCount = capabilities.filter((capability) => capability.status === "partial").length;
 
 function combinedStatus(ids: readonly string[]): CapabilityStatus {
   const statuses = ids.map((id) => capabilities.find((capability) => capability.id === id)?.status ?? "planned");
@@ -115,12 +116,12 @@ const featureGroups = [
   {
     index: "08",
     eyebrow: "DEVELOPER + AI TOOLING",
-    title: "Understand, format, and upgrade",
+    title: "Give agents a smaller, verifiable brief",
     description:
-      "The language server, canonical formatter, codemods, native scanner, compatibility manifest, and deprecation diagnostics keep every change traceable.",
-    ids: ["language-server", "formatter", "codemods", "native-scanner", "compatibility"],
-    example: "coordiation-format src --write",
-    href: "/docs/tooling/language-server",
+      "Compact project manifests, task context packs, the language server, formatter, codemods, and compatibility contracts make automated changes focused and traceable.",
+    ids: ["agent-context", "language-server", "formatter", "codemods", "native-scanner", "compatibility"],
+    example: "coordiation context pricing --json",
+    href: "/docs/tooling/agent-context",
   },
   {
     index: "09",
@@ -149,6 +150,7 @@ const integrations = [
   { name: "PostCSS", label: "Pipeline", description: "A standard PostCSS 8 adapter with dependency messages, warnings, and multi-entry safety.", href: "/docs/installation/using-postcss", code: "@coordiation/postcss" },
   { name: "CLI", label: "Standalone", description: "One-shot builds and durable watch mode with atomic output and no bundler requirement.", href: "/docs/installation/using-cli", code: "coordiation-css" },
   { name: "Language Server", label: "Editor", description: "Completion, compiler-authored hover previews, project configuration, and actionable diagnostics over LSP 3.17.", href: "/docs/tooling/language-server", code: "@coordiation/language-server" },
+  { name: "Agent Context", label: "Release candidate", description: "Compact project manifests and task packs expose only the components, utility hints, rules, and checks an agent needs.", href: "/docs/tooling/agent-context", code: "@coordiation/agent" },
   { name: "Formatter", label: "Canonical", description: "Stable class sorting powered by the same candidate ordering used by the compiler.", href: "/docs/tooling/formatter", code: "@coordiation/formatter" },
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
@@ -163,7 +165,7 @@ export default function Home() {
     <main>
       <div className="announcement">
         <span className="announcement-dot" />
-        All {completeCapabilityCount} tracked capabilities are complete
+        {completeCapabilityCount} capabilities complete · {inProgressCapabilityCount} release candidate
         <Link href="/release-check">View release readiness <SolarIcon name="arrow-right" size={14} /></Link>
       </div>
 

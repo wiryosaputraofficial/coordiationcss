@@ -43,6 +43,9 @@ npx @coordiation/cli@latest add theme editorial-advisor`} /></div></section>
   --output dist/coordiation.css \\
   --content src`} /><div className="inline-links"><Link href="/docs/installation/using-cli">Open the CLI guide →</Link><Link href="/docs/installation/using-postcss">Open the PostCSS guide →</Link></div></div></section>
 
+      <section className="guide-step" id="agent-preview"><div className="step-number">05</div><div><h2>Prepare compact context for AI agents</h2><p><code>@coordiation/agent</code> is available in the workspace as a release candidate and will join the public package catalog in the next npm release. It creates a small, deterministic manifest instead of sending the entire repository to an agent.</p><CodeBlock title="Release-candidate CLI" code={`npx @coordiation/cli inspect --write
+npx @coordiation/cli context pricing`} /><div className="inline-links"><Link href="/docs/tooling/agent-context">Open the AI agent context guide →</Link></div></div></section>
+
       <section className="family-caveats" id="ai-contract"><div><p className="docs-overline">AI INSTALLATION CONTRACT</p><h2>Keep dependencies traceable</h2><p>Agents should select packages from the published catalog instead of inventing package names or copying registry payloads manually.</p></div><ul><li>Use the exact <code>@coordiation/*</code> package names listed above.</li><li>Read <code>/llms.txt</code> and <code>/api/capabilities</code> before generating framework code.</li><li>Use literal <code>co-*</code> classes so scanning and diagnostics remain reliable.</li><li>Prefer the CLI for open-code components and themes.</li><li>Pin versions in CI and automated agent environments.</li></ul></section>
 
       <div className="docs-next split"><Link href="/docs"><span>Previous</span><b>← Installation</b></Link><Link href="/docs/installation/using-vite"><span>Next</span><b>Using Vite →</b></Link></div>

@@ -15,7 +15,7 @@ function escapeXml(value: string): string {
 }
 
 export async function GET() {
-  const updatedAt = "2026-08-30T00:00:00.000Z";
+  const updatedAt = "2026-08-31T00:00:00.000Z";
   const utilityRoutes = utilityRegistry.families.map((family) => `/docs/utilities/${family.id}`);
   const entries = [...STATIC_INDEXABLE_ROUTES, ...utilityRoutes]
     .map((route) => {

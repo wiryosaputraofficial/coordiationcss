@@ -92,11 +92,12 @@ export default function ReleaseCheckPage() {
           <a href="/api/utilities"><span>Generated utility registry</span><code>GET /api/utilities</code><SolarIcon name="arrow-right" size={17} /></a>
           <a href="/api/components"><span>Open-code component manifest</span><code>GET /api/components</code><SolarIcon name="arrow-right" size={17} /></a>
           <a href="/api/themes"><span>Application theme manifest</span><code>GET /api/themes</code><SolarIcon name="arrow-right" size={17} /></a>
+          <Link href="/docs/tooling/agent-context"><span>Compact AI agent context</span><code>DOC /docs/tooling/agent-context</code><SolarIcon name="arrow-right" size={17} /></Link>
           <a href="/llms.txt"><span>Concise AI usage guide</span><code>GET /llms.txt</code><SolarIcon name="arrow-right" size={17} /></a>
         </div>
       </section>
 
-      <footer className="docs-footer"><Link className="brand footer-brand" href="/"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link><p>Capability data is versioned with the framework.</p><span>Updated 29 Aug 2026</span></footer>
+      <footer className="docs-footer"><Link className="brand footer-brand" href="/"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link><p>Capability data is versioned with the framework.</p><span>Updated 31 Aug 2026</span></footer>
     </main>
   );
 }

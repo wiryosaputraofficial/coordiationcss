@@ -110,6 +110,7 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/docs/installation/using-vite",
   "/docs/installation/using-wordpress",
   "/docs/themes",
+  "/docs/tooling/agent-context",
   "/docs/tooling/css-toolchain",
   "/docs/tooling/formatter",
   "/docs/tooling/incremental-cache",
