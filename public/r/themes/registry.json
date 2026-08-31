@@ -811,6 +811,183 @@
         "frameworkName": "Coordiation CSS",
         "sourceOwnership": "open-code"
       }
+    },
+    {
+      "name": "noir-habitat",
+      "type": "registry:page",
+      "title": "Noir Habitat",
+      "description": "A dark editorial architecture and interior studio theme for residential practices, spatial designers, and design-led firms.",
+      "categories": [
+        "architecture",
+        "interior",
+        "portfolio"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/noir-habitat/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/noir-habitat/page.tsx"
+        },
+        {
+          "path": "site/app/themes/noir-habitat/preview/noir-habitat.css",
+          "type": "registry:style",
+          "target": "app/noir-habitat/noir-habitat.css"
+        },
+        {
+          "path": "site/app/themes/noir-habitat/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/noir-habitat/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/noir-habitat/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/noir-habitat/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/buildings-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/buildings-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/home-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/home-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/ruler-pen.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/ruler-pen.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/sofa-2.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/sofa-2.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/palette.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/palette.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/camera.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/camera.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/clock-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/clock-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/leaf.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/leaf.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/shield-check.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/shield-check.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/eye.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/eye.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/stars.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/stars.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/gallery-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/gallery-minimalistic.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/layers-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/layers-minimalistic.svg"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input"
+      ],
+      "meta": {
+        "status": "stable",
+        "copyright": "Coordiation",
+        "framework": "Next.js App Router",
+        "style": "dark editorial architecture studio",
+        "palette": "charcoal, stone and warm sand",
+        "namespace": "noir-habitat",
+        "classPrefix": "nh-",
+        "preview": "/themes/noir-habitat/preview",
+        "cover": "/themes/noir-habitat/hero.jpg",
+        "components": [
+          "StudioButton",
+          "SectionTitle",
+          "ProjectCard",
+          "ProcessStep",
+          "ArticleCard",
+          "ThemeIcon"
+        ],
+        "sections": [
+          "header",
+          "hero",
+          "manifesto",
+          "service marquee",
+          "services",
+          "selected work",
+          "interior studies",
+          "work process",
+          "testimonial",
+          "newsletter",
+          "journal",
+          "footer"
+        ],
+        "assets": [
+          "/themes/noir-habitat/hero.jpg",
+          "/themes/noir-habitat/studio-director.jpg",
+          "/themes/noir-habitat/service-interior.jpg",
+          "/themes/noir-habitat/service-exterior.jpg",
+          "/themes/noir-habitat/project-house.jpg",
+          "/themes/noir-habitat/project-villa.jpg",
+          "/themes/noir-habitat/project-interior.jpg",
+          "/themes/noir-habitat/process.jpg",
+          "/themes/noir-habitat/testimonial.jpg",
+          "/themes/noir-habitat/news-material.jpg",
+          "/themes/noir-habitat/news-light.jpg"
+        ],
+        "frameworkName": "Coordiation CSS",
+        "sourceOwnership": "open-code"
+      }
     }
   ]
 }

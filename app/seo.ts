@@ -132,6 +132,8 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/themes/industrial-forge/preview",
   "/themes/mono-portfolio",
   "/themes/mono-portfolio/preview",
+  "/themes/noir-habitat",
+  "/themes/noir-habitat/preview",
   "/themes/quiet-journal",
   "/themes/quiet-journal/preview",
 ] as const;
