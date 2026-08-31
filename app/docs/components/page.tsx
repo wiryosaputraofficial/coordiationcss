@@ -18,7 +18,7 @@ export default function ComponentGuidePage() {
     <div className="family-support"><span>Want to compare every preview?</span><Link prefetch={false} href="/components">Browse the component catalog →</Link></div>
 
     <section className="guide-step" id="prerequisite"><div className="step-number">01</div><div><h2>Install Coordiation CSS first</h2><CodeBlock title="Terminal" code={`npm install @coordiation/css @coordiation/vite`} /><p>Components contain literal <code>co-*</code> classes. Your existing scanner detects them after the source file is added.</p></div></section>
-    <section className="guide-step" id="install"><div className="step-number">02</div><div><h2>Add a component with Coordiation CLI</h2><CodeBlock title="Terminal" code="npx @coordiation/cli@latest add component button" /><p>The official installer resolves the Coordiation registry, verifies safe target paths, refuses accidental overwrites, and writes the full source into <code>components/ui</code>.</p></div></section>
+    <section className="guide-step" id="install"><div className="step-number">02</div><div><h2>Add a component with Coordiation CLI</h2><CodeBlock title="Terminal" code="npx @coordiation/cli@next add component button" /><p>The official installer resolves the Coordiation registry, verifies safe target paths, refuses accidental overwrites, and writes the full source into <code>components/ui</code>.</p></div></section>
     <section className="guide-step" id="use"><div className="step-number">03</div><div><h2>Import the owned source</h2><CodeBlock title="app.tsx" code={`import { Button } from "@/components/ui/button";
 
 export function SaveAction() {

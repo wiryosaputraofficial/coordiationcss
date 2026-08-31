@@ -8,6 +8,8 @@ const links = [
   ["Themes", "/themes"],
   ["Icons", "/icons"],
   ["Release Check", "/release-check"],
+  ["1.0 RC notes", "/docs/releases/1.0.0-rc.1"],
+  ["Migration guide", "/docs/migration/1.0-rc"],
   ["Get started", "/docs/installation/using-vite"],
 ] as const;
 

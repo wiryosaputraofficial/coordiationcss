@@ -202,7 +202,7 @@ const featureGroups = [
     description:
       "Install complete application templates with editable source, responsive composition, original media, documented sections, and AI-readable customization contracts.",
     ids: ["registry-cli", "themes"],
-    example: "npx @coordiation/cli@latest add theme editorial-advisor",
+    example: "npx @coordiation/cli@next add theme editorial-advisor",
     href: "/themes",
   },
  ] as const;

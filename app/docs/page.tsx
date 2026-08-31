@@ -17,7 +17,12 @@ export default function DocsOverview() {
       <p className="docs-overline">GETTING STARTED</p>
       <h1>Installation</h1>
       <p className="docs-lead">Get Coordiation CSS running in your project. Choose the integration that matches your build tool.</p>
-      <div className="docs-callout"><strong>Feature implementation complete</strong><p>All {capabilities.length} tracked capability areas are implemented and documented. The project remains prerelease until the stable release process, signed native artifacts, and supported-platform checks pass.</p><Link href="/release-check">Open Release Check →</Link></div>
+      <div className="docs-callout"><strong>Release candidate 1.0.0-rc.1 is available</strong><p>All {capabilities.length} tracked capability areas are implemented and documented across twelve public packages. Install the candidate with the npm <code>next</code> tag while <code>latest</code> remains unchanged.</p><Link href="/docs/releases/1.0.0-rc.1">Read the RC release notes →</Link></div>
+      <h2 id="release-candidate">Release candidate</h2>
+      <div className="integration-grid">
+        <Link href="/docs/releases/1.0.0-rc.1"><span>Published · next</span><strong>1.0.0-rc.1 release notes</strong><p>See the complete package train, lifecycle capabilities, validation results, and stable-release boundary.</p><code>12 public packages</code><b>→</b></Link>
+        <Link href="/docs/migration/1.0-rc"><span>From 0.1 and CLI 0.2</span><strong>Migrate to 1.0 RC</strong><p>Upgrade package versions, migrate negative utility syntax, and adopt revision-aware lifecycle contracts.</p><code>@coordiation/upgrade@next</code><b>→</b></Link>
+      </div>
       <h2 id="choose-integration">Choose your integration</h2>
       <div className="integration-grid">
         <Link href="/docs/installation/using-npm"><span>Published packages</span><strong>Using npm</strong><p>Install the compiler, adapters, icons, themes, components, and tooling from the public npm registry.</p><code>@coordiation/*</code><b>→</b></Link>

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "framework": "Coordiation CSS",
   "package": "@coordiation/themes",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.1",
   "generatedAt": "2026-08-29",
   "distribution": "open-code page registry",
   "themeCount": 7,
@@ -28,7 +28,7 @@
       "preview": "/themes/editorial-advisor/preview",
       "cover": "/themes/editorial-advisor/hero-advisor.png",
       "installPath": "/r/themes/editorial-advisor.json",
-      "command": "npx @coordiation/cli@latest add theme editorial-advisor",
+      "command": "npx @coordiation/cli@next add theme editorial-advisor",
       "sections": [
         "hero",
         "principle",
@@ -132,7 +132,7 @@
       "preview": "/themes/quiet-journal/preview",
       "cover": "/themes/quiet-journal/hero-desk.webp",
       "installPath": "/r/themes/quiet-journal.json",
-      "command": "npx @coordiation/cli@latest add theme quiet-journal",
+      "command": "npx @coordiation/cli@next add theme quiet-journal",
       "sections": [
         "header",
         "hero",
@@ -268,7 +268,7 @@
       "preview": "/themes/finance-dashboard/preview",
       "cover": null,
       "installPath": "/r/themes/finance-dashboard.json",
-      "command": "npx @coordiation/cli@latest add theme finance-dashboard",
+      "command": "npx @coordiation/cli@next add theme finance-dashboard",
       "sections": [
         "sidebar",
         "topbar",
@@ -510,7 +510,7 @@
       "preview": "/themes/industrial-forge/preview",
       "cover": "/themes/industrial-forge/hero.jpg",
       "installPath": "/r/themes/industrial-forge.json",
-      "command": "npx @coordiation/cli@latest add theme industrial-forge",
+      "command": "npx @coordiation/cli@next add theme industrial-forge",
       "sections": [
         "header",
         "hero",
@@ -661,7 +661,7 @@
       "preview": "/themes/mono-portfolio/preview",
       "cover": "/themes/mono-portfolio/hero.jpg",
       "installPath": "/r/themes/mono-portfolio.json",
-      "command": "npx @coordiation/cli@latest add theme mono-portfolio",
+      "command": "npx @coordiation/cli@next add theme mono-portfolio",
       "sections": [
         "header",
         "hero",
@@ -845,7 +845,7 @@
       "preview": "/themes/noir-habitat/preview",
       "cover": "/themes/noir-habitat/hero.jpg",
       "installPath": "/r/themes/noir-habitat.json",
-      "command": "npx @coordiation/cli@latest add theme noir-habitat",
+      "command": "npx @coordiation/cli@next add theme noir-habitat",
       "sections": [
         "header",
         "hero",
@@ -1019,7 +1019,7 @@
       "preview": "/themes/studio-index/preview",
       "cover": "/themes/studio-index/root-table.jpg",
       "installPath": "/r/themes/studio-index.json",
-      "command": "npx @coordiation/cli@latest add theme studio-index",
+      "command": "npx @coordiation/cli@next add theme studio-index",
       "sections": [
         "portfolio header",
         "introduction",

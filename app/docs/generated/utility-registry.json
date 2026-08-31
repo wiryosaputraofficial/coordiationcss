@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "framework": "Coordiation CSS",
-  "frameworkVersion": "0.2-dev",
+  "frameworkVersion": "1.0.0-rc.1",
   "prefix": "co-",
   "canonicalNegativeSyntax": "-co-{utility}",
   "generatedAt": "2026-08-29",

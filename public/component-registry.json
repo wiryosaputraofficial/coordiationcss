@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "framework": "Coordiation CSS",
   "package": "@coordiation/ui",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.1",
   "generatedAt": "2026-08-29",
   "distribution": "open-code registry",
   "style": "monochrome",
@@ -35,7 +35,7 @@
         }
       ],
       "installPath": "/r/button.json",
-      "command": "npx @coordiation/cli@latest add component button",
+      "command": "npx @coordiation/cli@next add component button",
       "import": "@/components/ui/button",
       "usage": "<Button variant=\"outline\">Continue</Button>",
       "accessibility": "Uses a native button, preserves disabled semantics, and exposes a visible keyboard focus ring."
@@ -57,7 +57,7 @@
         }
       ],
       "installPath": "/r/badge.json",
-      "command": "npx @coordiation/cli@latest add component badge",
+      "command": "npx @coordiation/cli@next add component badge",
       "import": "@/components/ui/badge",
       "usage": "<Badge variant=\"outline\">Beta</Badge>",
       "accessibility": "Text is always visible; color is never the only information channel."
@@ -79,7 +79,7 @@
         }
       ],
       "installPath": "/r/card.json",
-      "command": "npx @coordiation/cli@latest add component card",
+      "command": "npx @coordiation/cli@next add component card",
       "import": "@/components/ui/card",
       "usage": "<Card><CardHeader><CardTitle>Project</CardTitle></CardHeader><CardContent>Ready.</CardContent></Card>",
       "accessibility": "Uses neutral containers so consumers choose the correct heading and landmark structure."
@@ -101,7 +101,7 @@
         }
       ],
       "installPath": "/r/input.json",
-      "command": "npx @coordiation/cli@latest add component input",
+      "command": "npx @coordiation/cli@next add component input",
       "import": "@/components/ui/input",
       "usage": "<Input aria-label=\"Email\" type=\"email\" placeholder=\"you@example.com\" />",
       "accessibility": "Uses a native input and exposes invalid, disabled, placeholder, and focus states."
@@ -123,7 +123,7 @@
         }
       ],
       "installPath": "/r/textarea.json",
-      "command": "npx @coordiation/cli@latest add component textarea",
+      "command": "npx @coordiation/cli@next add component textarea",
       "import": "@/components/ui/textarea",
       "usage": "<Textarea aria-label=\"Message\" placeholder=\"Write a message…\" />",
       "accessibility": "Uses a native textarea and preserves resize, invalid, disabled, and focus behavior."
@@ -145,7 +145,7 @@
         }
       ],
       "installPath": "/r/label.json",
-      "command": "npx @coordiation/cli@latest add component label",
+      "command": "npx @coordiation/cli@next add component label",
       "import": "@/components/ui/label",
       "usage": "<Label htmlFor=\"email\">Email</Label>",
       "accessibility": "Uses the native label element and should be connected with htmlFor."
@@ -167,7 +167,7 @@
         }
       ],
       "installPath": "/r/checkbox.json",
-      "command": "npx @coordiation/cli@latest add component checkbox",
+      "command": "npx @coordiation/cli@next add component checkbox",
       "import": "@/components/ui/checkbox",
       "usage": "<Checkbox aria-label=\"Accept terms\" />",
       "accessibility": "Uses a native checkbox, including keyboard, checked, disabled, and form semantics."
@@ -189,7 +189,7 @@
         }
       ],
       "installPath": "/r/switch.json",
-      "command": "npx @coordiation/cli@latest add component switch",
+      "command": "npx @coordiation/cli@next add component switch",
       "import": "@/components/ui/switch",
       "usage": "<Switch checked={enabled} onCheckedChange={setEnabled} aria-label=\"Notifications\" />",
       "accessibility": "Uses role=switch, aria-checked, native button keyboard behavior, and controlled state."
@@ -211,7 +211,7 @@
         }
       ],
       "installPath": "/r/alert.json",
-      "command": "npx @coordiation/cli@latest add component alert",
+      "command": "npx @coordiation/cli@next add component alert",
       "import": "@/components/ui/alert",
       "usage": "<Alert><AlertTitle>Saved</AlertTitle><AlertDescription>Your changes are live.</AlertDescription></Alert>",
       "accessibility": "Uses role=alert for important feedback and composable title/description content."
@@ -233,7 +233,7 @@
         }
       ],
       "installPath": "/r/separator.json",
-      "command": "npx @coordiation/cli@latest add component separator",
+      "command": "npx @coordiation/cli@next add component separator",
       "import": "@/components/ui/separator",
       "usage": "<Separator orientation=\"horizontal\" />",
       "accessibility": "Can be decorative or expose separator role and aria-orientation."
@@ -255,7 +255,7 @@
         }
       ],
       "installPath": "/r/skeleton.json",
-      "command": "npx @coordiation/cli@latest add component skeleton",
+      "command": "npx @coordiation/cli@next add component skeleton",
       "import": "@/components/ui/skeleton",
       "usage": "<Skeleton className=\"co-h-4 co-w-48\" />",
       "accessibility": "Hidden from assistive technology so real loading status can be announced separately."
@@ -277,7 +277,7 @@
         }
       ],
       "installPath": "/r/spinner.json",
-      "command": "npx @coordiation/cli@latest add component spinner",
+      "command": "npx @coordiation/cli@next add component spinner",
       "import": "@/components/ui/spinner",
       "usage": "<Spinner aria-label=\"Saving\" />",
       "accessibility": "Uses role=status and requires a concise accessible label."
@@ -299,7 +299,7 @@
         }
       ],
       "installPath": "/r/avatar.json",
-      "command": "npx @coordiation/cli@latest add component avatar",
+      "command": "npx @coordiation/cli@next add component avatar",
       "import": "@/components/ui/avatar",
       "usage": "<Avatar><AvatarImage src=\"/avatar.jpg\" alt=\"Ayu\" /><AvatarFallback>AY</AvatarFallback></Avatar>",
       "accessibility": "Preserves image alt text and renders deterministic fallback content after image failure."
@@ -321,7 +321,7 @@
         }
       ],
       "installPath": "/r/table.json",
-      "command": "npx @coordiation/cli@latest add component table",
+      "command": "npx @coordiation/cli@next add component table",
       "import": "@/components/ui/table",
       "usage": "<Table><TableHeader>…</TableHeader><TableBody>…</TableBody></Table>",
       "accessibility": "Uses native table elements and keeps wide data horizontally scrollable."
@@ -343,7 +343,7 @@
         }
       ],
       "installPath": "/r/tabs.json",
-      "command": "npx @coordiation/cli@latest add component tabs",
+      "command": "npx @coordiation/cli@next add component tabs",
       "import": "@/components/ui/tabs",
       "usage": "<Tabs value={tab} onValueChange={setTab}>…</Tabs>",
       "accessibility": "Implements tablist, tab, tabpanel, aria linkage, roving focus, Home/End, and arrow keys."
@@ -365,7 +365,7 @@
         }
       ],
       "installPath": "/r/dialog.json",
-      "command": "npx @coordiation/cli@latest add component dialog",
+      "command": "npx @coordiation/cli@next add component dialog",
       "import": "@/components/ui/dialog",
       "usage": "<Dialog open={open} onOpenChange={setOpen}>…</Dialog>",
       "accessibility": "Uses the native modal dialog for focus containment, Escape handling, backdrop, and dismissal."
@@ -387,7 +387,7 @@
         }
       ],
       "installPath": "/r/accordion.json",
-      "command": "npx @coordiation/cli@latest add component accordion",
+      "command": "npx @coordiation/cli@next add component accordion",
       "import": "@/components/ui/accordion",
       "usage": "<Accordion />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -409,7 +409,7 @@
         }
       ],
       "installPath": "/r/alert-dialog.json",
-      "command": "npx @coordiation/cli@latest add component alert-dialog",
+      "command": "npx @coordiation/cli@next add component alert-dialog",
       "import": "@/components/ui/alert-dialog",
       "usage": "<AlertDialog />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -431,7 +431,7 @@
         }
       ],
       "installPath": "/r/aspect-ratio.json",
-      "command": "npx @coordiation/cli@latest add component aspect-ratio",
+      "command": "npx @coordiation/cli@next add component aspect-ratio",
       "import": "@/components/ui/aspect-ratio",
       "usage": "<AspectRatio />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -453,7 +453,7 @@
         }
       ],
       "installPath": "/r/attachment.json",
-      "command": "npx @coordiation/cli@latest add component attachment",
+      "command": "npx @coordiation/cli@next add component attachment",
       "import": "@/components/ui/attachment",
       "usage": "<Attachment />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -475,7 +475,7 @@
         }
       ],
       "installPath": "/r/breadcrumb.json",
-      "command": "npx @coordiation/cli@latest add component breadcrumb",
+      "command": "npx @coordiation/cli@next add component breadcrumb",
       "import": "@/components/ui/breadcrumb",
       "usage": "<Breadcrumb />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -497,7 +497,7 @@
         }
       ],
       "installPath": "/r/bubble.json",
-      "command": "npx @coordiation/cli@latest add component bubble",
+      "command": "npx @coordiation/cli@next add component bubble",
       "import": "@/components/ui/bubble",
       "usage": "<Bubble />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -519,7 +519,7 @@
         }
       ],
       "installPath": "/r/button-group.json",
-      "command": "npx @coordiation/cli@latest add component button-group",
+      "command": "npx @coordiation/cli@next add component button-group",
       "import": "@/components/ui/button-group",
       "usage": "<ButtonGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -541,7 +541,7 @@
         }
       ],
       "installPath": "/r/calendar.json",
-      "command": "npx @coordiation/cli@latest add component calendar",
+      "command": "npx @coordiation/cli@next add component calendar",
       "import": "@/components/ui/calendar",
       "usage": "<Calendar />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -563,7 +563,7 @@
         }
       ],
       "installPath": "/r/carousel.json",
-      "command": "npx @coordiation/cli@latest add component carousel",
+      "command": "npx @coordiation/cli@next add component carousel",
       "import": "@/components/ui/carousel",
       "usage": "<Carousel />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -585,7 +585,7 @@
         }
       ],
       "installPath": "/r/chart.json",
-      "command": "npx @coordiation/cli@latest add component chart",
+      "command": "npx @coordiation/cli@next add component chart",
       "import": "@/components/ui/chart",
       "usage": "<Chart />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -607,7 +607,7 @@
         }
       ],
       "installPath": "/r/collapsible.json",
-      "command": "npx @coordiation/cli@latest add component collapsible",
+      "command": "npx @coordiation/cli@next add component collapsible",
       "import": "@/components/ui/collapsible",
       "usage": "<Collapsible />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -629,7 +629,7 @@
         }
       ],
       "installPath": "/r/combobox.json",
-      "command": "npx @coordiation/cli@latest add component combobox",
+      "command": "npx @coordiation/cli@next add component combobox",
       "import": "@/components/ui/combobox",
       "usage": "<Combobox />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -651,7 +651,7 @@
         }
       ],
       "installPath": "/r/command.json",
-      "command": "npx @coordiation/cli@latest add component command",
+      "command": "npx @coordiation/cli@next add component command",
       "import": "@/components/ui/command",
       "usage": "<Command />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -673,7 +673,7 @@
         }
       ],
       "installPath": "/r/context-menu.json",
-      "command": "npx @coordiation/cli@latest add component context-menu",
+      "command": "npx @coordiation/cli@next add component context-menu",
       "import": "@/components/ui/context-menu",
       "usage": "<ContextMenu />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -695,7 +695,7 @@
         }
       ],
       "installPath": "/r/data-table.json",
-      "command": "npx @coordiation/cli@latest add component data-table",
+      "command": "npx @coordiation/cli@next add component data-table",
       "import": "@/components/ui/data-table",
       "usage": "<DataTable />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -717,7 +717,7 @@
         }
       ],
       "installPath": "/r/date-picker.json",
-      "command": "npx @coordiation/cli@latest add component date-picker",
+      "command": "npx @coordiation/cli@next add component date-picker",
       "import": "@/components/ui/date-picker",
       "usage": "<DatePicker />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -739,7 +739,7 @@
         }
       ],
       "installPath": "/r/direction.json",
-      "command": "npx @coordiation/cli@latest add component direction",
+      "command": "npx @coordiation/cli@next add component direction",
       "import": "@/components/ui/direction",
       "usage": "<Direction />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -761,7 +761,7 @@
         }
       ],
       "installPath": "/r/drawer.json",
-      "command": "npx @coordiation/cli@latest add component drawer",
+      "command": "npx @coordiation/cli@next add component drawer",
       "import": "@/components/ui/drawer",
       "usage": "<Drawer />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -783,7 +783,7 @@
         }
       ],
       "installPath": "/r/dropdown-menu.json",
-      "command": "npx @coordiation/cli@latest add component dropdown-menu",
+      "command": "npx @coordiation/cli@next add component dropdown-menu",
       "import": "@/components/ui/dropdown-menu",
       "usage": "<DropdownMenu />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -805,7 +805,7 @@
         }
       ],
       "installPath": "/r/empty.json",
-      "command": "npx @coordiation/cli@latest add component empty",
+      "command": "npx @coordiation/cli@next add component empty",
       "import": "@/components/ui/empty",
       "usage": "<Empty />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -827,7 +827,7 @@
         }
       ],
       "installPath": "/r/field.json",
-      "command": "npx @coordiation/cli@latest add component field",
+      "command": "npx @coordiation/cli@next add component field",
       "import": "@/components/ui/field",
       "usage": "<Field />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -849,7 +849,7 @@
         }
       ],
       "installPath": "/r/hover-card.json",
-      "command": "npx @coordiation/cli@latest add component hover-card",
+      "command": "npx @coordiation/cli@next add component hover-card",
       "import": "@/components/ui/hover-card",
       "usage": "<HoverCard />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -871,7 +871,7 @@
         }
       ],
       "installPath": "/r/input-group.json",
-      "command": "npx @coordiation/cli@latest add component input-group",
+      "command": "npx @coordiation/cli@next add component input-group",
       "import": "@/components/ui/input-group",
       "usage": "<InputGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -893,7 +893,7 @@
         }
       ],
       "installPath": "/r/input-otp.json",
-      "command": "npx @coordiation/cli@latest add component input-otp",
+      "command": "npx @coordiation/cli@next add component input-otp",
       "import": "@/components/ui/input-otp",
       "usage": "<InputOTP />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -915,7 +915,7 @@
         }
       ],
       "installPath": "/r/item.json",
-      "command": "npx @coordiation/cli@latest add component item",
+      "command": "npx @coordiation/cli@next add component item",
       "import": "@/components/ui/item",
       "usage": "<Item />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -937,7 +937,7 @@
         }
       ],
       "installPath": "/r/kbd.json",
-      "command": "npx @coordiation/cli@latest add component kbd",
+      "command": "npx @coordiation/cli@next add component kbd",
       "import": "@/components/ui/kbd",
       "usage": "<Kbd />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -959,7 +959,7 @@
         }
       ],
       "installPath": "/r/marker.json",
-      "command": "npx @coordiation/cli@latest add component marker",
+      "command": "npx @coordiation/cli@next add component marker",
       "import": "@/components/ui/marker",
       "usage": "<Marker />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -981,7 +981,7 @@
         }
       ],
       "installPath": "/r/menubar.json",
-      "command": "npx @coordiation/cli@latest add component menubar",
+      "command": "npx @coordiation/cli@next add component menubar",
       "import": "@/components/ui/menubar",
       "usage": "<Menubar />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1003,7 +1003,7 @@
         }
       ],
       "installPath": "/r/message.json",
-      "command": "npx @coordiation/cli@latest add component message",
+      "command": "npx @coordiation/cli@next add component message",
       "import": "@/components/ui/message",
       "usage": "<Message />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1025,7 +1025,7 @@
         }
       ],
       "installPath": "/r/message-scroller.json",
-      "command": "npx @coordiation/cli@latest add component message-scroller",
+      "command": "npx @coordiation/cli@next add component message-scroller",
       "import": "@/components/ui/message-scroller",
       "usage": "<MessageScroller />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1047,7 +1047,7 @@
         }
       ],
       "installPath": "/r/native-select.json",
-      "command": "npx @coordiation/cli@latest add component native-select",
+      "command": "npx @coordiation/cli@next add component native-select",
       "import": "@/components/ui/native-select",
       "usage": "<NativeSelect />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1069,7 +1069,7 @@
         }
       ],
       "installPath": "/r/navigation-menu.json",
-      "command": "npx @coordiation/cli@latest add component navigation-menu",
+      "command": "npx @coordiation/cli@next add component navigation-menu",
       "import": "@/components/ui/navigation-menu",
       "usage": "<NavigationMenu />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1091,7 +1091,7 @@
         }
       ],
       "installPath": "/r/pagination.json",
-      "command": "npx @coordiation/cli@latest add component pagination",
+      "command": "npx @coordiation/cli@next add component pagination",
       "import": "@/components/ui/pagination",
       "usage": "<Pagination />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1113,7 +1113,7 @@
         }
       ],
       "installPath": "/r/popover.json",
-      "command": "npx @coordiation/cli@latest add component popover",
+      "command": "npx @coordiation/cli@next add component popover",
       "import": "@/components/ui/popover",
       "usage": "<Popover />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1135,7 +1135,7 @@
         }
       ],
       "installPath": "/r/progress.json",
-      "command": "npx @coordiation/cli@latest add component progress",
+      "command": "npx @coordiation/cli@next add component progress",
       "import": "@/components/ui/progress",
       "usage": "<Progress />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1157,7 +1157,7 @@
         }
       ],
       "installPath": "/r/questionnaire.json",
-      "command": "npx @coordiation/cli@latest add component questionnaire",
+      "command": "npx @coordiation/cli@next add component questionnaire",
       "import": "@/components/ui/questionnaire",
       "usage": "<Questionnaire />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1179,7 +1179,7 @@
         }
       ],
       "installPath": "/r/radio-group.json",
-      "command": "npx @coordiation/cli@latest add component radio-group",
+      "command": "npx @coordiation/cli@next add component radio-group",
       "import": "@/components/ui/radio-group",
       "usage": "<RadioGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1201,7 +1201,7 @@
         }
       ],
       "installPath": "/r/resizable.json",
-      "command": "npx @coordiation/cli@latest add component resizable",
+      "command": "npx @coordiation/cli@next add component resizable",
       "import": "@/components/ui/resizable",
       "usage": "<Resizable />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1223,7 +1223,7 @@
         }
       ],
       "installPath": "/r/scroll-area.json",
-      "command": "npx @coordiation/cli@latest add component scroll-area",
+      "command": "npx @coordiation/cli@next add component scroll-area",
       "import": "@/components/ui/scroll-area",
       "usage": "<ScrollArea />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1245,7 +1245,7 @@
         }
       ],
       "installPath": "/r/select.json",
-      "command": "npx @coordiation/cli@latest add component select",
+      "command": "npx @coordiation/cli@next add component select",
       "import": "@/components/ui/select",
       "usage": "<Select />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1267,7 +1267,7 @@
         }
       ],
       "installPath": "/r/sheet.json",
-      "command": "npx @coordiation/cli@latest add component sheet",
+      "command": "npx @coordiation/cli@next add component sheet",
       "import": "@/components/ui/sheet",
       "usage": "<Sheet />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1289,7 +1289,7 @@
         }
       ],
       "installPath": "/r/sidebar.json",
-      "command": "npx @coordiation/cli@latest add component sidebar",
+      "command": "npx @coordiation/cli@next add component sidebar",
       "import": "@/components/ui/sidebar",
       "usage": "<SidebarProvider />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1311,7 +1311,7 @@
         }
       ],
       "installPath": "/r/slider.json",
-      "command": "npx @coordiation/cli@latest add component slider",
+      "command": "npx @coordiation/cli@next add component slider",
       "import": "@/components/ui/slider",
       "usage": "<Slider />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1333,7 +1333,7 @@
         }
       ],
       "installPath": "/r/toast.json",
-      "command": "npx @coordiation/cli@latest add component toast",
+      "command": "npx @coordiation/cli@next add component toast",
       "import": "@/components/ui/toast",
       "usage": "<ToastProvider />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1355,7 +1355,7 @@
         }
       ],
       "installPath": "/r/toggle.json",
-      "command": "npx @coordiation/cli@latest add component toggle",
+      "command": "npx @coordiation/cli@next add component toggle",
       "import": "@/components/ui/toggle",
       "usage": "<Toggle />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1377,7 +1377,7 @@
         }
       ],
       "installPath": "/r/toggle-group.json",
-      "command": "npx @coordiation/cli@latest add component toggle-group",
+      "command": "npx @coordiation/cli@next add component toggle-group",
       "import": "@/components/ui/toggle-group",
       "usage": "<ToggleGroup />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1399,7 +1399,7 @@
         }
       ],
       "installPath": "/r/tooltip.json",
-      "command": "npx @coordiation/cli@latest add component tooltip",
+      "command": "npx @coordiation/cli@next add component tooltip",
       "import": "@/components/ui/tooltip",
       "usage": "<Tooltip />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."
@@ -1421,7 +1421,7 @@
         }
       ],
       "installPath": "/r/typography.json",
-      "command": "npx @coordiation/cli@latest add component typography",
+      "command": "npx @coordiation/cli@next add component typography",
       "import": "@/components/ui/typography",
       "usage": "<TypographyH1 />",
       "accessibility": "Uses semantic HTML, preserves keyboard operation, exposes visible focus, and keeps accessible naming under consumer control."

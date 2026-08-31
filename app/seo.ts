@@ -109,6 +109,8 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/docs/installation/using-svelte",
   "/docs/installation/using-vite",
   "/docs/installation/using-wordpress",
+  "/docs/migration/1.0-rc",
+  "/docs/releases/1.0.0-rc.1",
   "/docs/themes",
   "/docs/tooling/agent-context",
   "/docs/tooling/css-toolchain",

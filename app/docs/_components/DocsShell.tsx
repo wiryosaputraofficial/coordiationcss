@@ -13,6 +13,7 @@ const navigation = [
   { title: "Icons", items: [["Browse all icons", "/icons"], ["Solar Linear guide", "/docs/icons/solar-linear"], ["Iconsax Line Oval guide", "/docs/icons/iconsax-line-oval"], ["Icon registry", "/icon-registry.json"]] },
   { title: "Components", items: [["Browse components", "/components"], ["Registry guide", "/docs/components"], ["AI component manifest", "/component-registry.json"], ["Coordiation catalog", "/r/registry.json"]] },
   { title: "Themes", items: [["Browse themes", "/themes"], ["Installation guide", "/docs/themes"], ["AI theme manifest", "/theme-registry.json"], ["Theme catalog", "/r/themes/registry.json"]] },
+  { title: "Release & migration", items: [["1.0.0-rc.1 release notes", "/docs/releases/1.0.0-rc.1"], ["Migrate to 1.0 RC", "/docs/migration/1.0-rc"], ["Release Check", "/release-check"], ["Compatibility policy", "/docs/core/compatibility"], ["Upgrade codemods", "/docs/tooling/upgrade"]] },
   { title: "Tooling", items: [["AI agent context", "/docs/tooling/agent-context"], ["CSS toolchain", "/docs/tooling/css-toolchain"], ["Incremental cache", "/docs/tooling/incremental-cache"], ["Source maps", "/docs/tooling/source-maps"], ["IntelliSense & LSP", "/docs/tooling/language-server"], ["Class formatter", "/docs/tooling/formatter"], ["Upgrade & codemods", "/docs/tooling/upgrade"], ["Native scanner", "/docs/tooling/native-scanner"], ["Vite", "/docs/installation/using-vite"], ["PostCSS", "/docs/installation/using-postcss"], ["CLI", "/docs/installation/using-cli"], ["AI integration", "#ai-integration"]] },
 ] as const;
 
@@ -42,7 +43,7 @@ export default function DocsShell({ children }: { children: ReactNode }) {
       </header>
       <div className="reference-layout">
         <aside className="reference-sidebar" aria-label="Documentation sections">
-          <div className="docs-version"><span>Documentation</span><code>feature-complete</code></div>
+          <div className="docs-version"><span>Documentation</span><code>1.0.0-rc.1</code></div>
           {navigation.map((section) => <section key={section.title}><h2>{section.title}</h2><ul>{section.items.map(([label, href]) => <li key={label}><Link prefetch={false} href={href}>{label}</Link></li>)}</ul></section>)}
         </aside>
         <div className="reference-content">{children}</div>
