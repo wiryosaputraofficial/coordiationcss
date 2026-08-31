@@ -21,9 +21,10 @@ function ArticleArt({ post, compact = false }: { post: BlogPost; compact?: boole
 }
 
 export default function BlogsPage() {
-  const featured = blogPosts[0];
-  const latest = blogPosts.slice(1, 4);
-  const systems = blogPosts.slice(4);
+  const orderedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
+  const featured = orderedPosts[0];
+  const latest = orderedPosts.slice(1, 4);
+  const systems = orderedPosts.slice(4);
   return (
     <main className="blogs-page" id="top">
       <header className="site-header blogs-header">
@@ -35,7 +36,7 @@ export default function BlogsPage() {
 
       <section className="blogs-hero co-grid co-overflow-hidden">
         <div className="blogs-hero-copy">
-          <p className="blogs-kicker"><span>CO</span> FIELD NOTES · ISSUE 001</p>
+          <p className="blogs-kicker"><span>CO</span> {String(blogPosts.length).padStart(2, "0")} FIELD NOTES · JOURNAL</p>
           <h1>Ideas for building<br /><em>useful products.</em></h1>
           <p>Practical writing about product contracts, interface systems, AI-agent workflows, and the decisions that carry good work from an idea into production.</p>
           <a className="blogs-text-link co-inline-flex co-items-center" href="#featured">Read the latest note <SolarIcon name="arrow-down" size={16} /></a>
@@ -49,9 +50,9 @@ export default function BlogsPage() {
       </section>
 
       <section className="blogs-featured" id="featured" aria-labelledby="featured-title">
-        <div className="blogs-section-heading co-flex co-items-end co-justify-between"><div><p className="blogs-kicker">FEATURED FIELD NOTE</p><h2 id="featured-title">Start with the contract.</h2></div><span>{featured.readingTime} · {featured.category}</span></div>
+        <div className="blogs-section-heading co-flex co-items-end co-justify-between"><div><p className="blogs-kicker">FEATURED FIELD NOTE</p><h2 id="featured-title">The latest field note.</h2></div><span>{featured.readingTime} · {featured.category}</span></div>
         <article className="blogs-feature-card co-grid">
-          <div className="blogs-feature-art co-relative co-overflow-hidden" aria-hidden="true"><span>SPEC</span><span>PRD</span><span>UX</span><span>QA</span><strong>01</strong></div>
+          <div className="blogs-feature-art co-relative co-overflow-hidden" aria-hidden="true"><span>SPEC</span><span>UX</span><span>BUILD</span><span>QA</span><strong>{featured.number}</strong></div>
           <div className="blogs-feature-copy co-flex"><ArticleMeta post={featured} /><h3>{featured.title}</h3><p>{featured.dek}</p><Link className="blogs-read-link co-inline-flex co-items-center" href={`/blogs/${featured.slug}`}>Read the field note <SolarIcon name="arrow-right" size={16} /></Link></div>
         </article>
       </section>

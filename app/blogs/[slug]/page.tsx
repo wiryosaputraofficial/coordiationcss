@@ -22,7 +22,13 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) notFound();
-  const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const related = blogPosts
+    .filter((item) => item.slug !== post.slug)
+    .sort((a, b) => {
+      const score = (candidate: typeof a) => candidate.keywords.filter((keyword) => post.keywords.includes(keyword)).length;
+      return score(b) - score(a) || b.date.localeCompare(a.date);
+    })
+    .slice(0, 2);
   const articleJsonLd = { "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.dek, datePublished: post.date, dateModified: post.date, mainEntityOfPage: `${SITE_URL}/blogs/${post.slug}`, author: { "@type": "Person", name: "Wiryo Saputra", url: SITE_URL }, publisher: { "@type": "Organization", name: "Coordiation", url: SITE_URL }, keywords: post.keywords.join(", ") };
   return <main className="blog-article-page" id="top">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }} />
