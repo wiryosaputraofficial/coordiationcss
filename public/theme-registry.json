@@ -626,7 +626,7 @@
           "target": "public/icons/solar-linear/letter.svg"
         }
       ],
-      "coordiationUtilityCount": 30,
+      "coordiationUtilityCount": 42,
       "ai": {
         "selectionKey": "industrial-forge",
         "sourceOwnership": "open-code",
