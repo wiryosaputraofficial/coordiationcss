@@ -83,6 +83,13 @@ export function createSeoMetadata({ path, ...metadata }: SeoMetadataInput): Meta
 
 export const STATIC_INDEXABLE_ROUTES = [
   "/",
+  "/blogs",
+  "/blogs/why-ai-agents-need-product-contracts",
+  "/blogs/from-specification-to-production",
+  "/blogs/zero-browser-runtime-design-constraint",
+  "/blogs/open-code-components-are-easier-to-audit",
+  "/blogs/a-registry-is-a-promise-not-a-catalog",
+  "/blogs/what-coordination-stable-one-needs",
   "/cookbook",
   "/components",
   "/docs",

@@ -12,6 +12,7 @@
   <a href="https://coordiation.com/">Website</a> ·
   <a href="https://coordiation.com/docs">Documentation</a> ·
   <a href="https://coordiation.com/cookbook">Cookbook</a> ·
+  <a href="https://coordiation.com/blogs">Journal</a> ·
   <a href="https://coordiation.com/components">Components</a> ·
   <a href="https://coordiation.com/themes">Themes</a> ·
   <a href="https://coordiation.com/icons">Icons</a> ·
@@ -398,4 +399,3 @@ This repository does not use the presence of a screenshot or registry record as 
 Coordiation is created by **Wiryo Saputra** to help people and AI agents spend less time rebuilding foundations and more time creating products that are useful to many people.
 
 Contact: [wiryosaputra@coordiation.com](mailto:wiryosaputra@coordiation.com)
-

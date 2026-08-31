@@ -248,14 +248,11 @@ export default function Home() {
           <span className="brand-product">CSS</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#features">Features</a>
-          <a href="#engine">Engine</a>
-          <a href="#integrations">Integrations</a>
           <Link href="/cookbook">Cookbook</Link>
+          <Link href="/blogs">Journal</Link>
           <Link href="/components">Components</Link>
           <Link href="/themes">Themes</Link>
           <Link href="/icons">Icons</Link>
-          <a href="#about">About</a>
           <Link href="/docs">Docs</Link>
           <Link href="/release-check">Release Check</Link>
         </nav>
