@@ -988,6 +988,166 @@
         "frameworkName": "Coordiation CSS",
         "sourceOwnership": "open-code"
       }
+    },
+    {
+      "name": "studio-index",
+      "type": "registry:page",
+      "title": "Studio Index",
+      "description": "A minimal brand and product designer portfolio with an expansive work grid and reusable case-study pages.",
+      "categories": [
+        "portfolio",
+        "brand",
+        "product"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/studio-index/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/studio-index/page.tsx"
+        },
+        {
+          "path": "site/app/themes/studio-index/preview/work/[slug]/page.tsx",
+          "type": "registry:page",
+          "target": "app/studio-index/work/[slug]/page.tsx"
+        },
+        {
+          "path": "site/app/themes/studio-index/preview/studio-index.css",
+          "type": "registry:style",
+          "target": "app/studio-index/studio-index.css"
+        },
+        {
+          "path": "site/app/themes/studio-index/preview/projects.ts",
+          "type": "registry:file",
+          "target": "app/studio-index/projects.ts"
+        },
+        {
+          "path": "site/app/themes/studio-index/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/studio-index/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/studio-index/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/studio-index/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/palette.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/palette.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/code.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/code.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/user.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/user.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/gallery-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/gallery-minimalistic.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/layers-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/layers-minimalistic.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/case-minimalistic.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/case-minimalistic.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/link.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/link.svg"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "meta": {
+        "status": "stable",
+        "copyright": "Coordiation",
+        "framework": "Next.js App Router",
+        "style": "minimal brand and product design portfolio",
+        "palette": "white, ink and project-led colors",
+        "namespace": "studio-index",
+        "classPrefix": "si-",
+        "preview": "/themes/studio-index/preview",
+        "cover": "/themes/studio-index/root-table.jpg",
+        "components": [
+          "StudioHeader",
+          "ProjectCard",
+          "DetailLabel",
+          "ThemeIcon"
+        ],
+        "sections": [
+          "portfolio header",
+          "introduction",
+          "project index",
+          "project metadata",
+          "case-study hero",
+          "project brief",
+          "feature image",
+          "concept",
+          "visual system",
+          "gallery",
+          "outcome",
+          "footer"
+        ],
+        "assets": [
+          "/themes/studio-index/root-table.jpg",
+          "/themes/studio-index/playroom.jpg",
+          "/themes/studio-index/aperture.jpg",
+          "/themes/studio-index/homebase.jpg",
+          "/themes/studio-index/signal.jpg",
+          "/themes/studio-index/sidecar.jpg",
+          "/themes/studio-index/detail-food.jpg",
+          "/themes/studio-index/detail-chef.jpg",
+          "/themes/studio-index/detail-team.jpg",
+          "/themes/studio-index/detail-work.jpg",
+          "/themes/studio-index/detail-material.jpg",
+          "/themes/studio-index/detail-mobile.jpg"
+        ],
+        "frameworkName": "Coordiation CSS",
+        "sourceOwnership": "open-code"
+      }
     }
   ]
 }

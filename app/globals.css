@@ -1147,6 +1147,10 @@ footer > span { justify-self: end; }
 .theme-detail-hero.noir-habitat-detail .component-overline,
 .theme-detail-hero.noir-habitat-detail small { color: #b79c74; }
 .theme-detail-hero.noir-habitat-detail .theme-tags span { border-color: #555; color: #f6f4ef; }
+.theme-detail-hero.studio-index-detail { background: #f1f1f3; color: #111; }
+.theme-detail-hero.studio-index-detail .component-overline,
+.theme-detail-hero.studio-index-detail small { color: #555; }
+.theme-detail-hero.studio-index-detail .theme-tags span { border-color: #aaa; color: #111; }
 .theme-detail-hero h1 { margin: 18px 0 24px; font-family: Georgia, serif; font-size: clamp(68px, 9vw, 132px); font-weight: 400; line-height: .85; letter-spacing: -.075em; }
 .theme-detail-hero > div:first-child > p:last-of-type { max-width: 760px; font-size: 15px; line-height: 1.7; }
 .theme-detail-hero .theme-tags { margin-bottom: 0; }
