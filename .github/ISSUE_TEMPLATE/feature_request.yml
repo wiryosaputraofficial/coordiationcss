@@ -1,0 +1,46 @@
+name: Feature request
+description: Propose a bounded Coordiation improvement with a concrete user outcome.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who is blocked, what are they trying to accomplish, and why is the current behavior insufficient?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Concrete example
+      description: Show a realistic request, workflow, or source example.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior without prescribing unnecessary implementation details.
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Contract impact
+      description: Note effects on capabilities, registries, AI context, accessibility, compatibility, or release gates.
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Suggested default
+      description: If users must make a choice, propose a safe recommended default and explain why.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and documentation.
+          required: true
+        - label: This request has one clear user outcome.
+          required: true
+
