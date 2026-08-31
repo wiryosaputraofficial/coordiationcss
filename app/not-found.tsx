@@ -41,6 +41,7 @@ export default function NotFound() {
         </Link>
         <nav aria-label="Main navigation">
           <Link href="/docs">Documentation</Link>
+          <Link href="/blogs">Blogs</Link>
           <Link href="/components">Components</Link>
           <Link href="/themes">Themes</Link>
           <Link href="/icons">Icons</Link>

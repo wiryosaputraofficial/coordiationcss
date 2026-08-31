@@ -31,7 +31,7 @@ export default function ReleaseCheckPage() {
           <span>Coordiation</span><span className="brand-product">CSS</span>
         </Link>
         <nav aria-label="Documentation navigation">
-          <a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#ai-access">AI access</a>
+          <a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#ai-access">AI access</a><Link href="/blogs">Blogs</Link>
         </nav>
         <MobileNav />
         <Link className="header-cta" href="/">Back home <SolarIcon name="arrow-to-top-right" size={15} /></Link>

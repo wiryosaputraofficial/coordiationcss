@@ -28,7 +28,7 @@ export default function BlogsPage() {
     <main className="blogs-page" id="top">
       <header className="site-header blogs-header">
         <Link className="brand" href="/" aria-label="Coordiation home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">Journal</span></Link>
-        <nav aria-label="Journal navigation"><Link href="/blogs">Latest</Link><a href="#latest">AI &amp; product</a><a href="#systems">Engineering</a><Link href="/cookbook">Cookbook</Link><Link href="/docs">Docs</Link></nav>
+        <nav aria-label="Journal navigation"><Link href="/blogs">Blogs</Link><a href="#latest">AI &amp; product</a><a href="#systems">Engineering</a><Link href="/cookbook">Cookbook</Link><Link href="/docs">Docs</Link></nav>
         <MobileNav />
         <a className="header-cta co-inline-flex co-items-center" href="#featured">Start reading <SolarIcon name="arrow-down" size={15} /></a>
       </header>
@@ -72,4 +72,3 @@ export default function BlogsPage() {
     </main>
   );
 }
-

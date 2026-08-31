@@ -21,6 +21,7 @@ export default function IconsPage() {
         </Link>
         <nav aria-label="Main navigation">
           <Link href="/">Home</Link>
+          <Link href="/blogs">Blogs</Link>
           <Link href="/themes">Themes</Link>
           <Link href="/docs">Docs</Link>
           <Link href="/docs/icons/iconsax-line-oval">Icon guide</Link>

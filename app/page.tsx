@@ -249,7 +249,7 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <Link href="/cookbook">Cookbook</Link>
-          <Link href="/blogs">Journal</Link>
+          <Link href="/blogs">Blogs</Link>
           <Link href="/components">Components</Link>
           <Link href="/themes">Themes</Link>
           <Link href="/icons">Icons</Link>

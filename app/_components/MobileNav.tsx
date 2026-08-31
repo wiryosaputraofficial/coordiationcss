@@ -5,7 +5,7 @@ const links = [
   ["Home", "/"],
   ["Docs", "/docs"],
   ["Cookbook", "/cookbook"],
-  ["Journal", "/blogs"],
+  ["Blogs", "/blogs"],
   ["Components", "/components"],
   ["Themes", "/themes"],
   ["Icons", "/icons"],

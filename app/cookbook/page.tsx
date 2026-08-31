@@ -82,7 +82,7 @@ export default function CookbookPage() {
     <main className="cookbook-page" id="top">
       <header className="site-header cookbook-header">
         <Link className="brand" href="/" aria-label="Coordiation CSS home"><img src="/coordiation-logo.png" alt="" /><span>Coordiation</span><span className="brand-product">CSS</span></Link>
-        <nav aria-label="Cookbook navigation"><a href="#architecture">Architecture</a><a href="#setup">Setup</a><a href="#assemble">Final assembly</a><Link href="/docs">Docs</Link></nav>
+        <nav aria-label="Cookbook navigation"><a href="#architecture">Architecture</a><a href="#setup">Setup</a><a href="#assemble">Final assembly</a><Link href="/blogs">Blogs</Link><Link href="/docs">Docs</Link></nav>
         <MobileNav />
         <a className="header-cta" href="#setup">Start recipe <SolarIcon name="arrow-down" size={15} /></a>
       </header>
