@@ -150,7 +150,7 @@ const integrations = [
   { name: "PostCSS", label: "Pipeline", description: "A standard PostCSS 8 adapter with dependency messages, warnings, and multi-entry safety.", href: "/docs/installation/using-postcss", code: "@coordiation/postcss" },
   { name: "CLI", label: "Standalone", description: "One-shot builds and durable watch mode with atomic output and no bundler requirement.", href: "/docs/installation/using-cli", code: "coordiation-css" },
   { name: "Language Server", label: "Editor", description: "Completion, compiler-authored hover previews, project configuration, and actionable diagnostics over LSP 3.17.", href: "/docs/tooling/language-server", code: "@coordiation/language-server" },
-  { name: "Agent Context", label: "Release candidate", description: "Compact project manifests and task packs expose only the components, utility hints, rules, and checks an agent needs.", href: "/docs/tooling/agent-context", code: "@coordiation/agent" },
+  { name: "Agent Context", label: "AI-native", description: "Compact project manifests and task packs expose only the components, utility hints, rules, and checks an agent needs.", href: "/docs/tooling/agent-context", code: "@coordiation/agent" },
   { name: "Formatter", label: "Canonical", description: "Stable class sorting powered by the same candidate ordering used by the compiler.", href: "/docs/tooling/formatter", code: "@coordiation/formatter" },
   { name: "Upgrade", label: "Migration", description: "Versioned, idempotent codemods with exact edits, dry runs, JSON plans, and deprecation ownership.", href: "/docs/tooling/upgrade", code: "@coordiation/upgrade" },
   { name: "Oxide", label: "Native", description: "An optional C11 scanner for Linux, macOS, and Windows with explicit JavaScript fallback.", href: "/docs/tooling/native-scanner", code: "@coordiation/oxide" },
@@ -165,7 +165,7 @@ export default function Home() {
     <main>
       <div className="announcement">
         <span className="announcement-dot" />
-        {completeCapabilityCount} capabilities complete · {inProgressCapabilityCount} release candidate
+        {inProgressCapabilityCount ? `${completeCapabilityCount} capabilities complete · ${inProgressCapabilityCount} in progress` : `All ${completeCapabilityCount} tracked capabilities are complete`}
         <Link href="/release-check">View release readiness <SolarIcon name="arrow-right" size={14} /></Link>
       </div>
 
@@ -198,7 +198,7 @@ export default function Home() {
           <h1>Build interfaces.<br /><em>Keep the system.</em></h1>
           <p>
             A complete utility-first CSS system for Coordiation. Build responsive,
-            accessible interfaces with {completeCapabilityCount} verified capabilities, twelve official packages,
+            accessible interfaces with {completeCapabilityCount} verified capabilities, thirteen official packages,
             CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">

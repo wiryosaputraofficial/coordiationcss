@@ -12,14 +12,16 @@ export default function AgentContextPage() {
   return (
     <article className="docs-article vite-guide">
       <div className="docs-breadcrumb"><Link prefetch={false} href="/docs">Docs</Link><b>/</b><span>Tooling</span><b>/</b><span>AI agent context</span></div>
-      <p className="docs-overline">TOOLING · RELEASE CANDIDATE</p>
+      <p className="docs-overline">TOOLING · PUBLIC NPM PACKAGES</p>
       <h1>Give agents less context and better constraints</h1>
       <p className="docs-lead">Coordiation turns project structure, literal utilities, component choices, and delivery rules into a compact machine-readable contract. An agent can start with the exact task context instead of repeatedly reading the complete repository and documentation.</p>
       <div className="docs-note"><span>i</span><p>The compact manifest for the Coordiation workspace is currently about 631 estimated tokens. This is a context-size estimate, not a guaranteed monetary saving; cost improvements must be measured with repeatable agent evaluations.</p></div>
 
       <section className="family-concepts" id="flow"><div><p className="docs-overline">ONE DETERMINISTIC FLOW</p><h2>Inspect, narrow, build, verify</h2><p>Every phase produces data that another tool or agent can inspect.</p></div><ol><li><span>01</span><p><strong>Inspect:</strong> identify the framework, package manager, installed Coordiation packages, literal candidates, and actionable warnings.</p></li><li><span>02</span><p><strong>Narrow:</strong> select a task pack such as <code>pricing</code>, <code>form</code>, or <code>dashboard</code>.</p></li><li><span>03</span><p><strong>Build:</strong> reuse registered components and emit literal <code>co-*</code> classes under explicit contracts.</p></li><li><span>04</span><p><strong>Verify:</strong> run the pack&apos;s accessibility, responsive, content, and build checks.</p></li></ol></section>
 
-      <section className="guide-step" id="inspect"><div className="step-number">01</div><div><h2>Inspect the current project</h2><CodeBlock title="Terminal" code={`npx @coordiation/cli inspect
+      <section className="guide-step" id="inspect"><div className="step-number">01</div><div><h2>Install and inspect the current project</h2><CodeBlock title="Terminal" code={`npm install -D @coordiation/agent @coordiation/cli
+
+npx @coordiation/cli inspect
 npx @coordiation/cli inspect --write`} /><p>The first command prints a short human summary. The second writes <code>.coordiation/agent-manifest.json</code>, which can be committed so humans, CI, and agents can track changes to the project contract.</p></div></section>
 
       <section className="guide-step" id="manifest"><div className="step-number">02</div><div><h2>Read the compact manifest first</h2><CodeBlock title=".coordiation/agent-manifest.json" code={`{
@@ -68,7 +70,7 @@ npx @coordiation/cli inspect --write`} /><p>The first command prints a short hum
 
       <section className="family-caveats" id="contracts"><div><p className="docs-overline">AGENT CONTRACTS</p><h2>Make generated work easy to audit</h2><p>These constraints stay stable across frameworks and task packs.</p></div><ul><li>Use literal static class candidates; report dynamic interpolation instead of guessing its runtime values.</li><li>Prefer Coordiation components and icon packages before adding another UI dependency.</li><li>Preserve zero browser runtime for the CSS utility engine.</li><li>Respect responsive layouts, keyboard access, contrast, and reduced-motion preferences.</li><li>Use Coordiation copyright in every installable application theme.</li><li>Keep warnings visible in the manifest until their cause is resolved.</li></ul></section>
 
-      <section className="family-caveats" id="release-status"><div><p className="docs-overline">RELEASE STATUS</p><h2>MVP implemented; public package release pending</h2><p>The source and automated tests are complete for the first usable slice.</p></div><ul><li><code>@coordiation/agent</code> contains the schema, project inspector, and task context packs.</li><li><code>@coordiation/cli</code> exposes <code>inspect</code> and <code>context</code>.</li><li>The next gate is a coordinated public npm release of both packages.</li><li>After publication, framework-by-framework evaluations will measure context size, task success, latency, and actual token usage.</li></ul></section>
+      <section className="family-caveats" id="release-status"><div><p className="docs-overline">RELEASE STATUS</p><h2>Available publicly from npm</h2><p>The first usable agent-context slice is documented, tested, and versioned.</p></div><ul><li><code>@coordiation/agent@0.1.0</code> contains the schema, project inspector, and task context packs.</li><li><code>@coordiation/cli@0.2.0</code> exposes <code>inspect</code> and <code>context</code>.</li><li>Both packages are public under the official <code>@coordiation</code> npm scope.</li><li>Framework-by-framework evaluations will continue measuring context size, task success, latency, and actual token usage.</li></ul></section>
 
       <div className="docs-next split"><Link prefetch={false} href="/docs/tooling/language-server"><span>Previous</span><b>← IntelliSense &amp; LSP</b></Link><Link prefetch={false} href="/release-check"><span>Track release</span><b>Release Check →</b></Link></div>
     </article>
