@@ -4,6 +4,9 @@ import { createSeoMetadata } from "@/app/seo";
 import MobileNav from "./_components/MobileNav";
 import SolarIcon from "./_components/SolarIcon";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
+import componentRegistry from "./docs/generated/component-registry.json";
+import iconRegistry from "./docs/generated/icon-registry.json";
+import themeRegistry from "./docs/generated/theme-registry.json";
 import registry from "./docs/generated/utility-registry.json";
 
 export const metadata: Metadata = createSeoMetadata({
@@ -25,6 +28,9 @@ const familyCount = registry.families.length;
 const verifiedExampleCount = registry.families.reduce((total, family) => total + family.resolvedExamples.length, 0);
 const completeCapabilityCount = capabilities.filter((capability) => capability.status === "complete").length;
 const inProgressCapabilityCount = capabilities.filter((capability) => capability.status === "partial").length;
+const componentCount = componentRegistry.componentCount;
+const iconCount = iconRegistry.iconCount;
+const themeCount = themeRegistry.themeCount;
 
 function combinedStatus(ids: readonly string[]): CapabilityStatus {
   const statuses = ids.map((id) => capabilities.find((capability) => capability.id === id)?.status ?? "planned");
@@ -41,6 +47,49 @@ const utilities = [
   "md:co-grid-cols-3",
   "dark:co-text-white",
 ];
+
+const featuredAdvantages = [
+  {
+    index: "01",
+    eyebrow: "AI-NATIVE CONTEXT",
+    metric: "TASK-SCOPED",
+    title: "Give agents the brief, not the whole codebase.",
+    description:
+      "Generate compact manifests and task packs with only the components, utility hints, rules, files, and checks an agent needs for the work in front of it.",
+    href: "/docs/tooling/agent-context",
+    link: "Explore agent context",
+  },
+  {
+    index: "02",
+    eyebrow: "STATIC BY DEFAULT",
+    metric: "0 KB RUNTIME",
+    title: "Ship deterministic CSS without browser-side machinery.",
+    description:
+      "Coordiation scans literal candidates at build time and emits static CSS. The result is predictable, inspectable, and independent of a client runtime.",
+    href: "/docs",
+    link: "See the compiler",
+  },
+  {
+    index: "03",
+    eyebrow: "OWNED UI SOURCE",
+    metric: `${componentCount} · ${iconCount.toLocaleString("en-US")} · ${themeCount}`,
+    title: "Start with a complete visual vocabulary.",
+    description:
+      "Install open-code components, first-party icon collections, and complete themes that already use Coordiation classes and machine-readable contracts.",
+    href: "/components",
+    link: "Browse the UI system",
+  },
+  {
+    index: "04",
+    eyebrow: "ONE SOURCE OF TRUTH",
+    metric: `${completeCapabilityCount} VERIFIED`,
+    title: "Keep docs, agents, and generated CSS in agreement.",
+    description:
+      "The compiler, documentation, examples, release checks, and APIs are published from tested registries instead of separate hand-maintained promises.",
+    href: "/release-check",
+    link: "Open release check",
+  },
+] as const;
 
 const featureGroups = [
   {
@@ -198,7 +247,7 @@ export default function Home() {
           <h1>Build interfaces.<br /><em>Keep the system.</em></h1>
           <p>
             A complete utility-first CSS system for Coordiation. Build responsive,
-            accessible interfaces with {completeCapabilityCount} verified capabilities, thirteen official packages,
+            accessible interfaces with {completeCapabilityCount} verified capabilities, {integrations.length} official packages,
             CSS-first tokens, and machine-readable tooling.
           </p>
           <div className="hero-actions">
@@ -253,6 +302,27 @@ export default function Home() {
         <div><strong>{familyCount}</strong><span>Complete families</span><p>Every family is documented and registry-backed.</p></div>
         <div><strong>{verifiedExampleCount}</strong><span>Verified examples</span><p>Broken examples fail registry generation.</p></div>
         <div><strong>{completeCapabilityCount}</strong><span>Complete capabilities</span><p>Published through the machine-readable API.</p></div>
+        <div className="homepage-stat-product"><strong>{iconCount.toLocaleString("en-US")}</strong><span>Coordiation icons</span><p>Solar Linear and Iconsax Line Oval, ready to import.</p></div>
+        <div className="homepage-stat-product"><strong>{componentCount}</strong><span>Open-code components</span><p>Accessible source you can install, inspect, and own.</p></div>
+        <div className="homepage-stat-product"><strong>{themeCount}</strong><span>Complete themes</span><p>Responsive application starting points built with Coordiation.</p></div>
+      </section>
+
+      <section className="homepage-advantages" aria-labelledby="advantages-heading">
+        <div className="homepage-advantages-heading">
+          <p className="kicker kicker-light">WHY COORDIATION</p>
+          <h2 id="advantages-heading">Move faster.<br />Keep every decision.</h2>
+          <p>Coordiation gives human and AI teams one compact, verifiable system for moving from an idea to a production interface without rebuilding the foundation.</p>
+        </div>
+        <div className="homepage-advantage-grid">
+          {featuredAdvantages.map((feature) => (
+            <article className="homepage-advantage-card" key={feature.index}>
+              <div><span>{feature.index} · {feature.eyebrow}</span><b>{feature.metric}</b></div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+              <Link href={feature.href}>{feature.link} <SolarIcon name="arrow-to-top-right" size={15} /></Link>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section features-section" id="features">

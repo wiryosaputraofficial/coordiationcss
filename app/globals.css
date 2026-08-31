@@ -121,12 +121,31 @@ pre { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
 .not-found-destination-grid p { max-width: 270px; margin: 0; color: #777; font-size: 12px; line-height: 1.65; }
 .not-found-destination-grid b { position: absolute; right: 24px; bottom: 23px; }
 .not-found-footer .brand { color: #111; }
-.homepage-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
-.homepage-stats > div { min-height: 210px; padding: 27px clamp(20px, 3vw, 42px); display: flex; flex-direction: column; border-right: 1px solid var(--line); }
-.homepage-stats > div:last-child { border-right: 0; }
+.homepage-stats { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.homepage-stats > div { min-width: 0; min-height: 210px; padding: 27px clamp(20px, 3vw, 42px); grid-column: span 3; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
+.homepage-stats > div:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+.homepage-stats > div:nth-child(4), .homepage-stats > div:last-child { border-right: 0; }
+.homepage-stats > div:nth-child(n+5) { grid-column: span 4; }
 .homepage-stats strong { font-size: clamp(46px, 5vw, 74px); line-height: 1; letter-spacing: -.07em; }
 .homepage-stats span { margin-top: 17px; font-family: var(--font-geist-mono); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
 .homepage-stats p { margin: auto 0 0; max-width: 240px; color: #777; font-size: 10px; line-height: 1.55; }
+.homepage-stat-product { background: #0a0a0a; color: #fff; border-color: #333 !important; }
+.homepage-stat-product p { color: #92928d; }
+
+.homepage-advantages { padding: 130px clamp(24px, 6vw, 96px); background: #0a0a0a; color: #fff; }
+.homepage-advantages-heading { display: grid; grid-template-columns: .7fr 1.3fr 1fr; align-items: end; gap: 50px; margin-bottom: 70px; }
+.homepage-advantages-heading h2 { margin: 0; font-size: clamp(44px, 5vw, 78px); line-height: .98; letter-spacing: -.06em; }
+.homepage-advantages-heading > p:last-child { margin: 0; color: #999; font-size: 15px; line-height: 1.7; }
+.homepage-advantage-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid #444; }
+.homepage-advantage-card { min-height: 410px; padding: 29px; display: flex; flex-direction: column; border-right: 1px solid #333; border-bottom: 1px solid #333; }
+.homepage-advantage-card:nth-child(2n) { border-right: 0; }
+.homepage-advantage-card:nth-last-child(-n+2) { border-bottom: 0; }
+.homepage-advantage-card > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #8e8e89; font-family: var(--font-geist-mono); font-size: 10px; letter-spacing: .08em; }
+.homepage-advantage-card > div b { color: #fff; font-size: 10px; font-weight: 600; white-space: nowrap; }
+.homepage-advantage-card h3 { max-width: 610px; margin: 64px 0 16px; font-size: clamp(29px, 3.2vw, 47px); line-height: 1; letter-spacing: -.055em; }
+.homepage-advantage-card > p { max-width: 580px; margin: 0; color: #999; font-size: 13px; line-height: 1.7; }
+.homepage-advantage-card > a { margin-top: auto; padding-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #333; color: #fff; font-size: 12px; font-weight: 700; }
+.homepage-advantage-card > a:hover { color: #c8c8c3; }
 
 .section { padding: 130px clamp(24px, 6vw, 96px); }
 .section-heading { display: grid; grid-template-columns: .7fr 1.3fr 1fr; align-items: end; gap: 50px; margin-bottom: 70px; }
@@ -790,13 +809,13 @@ footer > span { justify-self: end; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { max-width: 800px; }
   .hero-demo { max-width: 720px; }
-  .section-heading, .section-heading.compact { grid-template-columns: 1fr; gap: 20px; }
+  .section-heading, .section-heading.compact, .homepage-advantages-heading { grid-template-columns: 1fr; gap: 20px; }
   .section-heading > p:last-child { max-width: 650px; }
   .engine-section, .roadmap-section { grid-template-columns: 1fr; }
   .engine-copy { max-width: 620px; }
-  .homepage-stats { grid-template-columns: repeat(2, 1fr); }
-  .homepage-stats > div:nth-child(2) { border-right: 0; }
-  .homepage-stats > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .homepage-stats > div, .homepage-stats > div:nth-child(n+5) { grid-column: span 6; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .homepage-stats > div:nth-child(2n) { border-right: 0; }
+  .homepage-stats > div:last-child { grid-column: 1 / -1; border-right: 0; border-bottom: 0; }
   .ai-native-section { grid-template-columns: 1fr; }
   .ai-native-section > div:first-child { max-width: 720px; }
   .docs-hero { grid-template-columns: 1fr; }
@@ -870,9 +889,14 @@ footer > span { justify-self: end; }
   .utility-marquee { grid-template-columns: 130px 1fr; }
   .marquee-label { padding-left: 15px; font-size: 8px; }
   .section { padding: 90px 20px; }
-  .homepage-stats { grid-template-columns: 1fr; }
-  .homepage-stats > div { min-height: 160px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .homepage-stats > div, .homepage-stats > div:nth-child(n+5), .homepage-stats > div:last-child { min-height: 160px; grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); }
   .homepage-stats > div:last-child { border-bottom: 0; }
+  .homepage-advantages { padding: 90px 20px; }
+  .homepage-advantage-grid { grid-template-columns: 1fr; }
+  .homepage-advantage-card, .homepage-advantage-card:nth-child(2n) { min-height: 390px; border-right: 0; border-bottom: 1px solid #333; }
+  .homepage-advantage-card:last-child { border-bottom: 0; }
+  .homepage-advantage-card > div { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .homepage-advantage-card h3 { margin-top: 45px; }
   .showcase-grid { grid-template-columns: 1fr; }
   .showcase-card, .showcase-card:nth-child(odd) { min-height: 460px; border-right: 0; border-bottom: 1px solid var(--line); }
   .showcase-ai { grid-column: auto; border-bottom: 0; }
