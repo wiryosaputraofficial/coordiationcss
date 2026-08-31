@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import ThemeIcon, { type ThemeIconName } from "./ThemeIcon";
 
-export function ForgeButton({ href, children, inverse = false }: { href: string; children: ReactNode; inverse?: boolean }) {
-  return <a className={`if-button co-inline-flex co-items-center co-justify-between co-transition co-duration-300 co-ease-out motion-reduce:co-animate-none${inverse ? " is-inverse" : ""}`} href={href}>{children}<ThemeIcon name="arrow-right" size={17} tone={inverse ? "dark" : "light"} /></a>;
+export function ForgeButton({ href, children, inverse = false, light = false }: { href: string; children: ReactNode; inverse?: boolean; light?: boolean }) {
+  return <a className={`if-button co-inline-flex co-items-center co-justify-between co-transition co-duration-300 co-ease-out motion-reduce:co-animate-none${inverse ? " is-inverse" : ""}${light ? " is-light" : ""}`} href={href}>{children}<ThemeIcon name="arrow-right" size={17} tone={light ? "dark" : "light"} /></a>;
 }
 
 export function SectionLabel({ children, light = false }: { children: ReactNode; light?: boolean }) {

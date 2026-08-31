@@ -26,6 +26,8 @@
 
 .industrial-forge .if-button{color:#fff}
 .industrial-forge .if-button.is-inverse{color:#fff}
+.industrial-forge .if-button.is-light{background:#fff;border-color:#fff;color:#111}
+.industrial-forge .if-button.is-light:hover{background:#111;border-color:#111;color:#fff}
 .if-service-card:hover{transform:translateY(-6px)}
 .if-service-card section>a:hover{background:#fff;transform:rotate(8deg)}
 .industrial-forge .if-contact-button{color:#111}
