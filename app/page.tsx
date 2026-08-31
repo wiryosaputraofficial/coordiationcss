@@ -3,6 +3,7 @@ import Link from "@/app/_components/SiteLink";
 import { createSeoMetadata } from "@/app/seo";
 import MobileNav from "./_components/MobileNav";
 import SolarIcon from "./_components/SolarIcon";
+import ThemeCarousel, { type ThemeCarouselSlide } from "./_components/ThemeCarousel";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
 import componentRegistry from "./docs/generated/component-registry.json";
 import iconRegistry from "./docs/generated/icon-registry.json";
@@ -31,6 +32,28 @@ const inProgressCapabilityCount = capabilities.filter((capability) => capability
 const componentCount = componentRegistry.componentCount;
 const iconCount = iconRegistry.iconCount;
 const themeCount = themeRegistry.themeCount;
+
+const themeVisuals: Record<string, Pick<ThemeCarouselSlide, "accent" | "contrast">> = {
+  "editorial-advisor": { accent: "#f1d6a8", contrast: "light" },
+  "quiet-journal": { accent: "#d86d3b", contrast: "light" },
+  "finance-dashboard": { accent: "#5c55f5", contrast: "dark" },
+  "industrial-forge": { accent: "#ff4a12", contrast: "dark" },
+  "mono-portfolio": { accent: "#c9ff2f", contrast: "light" },
+  "noir-habitat": { accent: "#b79c74", contrast: "dark" },
+  "studio-index": { accent: "#258a54", contrast: "light" },
+};
+
+const themeCarouselSlides: ThemeCarouselSlide[] = themeRegistry.themes.map((theme) => ({
+  name: theme.name,
+  title: theme.title,
+  description: theme.description,
+  cover: theme.cover,
+  preview: theme.preview,
+  detail: `/themes/${theme.name}`,
+  command: theme.command,
+  sections: theme.sections.length,
+  ...(themeVisuals[theme.name] ?? { accent: "#111111", contrast: "dark" }),
+}));
 
 function combinedStatus(ids: readonly string[]): CapabilityStatus {
   const statuses = ids.map((id) => capabilities.find((capability) => capability.id === id)?.status ?? "planned");
@@ -306,6 +329,8 @@ export default function Home() {
         <div className="homepage-stat-product"><strong>{componentCount}</strong><span>Open-code components</span><p>Accessible source you can install, inspect, and own.</p></div>
         <div className="homepage-stat-product"><strong>{themeCount}</strong><span>Complete themes</span><p>Responsive application starting points built with Coordiation.</p></div>
       </section>
+
+      <ThemeCarousel slides={themeCarouselSlides} />
 
       <section className="homepage-advantages" aria-labelledby="advantages-heading">
         <div className="homepage-advantages-heading">
