@@ -119,6 +119,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
+        <script
+          id="buy-me-a-coffee-widget"
+          async
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="coordiation"
+          data-description="Support me on Buy me a coffee!"
+          data-message="Your supports is truly matters."
+          data-color="#5F7FFF"
+          data-position="Right"
+          data-x_margin="18"
+          data-y_margin="18"
+        />
       </body>
     </html>
   );
