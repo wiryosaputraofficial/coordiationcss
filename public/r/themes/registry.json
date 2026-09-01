@@ -1148,6 +1148,182 @@
         "frameworkName": "Coordiation CSS",
         "sourceOwnership": "open-code"
       }
+    },
+    {
+      "name": "signal-agency",
+      "type": "registry:page",
+      "title": "Signal Agency",
+      "description": "A high-contrast digital agency theme for strategy, design, development, growth, and creative studio teams.",
+      "categories": [
+        "agency",
+        "creative",
+        "business"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/signal-agency/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/signal-agency/page.tsx"
+        },
+        {
+          "path": "site/app/themes/signal-agency/preview/signal-agency.css",
+          "type": "registry:style",
+          "target": "app/signal-agency/signal-agency.css"
+        },
+        {
+          "path": "site/app/themes/signal-agency/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/signal-agency/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/signal-agency/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/signal-agency/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/target.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/target.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/graph-new-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/graph-new-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/monitor.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/monitor.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/palette.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/palette.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/code.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/code.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/users-group-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/users-group-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/shield-check.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/shield-check.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/check-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/check-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/play-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/play-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/phone-calling-rounded.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/phone-calling-rounded.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/star.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/star.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "meta": {
+        "status": "stable",
+        "copyright": "Coordiation",
+        "framework": "Next.js App Router",
+        "style": "high-contrast digital creative agency",
+        "palette": "near black, warm white and electric lime",
+        "namespace": "signal-agency",
+        "classPrefix": "sa-",
+        "preview": "/themes/signal-agency/preview",
+        "cover": "/themes/signal-agency/hero-team.jpg",
+        "components": [
+          "AgencyButton",
+          "SectionHeading",
+          "ServiceCard",
+          "ProjectCard",
+          "PlanCard",
+          "TeamCard",
+          "TestimonialCard",
+          "BlogCard",
+          "ThemeIcon"
+        ],
+        "sections": [
+          "header",
+          "hero",
+          "about",
+          "services",
+          "showreel",
+          "benefits",
+          "projects",
+          "client logos",
+          "pricing",
+          "statistics",
+          "team",
+          "testimonials",
+          "journal",
+          "contact",
+          "footer"
+        ],
+        "assets": [
+          "/themes/signal-agency/hero-team.jpg",
+          "/themes/signal-agency/about-team.jpg",
+          "/themes/signal-agency/project-strategy.jpg",
+          "/themes/signal-agency/project-product.jpg",
+          "/themes/signal-agency/project-interface.jpg",
+          "/themes/signal-agency/blog-meeting.jpg",
+          "/themes/signal-agency/team-ana.jpg",
+          "/themes/signal-agency/team-raka.jpg",
+          "/themes/signal-agency/team-nadia.jpg",
+          "/themes/signal-agency/team-bima.jpg"
+        ],
+        "frameworkName": "Coordiation CSS",
+        "sourceOwnership": "open-code"
+      }
     }
   ]
 }

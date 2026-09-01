@@ -43,6 +43,7 @@ const themeVisuals: Record<string, Pick<ThemeCarouselSlide, "accent" | "contrast
   "mono-portfolio": { accent: "#c9ff2f", contrast: "light" },
   "noir-habitat": { accent: "#b79c74", contrast: "dark" },
   "studio-index": { accent: "#258a54", contrast: "light" },
+  "signal-agency": { accent: "#c6ff27", contrast: "dark" },
 };
 
 const themeCarouselSlides: ThemeCarouselSlide[] = themeRegistry.themes.map((theme) => ({
