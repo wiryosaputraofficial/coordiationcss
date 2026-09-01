@@ -15,7 +15,8 @@ export default function DiscussionThread({ initialDiscussion, initialReplies }: 
   const [following, setFollowing] = useState(false);
   const [solved, setSolved] = useState(initialDiscussion.solved);
   const isOwner = Boolean(session?.user.id && initialDiscussion.author.id === session.user.id);
-  const isModerator = session?.user.email?.toLowerCase() === "wiryosaputra@coordiation.com";
+  const sessionUser = session?.user as (typeof session.user & { username?: string; role?: string }) | undefined;
+  const isModerator = sessionUser?.role === "administrator" || sessionUser?.username?.toLowerCase() === "wiryosaputraofficial" || sessionUser?.email?.toLowerCase() === "wiryosaputra@coordiation.com";
 
   async function vote(targetType: "discussion" | "reply", targetId: string) {
     if (!session) return window.location.assign(`/login?returnTo=/discussions/${initialDiscussion.slug}`);

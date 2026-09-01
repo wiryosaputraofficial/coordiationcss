@@ -22,8 +22,21 @@ export const auth = betterAuth({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
       scope: ["read:user", "user:email"],
+      mapProfileToUser: (profile) => {
+        const username = profile.login.toLowerCase();
+        const administrators = (process.env.DISCUSSIONS_ADMIN_GITHUB_USERNAMES || "wiryosaputraofficial")
+          .split(",")
+          .map((value) => value.trim().toLowerCase());
+        return { username, role: administrators.includes(username) ? "administrator" : "member" };
+      },
     },
   } : {},
+  user: {
+    additionalFields: {
+      username: { type: "string", required: false, input: false },
+      role: { type: "string", required: false, input: false, defaultValue: "member" },
+    },
+  },
   account: { accountLinking: { enabled: true, trustedProviders: ["github"] } },
   plugins: [
     magicLink({
@@ -50,11 +63,19 @@ export async function getSession(requestHeaders: Headers) {
   return auth.api.getSession({ headers: requestHeaders });
 }
 
-export function isDiscussionAdmin(email?: string | null) {
-  if (!email) return false;
-  return (process.env.DISCUSSIONS_ADMIN_EMAILS || "wiryosaputra@coordiation.com")
+export function isDiscussionAdmin(user?: { email?: string | null; username?: unknown; role?: unknown } | null) {
+  if (!user) return false;
+  if (user.role === "administrator") return true;
+  const emailAdministrators = (process.env.DISCUSSIONS_ADMIN_EMAILS || "wiryosaputra@coordiation.com")
     .split(",")
     .map((value) => value.trim().toLowerCase())
-    .includes(email.toLowerCase());
+    .filter(Boolean);
+  const usernameAdministrators = (process.env.DISCUSSIONS_ADMIN_GITHUB_USERNAMES || "wiryosaputraofficial")
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+  return Boolean(
+    (user.email && emailAdministrators.includes(user.email.toLowerCase())) ||
+    (typeof user.username === "string" && usernameAdministrators.includes(user.username.toLowerCase()))
+  );
 }
-

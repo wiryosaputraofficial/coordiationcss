@@ -270,3 +270,4 @@
 .discussion-categories nav a{padding-inline:12px;gap:9px}
 .discussion-categories nav a>.site-icon{width:18px;height:18px;flex:0 0 18px}
 .discussion-categories nav a>span:not(.site-icon){min-width:0;flex:1}
+.discussion-account-pending{display:inline-flex;align-items:center;gap:10px;color:#666}

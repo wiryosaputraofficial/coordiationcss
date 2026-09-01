@@ -4,9 +4,15 @@ CREATE TABLE IF NOT EXISTS "user" (
   "email" text NOT NULL UNIQUE,
   "emailVerified" boolean NOT NULL DEFAULT false,
   "image" text,
+  "username" text,
+  "role" text NOT NULL DEFAULT 'member',
   "createdAt" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "updatedAt" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS "username" text;
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS "role" text NOT NULL DEFAULT 'member';
+CREATE UNIQUE INDEX IF NOT EXISTS "user_username_unique_idx" ON "user" (LOWER("username")) WHERE "username" IS NOT NULL;
 
 CREATE TABLE IF NOT EXISTS "session" (
   "id" text PRIMARY KEY,
@@ -22,6 +28,7 @@ CREATE INDEX IF NOT EXISTS "session_userId_idx" ON "session"("userId");
 
 CREATE TABLE IF NOT EXISTS "account" (
   "id" text PRIMARY KEY,
+  "issuer" text NOT NULL,
   "accountId" text NOT NULL,
   "providerId" text NOT NULL,
   "userId" text NOT NULL REFERENCES "user"("id") ON DELETE CASCADE,
@@ -35,7 +42,11 @@ CREATE TABLE IF NOT EXISTS "account" (
   "createdAt" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "updatedAt" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+ALTER TABLE "account" ADD COLUMN IF NOT EXISTS "issuer" text;
+UPDATE "account" SET "issuer" = CASE WHEN "providerId" = 'credential' THEN 'local:credential' ELSE 'local:oauth:' || "providerId" END WHERE "issuer" IS NULL;
+ALTER TABLE "account" ALTER COLUMN "issuer" SET NOT NULL;
 CREATE INDEX IF NOT EXISTS "account_userId_idx" ON "account"("userId");
+CREATE UNIQUE INDEX IF NOT EXISTS "account_issuer_accountId_unique_idx" ON "account"("issuer", "accountId");
 
 CREATE TABLE IF NOT EXISTS "verification" (
   "id" text PRIMARY KEY,

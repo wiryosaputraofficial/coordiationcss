@@ -4,7 +4,7 @@ import { moderateDiscussion } from "@/app/lib/discussions";
 
 export async function POST(request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const session = await getSession(request.headers);
-  if (!session || !isDiscussionAdmin(session.user.email)) return NextResponse.json({ error: "Moderator access required" }, { status: 403 });
+  if (!session || !isDiscussionAdmin(session.user)) return NextResponse.json({ error: "Moderator access required" }, { status: 403 });
   const { slug } = await params;
   const input = await request.json().catch(() => null) as { status?: unknown; note?: unknown } | null;
   if (input?.status !== "open" && input?.status !== "closed" && input?.status !== "hidden") return NextResponse.json({ error: "Invalid status" }, { status: 400 });

@@ -8,7 +8,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ slu
   const { slug } = await params;
   const input = await request.json().catch(() => null) as { replyId?: unknown } | null;
   if (typeof input?.replyId !== "string") return NextResponse.json({ error: "Reply required" }, { status: 400 });
-  const solved = await solveDiscussion(slug, input.replyId, session.user.id, isDiscussionAdmin(session.user.email));
+  const solved = await solveDiscussion(slug, input.replyId, session.user.id, isDiscussionAdmin(session.user));
   if (!solved) return NextResponse.json({ error: "Not permitted" }, { status: 403 });
   return NextResponse.json({ solved: true });
 }
