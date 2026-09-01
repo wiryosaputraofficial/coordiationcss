@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import ThemeIcon, { type ThemeIconName } from "./ThemeIcon";
 
 export function AgencyButton({ href, children, outline = false }: { href: string; children: ReactNode; outline?: boolean }) {
-  return <a className={`sa-button co-inline-flex co-items-center co-justify-between co-transition co-duration-300 co-ease-out${outline ? " is-outline" : ""}`} href={href}>{children}<span className="co-inline-flex co-items-center co-justify-center"><ThemeIcon name="arrow-right" size={15} tone={outline ? "accent" : "dark"} /></span></a>;
+  return <a className={`sa-button co-inline-flex co-items-center co-justify-between co-transition co-duration-300 co-ease-out${outline ? " is-outline" : ""}`} href={href}>{children}<span className="co-inline-flex co-items-center co-justify-center"><ThemeIcon name="arrow-right" size={15} tone={outline ? "dark" : "accent"} /></span></a>;
 }
 
 export function SectionHeading({ eyebrow, title, copy, action }: { eyebrow: string; title: ReactNode; copy?: string; action?: ReactNode }) {
