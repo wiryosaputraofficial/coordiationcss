@@ -3,7 +3,7 @@ import ThemeIcon from "./ThemeIcon";
 import type { StudioProject } from "./projects";
 
 export function StudioHeader() {
-  return <header className="si-header co-flex co-items-start co-justify-between"><a className="si-identity co-flex co-flex-col" href="/themes/studio-index/preview"><strong>Ayla Vermeer</strong><span>Brand &amp; Product Design</span><span>©2026 Coordiation</span></a><nav className="co-flex co-items-center" aria-label="Social links"><a href="#contact" aria-label="Email"><ThemeIcon name="letter" /></a><a href="#work" aria-label="Portfolio"><ThemeIcon name="gallery-minimalistic" /></a><a href="#contact" aria-label="LinkedIn"><ThemeIcon name="link" /></a></nav></header>;
+  return <header className="si-header co-flex co-items-start co-justify-between"><a className="si-identity co-flex co-flex-col" href="/themes/studio-index/preview"><strong>Ayla Vermeer</strong><span>Brand &amp; Product Design</span><span>©2026 Coordiation</span></a><nav className="co-flex co-items-center" aria-label="Portfolio navigation"><a href="/themes/studio-index/preview#contact" aria-label="Email"><ThemeIcon name="letter" /></a><a href="/themes/studio-index/preview#work" aria-label="Portfolio"><ThemeIcon name="gallery-minimalistic" /></a><a href="/themes/studio-index/preview#contact" aria-label="Contact"><ThemeIcon name="link" /></a></nav></header>;
 }
 
 export function ProjectCard({ project }: { project: StudioProject }) {
