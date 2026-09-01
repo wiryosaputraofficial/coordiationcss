@@ -121,7 +121,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <script
           id="buy-me-a-coffee-widget"
-          async
           data-name="BMC-Widget"
           data-cfasync="false"
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
