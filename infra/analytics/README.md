@@ -5,6 +5,8 @@ Self-hosted Umami for `coordiation.com`, published at `https://analytics.coordia
 - Public collection is limited to `/script.js`, `/api/send`, and `/api/heartbeat`.
 - The dashboard is protected by GitHub OAuth.
 - OAuth access is restricted to the configured GitHub username.
+- OAuth requests no additional scopes and reads only the authenticated account's
+  public profile to verify its username.
 - A small login bridge exchanges the approved GitHub session for an Umami session, so there is no second password screen.
 - Umami's own telemetry is disabled.
 
