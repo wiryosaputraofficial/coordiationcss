@@ -15,3 +15,250 @@
 @media(max-width:820px){.discussions-hero{grid-template-columns:1fr;gap:40px}.discussions-shell{grid-template-columns:1fr}.discussion-categories{min-height:auto;position:static;border-right:0;border-bottom:1px solid var(--discussion-line)}.discussion-categories nav{display:flex;overflow-x:auto}.discussion-categories nav a{min-width:max-content}.discussion-guidelines{display:none}.discussion-feed-heading{padding:24px 20px}.discussion-toolbar{grid-template-columns:1fr}.discussion-row{grid-template-columns:50px minmax(0,1fr);padding:20px 16px}.discussion-row-meta{grid-column:2}.discussion-login-grid{grid-template-columns:1fr}.discussion-login-intro{min-height:650px}.discussion-login-card{border-top:1px solid #111;border-left:0}.discussion-login-card-body{margin:0 auto}.discussion-auth-header .brand-product{display:none}.discussion-question-layout{grid-template-columns:55px minmax(0,1fr)}.discussion-question-main{padding:40px 22px}.discussion-question-status{flex-wrap:wrap}.discussion-question-status small{width:100%;margin-left:0}.discussion-replies{padding:70px 20px}.discussion-reply-editor{grid-template-columns:1fr;gap:40px}.discussion-create-shell{grid-template-columns:1fr}.discussion-create-intro{border-right:0}.discussion-profile-shell{grid-template-columns:1fr}.discussion-profile-shell>aside{border-right:0}.discussion-profile-shell>div{padding:60px 24px}}
 @media(max-width:520px){.discussion-auth-header{height:68px;padding:0 16px}.discussion-auth-header .brand span:not(.brand-product){display:none}.discussion-back{font-size:9px}.discussions-hero{min-height:520px;padding:65px 20px}.discussions-hero h1{font-size:52px}.discussions-hero-actions{width:100%}.discussion-feed-heading{align-items:start;flex-direction:column;gap:12px}.discussion-row{grid-template-columns:42px minmax(0,1fr);gap:12px}.discussion-vote-block{padding-right:10px}.discussion-row-copy h3{font-size:16px}.discussion-row-meta{flex-wrap:wrap}.discussion-row-meta dl{margin-top:8px}.discussions-footer{align-items:flex-start;flex-direction:column}.discussions-footer nav{flex-wrap:wrap}.discussion-login-intro{min-height:590px;padding:70px 20px}.discussion-login-intro h1{font-size:56px}.discussion-login-proof{margin-top:38px}.discussion-login-card-body{padding:55px 20px}.discussion-login-card-body>h2{font-size:30px}.discussion-detail-breadcrumb{overflow:hidden;white-space:nowrap}.discussion-question-layout{grid-template-columns:48px minmax(0,1fr)}.discussion-question-votes{padding-top:30px}.discussion-question-votes button{width:32px;height:32px}.discussion-question-main h1{font-size:36px}.discussion-question-footer{align-items:flex-start;flex-direction:column}.discussion-reply{grid-template-columns:48px 1fr}.discussion-reply>div{padding:22px 16px}.discussion-reply-editor{padding:65px 20px}.discussion-create-intro{padding:65px 20px}.discussion-create-form{padding:55px 20px}.discussion-profile-stats{grid-template-columns:1fr 1fr}.discussion-profile-stats article{min-height:120px;padding:16px}.discussion-profile-shell>div>h2{font-size:43px}}
 @media(prefers-reduced-motion:reduce){.discussion-row{transition:none}}
+
+/*
+ * Discussions layout contract
+ *
+ * Keep the forum usable even when the generated Coordiation utility sheet is
+ * not present yet (for example during a cold production deploy). The semantic
+ * component classes below own their critical display, alignment and readable
+ * type sizes; the co-* classes remain in the markup as the canonical framework
+ * contract.
+ */
+.discussions-hero,
+.discussions-shell,
+.discussion-toolbar,
+.discussion-row,
+.discussion-login-grid,
+.discussion-login-proof,
+.discussion-question-layout,
+.discussion-reply,
+.discussion-reply-editor,
+.discussion-create-shell,
+.discussion-profile-shell,
+.discussion-profile-stats{display:grid}
+
+.discussion-aside-title,
+.discussion-categories nav a,
+.discussion-feed-heading,
+.discussion-search,
+.discussions-hero-actions>p,
+.discussion-primary-action,
+.discussion-auth-header,
+.discussion-back,
+.discussion-github-button,
+.discussion-github-button>span,
+.discussion-email-field,
+.discussion-detail-breadcrumb,
+.discussion-question-status,
+.discussion-question-author,
+.discussion-question-footer,
+.discussion-question-footer>div:last-child,
+.discussion-replies-heading,
+.discussion-reply-author,
+.discussion-reply footer,
+.discussion-reply-editor form>div,
+.discussion-guideline-check,
+.discussion-contributor,
+.discussions-footer,
+.discussions-footer>a{display:flex}
+
+.discussion-pinned,
+.discussion-accepted-label,
+.discussion-thread-aside a,
+.discussion-release-card a{display:inline-flex;align-items:center}
+
+.discussion-aside-title,
+.discussion-categories nav a,
+.discussion-feed-heading,
+.discussion-search,
+.discussions-hero-actions>p,
+.discussion-primary-action,
+.discussion-auth-header,
+.discussion-back,
+.discussion-github-button,
+.discussion-github-button>span,
+.discussion-email-field,
+.discussion-detail-breadcrumb,
+.discussion-question-status,
+.discussion-question-author,
+.discussion-question-footer,
+.discussion-replies-heading,
+.discussion-reply-author,
+.discussion-reply-editor form>div,
+.discussion-contributor,
+.discussions-footer{align-items:center}
+
+.discussion-aside-title,
+.discussion-feed-heading,
+.discussion-primary-action,
+.discussion-auth-header,
+.discussion-question-footer,
+.discussion-replies-heading,
+.discussion-reply-editor form>div,
+.discussions-footer{justify-content:space-between}
+
+.discussions-shell{grid-template-columns:280px minmax(0,1fr) 320px}
+.discussions-hero{grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr)}
+.discussion-overline{font-size:12px;line-height:1.5}
+.discussion-overline>span{font-size:10px}
+.discussions-hero>div:first-child>p:last-child{font-size:17px}
+.discussion-primary-action{font-size:14px}
+.discussions-hero-actions>p{font-size:13px}
+
+.discussion-aside-title{gap:12px;font-size:11px}
+.discussion-aside-title b{min-width:24px;padding:4px 7px;border:1px solid #aaa;border-radius:999px;font-size:10px;text-align:center}
+.discussion-categories nav a{font-size:14px;line-height:1.35}
+.discussion-categories nav a b{min-width:24px;padding:3px 6px;border-radius:999px;background:rgb(0 0 0/.07);font-size:10px;text-align:center}
+.discussion-categories nav a.is-active b{background:rgb(255 255 255/.16)}
+.discussion-guidelines h2{font-size:20px}
+.discussion-guidelines p{font-size:13px}
+.discussion-guidelines a{font-size:12px}
+
+.discussion-feed-heading{gap:24px}
+.discussion-feed-heading h2{font-size:36px;line-height:1.05}
+.discussion-feed-heading>span{flex:0 0 auto;font-size:11px}
+.discussion-search input{font-size:14px}
+.discussion-sort select{font-size:13px}
+.discussion-row{min-height:214px;grid-template-columns:74px minmax(0,1fr) 174px;gap:24px;padding:28px 26px}
+.discussion-vote-block{justify-content:flex-start}
+.discussion-vote-block strong{font-size:28px}
+.discussion-vote-block>span{font-size:10px}
+.discussion-vote-block b,.discussion-vote-block small{font-size:10px}
+.discussion-pinned{font-size:10px}
+.discussion-row-copy h3{font-size:22px;line-height:1.25}
+.discussion-row-copy>p{font-size:14px;line-height:1.65}
+.discussion-tags span{font-size:10px}
+.discussion-avatar{width:38px;height:38px;font-size:10px}
+.discussion-row-meta>p strong{font-size:12px}
+.discussion-row-meta>p small{font-size:11px}
+.discussion-row-meta dt,.discussion-row-meta dd{font-size:11px}
+.discussion-empty p{font-size:14px}
+
+.discussion-community-panel>section{padding:27px 24px}
+.discussion-community-panel dt{font-size:12px}
+.discussion-community-panel dd{font-size:26px}
+.discussion-community-panel section>div:first-child{gap:12px}
+.discussion-community-panel section>div:first-child>span{font-size:10px}
+.discussion-contributor{gap:12px}
+.discussion-contributor>b{width:36px;height:36px;font-size:9px}
+.discussion-contributor strong{font-size:12px}
+.discussion-contributor small{font-size:10px}
+.discussion-release-card>span{font-size:10px}
+.discussion-release-card h2{font-size:28px;line-height:1.05}
+.discussion-release-card p{font-size:13px}
+.discussion-release-card a{font-size:12px}
+.discussions-footer{font-size:11px}
+
+.discussion-back{font-size:13px}
+.discussion-login-grid{grid-template-columns:minmax(0,1.08fr) minmax(430px,.92fr)}
+.discussion-login-intro{display:flex}
+.discussion-login-proof{grid-template-columns:repeat(3,1fr)}
+.discussion-login-intro>p:not(.discussion-overline):not(.discussion-public-note){font-size:17px}
+.discussion-login-proof span{font-size:11px;line-height:1.4}
+.discussion-public-note{font-size:13px!important}
+.discussion-login-card-head{font-size:11px}
+.discussion-login-card-body>p{font-size:14px}
+.discussion-github-button>span{font-size:14px}
+.discussion-divider{font-size:10px}
+.discussion-login-actions label{font-size:12px}
+.discussion-email-field input{font-size:14px}
+.discussion-login-actions form>p,.discussion-login-message,.discussion-login-card>footer{font-size:11px}
+
+.discussion-detail-breadcrumb{font-size:11px}
+.discussion-question-layout{grid-template-columns:84px minmax(0,1fr) 280px}
+.discussion-question-votes>span,.discussion-reply>aside>span{font-size:10px}
+.discussion-question-status{font-size:11px}
+.discussion-question-author strong,.discussion-reply-author strong{font-size:13px}
+.discussion-question-author small,.discussion-reply-author small{font-size:11px}
+.discussion-question-body p,.discussion-reply-body p{font-size:16px;line-height:1.75}
+.discussion-question-footer button,.discussion-reply footer button{font-size:11px}
+.discussion-thread-aside>div>span{font-size:10px}
+.discussion-thread-aside dt{font-size:12px}
+.discussion-thread-aside p{font-size:13px}
+.discussion-thread-aside a{font-size:12px}
+.discussion-replies-heading>span{font-size:10px}
+.discussion-accepted-label{font-size:10px}
+.discussion-reply-editor>div>p:last-child{font-size:14px}
+.discussion-reply-editor form label{font-size:12px}
+.discussion-reply-editor textarea{font-size:15px}
+.discussion-reply-editor form>div>span,.discussion-reply-editor form>p{font-size:11px}
+.discussion-reply-editor form button,.discussion-reply-editor form a{font-size:13px}
+
+.discussion-create-intro>p:not(.discussion-overline){font-size:15px}
+.discussion-create-intro li>span{font-size:10px}
+.discussion-create-intro li strong{font-size:14px}
+.discussion-create-intro li p{font-size:12px}
+.discussion-create-form label:not(.discussion-guideline-check){font-size:13px}
+.discussion-create-form input:not([type=checkbox]),.discussion-create-form select,.discussion-create-form textarea{font-size:15px}
+.discussion-create-form small{font-size:11px}
+.discussion-guideline-check{align-items:flex-start;font-size:12px}
+.discussion-create-form>button,.discussion-signin-required>a{font-size:13px}
+.discussion-create-form>p{font-size:12px}
+.discussion-signin-required>p{font-size:14px!important}
+
+.discussion-profile-shell{grid-template-columns:320px minmax(0,1fr)}
+.discussion-profile-stats{grid-template-columns:repeat(4,1fr)}
+.discussion-profile-shell>aside p{font-size:12px}
+.discussion-profile-shell>aside b{font-size:10px}
+.discussion-profile-shell>aside button{font-size:12px}
+.discussion-profile-stats span{font-size:12px}
+.discussion-profile-shell>div>section a{font-size:12px}
+.discussion-profile-shell>div>section>p{font-size:14px}
+.discussion-profile-activity li>span{font-size:10px}
+.discussion-profile-activity li>a{font-size:14px!important;line-height:1.45}
+
+@media(max-width:1180px){
+  .discussions-shell{grid-template-columns:240px minmax(0,1fr)}
+  .discussion-login-grid{grid-template-columns:1fr 470px}
+  .discussion-login-proof{grid-template-columns:1fr}
+  .discussion-question-layout{grid-template-columns:76px minmax(0,1fr)}
+  .discussion-create-shell{grid-template-columns:1fr 1.2fr}
+  .discussion-profile-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:820px){
+  .discussions-hero,.discussions-shell,.discussion-login-grid,.discussion-create-shell,.discussion-profile-shell{grid-template-columns:1fr}
+  .discussions-hero{min-height:auto;padding:72px 22px;gap:42px}
+  .discussion-categories nav{display:flex;gap:8px;padding:14px 16px;overflow-x:auto;scrollbar-width:thin}
+  .discussion-categories nav a{min-height:44px;padding:0 14px;border:1px solid #d8d8d2;font-size:13px}
+  .discussion-feed-heading{padding:28px 20px}
+  .discussion-feed-heading h2{font-size:32px}
+  .discussion-toolbar{grid-template-columns:1fr;padding:16px}
+  .discussion-row{grid-template-columns:58px minmax(0,1fr);min-height:0;padding:26px 20px}
+  .discussion-row-meta{grid-column:2}
+  .discussion-login-proof{grid-template-columns:1fr}
+  .discussion-question-layout{grid-template-columns:62px minmax(0,1fr)}
+  .discussion-reply-editor{grid-template-columns:1fr}
+  .discussion-profile-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:520px){
+  .discussions-hero{padding:58px 20px}
+  .discussions-hero h1{font-size:48px;line-height:.92}
+  .discussions-hero>div:first-child>p:last-child{font-size:15px}
+  .discussion-aside-title{height:58px;padding:0 16px}
+  .discussion-feed-heading{align-items:flex-start;flex-direction:column;gap:12px}
+  .discussion-feed-heading h2{font-size:30px}
+  .discussion-row{display:block;padding:26px 20px}
+  .discussion-vote-block{padding:0 0 16px;flex-direction:row;align-items:center;gap:7px;border-right:0}
+  .discussion-vote-block strong{font-size:22px}
+  .discussion-vote-block b,.discussion-vote-block small{margin:0 0 0 6px}
+  .discussion-row-copy h3{font-size:20px;line-height:1.3}
+  .discussion-row-copy>p{font-size:14px}
+  .discussion-row-meta{margin-top:20px}
+  .discussion-row-meta dl{margin-top:8px}
+  .discussions-footer{align-items:flex-start;flex-direction:column;font-size:11px}
+  .discussion-login-intro{min-height:auto;padding:68px 20px}
+  .discussion-login-intro h1{font-size:51px}
+  .discussion-login-card-body{padding:55px 20px}
+  .discussion-question-layout{grid-template-columns:52px minmax(0,1fr)}
+  .discussion-question-main{padding:36px 18px}
+  .discussion-question-main h1{font-size:36px;line-height:1.02}
+  .discussion-question-footer{align-items:flex-start;flex-direction:column}
+  .discussion-reply{grid-template-columns:52px minmax(0,1fr)}
+  .discussion-reply>div{padding:24px 17px}
+  .discussion-reply-editor{padding:64px 20px}
+  .discussion-create-intro,.discussion-create-form{padding:58px 20px}
+  .discussion-profile-stats{grid-template-columns:1fr 1fr}
+}
