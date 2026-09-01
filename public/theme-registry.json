@@ -1321,7 +1321,7 @@
           "target": "public/icons/solar-linear/global.svg"
         }
       ],
-      "coordiationUtilityCount": 21,
+      "coordiationUtilityCount": 41,
       "ai": {
         "selectionKey": "signal-agency",
         "sourceOwnership": "open-code",
