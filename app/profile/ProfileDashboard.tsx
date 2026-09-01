@@ -29,6 +29,7 @@ type ProfileStats = {
   reputation: number;
   reputationBreakdown: ReputationItem[];
   activity: ProfileActivity[];
+  followed: { title: string; slug: string; category: string; updatedAt: string }[];
   username: string | null;
   role: "administrator" | "member";
   joinedAt: string | null;
@@ -47,7 +48,7 @@ export default function ProfileDashboard() {
   useEffect(() => {
     if (!session) return;
     fetch("/api/discussions/profile")
-      .then((response) => response.ok ? response.json() : null)
+      .then(async (response): Promise<ProfileStats | null> => response.ok ? await response.json() as ProfileStats : null)
       .then(setStats)
       .catch(() => setStats(null))
       .finally(() => setProfilePending(false));
@@ -74,7 +75,7 @@ export default function ProfileDashboard() {
 
     <div className="discussion-profile-content">
       <p className="discussion-overline">YOUR COMMUNITY PROFILE</p>
-      <div className="discussion-profile-heading"><h2>Keep useful knowledge moving.</h2><Link href="/discussions/new">Ask a question <SolarIcon name="arrow-right" size={15} /></Link></div>
+      <div className="discussion-profile-heading"><h2>Keep useful knowledge moving.</h2><div className="discussion-profile-heading-actions">{role === "administrator" && <Link href="/discussions/moderation">Moderation queue <SolarIcon name="shield-warning" size={15} /></Link>}<Link href="/discussions/new">Ask a question <SolarIcon name="arrow-right" size={15} /></Link></div></div>
 
       <div className="discussion-profile-stats co-grid" aria-busy={profilePending}>
         <article><strong>{stats?.questions ?? "—"}</strong><span>Questions</span></article>
@@ -99,6 +100,15 @@ export default function ProfileDashboard() {
           <div><div className="discussion-profile-activity-meta"><b>{item.kind === "question" ? "Question" : "Answer"}</b><span>{item.category.replaceAll("-", " ")}</span><time dateTime={item.createdAt}>{formatDate(item.createdAt)}</time></div><Link href={`/discussions/${item.slug}`}>{item.title}</Link><p>{item.excerpt}</p></div>
           <SolarIcon name="arrow-right" size={16} />
         </li>)}</ul> : <div className="discussion-profile-no-posts"><SolarIcon name="chat-round-line" size={24} /><h4>No posts yet</h4><p>Your questions and answers will appear here after you join a discussion.</p><Link href="/discussions">Browse discussions <SolarIcon name="arrow-right" size={14} /></Link></div>}
+      </section>
+
+      <section className="discussion-profile-posts" aria-labelledby="followed-title">
+        <header><div><p className="discussion-overline">FOLLOWED DISCUSSIONS</p><h3 id="followed-title">Questions you are tracking</h3></div><span>{stats?.followed.length ?? 0} followed</span></header>
+        {stats?.followed.length ? <ul className="discussion-profile-activity">{stats.followed.map((item) => <li key={item.slug}>
+          <span className="discussion-profile-activity-icon"><SolarIcon name="bookmark" size={18} /></span>
+          <div><div className="discussion-profile-activity-meta"><b>Following</b><span>{item.category.replaceAll("-", " ")}</span><time dateTime={item.updatedAt}>{formatDate(item.updatedAt)}</time></div><Link href={`/discussions/${item.slug}`}>{item.title}</Link><p>Open the discussion to review new answers or stop following it.</p></div>
+          <SolarIcon name="arrow-right" size={16} />
+        </li>)}</ul> : <div className="discussion-profile-no-posts"><SolarIcon name="bookmark-square-minimalistic" size={24} /><h4>No followed discussions</h4><p>Use the bookmark button on a question to keep it here.</p><Link href="/discussions">Find discussions <SolarIcon name="arrow-right" size={14} /></Link></div>}
       </section>
     </div>
   </section>;

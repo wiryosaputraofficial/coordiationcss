@@ -123,3 +123,33 @@ CREATE TABLE IF NOT EXISTS discussion_moderation_log (
   note text,
   created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Remove the original showcase-only records. Production discussions now come
+-- exclusively from authenticated members and the live database.
+DELETE FROM discussion_votes WHERE (target_type='discussion' AND target_id IN (
+  'responsive-variants-from-component-props','dialog-focus-restoration-inside-sheet','share-your-first-coordination-theme',
+  'vite-monorepo-content-roots','agent-context-for-existing-product','theme-installer-preserve-existing-files'
+)) OR (target_type='reply' AND target_id IN ('reply-01','reply-02'));
+DELETE FROM discussion_follows WHERE discussion_slug IN (
+  'responsive-variants-from-component-props','dialog-focus-restoration-inside-sheet','share-your-first-coordination-theme',
+  'vite-monorepo-content-roots','agent-context-for-existing-product','theme-installer-preserve-existing-files'
+);
+DELETE FROM discussion_reports WHERE (target_type='discussion' AND target_id IN (
+  'responsive-variants-from-component-props','dialog-focus-restoration-inside-sheet','share-your-first-coordination-theme',
+  'vite-monorepo-content-roots','agent-context-for-existing-product','theme-installer-preserve-existing-files'
+)) OR (target_type='reply' AND target_id IN ('reply-01','reply-02'));
+DELETE FROM discussions WHERE id LIKE 'seed-discussion-%' OR author_user_id LIKE 'seed-user-%' OR slug IN (
+  'responsive-variants-from-component-props','dialog-focus-restoration-inside-sheet','share-your-first-coordination-theme',
+  'vite-monorepo-content-roots','agent-context-for-existing-product','theme-installer-preserve-existing-files'
+);
+DELETE FROM "user" WHERE id LIKE 'seed-user-%' OR email LIKE '%@coordiation.invalid';
+
+DO $$ BEGIN
+  ALTER TABLE discussion_follows ADD CONSTRAINT discussion_follows_slug_fk FOREIGN KEY (discussion_slug) REFERENCES discussions(slug) ON DELETE CASCADE;
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+
+DO $$ BEGIN
+  ALTER TABLE discussions ADD CONSTRAINT discussions_accepted_reply_fk FOREIGN KEY (accepted_reply_id) REFERENCES discussion_replies(id) ON DELETE SET NULL;
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;

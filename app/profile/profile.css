@@ -96,9 +96,17 @@
   margin-bottom: 44px !important;
 }
 
-.discussion-profile-heading > a {
-  min-height: 48px;
+.discussion-profile-heading-actions {
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.discussion-profile-heading-actions a {
+  min-height: 48px;
   padding: 0 18px;
   display: inline-flex;
   align-items: center;
@@ -108,6 +116,12 @@
   color: #fff;
   font-size: 13px;
   font-weight: 750;
+}
+
+.discussion-profile-heading-actions a:first-child:not(:last-child) {
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
 }
 
 .discussion-profile-stats article.is-reputation {
@@ -349,8 +363,9 @@
     margin-bottom: 0 !important;
   }
 
-  .discussion-profile-heading > a {
+  .discussion-profile-heading-actions {
     margin: 0 0 44px;
+    justify-content: flex-start;
   }
 }
 

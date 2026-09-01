@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "@/app/_components/SiteLink";
 import SolarIcon from "./SolarIcon";
+import { authClient } from "@/app/lib/auth-client";
 
 const links = [
   ["Home", "/"],
@@ -14,10 +17,11 @@ const links = [
   ["1.0 RC notes", "/docs/releases/1.0.0-rc.1"],
   ["Migration guide", "/docs/migration/1.0-rc"],
   ["Get started", "/docs/installation/using-vite"],
-  ["Sign in", "/login"],
 ] as const;
 
 export default function MobileNav() {
+  const { data: session, isPending } = authClient.useSession();
+  const accountLink = session ? [session.user.name || "Profile", "/profile"] as const : [isPending ? "Account" : "Sign in", isPending ? "/profile" : "/login"] as const;
   return (
     <details className="mobile-nav">
       <summary aria-label="Open main navigation">
@@ -31,6 +35,10 @@ export default function MobileNav() {
             <SolarIcon name="arrow-right" size={14} />
           </Link>
         ))}
+        <Link href={accountLink[1]} prefetch={false}>
+          <span>{accountLink[0]}</span>
+          <SolarIcon name={session ? "user-circle" : "arrow-right"} size={14} />
+        </Link>
       </nav>
     </details>
   );

@@ -3,6 +3,7 @@ import Link from "@/app/_components/SiteLink";
 import SolarIcon from "@/app/_components/SolarIcon";
 import { createSeoMetadata } from "@/app/seo";
 import LoginPanel from "./LoginPanel";
+import { getDiscussionOverview } from "@/app/lib/discussions";
 import "../discussions/discussions.css";
 
 export const metadata: Metadata = createSeoMetadata({
@@ -15,6 +16,7 @@ export const metadata: Metadata = createSeoMetadata({
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ returnTo?: string }> }) {
   const requestedReturn = (await searchParams).returnTo;
   const returnTo = requestedReturn?.startsWith("/") && !requestedReturn.startsWith("//") ? requestedReturn : "/discussions";
+  const overview = await getDiscussionOverview();
   return (
     <main className="discussion-login" id="top">
       <header className="discussion-auth-header co-flex co-items-center co-justify-between">
@@ -28,9 +30,9 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           <h1>Ask clearly.<br /><em>Build together.</em></h1>
           <p>Join the community space for practical questions about Coordiation utilities, components, themes, tooling, and AI-assisted product delivery.</p>
           <dl className="discussion-login-proof co-grid">
-            <div><dt><SolarIcon name="chat-round-line" size={18} /></dt><dd><strong>128</strong><span>Public discussions</span></dd></div>
-            <div><dt><SolarIcon name="users-group-rounded" size={18} /></dt><dd><strong>486</strong><span>Community members</span></dd></div>
-            <div><dt><SolarIcon name="check-circle" size={18} /></dt><dd><strong>72%</strong><span>Questions solved</span></dd></div>
+            <div><dt><SolarIcon name="chat-round-line" size={18} /></dt><dd><strong>{overview.totalDiscussions}</strong><span>Public discussions</span></dd></div>
+            <div><dt><SolarIcon name="users-group-rounded" size={18} /></dt><dd><strong>{overview.totalMembers}</strong><span>Real members</span></dd></div>
+            <div><dt><SolarIcon name="check-circle" size={18} /></dt><dd><strong>{overview.solvedPercentage}%</strong><span>Questions solved</span></dd></div>
           </dl>
           <p className="discussion-public-note"><SolarIcon name="eye" size={16} />You can read every public discussion without an account.</p>
         </section>

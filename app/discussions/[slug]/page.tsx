@@ -4,14 +4,9 @@ import Link from "@/app/_components/SiteLink";
 import MobileNav from "@/app/_components/MobileNav";
 import SolarIcon from "@/app/_components/SolarIcon";
 import { SITE_NAME, SITE_URL } from "@/app/seo";
-import { seedDiscussions } from "../discussion-data";
 import { getDiscussion, getDiscussionReplies } from "@/app/lib/discussions";
 import DiscussionThread from "./DiscussionThread";
 import "../discussions.css";
-
-export function generateStaticParams() {
-  return seedDiscussions.map(({ slug }) => ({ slug }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

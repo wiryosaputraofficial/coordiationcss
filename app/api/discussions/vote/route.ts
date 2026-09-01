@@ -10,5 +10,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid vote" }, { status: 400 });
   }
   const votes = await toggleVote(session.user.id, input.targetType, input.targetId);
+  if (votes === undefined) return NextResponse.json({ error: "Content not found" }, { status: 404 });
   return NextResponse.json({ votes });
 }

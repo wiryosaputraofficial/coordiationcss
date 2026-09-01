@@ -1,5 +1,6 @@
 import utilityRegistry from "../docs/generated/utility-registry.json";
 import { absoluteUrl, STATIC_INDEXABLE_ROUTES } from "../seo";
+import { listDiscussions } from "../lib/discussions";
 
 function escapeXml(value: string): string {
   return value.replace(/[<>&'\"]/g, (character) => {
@@ -17,7 +18,8 @@ function escapeXml(value: string): string {
 export async function GET() {
   const updatedAt = "2026-08-31T00:00:00.000Z";
   const utilityRoutes = utilityRegistry.families.map((family) => `/docs/utilities/${family.id}`);
-  const entries = [...STATIC_INDEXABLE_ROUTES, ...utilityRoutes]
+  const discussionRoutes = (await listDiscussions()).map((discussion) => `/discussions/${discussion.slug}`);
+  const entries = [...STATIC_INDEXABLE_ROUTES, ...utilityRoutes, ...discussionRoutes]
     .map((route) => {
       const priority = route === "/" ? "1.0" : route === "/docs" ? "0.9" : "0.7";
       const changeFrequency = route === "/" ? "weekly" : "monthly";

@@ -10,6 +10,7 @@ export async function POST(request: Request) {
   if ((input?.targetType !== "discussion" && input?.targetType !== "reply") || typeof input.targetId !== "string" || reason.length < 10 || reason.length > 500) {
     return NextResponse.json({ error: "Invalid report" }, { status: 400 });
   }
-  await reportTarget(session.user.id, input.targetType, input.targetId, reason);
+  const reported = await reportTarget(session.user.id, input.targetType, input.targetId, reason);
+  if (!reported) return NextResponse.json({ error: "Content not found" }, { status: 404 });
   return NextResponse.json({ reported: true });
 }
