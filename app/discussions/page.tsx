@@ -29,7 +29,7 @@ export default async function DiscussionsPage({ searchParams }: { searchParams: 
 
     <section className="discussions-hero co-grid co-overflow-hidden">
       <div><p className="discussion-overline"><span>CO</span> COMMUNITY KNOWLEDGE</p><h1>Questions become<br /><em>shared answers.</em></h1><p>A public place to ask about Coordiation, learn from real implementation decisions, and help the next person build with more confidence.</p></div>
-      <div className="discussions-hero-actions"><Link className="discussion-primary-action co-inline-flex co-items-center co-justify-between" href="/discussions/new"><span>Ask a question</span><SolarIcon name="pen-new-round" size={17} /></Link><p><SolarIcon name="eye" size={16} />Public to read. Sign in to participate.</p></div>
+      <div className="discussions-hero-actions"><Link className="discussion-primary-action co-inline-flex co-items-center co-justify-between" href="/discussions/new"><span>Ask a question</span><SolarIcon name="pen-new-round" size={17} /></Link><p><SolarIcon name="eye" size={16} />Public to read. Contributions stay linked to your profile.</p></div>
     </section>
 
     <section className="discussions-shell co-grid">
