@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS "user" (
 
 ALTER TABLE "user" ADD COLUMN IF NOT EXISTS "username" text;
 ALTER TABLE "user" ADD COLUMN IF NOT EXISTS "role" text NOT NULL DEFAULT 'member';
+UPDATE "user" SET "username" = COALESCE("username", 'wiryosaputraofficial'), "role" = 'administrator' WHERE LOWER("name") = 'wiryosaputraofficial' OR LOWER("email") = 'wiryosaputra@coordiation.com';
 CREATE UNIQUE INDEX IF NOT EXISTS "user_username_unique_idx" ON "user" (LOWER("username")) WHERE "username" IS NOT NULL;
 
 CREATE TABLE IF NOT EXISTS "session" (

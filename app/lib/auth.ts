@@ -5,6 +5,20 @@ import { getDatabase } from "./database";
 
 const githubEnabled = Boolean(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET);
 
+function adminUsernames() {
+  return (process.env.DISCUSSIONS_ADMIN_GITHUB_USERNAMES || "wiryosaputraofficial")
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+function adminEmails() {
+  return (process.env.DISCUSSIONS_ADMIN_EMAILS || "wiryosaputra@coordiation.com")
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+}
+
 const mailer = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "postfix",
   port: Number(process.env.SMTP_PORT || 25),
@@ -24,17 +38,27 @@ export const auth = betterAuth({
       scope: ["read:user", "user:email"],
       mapProfileToUser: (profile) => {
         const username = profile.login.toLowerCase();
-        const administrators = (process.env.DISCUSSIONS_ADMIN_GITHUB_USERNAMES || "wiryosaputraofficial")
-          .split(",")
-          .map((value) => value.trim().toLowerCase());
-        return { username, role: administrators.includes(username) ? "administrator" : "member" };
+        return { username };
       },
     },
   } : {},
   user: {
     additionalFields: {
-      username: { type: "string", required: false, input: false },
+      username: { type: "string", required: false },
       role: { type: "string", required: false, input: false, defaultValue: "member" },
+    },
+  },
+  databaseHooks: {
+    user: {
+      create: {
+        before: async (user) => {
+          const mappedUsername = typeof user.username === "string" ? user.username.toLowerCase() : undefined;
+          const nameFallback = adminUsernames().includes(user.name.toLowerCase()) ? user.name.toLowerCase() : undefined;
+          const username = mappedUsername || nameFallback;
+          const administrator = Boolean((username && adminUsernames().includes(username)) || adminEmails().includes(user.email.toLowerCase()));
+          return { data: { ...user, username, role: administrator ? "administrator" : "member" } };
+        },
+      },
     },
   },
   account: { accountLinking: { enabled: true, trustedProviders: ["github"] } },
@@ -66,16 +90,5 @@ export async function getSession(requestHeaders: Headers) {
 export function isDiscussionAdmin(user?: { email?: string | null; username?: unknown; role?: unknown } | null) {
   if (!user) return false;
   if (user.role === "administrator") return true;
-  const emailAdministrators = (process.env.DISCUSSIONS_ADMIN_EMAILS || "wiryosaputra@coordiation.com")
-    .split(",")
-    .map((value) => value.trim().toLowerCase())
-    .filter(Boolean);
-  const usernameAdministrators = (process.env.DISCUSSIONS_ADMIN_GITHUB_USERNAMES || "wiryosaputraofficial")
-    .split(",")
-    .map((value) => value.trim().toLowerCase())
-    .filter(Boolean);
-  return Boolean(
-    (user.email && emailAdministrators.includes(user.email.toLowerCase())) ||
-    (typeof user.username === "string" && usernameAdministrators.includes(user.username.toLowerCase()))
-  );
+  return Boolean(user.email && adminEmails().includes(user.email.toLowerCase()));
 }
