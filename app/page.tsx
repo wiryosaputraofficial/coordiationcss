@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/app/_components/SiteLink";
 import { createSeoMetadata } from "@/app/seo";
 import MobileNav from "./_components/MobileNav";
+import NpmDownloadsStat from "./_components/NpmDownloadsStat";
 import SolarIcon from "./_components/SolarIcon";
 import ThemeCarousel, { type ThemeCarouselSlide } from "./_components/ThemeCarousel";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
@@ -32,6 +33,7 @@ const inProgressCapabilityCount = capabilities.filter((capability) => capability
 const componentCount = componentRegistry.componentCount;
 const iconCount = iconRegistry.iconCount;
 const themeCount = themeRegistry.themeCount;
+const npmDownloadFallback = 1430;
 
 const themeVisuals: Record<string, Pick<ThemeCarouselSlide, "accent" | "contrast">> = {
   "editorial-advisor": { accent: "#f1d6a8", contrast: "light" },
@@ -326,6 +328,7 @@ export default function Home() {
         <div className="homepage-stat-product"><strong>{iconCount.toLocaleString("en-US")}</strong><span>Coordiation icons</span><p>Solar Linear and Iconsax Line Oval, ready to import.</p></div>
         <div className="homepage-stat-product"><strong>{componentCount}</strong><span>Open-code components</span><p>Accessible source you can install, inspect, and own.</p></div>
         <div className="homepage-stat-product"><strong>{themeCount}</strong><span>Complete themes</span><p>Responsive application starting points built with Coordiation.</p></div>
+        <NpmDownloadsStat initialDownloads={npmDownloadFallback} />
       </section>
 
       <ThemeCarousel slides={themeCarouselSlides} />
