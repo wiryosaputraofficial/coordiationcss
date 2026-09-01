@@ -120,7 +120,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
         <script
+          defer
+          src="https://analytics.coordiation.com/script.js"
+          data-website-id="1080725d-caf9-414a-bbd9-6943fedb2eba"
+          data-domains="coordiation.com"
+          data-do-not-track="true"
+          data-exclude-search="true"
+          data-performance="true"
+        />
+        <script
           id="buy-me-a-coffee-widget"
+          defer
           data-name="BMC-Widget"
           data-cfasync="false"
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"

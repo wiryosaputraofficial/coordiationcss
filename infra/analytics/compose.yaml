@@ -1,0 +1,151 @@
+name: coordiation-analytics
+
+services:
+  database:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: ${UMAMI_DB_PASSWORD}
+      TZ: UTC
+    command:
+      - postgres
+      - -c
+      - timezone=UTC
+    volumes:
+      - database_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U umami -d umami"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    networks:
+      - internal
+    security_opt:
+      - no-new-privileges:true
+
+  umami:
+    image: ghcr.io/umami-software/umami:3.3.1
+    restart: unless-stopped
+    init: true
+    environment:
+      DATABASE_URL: postgresql://umami:${UMAMI_DB_PASSWORD}@database:5432/umami
+      APP_SECRET: ${UMAMI_APP_SECRET}
+      TWO_FACTOR_ENCRYPTION_KEY: ${UMAMI_TWO_FACTOR_KEY}
+      DISABLE_TELEMETRY: "1"
+      CLIENT_IP_HEADER: X-Forwarded-For
+    depends_on:
+      database:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:3000/api/heartbeat"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    networks:
+      - internal
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: proxy_public
+      traefik.http.routers.coordiation-analytics-collect.rule: Host(`analytics.coordiation.com`) && (Path(`/script.js`) || Path(`/api/send`) || Path(`/api/heartbeat`))
+      traefik.http.routers.coordiation-analytics-collect.entrypoints: websecure
+      traefik.http.routers.coordiation-analytics-collect.priority: "200"
+      traefik.http.routers.coordiation-analytics-collect.tls: "true"
+      traefik.http.routers.coordiation-analytics-collect.tls.certresolver: letsencrypt
+      traefik.http.services.coordiation-analytics-collect.loadbalancer.server.port: "3000"
+    security_opt:
+      - no-new-privileges:true
+
+  initialize:
+    build:
+      context: ./bridge
+    restart: "no"
+    command: ["node", "init.mjs"]
+    environment:
+      UMAMI_URL: http://umami:3000
+      UMAMI_USERNAME: admin
+      UMAMI_ADMIN_PASSWORD: ${UMAMI_ADMIN_PASSWORD}
+      UMAMI_WEBSITE_ID: ${UMAMI_WEBSITE_ID}
+      UMAMI_WEBSITE_NAME: Coordiation
+      UMAMI_WEBSITE_DOMAIN: coordiation.com
+    depends_on:
+      umami:
+        condition: service_healthy
+    networks:
+      - internal
+    security_opt:
+      - no-new-privileges:true
+
+  bridge:
+    build:
+      context: ./bridge
+    restart: unless-stopped
+    environment:
+      UMAMI_URL: http://umami:3000
+      UMAMI_USERNAME: admin
+      UMAMI_ADMIN_PASSWORD: ${UMAMI_ADMIN_PASSWORD}
+      ALLOWED_GITHUB_USER: ${ALLOWED_GITHUB_USER}
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+    networks:
+      - internal
+    security_opt:
+      - no-new-privileges:true
+
+  oauth2-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:v7.15.3
+    restart: unless-stopped
+    command:
+      - --provider=github
+      - --scope=user:email
+      - --http-address=0.0.0.0:4180
+      - --redirect-url=https://analytics.coordiation.com/oauth2/callback
+      - --upstream=http://bridge:3000
+      - --email-domain=*
+      - --github-user=${ALLOWED_GITHUB_USER}
+      - --pass-user-headers=true
+      - --reverse-proxy=true
+      - --trusted-proxy-ip=172.19.0.0/16
+      - --skip-provider-button=true
+      - --cookie-secure=true
+      - --cookie-samesite=lax
+      - --cookie-domain=analytics.coordiation.com
+      - --cookie-expire=12h
+      - --cookie-refresh=1h
+      - --whitelist-domain=analytics.coordiation.com
+    environment:
+      OAUTH2_PROXY_CLIENT_ID: ${GITHUB_CLIENT_ID}
+      OAUTH2_PROXY_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
+      OAUTH2_PROXY_COOKIE_SECRET: ${OAUTH2_COOKIE_SECRET}
+    depends_on:
+      bridge:
+        condition: service_started
+    networks:
+      - internal
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: proxy_public
+      traefik.http.routers.coordiation-analytics-dashboard.rule: Host(`analytics.coordiation.com`)
+      traefik.http.routers.coordiation-analytics-dashboard.entrypoints: websecure
+      traefik.http.routers.coordiation-analytics-dashboard.priority: "100"
+      traefik.http.routers.coordiation-analytics-dashboard.tls: "true"
+      traefik.http.routers.coordiation-analytics-dashboard.tls.certresolver: letsencrypt
+      traefik.http.services.coordiation-analytics-dashboard.loadbalancer.server.port: "4180"
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  internal:
+    name: coordiation_analytics_internal
+    internal: true
+  proxy:
+    name: proxy_public
+    external: true
+
+volumes:
+  database_data:
+    name: coordiation_analytics_database
