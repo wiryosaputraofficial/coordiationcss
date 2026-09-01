@@ -100,6 +100,7 @@ services:
     restart: unless-stopped
     command:
       - --provider=github
+      - --scope=user:email
       - --http-address=0.0.0.0:4180
       - --redirect-url=https://analytics.coordiation.com/oauth2/callback
       - --upstream=http://bridge:3000
