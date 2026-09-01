@@ -262,3 +262,11 @@
   .discussion-create-intro,.discussion-create-form{padding:58px 20px}
   .discussion-profile-stats{grid-template-columns:1fr 1fr}
 }
+
+/* Sidebar category rhythm: keep the icon compact and separate label growth. */
+@media(min-width:821px){
+  .discussion-categories nav{display:grid;gap:8px;padding:14px 12px 18px}
+}
+.discussion-categories nav a{padding-inline:12px;gap:9px}
+.discussion-categories nav a>.site-icon{width:18px;height:18px;flex:0 0 18px}
+.discussion-categories nav a>span:not(.site-icon){min-width:0;flex:1}
