@@ -250,11 +250,11 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <Link href="/cookbook">Cookbook</Link>
           <Link href="/blogs">Blogs</Link>
+          <Link href="/discussions">Discuss</Link>
           <Link href="/components">Components</Link>
           <Link href="/themes">Themes</Link>
           <Link href="/icons">Icons</Link>
           <Link href="/docs">Docs</Link>
-          <Link href="/release-check">Release Check</Link>
         </nav>
         <MobileNav />
         <Link className="header-cta mobile-menu-cta" href="/docs/installation/using-vite">Get started <SolarIcon name="arrow-to-top-right" size={15} /></Link>

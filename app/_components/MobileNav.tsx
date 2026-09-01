@@ -6,6 +6,7 @@ const links = [
   ["Docs", "/docs"],
   ["Cookbook", "/cookbook"],
   ["Blogs", "/blogs"],
+  ["Discussions", "/discussions"],
   ["Components", "/components"],
   ["Themes", "/themes"],
   ["Icons", "/icons"],
@@ -13,6 +14,7 @@ const links = [
   ["1.0 RC notes", "/docs/releases/1.0.0-rc.1"],
   ["Migration guide", "/docs/migration/1.0-rc"],
   ["Get started", "/docs/installation/using-vite"],
+  ["Sign in", "/login"],
 ] as const;
 
 export default function MobileNav() {

@@ -1,6 +1,24 @@
 name: coordiation-web
 
 services:
+  discussion-db:
+    image: postgres:17-alpine
+    container_name: coordiation-discussion-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: coordiation_discussions
+      POSTGRES_USER: coordiation
+      POSTGRES_PASSWORD: ${DISCUSSION_DB_PASSWORD:?Set DISCUSSION_DB_PASSWORD in .env.production}
+    volumes:
+      - discussion_db_data:/var/lib/postgresql/data
+    networks:
+      - discussions_internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U coordiation -d coordiation_discussions"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
   web:
     build:
       context: .
@@ -8,8 +26,21 @@ services:
     image: coordiation-web:latest
     container_name: coordiation-web
     restart: unless-stopped
+    depends_on:
+      discussion-db:
+        condition: service_healthy
+    env_file:
+      - .env.production
+    environment:
+      DATABASE_URL: postgresql://coordiation:${DISCUSSION_DB_PASSWORD}@discussion-db:5432/coordiation_discussions
+      BETTER_AUTH_URL: https://coordiation.com
+      SMTP_HOST: postfix
+      SMTP_PORT: "25"
+      SMTP_SECURE: "false"
     networks:
       - proxy_public
+      - discussions_internal
+      - mail_internal
     labels:
       traefik.enable: "true"
       traefik.docker.network: proxy_public
@@ -23,3 +54,10 @@ services:
 networks:
   proxy_public:
     external: true
+  mail_internal:
+    external: true
+  discussions_internal:
+    internal: true
+
+volumes:
+  discussion_db_data:

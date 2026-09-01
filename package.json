@@ -12,7 +12,10 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
+    "better-auth": "^1.7.2",
     "next": "16.2.6",
+    "nodemailer": "^9.0.6",
+    "pg": "^8.23.0",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
@@ -21,6 +24,8 @@
     "@cloudflare/workers-types": "4.20260515.1",
     "@openai/sites-vite-plugin": "^0.1.0 || ^0.2.0",
     "@types/node": "22.19.19",
+    "@types/nodemailer": "^8.0.1",
+    "@types/pg": "^8.23.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
