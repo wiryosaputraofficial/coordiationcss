@@ -87,42 +87,12 @@ services:
       UMAMI_USERNAME: admin
       UMAMI_ADMIN_PASSWORD: ${UMAMI_ADMIN_PASSWORD}
       ALLOWED_GITHUB_USER: ${ALLOWED_GITHUB_USER}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
+      AUTH_SESSION_SECRET: ${OAUTH2_COOKIE_SECRET}
     depends_on:
       initialize:
         condition: service_completed_successfully
-    networks:
-      - internal
-    security_opt:
-      - no-new-privileges:true
-
-  oauth2-proxy:
-    image: quay.io/oauth2-proxy/oauth2-proxy:v7.15.3
-    restart: unless-stopped
-    command:
-      - --provider=github
-      - --scope=user:email
-      - --http-address=0.0.0.0:4180
-      - --redirect-url=https://analytics.coordiation.com/oauth2/callback
-      - --upstream=http://bridge:3000
-      - --email-domain=*
-      - --github-user=${ALLOWED_GITHUB_USER}
-      - --pass-user-headers=true
-      - --reverse-proxy=true
-      - --trusted-proxy-ip=172.19.0.0/16
-      - --skip-provider-button=true
-      - --cookie-secure=true
-      - --cookie-samesite=lax
-      - --cookie-domain=analytics.coordiation.com
-      - --cookie-expire=12h
-      - --cookie-refresh=1h
-      - --whitelist-domain=analytics.coordiation.com
-    environment:
-      OAUTH2_PROXY_CLIENT_ID: ${GITHUB_CLIENT_ID}
-      OAUTH2_PROXY_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
-      OAUTH2_PROXY_COOKIE_SECRET: ${OAUTH2_COOKIE_SECRET}
-    depends_on:
-      bridge:
-        condition: service_started
     networks:
       - internal
       - proxy
@@ -134,7 +104,7 @@ services:
       traefik.http.routers.coordiation-analytics-dashboard.priority: "100"
       traefik.http.routers.coordiation-analytics-dashboard.tls: "true"
       traefik.http.routers.coordiation-analytics-dashboard.tls.certresolver: letsencrypt
-      traefik.http.services.coordiation-analytics-dashboard.loadbalancer.server.port: "4180"
+      traefik.http.services.coordiation-analytics-dashboard.loadbalancer.server.port: "3000"
     security_opt:
       - no-new-privileges:true
 
