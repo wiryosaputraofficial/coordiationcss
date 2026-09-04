@@ -33,7 +33,7 @@ const inProgressCapabilityCount = capabilities.filter((capability) => capability
 const componentCount = componentRegistry.componentCount;
 const iconCount = iconRegistry.iconCount;
 const themeCount = themeRegistry.themeCount;
-const npmDownloadFallback = 1430;
+const npmDownloadFallback = 3084;
 
 const themeVisuals: Record<string, Pick<ThemeCarouselSlide, "accent" | "contrast">> = {
   "editorial-advisor": { accent: "#f1d6a8", contrast: "light" },

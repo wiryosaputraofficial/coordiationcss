@@ -28,7 +28,7 @@ export default function NpmDownloadsStat({ initialDownloads }: { initialDownload
     <div className="homepage-stat-product">
       <strong aria-live="polite">{downloads.toLocaleString("en-US")}</strong>
       <span>npm package downloads</span>
-      <p>Official npm registry total across Coordiation packages for the rolling 12 months.</p>
+      <p>Cumulative official npm downloads across every Coordiation package since the first release.</p>
     </div>
   );
 }
