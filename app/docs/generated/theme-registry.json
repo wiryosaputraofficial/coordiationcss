@@ -5,7 +5,7 @@
   "version": "1.0.0-rc.1",
   "generatedAt": "2026-08-29",
   "distribution": "open-code page registry",
-  "themeCount": 8,
+  "themeCount": 9,
   "themes": [
     {
       "name": "editorial-advisor",
@@ -1326,6 +1326,140 @@
         "selectionKey": "signal-agency",
         "sourceOwnership": "open-code",
         "customization": "Preserve the literal co-* utility foundation, signal-agency namespace, sa- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
+      }
+    },
+    {
+      "name": "serein-journal",
+      "title": "Serein Journal",
+      "description": "A refined independent magazine theme for culture, design, food, travel, and slow-living publications.",
+      "categories": [
+        "magazine",
+        "editorial",
+        "blog"
+      ],
+      "status": "stable",
+      "copyright": "Coordiation",
+      "framework": "Next.js App Router",
+      "style": "refined lifestyle editorial magazine",
+      "palette": "warm white, charcoal and antique gold",
+      "namespace": "serein-journal",
+      "classPrefix": "sj-",
+      "assetStrategy": "bundled-media",
+      "components": [
+        "JournalButton",
+        "SectionTitle",
+        "StoryCard",
+        "CompactStory",
+        "ThemeIcon"
+      ],
+      "preview": "/themes/serein-journal/preview",
+      "cover": "/themes/noir-habitat/project-interior.jpg",
+      "installPath": "/r/themes/serein-journal.json",
+      "command": "npx @coordiation/cli@next add theme serein-journal",
+      "sections": [
+        "header",
+        "cover story",
+        "news strip",
+        "featured story",
+        "editorial essay",
+        "must read",
+        "essential feature",
+        "latest stories",
+        "trending sidebar",
+        "newsletter",
+        "footer"
+      ],
+      "assets": [
+        "/themes/noir-habitat/project-interior.jpg",
+        "/themes/studio-index/detail-food.jpg",
+        "/themes/noir-habitat/news-light.jpg",
+        "/themes/mono-portfolio/blog-design.jpg",
+        "/themes/studio-index/playroom.jpg",
+        "/themes/noir-habitat/service-interior.jpg",
+        "/themes/industrial-forge/cta.jpg",
+        "/themes/signal-agency/blog-meeting.jpg",
+        "/themes/studio-index/root-table.jpg",
+        "/themes/noir-habitat/project-house.jpg",
+        "/themes/studio-index/detail-chef.jpg"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/serein-journal/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/serein-journal/page.tsx"
+        },
+        {
+          "path": "site/app/themes/serein-journal/preview/serein-journal.css",
+          "type": "registry:style",
+          "target": "app/serein-journal/serein-journal.css"
+        },
+        {
+          "path": "site/app/themes/serein-journal/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/serein-journal/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/serein-journal/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/serein-journal/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-to-top-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-to-top-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/calendar.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/calendar.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/clock-circle.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/clock-circle.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/bookmark.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/bookmark.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/magnifier.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/magnifier.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/star.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/star.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        }
+      ],
+      "coordiationUtilityCount": 23,
+      "ai": {
+        "selectionKey": "serein-journal",
+        "sourceOwnership": "open-code",
+        "customization": "Preserve the literal co-* utility foundation, serein-journal namespace, sj- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
         "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
       }
     }
