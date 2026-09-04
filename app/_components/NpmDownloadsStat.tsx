@@ -12,7 +12,10 @@ export default function NpmDownloadsStat({ initialDownloads }: { initialDownload
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("/api/npm-downloads", { signal: controller.signal })
+    fetch("/api/npm-downloads?metric=cumulative", {
+      cache: "no-store",
+      signal: controller.signal,
+    })
       .then(async (response): Promise<NpmDownloadResponse | null> =>
         response.ok ? (await response.json()) as NpmDownloadResponse : null,
       )
