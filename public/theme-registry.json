@@ -1485,6 +1485,7 @@
         "ProjectCard",
         "MetricCard",
         "RoundLink",
+        "CaseVisual",
         "ThemeIcon"
       ],
       "preview": "/themes/spectrum-studio/preview",
@@ -1502,6 +1503,12 @@
         "process",
         "team",
         "testimonials",
+        "project detail hero",
+        "project assignment",
+        "project system",
+        "project outcomes",
+        "project gallery",
+        "next project",
         "contact",
         "footer"
       ],
@@ -1522,6 +1529,21 @@
           "path": "site/app/themes/spectrum-studio/preview/page.tsx",
           "type": "registry:page",
           "target": "app/spectrum-studio/page.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/work/[slug]/page.tsx",
+          "type": "registry:page",
+          "target": "app/spectrum-studio/work/[slug]/page.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/projects.ts",
+          "type": "registry:file",
+          "target": "app/spectrum-studio/projects.ts"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/CaseVisual.tsx",
+          "type": "registry:component",
+          "target": "app/spectrum-studio/CaseVisual.tsx"
         },
         {
           "path": "site/app/themes/spectrum-studio/preview/SpectrumExperience.tsx",

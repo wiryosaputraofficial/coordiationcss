@@ -5,12 +5,12 @@ import { MetricCard, ProjectCard, RoundLink, SectionHeading } from "./DashboardC
 import ThemeIcon from "./ThemeIcon";
 
 const projects = [
-  ["/themes/spectrum-studio/project-01.jpg", "Chromatic Ritual", "Astra", "2026"],
-  ["/themes/spectrum-studio/project-02.jpg", "Motion, Engineered", "Vektor", "2026"],
-  ["/themes/spectrum-studio/project-03.jpg", "Nothing Static", "Kinetik", "2025"],
-  ["/themes/spectrum-studio/project-04.jpg", "Form After Dark", "Noir Lab", "2025"],
-  ["/themes/spectrum-studio/project-05.jpg", "Human Interface", "Synapse", "2026"],
-  ["/themes/spectrum-studio/project-06.jpg", "Secret Language", "Orphic", "2025"],
+  ["chromatic-ritual", "/themes/spectrum-studio/project-01.jpg", "Chromatic Ritual", "Astra", "2026"],
+  ["motion-engineered", "/themes/spectrum-studio/project-02.jpg", "Motion, Engineered", "Vektor", "2026"],
+  ["nothing-static", "/themes/spectrum-studio/project-03.jpg", "Nothing Static", "Kinetik", "2025"],
+  ["form-after-dark", "/themes/spectrum-studio/project-04.jpg", "Form After Dark", "Noir Lab", "2025"],
+  ["human-interface", "/themes/spectrum-studio/project-05.jpg", "Human Interface", "Synapse", "2026"],
+  ["secret-language", "/themes/spectrum-studio/project-06.jpg", "Secret Language", "Orphic", "2025"],
 ] as const;
 
 const services = [
@@ -96,7 +96,7 @@ export default function SpectrumExperience() {
 
     <section className="sp-hero co-relative co-overflow-hidden co-min-h-screen" ref={heroRef} onPointerMove={moveHero} onPointerLeave={() => { heroRef.current?.style.removeProperty("--sp-x"); heroRef.current?.style.removeProperty("--sp-y"); }} aria-labelledby="sp-hero-title"><div className="sp-hero-media co-absolute"><img className="sp-hero-base co-w-full co-h-full co-object-cover" src="/themes/spectrum-studio/hero-spectrum.jpg" alt="" /><img className="sp-hero-channel is-cyan co-w-full co-h-full co-object-cover" src="/themes/spectrum-studio/hero-spectrum.jpg" alt="" /><img className="sp-hero-channel is-magenta co-w-full co-h-full co-object-cover" src="/themes/spectrum-studio/hero-spectrum.jpg" alt="" /></div><div className="sp-spectrum-field co-absolute" aria-hidden="true" /><div className="sp-tech-grid co-absolute" aria-hidden="true" /><div className="sp-hero-shade co-absolute" aria-hidden="true" /><div className="sp-hero-intro"><p className="sp-eyebrow co-flex co-items-center"><i />独立系デザインスタジオ</p><h2>Independent<br />Creative Studio</h2><p>Jakarta · Indonesia<br />Working worldwide</p></div><div className="sp-hero-services"><span>EST. 2026</span><p>Brand<br />Product<br />Web<br />Motion</p></div><h1 className="sp-hero-title" id="sp-hero-title"><span>WE DON&apos;T MAKE NOISE<b>✣</b></span><span>WE MAKE IMPACT</span></h1><div className="sp-hero-rail">Spectrum Design / Always in motion<i /></div><a className="sp-scroll-cue co-inline-flex co-items-center" href="#work">Scroll to explore <ThemeIcon name="arrow-right" size={17} /></a></section>
 
-    <section className="sp-work sp-paper" id="work"><SectionHeading index="01" eyebrow="Selected projects">A curated selection of work<br /><em>built to refuse the ordinary.</em></SectionHeading><div className="sp-project-grid co-grid">{projects.map(([image,title,client,year])=><ProjectCard image={image} title={title} client={client} year={year} key={title} />)}</div><a className="sp-text-link co-inline-flex co-items-center" href="#services">Explore our approach <ThemeIcon name="arrow-right" size={17} tone="ink" /></a></section>
+    <section className="sp-work sp-paper" id="work"><SectionHeading index="01" eyebrow="Selected projects">A curated selection of work<br /><em>built to refuse the ordinary.</em></SectionHeading><div className="sp-project-grid co-grid">{projects.map(([slug,image,title,client,year])=><ProjectCard slug={slug} image={image} title={title} client={client} year={year} key={title} />)}</div><a className="sp-text-link co-inline-flex co-items-center" href="#services">Explore our approach <ThemeIcon name="arrow-right" size={17} tone="ink" /></a></section>
 
     <section className="sp-client-strip" aria-label="Selected clients"><div className="sp-marquee co-flex co-items-center">{["ASTRA","VEKTOR","MONOLITH","ORPHIC","KINETIK","NOIR LAB","ASTRA","VEKTOR","MONOLITH","ORPHIC","KINETIK","NOIR LAB"].map((client,index)=><span className="co-inline-flex co-items-center" key={`${client}-${index}`}>{client}<i>✣</i></span>)}</div></section>
 

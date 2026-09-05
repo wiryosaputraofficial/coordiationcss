@@ -5,8 +5,8 @@ export function SectionHeading({ index, eyebrow, children, light = false }: { in
   return <div className={`sp-section-heading sp-reveal co-flex co-items-start co-justify-between${light ? " is-light" : ""}`}><p className="sp-kicker">{index} / {eyebrow}</p><h2>{children}</h2></div>;
 }
 
-export function ProjectCard({ image, title, client, year }: { image: string; title: string; client: string; year: string }) {
-  return <a className="sp-project-card sp-reveal co-block co-min-w-0" href="#contact"><div className="sp-project-media co-relative co-overflow-hidden"><img className="co-w-full co-h-full co-object-cover" src={image} alt={`${title} project for ${client}`} /><span className="co-inline-flex co-items-center">View project <ThemeIcon name="arrow-right" size={14} tone="ink" /></span></div><div className="sp-project-meta co-flex co-justify-between"><strong>{title}</strong><span>{client} · {year}</span></div></a>;
+export function ProjectCard({ slug, image, title, client, year }: { slug: string; image: string; title: string; client: string; year: string }) {
+  return <a className="sp-project-card sp-reveal co-block co-min-w-0" href={`/themes/spectrum-studio/preview/work/${slug}`}><div className="sp-project-media co-relative co-overflow-hidden"><img className="co-w-full co-h-full co-object-cover" src={image} alt={`${title} project for ${client}`} /><span className="co-inline-flex co-items-center">View project <ThemeIcon name="arrow-right" size={14} tone="ink" /></span></div><div className="sp-project-meta co-flex co-justify-between"><strong>{title}</strong><span>{client} · {year}</span></div></a>;
 }
 
 export function MetricCard({ value, suffix, label, copy }: { value: number; suffix?: string; label: string; copy: string }) {

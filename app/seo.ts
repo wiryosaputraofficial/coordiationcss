@@ -170,4 +170,10 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/themes/serein-journal/preview",
   "/themes/spectrum-studio",
   "/themes/spectrum-studio/preview",
+  "/themes/spectrum-studio/preview/work/chromatic-ritual",
+  "/themes/spectrum-studio/preview/work/motion-engineered",
+  "/themes/spectrum-studio/preview/work/nothing-static",
+  "/themes/spectrum-studio/preview/work/form-after-dark",
+  "/themes/spectrum-studio/preview/work/human-interface",
+  "/themes/spectrum-studio/preview/work/secret-language",
 ] as const;
