@@ -168,4 +168,6 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/themes/quiet-journal/preview",
   "/themes/serein-journal",
   "/themes/serein-journal/preview",
+  "/themes/spectrum-studio",
+  "/themes/spectrum-studio/preview",
 ] as const;

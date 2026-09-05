@@ -5,7 +5,7 @@
   "version": "1.0.0-rc.1",
   "generatedAt": "2026-08-29",
   "distribution": "open-code page registry",
-  "themeCount": 9,
+  "themeCount": 10,
   "themes": [
     {
       "name": "editorial-advisor",
@@ -1460,6 +1460,125 @@
         "selectionKey": "serein-journal",
         "sourceOwnership": "open-code",
         "customization": "Preserve the literal co-* utility foundation, serein-journal namespace, sj- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
+        "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
+      }
+    },
+    {
+      "name": "spectrum-studio",
+      "title": "Spectrum Studio",
+      "description": "A high-energy independent creative studio theme for brand, product, web, and motion work.",
+      "categories": [
+        "agency",
+        "creative",
+        "portfolio"
+      ],
+      "status": "stable",
+      "copyright": "Coordiation",
+      "framework": "Next.js App Router",
+      "style": "chromatic experimental creative studio",
+      "palette": "near black, warm sand, signal red and electric blue",
+      "namespace": "spectrum-studio",
+      "classPrefix": "sp-",
+      "assetStrategy": "bundled-media",
+      "components": [
+        "SectionHeading",
+        "ProjectCard",
+        "MetricCard",
+        "RoundLink",
+        "ThemeIcon"
+      ],
+      "preview": "/themes/spectrum-studio/preview",
+      "cover": "/themes/spectrum-studio/hero-spectrum.jpg",
+      "installPath": "/r/themes/spectrum-studio.json",
+      "command": "npx @coordiation/cli@next add theme spectrum-studio",
+      "sections": [
+        "header",
+        "hero",
+        "selected projects",
+        "client marquee",
+        "studio statement",
+        "capabilities",
+        "proof metrics",
+        "process",
+        "team",
+        "testimonials",
+        "contact",
+        "footer"
+      ],
+      "assets": [
+        "/themes/spectrum-studio/hero-spectrum.jpg",
+        "/themes/spectrum-studio/project-01.jpg",
+        "/themes/spectrum-studio/project-02.jpg",
+        "/themes/spectrum-studio/project-03.jpg",
+        "/themes/spectrum-studio/project-04.jpg",
+        "/themes/spectrum-studio/project-05.jpg",
+        "/themes/spectrum-studio/project-06.jpg",
+        "/themes/spectrum-studio/person-01.avif",
+        "/themes/spectrum-studio/person-02.avif",
+        "/themes/spectrum-studio/person-03.avif"
+      ],
+      "files": [
+        {
+          "path": "site/app/themes/spectrum-studio/preview/page.tsx",
+          "type": "registry:page",
+          "target": "app/spectrum-studio/page.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/SpectrumExperience.tsx",
+          "type": "registry:component",
+          "target": "app/spectrum-studio/SpectrumExperience.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/spectrum-studio.css",
+          "type": "registry:style",
+          "target": "app/spectrum-studio/spectrum-studio.css"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/ThemeIcon.tsx",
+          "type": "registry:component",
+          "target": "app/spectrum-studio/ThemeIcon.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/DashboardComponents.tsx",
+          "type": "registry:component",
+          "target": "app/spectrum-studio/DashboardComponents.tsx"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-right.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-right.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/arrow-up.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/arrow-up.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/hamburger-menu.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/hamburger-menu.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/letter.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/letter.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/global.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/global.svg"
+        },
+        {
+          "path": "site/public/icons/solar-linear/stars.svg",
+          "type": "registry:file",
+          "target": "public/icons/solar-linear/stars.svg"
+        }
+      ],
+      "coordiationUtilityCount": 24,
+      "ai": {
+        "selectionKey": "spectrum-studio",
+        "sourceOwnership": "open-code",
+        "customization": "Preserve the literal co-* utility foundation, spectrum-studio namespace, sp- theme classes, semantic section IDs, literal asset paths, heading hierarchy, and Coordiation copyright.",
         "assetPolicy": "Copy the listed public assets when self-hosting, or replace each literal path with your own original media."
       }
     }
