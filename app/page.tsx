@@ -3,6 +3,7 @@ import Link from "@/app/_components/SiteLink";
 import { createSeoMetadata } from "@/app/seo";
 import MobileNav from "./_components/MobileNav";
 import NpmDownloadsStat from "./_components/NpmDownloadsStat";
+import AnimatedNumber from "./_components/AnimatedNumber";
 import SolarIcon from "./_components/SolarIcon";
 import ThemeCarousel, { type ThemeCarouselSlide } from "./_components/ThemeCarousel";
 import { capabilities, type CapabilityStatus } from "./docs/capabilities";
@@ -323,13 +324,13 @@ export default function Home() {
       </section>
 
       <section className="homepage-stats" aria-label="Framework statistics">
-        <div><strong>{utilityCount}</strong><span>Static utilities</span><p>Generated from the canonical compiler registry.</p></div>
-        <div><strong>{familyCount}</strong><span>Complete families</span><p>Every family is documented and registry-backed.</p></div>
-        <div><strong>{verifiedExampleCount}</strong><span>Verified examples</span><p>Broken examples fail registry generation.</p></div>
-        <div><strong>{completeCapabilityCount}</strong><span>Complete capabilities</span><p>Published through the machine-readable API.</p></div>
-        <div className="homepage-stat-product"><strong>{iconCount.toLocaleString("en-US")}</strong><span>Coordiation icons</span><p>Solar Linear and Iconsax Line Oval, ready to import.</p></div>
-        <div className="homepage-stat-product"><strong>{componentCount}</strong><span>Open-code components</span><p>Accessible source you can install, inspect, and own.</p></div>
-        <div className="homepage-stat-product"><strong>{themeCount}</strong><span>Complete themes</span><p>Responsive application starting points built with Coordiation.</p></div>
+        <div><AnimatedNumber value={utilityCount} /><span>Static utilities</span><p>Generated from the canonical compiler registry.</p></div>
+        <div><AnimatedNumber value={familyCount} delay={40} /><span>Complete families</span><p>Every family is documented and registry-backed.</p></div>
+        <div><AnimatedNumber value={verifiedExampleCount} delay={80} /><span>Verified examples</span><p>Broken examples fail registry generation.</p></div>
+        <div><AnimatedNumber value={completeCapabilityCount} delay={120} /><span>Complete capabilities</span><p>Published through the machine-readable API.</p></div>
+        <div className="homepage-stat-product"><AnimatedNumber value={iconCount} delay={160} /><span>Coordiation icons</span><p>Solar Linear and Iconsax Line Oval, ready to import.</p></div>
+        <div className="homepage-stat-product"><AnimatedNumber value={componentCount} delay={200} /><span>Open-code components</span><p>Accessible source you can install, inspect, and own.</p></div>
+        <div className="homepage-stat-product"><AnimatedNumber value={themeCount} delay={240} /><span>Complete themes</span><p>Responsive application starting points built with Coordiation.</p></div>
         <NpmDownloadsStat initialDownloads={npmDownloadFallback} />
       </section>
 

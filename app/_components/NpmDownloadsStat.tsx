@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import AnimatedNumber from "./AnimatedNumber";
 
 type NpmDownloadResponse = {
   downloads?: number;
@@ -29,7 +30,7 @@ export default function NpmDownloadsStat({ initialDownloads }: { initialDownload
 
   return (
     <div className="homepage-stat-product">
-      <strong aria-live="polite">{downloads.toLocaleString("en-US")}</strong>
+      <AnimatedNumber value={downloads} delay={280} />
       <span>npm package downloads</span>
       <p>Cumulative official npm downloads across every Coordiation package since the first release.</p>
     </div>

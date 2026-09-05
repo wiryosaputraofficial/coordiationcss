@@ -127,6 +127,8 @@ pre { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
 .homepage-stats > div:nth-child(4), .homepage-stats > div:last-child { border-right: 0; }
 .homepage-stats > div:nth-child(n+5) { grid-column: span 3; }
 .homepage-stats strong { font-size: clamp(46px, 5vw, 74px); line-height: 1; letter-spacing: -.07em; }
+.homepage-stat-number { font-variant-numeric: tabular-nums; }
+.homepage-stat-number > span { display: inline-block; min-width: 2ch; }
 .homepage-stats span { margin-top: 17px; font-family: var(--font-geist-mono); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
 .homepage-stats p { margin: auto 0 0; max-width: 240px; color: #777; font-size: 10px; line-height: 1.55; }
 .homepage-stat-product { background: #0a0a0a; color: #fff; border-color: #333 !important; }
