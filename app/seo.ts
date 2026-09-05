@@ -176,4 +176,8 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/themes/spectrum-studio/preview/work/form-after-dark",
   "/themes/spectrum-studio/preview/work/human-interface",
   "/themes/spectrum-studio/preview/work/secret-language",
+  "/themes/spectrum-studio/preview/studio/arka-wijaya",
+  "/themes/spectrum-studio/preview/studio/maya-adelia",
+  "/themes/spectrum-studio/preview/studio/keiko-tan",
+  "/themes/spectrum-studio/preview/start-project",
 ] as const;

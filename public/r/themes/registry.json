@@ -1492,6 +1492,31 @@
           "target": "app/spectrum-studio/CaseVisual.tsx"
         },
         {
+          "path": "site/app/themes/spectrum-studio/preview/studio/[slug]/page.tsx",
+          "type": "registry:page",
+          "target": "app/spectrum-studio/studio/[slug]/page.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/people.ts",
+          "type": "registry:file",
+          "target": "app/spectrum-studio/people.ts"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/PortraitVisual.tsx",
+          "type": "registry:component",
+          "target": "app/spectrum-studio/PortraitVisual.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/start-project/page.tsx",
+          "type": "registry:page",
+          "target": "app/spectrum-studio/start-project/page.tsx"
+        },
+        {
+          "path": "site/app/themes/spectrum-studio/preview/start-project/ProjectBriefForm.tsx",
+          "type": "registry:component",
+          "target": "app/spectrum-studio/start-project/ProjectBriefForm.tsx"
+        },
+        {
           "path": "site/app/themes/spectrum-studio/preview/SpectrumExperience.tsx",
           "type": "registry:component",
           "target": "app/spectrum-studio/SpectrumExperience.tsx"
@@ -1564,6 +1589,8 @@
           "MetricCard",
           "RoundLink",
           "CaseVisual",
+          "PortraitVisual",
+          "ProjectBriefForm",
           "ThemeIcon"
         ],
         "sections": [
@@ -1582,7 +1609,11 @@
           "project system",
           "project outcomes",
           "project gallery",
-          "next project",
+          "team profile hero",
+          "perspective",
+          "areas of focus",
+          "profile work",
+          "project brief",
           "contact",
           "footer"
         ],
